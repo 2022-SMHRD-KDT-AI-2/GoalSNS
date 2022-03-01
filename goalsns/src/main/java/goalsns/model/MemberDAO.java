@@ -1,5 +1,5 @@
 package goalsns.model;
 
-public class DTO {
+public class MemberDAO {
 
 }
