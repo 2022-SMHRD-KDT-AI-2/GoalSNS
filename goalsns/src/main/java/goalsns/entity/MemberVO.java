@@ -11,6 +11,7 @@ public class MemberVO {
 	private String mem_about;
 	private Date mem_joindate;
 	private String admin_yn;
+	private String mem_img;
 	
 	public String getMem_id() {
 		return mem_id;
@@ -53,6 +54,12 @@ public class MemberVO {
 	}
 	public void setAdmin_yn(String admin_yn) {
 		this.admin_yn = admin_yn;
+	}
+	public String getMem_img() {
+		return mem_img;
+	}
+	public void setMem_img(String mem_img) {
+		this.mem_img = mem_img;
 	}
 	
 	

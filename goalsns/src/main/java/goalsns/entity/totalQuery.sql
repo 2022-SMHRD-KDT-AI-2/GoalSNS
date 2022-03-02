@@ -423,4 +423,4 @@ ALTER TABLE t_cmt
         REFERENCES t_member (mem_id)
 /
 
-
+alter table t_member add mem_img VARCHAR2(200);
