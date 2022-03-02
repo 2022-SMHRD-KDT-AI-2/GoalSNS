@@ -62,8 +62,5 @@ public class MemberVO {
 		this.mem_img = mem_img;
 	}
 	
-	
-	
-	
 
 }
