@@ -13,4 +13,7 @@
   	<select id="getPostByIdx" parameterType="int" resultType="goalsns.entity.PostVO">
   		select * from t_post where post_seq=#{post_seq}
   	</select>
+  	<delete id="postDelete">
+  		delete from t_post where post_seq=#{post_seq}
+  	</delete>
 </mapper>

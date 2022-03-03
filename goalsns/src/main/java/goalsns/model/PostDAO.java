@@ -44,4 +44,11 @@ public class PostDAO {
 		session.close();
 		return vo;
 	}
+	
+	public void postDelete(int post_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("postDelete", post_seq);
+		session.commit();
+		session.close();
+	}
 }
