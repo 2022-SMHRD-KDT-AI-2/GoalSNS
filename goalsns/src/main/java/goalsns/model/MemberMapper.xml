@@ -19,6 +19,6 @@
 	mem_id,
 	mem_pw,
 	mem_email,
-	mem_name) values (t_member.nextval, #{mem_id}, #{mem_pw}, #{mem_email}, #{mem_name})
+	mem_name) values (#{mem_id}, #{mem_pw}, #{mem_email}, #{mem_name})
 	</insert>
 </mapper>
