@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <form action="데이터보낼주소">
+   <form action="./goalsns.controller/UserRegisterController">
         <h5>현재의 자신보다 더 나은 나를 원한다면 가입하세요</h5>
 
         <input type="text" name="mem_email" placeholder="이메일 주소">
