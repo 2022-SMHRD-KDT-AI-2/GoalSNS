@@ -2,8 +2,6 @@
 <%@page import="goalsns.entity.PostVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%
-    	List<PostVO> list = (List<PostVO>)request.getAttribute("list");
     %>
 <!DOCTYPE html>
 <html>
@@ -22,13 +20,7 @@
 <body>
 <jsp:include page="menu.jsp" />
 <!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
-<%for(int i=0; i<list.size(); i++){
-    			PostVO vo =list.get(i); %>
-	    		<%= vo.getPost_content() %>
-	    		<%= vo.getMem_id() %>
-	    		<%= vo.getPost_date() %>
-	    		<img src="postPic/<%= vo.getPost_file() %>">
-    		<% } %>
+
 <jsp:include page="footer.jsp" />
 </body>
 </html>
