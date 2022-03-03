@@ -13,6 +13,23 @@ public class MemberVO {
 	private String admin_yn;
 	private String mem_img;
 	
+	
+	public MemberVO() {
+		
+	}
+	
+	public MemberVO(String mem_id, String mem_pw, String mem_name, String mem_email, String mem_about,
+			Date mem_joindate, String admin_yn, String mem_img) {
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
+		this.mem_email = mem_email;
+		this.mem_about = mem_about;
+		this.mem_joindate = mem_joindate;
+		this.admin_yn = admin_yn;
+		this.mem_img = mem_img;
+	}
+	
 	public String getMem_id() {
 		return mem_id;
 	}

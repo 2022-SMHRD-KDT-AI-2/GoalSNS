@@ -7,24 +7,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UserRegisterController extends HttpServlet{
-	private static final long serialVersionUID = 1L;
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
-		String mem_email = request.getParameter("mem_email");
-		String mem_name = request.getParameter("mem_name");
-		String mem_id = request.getParameter("mem_id");
-		String mem_pw = request.getParameter("mem_pw");
-		if (mem_email == null || mem_email.equals("") || mem_name == null || mem_name.equals("") ||
-				mem_id == null || mem_id.equals("") || mem_pw == null || mem_pw.equals("")) {
-			request.getSession().setAttribute("messageType", "오류메시지");
-			request.getSession().setAttribute("messageContent", "모든 내용을 입력하세요.");
-			response.sendRedirect("signUp.jsp");
-			
-		}
-	}
+import goalsns.model.MemberDAO;
+import goalsns.controller.Controller;
+import goalsns.entity.MemberVO;
 
+public class UserRegisterController implements Controller {
+	public String requestHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String mem_id = request.getParameter("id");
+		String mem_pw = request.getParameter("pw");
+		String mem_email = request.getParameter("email");
+		String mem_name = request.getParameter("name");
+		
+		MemberVO vo = new MemberVO();
+		vo.setMem_id(mem_id);
+		vo.setMem_pw(mem_pw);
+		vo.setMem_email(mem_email);
+		vo.setMem_name(mem_name);
+		
+		MemberDAO dao = new MemberDAO();
+		dao.register(vo);
+		return "signUp.jsp";
+		
+	}
+	
 }
