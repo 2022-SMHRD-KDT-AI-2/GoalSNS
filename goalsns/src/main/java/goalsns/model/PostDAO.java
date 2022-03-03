@@ -21,9 +21,10 @@ public class PostDAO {
 			e.printStackTrace();
 		}
 	}
-	public void postwrite(PostVO vo) {
+	
+	public void postWrite(PostVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("postwrite", vo);
+		session.insert("postWrite", vo);
 		session.commit();
 		session.close();
 	}

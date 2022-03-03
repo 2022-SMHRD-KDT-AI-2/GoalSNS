@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="goalsns.model.MemberMapper">
-	<insert id="postwrite" parameterType="goalsns.model.PostVO">
+<mapper namespace="goalsns.model.PostMapper">
+	<insert id="postWrite" parameterType="goalsns.entity.PostVO">
 		insert into t_post(post_seq, post_content, post_file, mem_id)
 		values (t_post_SEQ.nextval, #{post_content}, #{post_file}, #{mem_id})
 	</insert>
