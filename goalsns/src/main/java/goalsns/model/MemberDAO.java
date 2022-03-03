@@ -1,24 +1,19 @@
 package goalsns.model;
 
-<<<<<<< HEAD
 import java.io.InputStream;
 import java.util.List;
-=======
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 
-<<<<<<< HEAD
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import goalsns.entity.MemberVO;
-
-public class MemberDAO {
 
 import javax.sql.DataSource;
 
