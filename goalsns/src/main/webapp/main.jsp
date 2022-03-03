@@ -1,8 +1,6 @@
-<%@page import="java.util.List"%>
-<%@page import="goalsns.entity.PostVO"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    %>
 <!DOCTYPE html>
 <html>
 <head>

@@ -22,7 +22,9 @@ public class MemberLoginController implements Controller {
 		String mem_pw=request.getParameter("mem_pw");
 		MemberVO vo_id=(MemberVO)mdao.memberIdCheck(mem_id);
 		MemberVO vo_pw=(MemberVO)mdao.memberPwCheck(mem_pw);
-		if (mem_id.equals(vo_id) && mem_pw.equals(vo_pw)) {
+		request.setAttribute("vo_id", vo_id);
+		request.setAttribute("vo_pw", vo_pw);
+		if (vo_id.equals(mem_id) && vo_pw.equals(mem_pw)) {
 			return "main";
 		}
 		
