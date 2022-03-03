@@ -17,7 +17,8 @@ public class PostWriteController implements Controller {
 public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
 	request.setCharacterEncoding("UTF-8");
-	
+	//이미지가 저장되는 경로
+	//C:\aiweb\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\goalsns\postPic
 	ServletContext context = request.getSession().getServletContext();
 	String path = context.getRealPath("postPic");
 	String encType = "UTF-8";

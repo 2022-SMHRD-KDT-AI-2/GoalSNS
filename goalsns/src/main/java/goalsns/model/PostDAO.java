@@ -31,9 +31,9 @@ public class PostDAO {
 		session.close();
 	}
 	
-	public List<PostVO> selectAll() {
+	public List<PostVO> selectPosts() {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<PostVO> list = session.selectList("selectAll"); 
+		List<PostVO> list = session.selectList("selectPosts"); 
 		session.close();
 		return list;
 	}

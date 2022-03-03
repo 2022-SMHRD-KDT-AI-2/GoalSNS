@@ -424,3 +424,5 @@ ALTER TABLE t_cmt
 /
 
 alter table t_member add mem_img VARCHAR2(200);
+
+alter table t_member modify (mem_img default './profilePic/profile_none.png');

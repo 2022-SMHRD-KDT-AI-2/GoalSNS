@@ -1,8 +1,5 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@ page import = "java.util.List" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,25 +13,10 @@
 <body>
  
 <div class="container">
-  <h2>MVC Framework 04</h2>
   <div class="panel panel-default">
-    <div class="panel-heading">
-							</div>
+    <div class="panel-heading">Panel Heading</div>
     <div class="panel-body">
-    	<table class="table table-bordered table-hover">
-    		<tr>
-    			<td>번호</td>
-    		</tr>
-    		<c:forEach var="vo" items="${list}">
-    			<tr>
-	    			<td>${vo.post_content}</td>
-    			</tr>
-    		</c:forEach>
-    	<tr>
-    		<td colspan="5">
-    		</td>
-    	</tr>
-    	</table>
+    	<a href="/goalsns/postList.po">글 리스트</a>
     </div>
   </div>
 </div>

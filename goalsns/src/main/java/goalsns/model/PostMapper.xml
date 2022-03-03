@@ -7,7 +7,7 @@
 		insert into t_post(post_seq, post_content, post_file, mem_id)
 		values (t_post_SEQ.nextval, #{post_content}, #{post_file}, #{mem_id})
 	</insert>
-	<select id="selectAll" resultType="goalsns.entity.PostVO">
+	<select id="selectPosts" resultType="goalsns.entity.PostVO">
   		select * from t_post
   	</select>
 </mapper>
