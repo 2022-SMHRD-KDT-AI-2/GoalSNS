@@ -20,7 +20,6 @@
         <br>
         <input type="submit" onclick="location.href='index.jsp'">
         <!-- 로그인 버튼 없어도 된다고 함 -->
-        <!--  -->
     </form>
 </body>
 </html>

@@ -56,14 +56,14 @@ public class MemberDAO {
 		return -1; // 데이터 베이스 오류
 	}
 	
-	public int register(MemberVO mem) {
+	public int register(String mem_email,String mem_name,String mem_id,String mem_pw) {
 		String sql = "insert into user values(?,?,?,?)";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, mem.getMem_email());
-			psmt.setString(2, mem.getMem_name());
-			psmt.setString(3, mem.getMem_id());
-			psmt.setString(4, mem.getMem_pw());
+			psmt.setString(1, mem_email);
+			psmt.setString(2, mem_name);
+			psmt.setString(3, mem_id);
+			psmt.setString(4, mem_pw);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
