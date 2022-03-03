@@ -114,7 +114,6 @@ public class MemberDAO {
 	}
 	public List<MemberVO> selectAll() {
 		SqlSession session=sqlSessionFactory.openSession();
-		
 		List<MemberVO> list=session.selectList("selectAll");
 		session.close(); //¹Ý³³
 		return list;
