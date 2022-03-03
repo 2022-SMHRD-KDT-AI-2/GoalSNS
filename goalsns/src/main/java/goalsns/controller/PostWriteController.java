@@ -32,7 +32,7 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	PostVO vo = new PostVO();
 	vo.setPost_content(post_content);
 	vo.setPost_file(post_file);
-	vo.setMem_id("test");
+	vo.setMem_id("test1");
 
 	PostDAO dao = new PostDAO();
 	dao.postWrite(vo);
