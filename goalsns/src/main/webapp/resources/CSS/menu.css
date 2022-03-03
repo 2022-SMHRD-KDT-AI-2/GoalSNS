@@ -1,0 +1,43 @@
+@charset "EUC-KR";
+body{
+    background-color: rgba(250, 250, 250, 1);
+}
+.navbar-default {
+    background-color: white;
+    border-bottom: 1px solid #E5E5E5;
+    border-top: 0px solid #E5E5E5;
+}
+/* 검색창 */
+.form-control{
+    background: #E5E5E5;
+}
+.navbar-form .form-control{
+    width:250px;
+}
+/* 아이콘들의 사이 거리 */
+.container-fluid>.navbar-header{
+    margin-left: 300px;
+}
+.navbar-form {
+    margin-left: 300px;
+}
+.navbar-nav{
+    margin-left: 300px;
+}
+.navbar-brand {
+    padding:4px
+}
+
+/* 아이콘들 */
+.fa-house{
+    font-size: 25px;
+    color:black;
+}
+.fa-square-plus{
+    font-size: 26px;
+    color:black;
+}
+.fa-arrow-right-from-bracket{
+    font-size: 25px;
+    color:black;
+}
