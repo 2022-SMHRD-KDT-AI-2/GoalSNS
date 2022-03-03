@@ -18,8 +18,9 @@
         <br>
         <input type="password" name="mem_pw" placeholder="비밀번호">
         <br>
-        <input type="submit">
+        <input type="submit" onclick="location.href='index.jsp'">
         <!-- 로그인 버튼 없어도 된다고 함 -->
+        <!--  -->
     </form>
 </body>
 </html>
