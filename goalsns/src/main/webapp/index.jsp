@@ -18,7 +18,7 @@
   <h2>챌린샷</h2>
   <div class="panel panel-default">
     <div class="panel-heading">
-    <form class="form-inline" action="goalsns/index" method="post">
+    <form class="form-inline" action="/index" method="post">
   <div class="form-group">
 
     <label for="mem_id">아이디</label>
