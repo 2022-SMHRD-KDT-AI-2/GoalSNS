@@ -12,6 +12,7 @@ import goalsns.entity.PostVO;
 
 public class PostDAO {
 	private static SqlSessionFactory sqlSessionFactory;
+	
 	//초기화 블럭.(프로그램 실행시 한번만 실행되는 부분.)
 	static {
 		try {
