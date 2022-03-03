@@ -1,5 +1,3 @@
- 
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -35,7 +33,9 @@
     <label><input type="checkbox">아이디기억</label>
   </div>
   <button type="submit" class="btn btn-primary">로그인</button>
+  
   </form>
+  <button class="btn" onclick="location.href='signUp.jsp'">회원가입</button>
   </div>
  </div>
 </div>
