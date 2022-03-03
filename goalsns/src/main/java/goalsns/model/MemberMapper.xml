@@ -14,4 +14,5 @@
 	<select id="selectAll" resultType="goalsns.entity.BoardVO">
 	select * from t_member
 	</select>
+	<insert  id=="goalsns.entity.BoardVO"></insert>
 </mapper>
