@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import goalsns.model.MemberDAO;
 
 public class UserRegisterController extends HttpServlet{
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
