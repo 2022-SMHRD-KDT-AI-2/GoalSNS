@@ -5,7 +5,6 @@ body{
 .navbar-default {
     background-color: white;
     border-bottom: 1px solid #E5E5E5;
-    border-top: 0px solid #E5E5E5;
 }
 /* 검색창 */
 .form-control{
@@ -20,6 +19,7 @@ body{
 }
 .navbar-form {
     margin-left: 300px;
+    margin-top: 11px;
 }
 .navbar-nav{
     margin-left: 300px;
@@ -29,6 +29,9 @@ body{
 }
 
 /* 아이콘들 */
+.fa-house:hover, .fa-square-plus:hover,.fa-arrow-right-from-bracket:hover{
+    color:rgba(243, 115, 33, 1);
+}
 .fa-house{
     font-size: 25px;
     color:black;

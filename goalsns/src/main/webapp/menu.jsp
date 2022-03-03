@@ -11,7 +11,7 @@
                     <div class="form-group">
                       <input type="text" class="form-control" placeholder="검색" name="search">
                     </div>
-                    <button type="submit" class="btn btn-default">✔</button>
+                    <button type="submit" class="btn btn-default"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
               <div class="test">
                 <ul class="nav navbar-nav">
