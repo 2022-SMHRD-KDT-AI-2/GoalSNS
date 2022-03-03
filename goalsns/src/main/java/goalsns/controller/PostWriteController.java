@@ -35,7 +35,7 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	vo.setMem_id("test");
 
 	PostDAO dao = new PostDAO();
-	dao.postwrite(vo);
-	return "redirect:/main.jsp"; // 메인으로 이동하게끔..
+	dao.postWrite(vo);
+	return "main"; // 메인으로 이동하게끔..
 }
 }
