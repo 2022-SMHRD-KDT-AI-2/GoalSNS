@@ -25,10 +25,10 @@ public class MemberLoginController implements Controller {
 		request.setAttribute("vo_pw", vo_pw);
 		if (mem_id.equals(vo_id) && mem_pw.equals(vo_pw)) {
 			System.out.print("로그인 성공");
-			return "index";
+			return "main";
 		}
 		
-		return "index";
+		return "main";
 	}
 	
 }

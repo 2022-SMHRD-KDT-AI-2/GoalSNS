@@ -3,16 +3,22 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="goalsns.model.MemberMapper">
-	<select id="getMem_id" parameterType="String" resultType="goalsns.entity.BoardVO">
+	<select id="getMem_id" parameterType="String" resultType="goalsns.entity.MemberVO">
 	select * from t_member
 	where mem_id=#{mem_id}
 	</select>
-	<select id="getMem_pw" parameterType="String" resultType="goalsns.entity.BoardVO">
+	<select id="getMem_pw" parameterType="String" resultType="goalsns.entity.MemberVO">
 	select * from t_member
 	where mem_pw=#{mem_pw}
 	</select>
-	<select id="selectAll" resultType="goalsns.entity.BoardVO">
+	<select id="selectAll" resultType="goalsns.entity.MemberVO">
 	select * from t_member
 	</select>
-	<insert  id=="goalsns.entity.BoardVO"></insert>
+	<insert id="register"  parameterType ="goalsns.entity.MemberVO">
+	insert into t_member(
+	mem_id,
+	mem_pw,
+	mem_email,
+	mem_name) values (t_member.nextval, #{mem_id}, #{mem_pw}, #{mem_email}, #{mem_name})
+	</insert>
 </mapper>

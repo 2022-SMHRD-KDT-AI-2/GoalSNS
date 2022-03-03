@@ -27,7 +27,7 @@ public class UserRegisterController implements Controller {
 		
 		MemberDAO dao = new MemberDAO();
 		dao.register(vo);
-		return "redirect:/signUp.jsp";
+		return "signUp.jsp";
 		
 	}
 	

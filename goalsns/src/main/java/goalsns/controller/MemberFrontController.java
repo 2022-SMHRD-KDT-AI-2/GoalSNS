@@ -18,12 +18,12 @@ import goalsns.model.MemberDAO;
 
 public class MemberFrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String reqpath=request.getRequestURI();
 		String cpath=request.getContextPath();
 		String command=reqpath.substring(cpath.length());
+		System.out.println(command);
 		
-		//2. 요청에 따른 분기작업(if~else)
-		MemberDAO dao=new MemberDAO();
 		//***View에 경로를 지정하는 변수***
 		String nextVew=null;
 		Controller controller=null;
