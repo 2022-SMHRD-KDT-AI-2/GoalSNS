@@ -1,8 +1,7 @@
+ 
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,30 +15,30 @@
 <body>
  
 <div class="container">
-  <h2>ç����</h2>
+  <h2>챌린샷</h2>
   <div class="panel panel-default">
     <div class="panel-heading">
-    <form class="form-inline" action="/action_page.php">
+    <form class="form-inline" action="/index" method="post">
   <div class="form-group">
-    <label for="email">�̸��� �ּ�:</label>
-    <input type="email" class="form-control" id="email">
+
+    <label for="mem_id">아이디</label>
+    <input type="text" class="form-control" id="mem_id">
   </div><br>
   <div class="form-group">
-    <label for="pwd">��й�ȣ:</label>
-    <input type="password" class="form-control" id="pwd">
+
+    <label for="mem_pw">비밀번호</label>
+
+    <input type="password" class="form-control" id="mem_pw">
   </div><br>
   <div class="checkbox">
-    <label><input type="checkbox"> ����ϱ�</label>
+
+    <label><input type="checkbox">아이디기억</label>
   </div>
-  <button type="submit" class="btn btn-default">�α���</button>
-</form>
-    </div>
-    <div class="panel-body">
-   
+  <button type="submit" class="btn btn-primary">로그인</button>
+  </form>
   </div>
-<div class="panel-footer"> 
+ </div>
 </div>
-</div >
 
 </body>
 </html>
