@@ -13,9 +13,10 @@
                 <button type="submit" class="btn btn-default">Submit</button>
               </form>
             <ul class="nav navbar-nav">
-              <li><a href="#">menu1</a></li>
+              <li class="fa-solid fa-house"><a href="#"></a></li>
               <li><a href="#">menu2</a></li>
               <li><a href="#">menu3</a></li>
+              <span class="fa-solid fa-house" style="font-size:30px;"></span>
             </ul>
           </div>
     </div>
