@@ -4,6 +4,7 @@
     <div class="menu-box">
         <div class="container-fluid">
             <div class="navbar-header">
+            
               <a class="navbar-brand" href="#">logo</a>
             </div>
             <form class="navbar-form navbar-left" action="/action_page.php">
@@ -13,10 +14,11 @@
                 <button type="submit" class="btn btn-default">Submit</button>
               </form>
             <ul class="nav navbar-nav">
-              <li class="fa-solid fa-house"><a href="#"></a></li>
-              <li><a href="#">menu2</a></li>
+              <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+              <li><a href="#"><i class="fa-regular fa-square-plus"></i></a></li>
               <li><a href="#">menu3</a></li>
-              <span class="fa-solid fa-house" style="font-size:30px;"></span>
+              <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a></li>
+          
             </ul>
           </div>
     </div>
