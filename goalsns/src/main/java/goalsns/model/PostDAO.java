@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import goalsns.entity.PostVO;
+import kr.smhrd.entity.BoardVO;
 
 public class PostDAO {
 	private static SqlSessionFactory sqlSessionFactory;
@@ -36,5 +37,12 @@ public class PostDAO {
 		List<PostVO> list = session.selectList("selectPosts"); 
 		session.close();
 		return list;
+	}
+	
+	public PostVO getByIdx(int idx) {
+		SqlSession session = sqlSessionFactory.openSession();
+		PostVO vo = session.selectOne("getByIdx", idx);
+		session.close();
+		return vo;
 	}
 }
