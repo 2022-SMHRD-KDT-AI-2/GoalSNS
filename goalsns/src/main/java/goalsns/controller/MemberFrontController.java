@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import goalsns.controller.Controller;
 import goalsns.controller.HandlerMapping;
 import goalsns.controller.ViewResolver;
+//github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 import goalsns.model.MemberDAO;
 
 public class MemberFrontController extends HttpServlet {
@@ -40,6 +42,7 @@ public class MemberFrontController extends HttpServlet {
 				rd.forward(request, response); // 2. forward	
 			}
 	}
-
 	}
 }
+
+//github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
