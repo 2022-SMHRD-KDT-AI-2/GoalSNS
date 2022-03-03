@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.po">
     <table>
         <input type="file" name="post_file">
         <div class="form-group">

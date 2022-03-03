@@ -8,7 +8,7 @@ public class HandlerMapping {
 	public HandlerMapping() {
 		mappings = new HashMap<String, Controller>();
 		//¿¹½Ã - mappings.put("/boardList.do", new BoardListController());
-		mappings.put("/postWrite.do", new PostWriteController());
+		mappings.put("/postWrite.po", new PostWriteController());
 		mappings.put("/login.do", new MemberLoginController());
 	}
 	public Controller getController(String key) {
