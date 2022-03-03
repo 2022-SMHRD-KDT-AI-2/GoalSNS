@@ -36,6 +36,6 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 
 	PostDAO dao = new PostDAO();
 	dao.postwrite(vo);
-	return "redirect:main.jsp"; // 메인으로 이동하게끔..
+	return "redirect:/main.jsp"; // 메인으로 이동하게끔..
 }
 }
