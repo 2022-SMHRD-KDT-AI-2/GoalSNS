@@ -1,6 +1,7 @@
 package goalsns.model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -27,5 +28,12 @@ public class PostDAO {
 		session.insert("postWrite", vo);
 		session.commit();
 		session.close();
+	}
+	
+	public List<PostVO> selectAll() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PostVO> list = session.selectList("selectAll"); 
+		session.close();
+		return list;
 	}
 }
