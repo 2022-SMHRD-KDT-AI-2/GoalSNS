@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import goalsns.controller.Controller;
 
-public class MemberLoginController {
+public class MemberLoginController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)

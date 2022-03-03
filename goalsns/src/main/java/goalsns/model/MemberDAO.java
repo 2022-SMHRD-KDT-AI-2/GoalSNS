@@ -26,6 +26,18 @@ public class MemberDAO {
 	private DataSource dataFactory;
 	private ResultSet rs;
 	
+	private static SqlSessionFactory sqlSessionFactory;
+	static {
+		try {
+		String resource = "goalsns/model/config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		}catch(Exception e) {
+			e.printStackTrace();
+		
+		}
+	}
+	
 	public MemberDAO() {
 		try {
 			String dbURL = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:XE";
@@ -87,6 +99,25 @@ public class MemberDAO {
 		}
 		return -1; // 데이터베이스 오류
 		
+	}
+	public MemberVO memberIdCheck(String mem_id) {
+		SqlSession session=sqlSessionFactory.openSession();
+		MemberVO vo=(MemberVO)session.selectOne("getMem_id", mem_id);
+		session.close();
+		return vo;
+	}
+	public MemberVO memberPwCheck(String mem_pw) {
+		SqlSession session=sqlSessionFactory.openSession();
+		MemberVO vo=(MemberVO)session.selectOne("getMem_pw", mem_pw);
+		session.close();
+		return vo;
+	}
+	public List<MemberVO> selectAll() {
+		SqlSession session=sqlSessionFactory.openSession();
+		
+		List<MemberVO> list=session.selectList("selectAll");
+		session.close(); //반납
+		return list;
 	}
 
 	
