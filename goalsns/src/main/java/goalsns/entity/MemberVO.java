@@ -13,6 +13,10 @@ public class MemberVO {
 	private String admin_yn;
 	private String mem_img;
 	
+	public MemberVO() {
+		
+	}
+	
 	public String getMem_id() {
 		return mem_id;
 	}
