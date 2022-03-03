@@ -2,7 +2,6 @@
 <%@page import="goalsns.entity.PostVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +14,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link href="./NewFile.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <jsp:include page="menu.jsp" />
