@@ -10,7 +10,6 @@ public class HandlerMapping {
 		//¿¹½Ã - mappings.put("/boardList.do", new BoardListController());
 		mappings.put("/postWrite.po", new PostWriteController());
 		mappings.put("/login.do", new MemberLoginController());
-		mappings.put("/main.do", new MainController());
 		mappings.put("/postList.po", new PostListController());
 	}
 	public Controller getController(String key) {

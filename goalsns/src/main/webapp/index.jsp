@@ -22,13 +22,13 @@
   <div class="form-group">
 
     <label for="mem_id">아이디</label>
-    <input type="text" class="form-control" id="mem_id">
+    <input type="text" class="form-control" name="mem_id" id="mem_id">
   </div><br>
   <div class="form-group">
 
     <label for="mem_pw">비밀번호</label>
 
-    <input type="password" class="form-control" id="mem_pw">
+    <input type="password" class="form-control" name="mem_pw" id="mem_pw">
   </div><br>
   <div class="checkbox">
 
