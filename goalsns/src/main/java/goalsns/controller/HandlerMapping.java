@@ -12,6 +12,7 @@ public class HandlerMapping {
 		mappings.put("/login.do", new MemberLoginController());
 		mappings.put("/postList.po", new PostListController());
 		mappings.put("/userRegister.do", new UserRegisterController());
+		mappings.put("/postContent.po", new PostContentController());		
 		
 
 	}

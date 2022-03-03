@@ -37,4 +37,11 @@ public class PostDAO {
 		session.close();
 		return list;
 	}
+	
+	public PostVO getPostByIdx(int post_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		PostVO vo = session.selectOne("getPostByIdx", post_seq);
+		session.close();
+		return vo;
+	}
 }

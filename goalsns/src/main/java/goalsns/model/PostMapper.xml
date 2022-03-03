@@ -10,4 +10,7 @@
 	<select id="selectPosts" resultType="goalsns.entity.PostVO">
   		select * from t_post
   	</select>
+  	<select id="getPostByIdx" parameterType="int" resultType="goalsns.entity.PostVO">
+  		select * from t_post where post_seq=#{post_seq}
+  	</select>
 </mapper>
