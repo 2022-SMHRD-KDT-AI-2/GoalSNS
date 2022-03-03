@@ -1,9 +1,8 @@
-<%@page import="java.util.List"%>
-<%@page import="kr.smhrd.entity.BoardVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   
+<%@ page import="goalsns.entity.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,30 +16,35 @@
 <body>
  
 <div class="container">
-  <h2>Ã§¸°¼¦</h2>
+  <h2>ì±Œë¦°ìƒ·</h2>
   <div class="panel panel-default">
     <div class="panel-heading">
-    <form class="form-inline" action="/action_page.php">
+    <form class="form-inline" action="goalsns/" method="post">
   <div class="form-group">
-    <label for="email">ÀÌ¸ŞÀÏ ÁÖ¼Ò:</label>
-    <input type="email" class="form-control" id="email">
+    <label for="email">ì´ë©”ì¼ ì£¼ì†Œ:</label>
+    <input type="text" class="form-control" id="mem_id">
   </div><br>
   <div class="form-group">
-    <label for="pwd">ºñ¹Ğ¹øÈ£:</label>
-    <input type="password" class="form-control" id="pwd">
+    <label for="pwd">ë¹„ë°€ë²ˆí˜¸:</label>
+    <input type="password" class="form-control" id="mem_pw">
   </div><br>
   <div class="checkbox">
-    <label><input type="checkbox"> ±â¾ïÇÏ±â</label>
+    <label><input type="checkbox"> ê¸°ì–µí•˜ê¸°</label>
   </div>
-  <button type="submit" class="btn btn-default">·Î±×ÀÎ</button>
+  <button type="submit" class="btn btn-primary">ë¡œê·¸ì¸</button>
+  
 </form>
-    </div>
-    <div class="panel-body">
-   
-  </div>
-<div class="panel-footer"> 
-</div>
-</div >
+   </div> 
+    
+<script>
+    function data(){
+    	let txt=document.getElementById("mem_id").value;
+    	let txt1=document.getElementById("mem_pw").value;
+    	document.write(txt)
+    	document.write("<br>")
+    	document.write(txt1)  	
+    }
+</script>
 
 </body>
 </html>
