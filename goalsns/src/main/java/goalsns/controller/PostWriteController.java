@@ -13,21 +13,21 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
+import goalsns.controller.Controller;
 
-public class PostWriteController {
+public class PostWriteController implements Controller {
+	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = response.getWriter();
 		
 		ServletContext context = request.getSession().getServletContext();
 		String path = context.getRealPath("postPic");
 		String encType = "UTF-8";
 		int uploadFileSizeLimit = 20 * 1024 * 1024;
 		
-		MultipartRequest multi = new MultipartRequest(request, path, uploadFileSizeLimit, encType, new DefaultFileRenamePolicy());
-		String fileName = multi.getFilesystemName("uploadFile");
+		MultipartRequest multi = new MultipartRequest(request, 
+				path, uploadFileSizeLimit, encType, new DefaultFileRenamePolicy());
 		
 		String post_content = multi.getParameter("post_content");
 		String post_file = multi.getFilesystemName("post_file");
