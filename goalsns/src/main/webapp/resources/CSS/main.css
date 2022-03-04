@@ -1,0 +1,46 @@
+@charset "EUC-KR";
+h2{
+    font-size: 15pt;
+    color: #A8A8A8;
+    margin-bottom: 20px;
+}
+  #jb-container {
+    width: 940px;
+    margin: 0px auto;
+  }
+  #peedbox {
+    background-color: white;
+    width: 580px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+  }
+  #sidebar {
+    background-color: white;
+    width: 260px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: right;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+  }
+
+
+/* 인기 챌린지 해시태그 */
+  #chellcount1, #chellcount2, #chellcount3, #chellcount4, #chellcount5, #chellcount6{
+      color: #6F6E6E;
+      font-size: 10pt;
+      padding-top: 2px;
+      padding-bottom: 20px;
+  }
+/* 유저랭킹 */
+  .userrank1, .userrank2, .userrank3, .userrank4{
+      padding-bottom: 20px;
+      font-size: 13pt;
+  }
+  .userrank5 {
+    padding-bottom: 16.6px;
+    font-size: 13pt;
+  }
