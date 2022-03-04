@@ -39,7 +39,8 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	
 	PostDAO dao = new PostDAO();
 	dao.postWrite(vo);
-	int post_seq = dao.getPostSeq();
+	int post_seq = dao.getPostSeq()-1;
+	System.out.println("post_seq: "+post_seq);
 	
 	HashtagVO hvo = new HashtagVO();
 	PostHashVO phvo = new PostHashVO();
@@ -55,13 +56,15 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 			// 등록되지 않았다면 등록 후 매핑 테이블에도 삽입.
 			if(exist_hvo==null) {
 				dao.hashInsert(hvo);
-				int hashtag_seq = dao.getHashtagSeq();
+				int hashtag_seq = dao.getHashtagSeq()-1;
+				System.out.println("hashtag_seq: "+hashtag_seq);
 				phvo.setPost_seq(post_seq);
 				phvo.setHashtag_seq(hashtag_seq);
 				dao.postHashInsert(phvo);
 			}
 			else { // 등록된 해시태그라면 매핑 테이블에만 삽입.
 				int hashtag_seq = exist_hvo.getHashtag_seq();
+				System.out.println("hashtag_seq: "+hashtag_seq);
 				phvo.setPost_seq(post_seq);
 				phvo.setHashtag_seq(hashtag_seq);
 				dao.postHashInsert(phvo);
