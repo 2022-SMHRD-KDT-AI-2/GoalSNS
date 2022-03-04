@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import goalsns.entity.HashtagVO;
+import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 
 public class PostDAO {
@@ -50,5 +52,38 @@ public class PostDAO {
 		session.delete("postDelete", post_seq);
 		session.commit();
 		session.close();
+	}
+	
+	public HashtagVO hashSelect(String hashtag_name) {
+		SqlSession session = sqlSessionFactory.openSession();
+		HashtagVO vo = session.selectOne("hashSelect", hashtag_name); 
+		session.close();
+		return vo;
+	}
+	
+	public void hashInsert(HashtagVO hvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("hashInsert", hvo);
+		session.commit();
+		session.close();
+	}
+	public void postHashInsert(PostHashVO phvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("postHashInsert", phvo);
+		session.commit();
+		session.close();		
+	}
+	
+	public int getPostSeq(){
+		SqlSession session = sqlSessionFactory.openSession();
+		int post_seq = session.selectOne("getPostSeq"); 
+		session.close();
+		return post_seq;
+	}
+	public int getHashtagSeq(){
+		SqlSession session = sqlSessionFactory.openSession();
+		int post_seq = session.selectOne("getHashtagSeq");
+		session.close();
+		return post_seq;
 	}
 }
