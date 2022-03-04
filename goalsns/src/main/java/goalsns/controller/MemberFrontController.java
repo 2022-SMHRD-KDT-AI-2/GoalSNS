@@ -15,6 +15,7 @@ import goalsns.controller.HandlerMapping;
 import goalsns.controller.ViewResolver;
 
 import goalsns.model.MemberDAO;
+import goalsns.model.PostDAO;
 
 public class MemberFrontController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,7 +24,7 @@ public class MemberFrontController extends HttpServlet {
 		String cpath=request.getContextPath();
 		String command=reqpath.substring(cpath.length());
 		System.out.println(command);
-		
+		MemberDAO dao = new MemberDAO();
 		//***View에 경로를 지정하는 변수***
 		String nextVew=null;
 		Controller controller=null;

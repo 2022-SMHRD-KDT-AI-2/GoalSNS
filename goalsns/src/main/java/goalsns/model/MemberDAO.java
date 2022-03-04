@@ -41,18 +41,13 @@ public class MemberDAO {
 		session.close();
 		return cnt;
 	}
-	public MemberVO memberIdCheck(String mem_id) {
+	public MemberVO Login(MemberVO vo) {
 		SqlSession session=sqlSessionFactory.openSession();
-		MemberVO vo=(MemberVO)session.selectOne("getMem_id", mem_id);
+		MemberVO memvo=session.selectOne("Login", vo);
 		session.close();
-		return vo;
+		return memvo;
 	}
-	public MemberVO memberPwCheck(String mem_pw) {
-		SqlSession session=sqlSessionFactory.openSession();
-		MemberVO vo=(MemberVO)session.selectOne("getMem_pw", mem_pw);
-		session.close();
-		return vo;
-	}
+	
 	
 }
 

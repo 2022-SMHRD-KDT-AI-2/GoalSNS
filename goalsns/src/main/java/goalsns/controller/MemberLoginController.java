@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import goalsns.controller.Controller;
 
@@ -20,15 +21,15 @@ public class MemberLoginController implements Controller {
 		MemberDAO mdao=new MemberDAO();
 		String mem_id=request.getParameter("mem_id");
 		String mem_pw=request.getParameter("mem_pw");
-		MemberVO vo_id=(MemberVO)mdao.memberIdCheck(mem_id);
-		MemberVO vo_pw=(MemberVO)mdao.memberPwCheck(mem_pw);
-		request.setAttribute("vo_id", vo_id);
-		request.setAttribute("vo_pw", vo_pw);
-		if (vo_id.equals(mem_id) && vo_pw.equals(mem_pw)) {
-			return "main";
+		vo.setMem_id(mem_id);
+		vo.setMem_pw(mem_pw);
+		MemberVO memvo=mdao.Login(vo);
+		if(memvo!=null) {
+			HttpSession session=request.getSession();
+			request.setAttribute("memvo", memvo);
 		}
-		
 		return "main";
+		
 	}
 	
 }
