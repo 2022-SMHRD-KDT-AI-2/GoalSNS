@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                 
-                  <a class="navbar-brand" href="/goalsns/main.jsp"><img src="./resources/images/logo.jpg" height="50px"></a>
+                  <a class="navbar-brand" href="/goalsns/main.jsp"><img src="./resources/images/logo.png" height="50px"></a>
                 </div>
                 <form class="navbar-form navbar-left" action="/action_page.php">
                     <div class="form-group">
@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav">
                   <li><a href="/goalsns/main.jsp"><i class="fa-solid fa-house"></i></a></li>
                   <li><a href="/goalsns/postWrite.jsp"><i class="fa-regular fa-square-plus"></i></a></li>
-                  <li><a href="#"><img src="./resources/images/profile.png" width="26" height="26" ></a></li>
+                  <li><a href="#"><img class="img-circle" src="./resources/images/profile.png" width=26.5px height=26.5px></a></li>
                   <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a></li>
                 </ul>
               </div>
