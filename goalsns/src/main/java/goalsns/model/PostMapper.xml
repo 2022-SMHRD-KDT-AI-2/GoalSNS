@@ -16,4 +16,21 @@
   	<delete id="postDelete">
   		delete from t_post where post_seq=#{post_seq}
   	</delete>
+  	<select id="hashSelect" resultType="goalsns.entity.HashtagVO">
+  		select * from t_hashtag where hashtag_name=#{hashtag_name}
+  	</select>
+ 	<insert id="hashInsert" parameterType="goalsns.entity.HashtagVO">
+		insert into t_hashtag
+		values (t_hashtag_SEQ.nextval, #{hashtag_name})
+	</insert>
+ 	<insert id="postHashInsert" parameterType="goalsns.entity.PostHashVO">
+		insert into t_post_hashtag
+		values (#{post_seq}, #{hashtag_seq}, t_post_hashtag_SEQ.nextval)
+	</insert>
+  	<select id="getPostSeq" resultType="int">
+  		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_POST_SEQ'
+  	</select>
+  	<select id="getHashtagSeq" resultType="int">
+  		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
+  	</select>
 </mapper>
