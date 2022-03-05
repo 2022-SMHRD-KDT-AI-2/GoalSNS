@@ -8,11 +8,10 @@ h2{
     width: 940px;
     margin: 0px auto;
   }
-  #peedbox {
+  div #peedbox {
     background-color: white;
     width: 580px;
-    padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     float: left;
     border: 1px solid #EAEAEA;
     border-radius: 5px;
@@ -26,6 +25,32 @@ h2{
     border: 1px solid #EAEAEA;
     border-radius: 5px;
   }
+
+/* peedbox안의 요소들 */
+img{
+  margin: 16px;
+}
+.mem_id{
+  font-size: 13pt;
+  color: black;
+  text-align: center;
+}
+.mem_id:hover{
+  color: black;
+}
+a{
+  text-decoration-line: none !important;
+}
+.fa-ellipsis{
+  font-size: 20px;
+  color: black;
+  margin-left: 350px;
+}
+
+.postfile{
+  margin: 0%;
+}
+
 
 
 /* 인기 챌린지 해시태그 */
