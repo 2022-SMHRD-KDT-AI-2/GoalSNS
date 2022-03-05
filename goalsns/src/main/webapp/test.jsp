@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%><!-- 이걸 붙여야 제대로 나온다... -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,15 @@
   <div class="panel panel-default">
     <div class="panel-heading">Panel Heading</div>
     <div class="panel-body">
-    	<a href="/goalsns/postList.po">글 리스트</a>
+
+    	<c:forEach var="vo" items="${list}">
+    	<!-- 프로필 이미지 경로 -->
+    		<p>${vo.mem_id}</p>
+    		<p>${vo.post_file}</p>
+    		<p>${vo.post_content}</p>
+    		<p>${vo.post_date}</p>
+    		<br>
+    	</c:forEach>
     </div>
   </div>
 </div>

@@ -35,12 +35,14 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	PostVO vo = new PostVO();
 	vo.setPost_content(post_content);
 	vo.setPost_file(post_file);
-	vo.setMem_id("test1");
+	vo.setMem_id("test1");//★★★★★★ 현재는 test1. 나중에는 현재 로그인 중인 사용자로 수정해야함.
 	
 	PostDAO dao = new PostDAO();
 	dao.postWrite(vo);
 	int post_seq = dao.getPostSeq()-1;
 	System.out.println("post_seq: "+post_seq);
+	
+	//아래로는 해시태그 구현부.
 	
 	HashtagVO hvo = new HashtagVO();
 	PostHashVO phvo = new PostHashVO();
