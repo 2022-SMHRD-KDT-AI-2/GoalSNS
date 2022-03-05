@@ -11,8 +11,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+ window.history.forward();
+ function noBack(){window.history.forward();}
+</script>
 </head>
-<body>
+<body onload="noback();"onpageshow="if(event.persisted) noback();"onunload="index.jsp">
  
 <div class="container">
   <h2>챌린샷</h2>
@@ -32,9 +36,8 @@
   </form>
   <button class="btn" onclick="location.href='signUp.jsp'">회원가입</button>
 </div>
-  
-  
-
+</div>
+</div>
 
 </body>
 </html>
