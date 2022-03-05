@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <form method = "post" action="/goalsns/userRegister.do">
+   <form method = "post" action="/goalsns/memberDelete.do">
         <h5>회원탈퇴</h5>
 
         <input type="password" name="pw" placeholder="비밀번호">
