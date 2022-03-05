@@ -1,9 +1,7 @@
 <%@page import="goalsns.entity.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-   <%
-   MemberVO vo = (MemberVO)request.getAttribute("vo");
-   %>
+
 <!DOCTYPE html>
 <html>
 <head>
