@@ -27,8 +27,11 @@ public class MemberLoginController implements Controller {
 		if(memvo!=null) {
 			HttpSession session=request.getSession();
 			request.setAttribute("memvo", memvo);
+			return "main";
+		} else {
+			return "index";
 		}
-		return "main";
+		
 		
 	}
 	

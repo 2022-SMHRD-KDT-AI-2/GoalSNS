@@ -19,7 +19,6 @@
   <div class="panel panel-default">  
     <div class="panel-heading">
     <form class="form-inline" action="/goalsns/login.do" method="post">
-    
   <div class="form-group">
     <label for="mem_id">아이디:</label>
     <input type="text" class="form-control" name="mem_id" id="mem_id">
@@ -31,11 +30,10 @@
   </div><br>
   <button type="submit" class="btn btn-primary">로그인</button>
   </form>
-
   <button class="btn" onclick="location.href='signUp.jsp'">회원가입</button>
-  </div>
 </div>
-</div>
+  
+  
 
 
 </body>
