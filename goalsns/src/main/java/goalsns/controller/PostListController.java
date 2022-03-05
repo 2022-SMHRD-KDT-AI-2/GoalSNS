@@ -19,9 +19,9 @@ public class PostListController implements Controller {
 		// 나중에는 로그인한 유저의 게시글을 반환하게.
 		// 팔로우 구현 후에는 팔로우한 유저들의 글까지 반환하게.
 		PostDAO dao = new PostDAO();
-		List<PostVO> list = dao.selectPosts();
+		List<PostVO> list = dao.selectPosts("test1");
 		request.setAttribute("list", list);
-		return "main";
+		return "test";
 	}
 
 }

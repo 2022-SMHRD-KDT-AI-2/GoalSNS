@@ -8,7 +8,7 @@
 		values (t_post_SEQ.nextval, #{post_content}, #{post_file}, #{mem_id})
 	</insert>
 	<select id="selectPosts" resultType="goalsns.entity.PostVO">
-  		select * from t_post
+  		select * from t_post where mem_id=#{mem_id}
   	</select>
   	<select id="getPostByIdx" parameterType="int" resultType="goalsns.entity.PostVO">
   		select * from t_post where post_seq=#{post_seq}
