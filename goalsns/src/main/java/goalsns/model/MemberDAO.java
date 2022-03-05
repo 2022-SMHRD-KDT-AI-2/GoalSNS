@@ -48,9 +48,9 @@ public class MemberDAO {
 		return memvo;
 	}
 	
-	public void memberDelete(String pw) {
+	public void memberDelete(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.delete("memberDelete", pw);
+		session.delete("memberDelete", vo);
 		session.commit();
 		session.close();
 	}

@@ -12,14 +12,14 @@ public class MemberVO {
 	private Date mem_joindate;
 	private String admin_yn;
 	private String mem_img;
-	
+	private String test4;
 	
 	public MemberVO() {
 		
 	}
 	
 	public MemberVO(String mem_id, String mem_pw, String mem_name, String mem_email, String mem_about,
-			Date mem_joindate, String admin_yn, String mem_img) {
+			Date mem_joindate, String admin_yn, String mem_img,String test4) {
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
 		this.mem_name = mem_name;
@@ -28,6 +28,7 @@ public class MemberVO {
 		this.mem_joindate = mem_joindate;
 		this.admin_yn = admin_yn;
 		this.mem_img = mem_img;
+		this.test4 = test4;
 	}
 	
 	public String getMem_id() {
@@ -78,6 +79,14 @@ public class MemberVO {
 	public void setMem_img(String mem_img) {
 		this.mem_img = mem_img;
 	}
-	
 
+	public String getTest4() {
+		return test4;
+	}
+
+	public void setTest4(String test4) {
+		this.test4 = test4;
+	}
+
+	
 }

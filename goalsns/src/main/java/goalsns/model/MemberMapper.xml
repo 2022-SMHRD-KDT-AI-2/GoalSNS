@@ -19,6 +19,7 @@
 	mem_name) values (#{mem_id}, #{mem_pw}, #{mem_email}, #{mem_name})
 	</insert>
 	<delete id = "memberDelete" parameterType="goalsns.entity.MemberVO">
-		delete from t_member where mem_pw=#{mem_pw}
+		delete from t_member 
+		where mem_pw=#{mem_pw}
 	</delete>
 </mapper>
