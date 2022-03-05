@@ -55,9 +55,6 @@
     <div class="userrank3">3. Hello_chall</div>
     <div class="userrank4">4. Hello_chall</div>
     <div class="userrank5">5. Hello_chall</div>
-  </div>
-  <div id="jb-footer">
-  </div>
 </div>
 <jsp:include page="footer.jsp" />
 </body>
