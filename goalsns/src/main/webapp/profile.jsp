@@ -13,18 +13,61 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/profile.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <jsp:include page="menu.jsp" />
-<div>
-	<div><a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a></div>
-	<div></div>
-	<div></div>
-	<div></div>
+<!-- 프로필부분  -->
+	<div class="profile_box">
+		<div class="prof_img">
+			<a href="#"><img class="img-circle" src="./resources/images/profile.png" width="200" height="200"></a>
+		</div>
+		<div class="item1">
+			<div class="section1">
+				<div class="prof_id">
+					<span name="mem_id" class="post_id">ididididididid</span>
+				</div>
+				<div class="prof_edit">
+					<button class="profile_btn">프로필편집</button>
+				</div>
+				<div class="prof_reward">
+					<button class="profile_btn reward">챌린지 리워드</button>
+				</div>
+			</div>
+
+			<div class="section2">
+				<div class="post">
+					<span class="prof_text">게시물 200</span>
+				</div>
+				<div class="follower">
+					<button class="prof_text">팔로워 20</button>
+				</div>
+				<div class="follow">
+					<button class="prof_text">팔로우 19</button>
+				</div>
+			</div>
+
+			<div class="section3">
+				<div class="prof_text_div">
+					<p class="prof_text">안녕하세요! 챌린지를 시랑하는
+						사람입니다!ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddlsfleilijsijfljlsjfsldddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd끝</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<div class="point"><i class="fa-solid fa-table-cells"></i>  게시물</div>
+
+
+<div class="img_row">
+	<div class="imgbox"><img src="./resources/images/profile.png"></div>
+	<div class="imgbox"><img src="./resources/images/profile.png"></div>
+	<div class="imgbox"><img src="./resources/images/profile.png"></div>
 </div>
-<div>
-	<div></div>
-</div>
+<!-- 사진들 -->
 
 <jsp:include page="footer.jsp" />
 </body>

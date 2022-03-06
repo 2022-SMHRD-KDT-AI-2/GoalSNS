@@ -16,6 +16,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -50,7 +51,7 @@
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="2200" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
       <div class="textsection3"><button type="submit">게시</button></div></form>
   </div>
   
