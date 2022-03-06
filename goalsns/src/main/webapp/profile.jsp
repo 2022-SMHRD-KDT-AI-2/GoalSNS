@@ -62,13 +62,23 @@
 
 <div class="point"><img class= "point_img" src="./resources/images/grid_icon.png">  게시물</div>
 
-
-<div class="img_row">
-	<div class="imgbox"><img src="./resources/images/profile.png"></div>
-	<div class="imgbox"><img src="./resources/images/profile.png"></div>
-	<div class="imgbox"><img src="./resources/images/profile.png"></div>
-</div>
+<c:forEach var="post" items="${postList}" varStatus="status">
+	<c:if test="${status.index mod 3 == 0}">
+		<div class="img_row">	
+	</c:if>
+		<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<c:if test="${((status.index+1) mod 3 == 0) || status.last}">
+		</div>
+	</c:if>
+</c:forEach>
 <!-- 사진들 -->
+<!-- 
+<div class="img_row">
+	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+</div>
+ -->
 
 <jsp:include page="footer.jsp" />
 </body>
