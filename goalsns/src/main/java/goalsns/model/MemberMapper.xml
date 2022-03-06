@@ -20,6 +20,6 @@
 	</insert>
 	<delete id = "memberDelete" parameterType="goalsns.entity.MemberVO">
 		delete from t_member 
-		where mem_pw=#{mem_pw}
+		where mem_id=#{mem_id} and mem_pw=#{mem_pw}
 	</delete>
 </mapper>
