@@ -18,6 +18,7 @@ public class HandlerMapping {
 		mappings.put("/memberDelete.do", new MemberDeleteController());	
 		mappings.put("/logout.do", new MemberLogoutController());
 		mappings.put("/profileEdit.do", new MemberProfileEditController());
+		mappings.put("/profile.do", new ProfileDefaultController());
 		
 		
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,7 @@
 		<div class="item1">
 			<div class="section1">
 				<div class="prof_id">
-					<span name="mem_id" class="post_id">ididididididid</span>
+					<span name="mem_id" class="post_id">${mvo.mem_id}</span>
 				</div>
 				<div class="prof_edit">
 					<button class="profile_btn">프로필편집</button>
@@ -38,7 +40,7 @@
 
 			<div class="section2">
 				<div class="post">
-					<span class="prof_text">게시물 200</span>
+					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
 				<div class="follower">
 					<button class="prof_text">팔로워 20</button>
@@ -50,8 +52,7 @@
 
 			<div class="section3">
 				<div class="prof_text_div">
-					<p class="prof_text">안녕하세요! 챌린지를 시랑하는
-						사람입니다!ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddlsfleilijsijfljlsjfsldddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd끝</p>
+					<p class="prof_text">${mvo.mem_about}</p>
 				</div>
 			</div>
 		</div>
@@ -61,13 +62,23 @@
 
 <div class="point"><i class="fa-solid fa-table-cells"></i>  게시물</div>
 
-
-<div class="img_row">
-	<div class="imgbox"><img src="./resources/images/profile.png"></div>
-	<div class="imgbox"><img src="./resources/images/profile.png"></div>
-	<div class="imgbox"><img src="./resources/images/profile.png"></div>
-</div>
+<c:forEach var="post" items="${postList}" varStatus="status">
+	<c:if test="${status.index mod 3 == 0}">
+		<div class="img_row">	
+	</c:if>
+		<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<c:if test="${((status.index+1) mod 3 == 0) || status.last}">
+		</div>
+	</c:if>
+</c:forEach>
 <!-- 사진들 -->
+<!-- 
+<div class="img_row">
+	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+</div>
+ -->
 
 <jsp:include page="footer.jsp" />
 </body>

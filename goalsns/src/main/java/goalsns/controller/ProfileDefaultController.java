@@ -16,12 +16,15 @@ public class ProfileDefaultController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//팔로우, 팔로워 수 + 게시물 수
 		String id = "test1";
 		MemberDAO mdao = new MemberDAO();
 		PostDAO pdao = new PostDAO();
 		MemberVO mvo = mdao.getMemberInfo(id);
 		List<PostVO> postList = pdao.getMemberPosts(id);
+		int postCnt = postList.size();
 		request.setAttribute("postList", postList);
+		request.setAttribute("postCnt", postCnt);
 		request.setAttribute("mvo", mvo);
 		return "profile";
 	}
