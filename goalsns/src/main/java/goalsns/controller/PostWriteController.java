@@ -77,6 +77,6 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 		
 	}
 
-	return "redirect:/postList.po"; // 메인으로 이동하게끔..
+	return "redirect:/postList.do"; // 메인으로 이동하게끔..
 }
 }
