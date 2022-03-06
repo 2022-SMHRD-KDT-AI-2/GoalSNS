@@ -5,30 +5,47 @@ h2{
     margin-bottom: 20px;
 }
   #jb-container {
-    width: 940px;
     margin: 0px auto;
+    padding-left: 400px;
+    padding-right: 476px;
   }
   div #peedbox {
     background-color: white;
-    width: 580px;
+    width: 700px;
     margin-bottom: 0px;
     float: left;
     border: 1px solid #EAEAEA;
     border-radius: 5px;
+ 
   }
-  #sidebar {
+  div #sidebar {
     background-color: white;
-    width: 260px;
+    width: 300px;
     padding: 20px;
     margin-bottom: 20px;
     float: right;
     border: 1px solid #EAEAEA;
     border-radius: 5px;
+    position: fixed;
+    top: 80px;
+    left: 1127px;
+  }
+  div #sidebar2 {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: right;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    position: fixed;
+    top: 576px;
+    left: 1127px;
   }
 
 /* peedbox안의 요소들 */
-img{
-  margin: 16px;
+#peedimg{
+ margin: 12px;
   
 }
 .mem_id{
@@ -45,11 +62,87 @@ a{
 .fa-ellipsis{
   font-size: 20px;
   color: black;
-  margin-left: 350px;
+  margin-left: 480px;
 }
 
 .postfile{
   margin: 0%;
+}
+
+.fa-heart{
+	font-size: 30px;
+	color: black;
+  padding: 10px;
+  margin-left: 6px;
+}
+.fa-comment{
+	font-size: 30px;
+	color: black;
+  padding: 10px;
+}
+.fa-face-smile-wink{
+	font-size: 30px;
+	color: black;
+}
+
+.content_container{
+  margin-left: 16px;
+  margin-right: 16px;
+}
+  .post_id{
+    font-size: 13pt;
+    padding-bottom: 10px;
+    
+  }
+  .post_con{
+    color: #6F6E6E;
+    font-size: 13px; 
+  }
+  .plus{
+    color: #A8A8A8;
+  }
+  .divplus{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .post_date{
+    padding-top: 8px;
+  }
+  #post_date{
+    color: #A8A8A8;
+    font-size: 10px;
+  }
+
+ div .textsection{
+    border-top: 1px solid #EAEAEA;
+  }
+.textsection1{
+  padding: 10px;
+  margin-left: 6px;
+  float: left;
+}
+.textsection2{
+  padding-top: 13px;
+  padding-bottom: 10px;
+  float: left;
+}
+#comment_textarea{
+  width: 688px;
+  resize: none;
+  border: none;
+}
+#comment_textarea:focus{
+  outline: none;
+}
+
+.textsection3{
+  padding-top: 16px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 6px;
+  /* float: right; */
+  float: right;
 }
 
 
@@ -70,3 +163,4 @@ a{
     padding-bottom: 16.6px;
     font-size: 13pt;
   }
+  
