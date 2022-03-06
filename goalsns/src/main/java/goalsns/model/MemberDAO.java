@@ -55,6 +55,12 @@ public class MemberDAO {
 		session.close();
 	}
 	
+	public void profileEdit(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("profileEdit",vo);
+		session.commit();
+		session.close();
+	}
 	
 }
 
