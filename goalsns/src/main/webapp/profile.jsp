@@ -59,7 +59,7 @@
 
 
 
-<div class="point"><img class= "point_img" src="./resources/images/grid_icon.png">  게시물</div>
+<div class="point"><i class="fa-solid fa-table-cells"></i>  게시물</div>
 
 
 <div class="img_row">
