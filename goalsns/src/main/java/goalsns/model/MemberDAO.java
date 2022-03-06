@@ -71,9 +71,9 @@ public class MemberDAO {
 		session.close();
 	}
 	
-	public MemberVO getMemberInfo(String id) {
+	public MemberVO getMemberInfo(String mem_id) {
 		SqlSession session = sqlSessionFactory.openSession();
-		MemberVO vo = session.selectOne("getMemberInfo");
+		MemberVO vo = session.selectOne("getMemberInfo", mem_id);
 		session.close();
 		return vo;
 	}
