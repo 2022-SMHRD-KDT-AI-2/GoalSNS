@@ -1,0 +1,121 @@
+@charset "EUC-KR";
+/* flex박스 지정 */
+.profile_box{
+	width:70%;
+	height: 410px;
+	margin:auto;
+	padding:30px;
+	border-bottom: 1px solid #C4C4C4;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+.section1{
+	display: flex;
+	flex-direction: row;
+	padding-top: 45px;
+}
+.section2{
+	display: flex;
+	flex-direction: row;
+	padding-top: 35px;
+}
+
+.section3{
+	display: flex;
+	flex-direction: row;
+	overflow:hidden;word-wrap:break-word;
+	padding-top: 35px;
+}
+
+.item1{
+	width:70%;
+}
+
+/* 세부적인 profile-box 지정*/
+.prof_img{
+	padding:40px;
+	margin-left:40px;
+}
+
+
+.post_id{
+	font-size:45px;
+}
+
+
+.profile_btn{
+	font-size:20px;
+	height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    background: none;
+  	border: solid 1px #C4C4C4;
+  	border-radius: 7px;
+}
+.prof_edit{
+	margin: auto 0;
+	padding-left: 40px;
+}
+.prof_reward{
+	margin: auto 0;
+	padding-left: 35px;
+}
+.reward{
+	color:#F67600;
+	border-color:#F67600;
+}
+
+.prof_text{
+	font-size:20px;
+	border: 0;
+	outline:0;
+	background: none;
+}
+
+.post{
+	padding-right:10px;
+}
+
+
+.img_row{
+	width:55%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-content: space-between;
+	margin: 35px auto;
+	
+}
+
+.imgbox{
+	width:300px;
+	height:300px;
+	display: inline-block;
+	overflow: hidden;
+	margin-left:35px;
+	
+	
+}
+.imgbox > img{ 
+	display: block;
+	min-width: 100%;
+	min-height: 100%; 
+	-ms-interpolation-mode: bicubic;
+}
+
+.point{
+	font-size: 15px;
+    margin: auto;
+    border-top: 1px solid black;
+    width: 150px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+
+
