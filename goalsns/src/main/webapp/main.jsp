@@ -27,7 +27,7 @@
       	<a href="#"><i class="fa-solid fa-ellipsis"></i></a>
     </div>
     <div name="post_file" id="post_file" >
-      <img src="./resources/images/postfile.jpg" class="postfile">
+      <img src="./resources/images/postfile.jpg" class="postfile"width="100%">
     </div>
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
@@ -48,8 +48,8 @@
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-      <div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="2200" rows="1" placeholder="댓글 달기..."></textarea></div>
-      <div class="textsection3"><a href="#">게시</a></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="2200" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><button type="submit">게시</button></div></form>
   </div>
   
  </div>
