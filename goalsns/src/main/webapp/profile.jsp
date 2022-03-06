@@ -31,7 +31,9 @@
 					<span name="mem_id" class="post_id">${mvo.mem_id}</span>
 				</div>
 				<div class="prof_edit">
+				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
 					<button class="profile_btn">프로필편집</button>
+					<button class="profile_btn follow1">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 				</div>
 				<div class="prof_reward">
 					<button class="profile_btn reward">챌린지 리워드</button>
