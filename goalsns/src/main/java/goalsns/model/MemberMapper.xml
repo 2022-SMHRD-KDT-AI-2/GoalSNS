@@ -11,6 +11,8 @@
 	<select id="selectAll" resultType="goalsns.entity.MemberVO">
 	select * from t_member
 	</select>
+	
+	<!-- 회원가입 -->
 	<insert id="register"  parameterType ="goalsns.entity.MemberVO">
 	insert into t_member(
 	mem_id,
@@ -18,8 +20,27 @@
 	mem_email,
 	mem_name) values (#{mem_id}, #{mem_pw}, #{mem_email}, #{mem_name})
 	</insert>
+	
+	<!-- 아이디 중복체크 -->
+	<select id="idchk" resultType="int">
+		select count(*) from t_member
+		where mem_id = #{mem_id}
+	</select>
+	
+	<!-- 회원탈퇴 -->
 	<delete id = "memberDelete" parameterType="goalsns.entity.MemberVO">
 		delete from t_member 
 		where mem_pw=#{mem_pw}
 	</delete>
+	
+	<update id="profileEdit" parameterType="goalsns.entity.MemberVO">
+	update t_member
+	set mem_name=#{mem_name},
+		mem_about=#{mem_about},
+		mem_email=#{mem_email}
+	where mem_id=#{mem_id}
+	</update>
+	
+	
+	
 </mapper>
