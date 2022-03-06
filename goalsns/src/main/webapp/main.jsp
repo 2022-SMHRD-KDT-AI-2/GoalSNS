@@ -21,26 +21,41 @@
 <!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
 <div id="jb-container">
   <div id="peedbox">
-    <div id="peedboxtop">
-        <a href="#"><img class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        <a href="#" name="mem_id" class="mem_id">id이름이나옴</a>
-      <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+    <div id="peedboxtop" >
+        <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+        <a href="#" name="mem_id" class="mem_id">idididididididid</a>
+      	<a href="#"><i class="fa-solid fa-ellipsis"></i></a>
     </div>
-    
     <div name="post_file" id="post_file" >
       <img src="./resources/images/postfile.jpg" class="postfile">
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-
+    <section>
+ 		<a><i class="fa-regular fa-heart"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+    </section>
+    <div>
+      <span name="mem_id" class="post_id">idididididididid</span>
+      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+   </div>
+   <div class="divplus">
+      <a href="#" class="plus">댓글 23개 모두 보기</a>
+   </div>
+   <div>
+      <span name="mem_id" class="post_id">idididididididid</span>
+      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+   </div>
+   <div name="post_date" class="post_date"><span id="post_date">2022.02.10</span></div>
+  
+  <div class="textsection">
+	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
+      <div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="2200" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><a href="#">게시</a></div>
   </div>
+  
+ </div>
+
+
+
   <div>
     <div id="sidebar">
       <h2>인기 챌린지 해시태그</h2>
@@ -57,7 +72,7 @@
       <div class="chell6">#30일_물마시기_챌린지</div>
       <div id="chellcount6">1233명 참여 중</div>
     </div>
-    <div id="sidebar">
+    <div id="sidebar2">
       <h2>유저랭킹</h2>
       <div class="userrank1">1. Hello_chall</div>
       <div class="userrank2">2. Hello_chall</div>
