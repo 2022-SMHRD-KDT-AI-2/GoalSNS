@@ -78,7 +78,7 @@
 	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
 	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
 </div>
- -->
+ --> 
 
 <jsp:include page="footer.jsp" />
 </body>
