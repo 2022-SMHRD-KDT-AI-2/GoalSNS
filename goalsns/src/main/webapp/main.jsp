@@ -1,6 +1,7 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,22 +21,23 @@
 <jsp:include page="menu.jsp" />
 <!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
 <div id="jb-container">
+<c:forEach var="vo" items="${list}">
   <div id="peedbox">
     <div id="peedboxtop" >
         <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        <a href="#" name="mem_id" class="mem_id">idididididididid</a>
+        <a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
       	<a href="#"><i class="fa-solid fa-ellipsis"></i></a>
     </div>
     <div name="post_file" id="post_file" >
-      <img src="./resources/images/postfile.jpg" class="postfile">
+      <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
     </div>
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
  		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
     </section>
     <div>
-      <span name="mem_id" class="post_id">idididididididid</span>
-      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+      <span name="mem_id" class="post_id">${vo.mem_id}</span>
+      <span class="post_con">${vo.post_content}</span>
    </div>
    <div class="divplus">
       <a href="#" class="plus">댓글 23개 모두 보기</a>
@@ -48,11 +50,12 @@
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-      <div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="2200" rows="1" placeholder="댓글 달기..."></textarea></div>
-      <div class="textsection3"><a href="#">게시</a></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="2200" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><button type="submit">게시</button></div></form>
   </div>
   
  </div>
+ </c:forEach>
 
 
 

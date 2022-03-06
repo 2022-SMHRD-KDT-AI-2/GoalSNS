@@ -22,4 +22,11 @@
 		delete from t_member 
 		where mem_pw=#{mem_pw}
 	</delete>
+	<update id="profileEdit" parameterType="goalsns.entity.MemberVO">
+	update t_member
+	set mem_name=#{mem_name},
+		mem_about=#{mem_about},
+		mem_email=#{mem_email}
+	where mem_id=#{mem_id}
+	</update>
 </mapper>
