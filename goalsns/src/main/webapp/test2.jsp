@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    	<a href="/goalsns/postList.po">list</a>
+    	<a href="/goalsns/postList.do">list</a>
 </body>
 </html>
