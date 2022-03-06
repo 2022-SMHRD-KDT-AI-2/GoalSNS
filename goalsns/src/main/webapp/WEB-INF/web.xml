@@ -9,10 +9,20 @@
 		<servlet-name>MemberFrontController</servlet-name>
 		<servlet-class>goalsns.controller.MemberFrontController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ProfileFrontController</servlet-name>
+		<display-name>ProfileFrontController</display-name>
+		<description></description>
+		<servlet-class>goalsns.controller.ProfileFrontController</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>MemberFrontController</servlet-name>
 		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProfileFrontController</servlet-name>
+		<url-pattern>*.fo</url-pattern>
 	</servlet-mapping>
 	
 </web-app>
