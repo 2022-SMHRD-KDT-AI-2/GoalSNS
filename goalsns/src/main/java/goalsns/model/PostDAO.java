@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import goalsns.entity.ChellVO;
 import goalsns.entity.HashtagVO;
+import goalsns.entity.MemChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 
@@ -101,6 +102,40 @@ public class PostDAO {
 		return post_seq;
 	}
 	
+	//-----------------------------------챌린지 해시태그 기능 구현을 위한 메소드--------------------------------------
+	
+	// (1) 챌린지 해시태그 이름을 통해 해시태그 정보 가져오기
+	public ChellVO challSelect(String chell_name) {
+		SqlSession session = sqlSessionFactory.openSession();
+		ChellVO vo = session.selectOne("challSelect", chell_name); 
+		session.close();
+		return vo;
+	}
+	
+	// (2) 해시태그 삽입하기
+	public void chellInsert(ChellVO cvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("chellInsert", cvo);
+		session.commit();
+		session.close();
+	}
+	
+	// (3) 방금 삽입한 챌린지 해시태그의 아이디 가져오기
+	public int getChellSeq(){
+		SqlSession session = sqlSessionFactory.openSession();
+		int chell_seq = session.selectOne("getChellSeq");
+		session.close();
+		return chell_seq;
+	}
+	
+	// (4) 멤버-해시태그 매핑 테이블 삽입하기
+	public void memChellInsert(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("memChellInsert", mcvo);
+		session.commit();
+		session.close();		
+	}
+	
 	//-----------------------------------프로필 기능 구현을 위한 메소드--------------------------------------
 	
 	// (1) 해당 유저의 포스트 리스트 가져오기.
@@ -111,11 +146,6 @@ public class PostDAO {
 		return list;
 	}
 
-	public void ChallInsert(ChellVO vo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("ChallInsert", vo);
-		session.commit();
-		session.close();
-	}
+
 	
 }
