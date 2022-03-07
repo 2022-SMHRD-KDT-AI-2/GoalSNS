@@ -17,7 +17,7 @@
         <input type="text" name="name" placeholder="성명" >
         <br>
         <input type="text" name="id" placeholder="사용자 이름">
-        <input type ="button" value = "ID중복체크" onclick="idCheck()">
+        <button type ="button" onclick="/goalsns/idCheck.do">ID중복체크</button>
         <span id = "sp"></span>
         <br>
         <input type="password" name="pw" placeholder="비밀번호">

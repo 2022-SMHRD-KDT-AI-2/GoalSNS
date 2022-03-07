@@ -9,10 +9,11 @@
 		<servlet-name>MemberFrontController</servlet-name>
 		<servlet-class>goalsns.controller.MemberFrontController</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>MemberFrontController</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+
 	
 </web-app>

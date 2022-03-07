@@ -19,7 +19,7 @@
 <body>
 <jsp:include page="menu.jsp" />
 
-<form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.po">
+<form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.do">
     <table>
         <input type="file" name="post_file">
         <div class="form-group">

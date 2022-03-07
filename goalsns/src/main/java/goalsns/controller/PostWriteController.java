@@ -23,6 +23,7 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	//C:\aiweb\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\goalsns\postPic
 	ServletContext context = request.getSession().getServletContext();
 	String path = context.getRealPath("postPic");
+	System.out.println("path: "+path);
 	String encType = "UTF-8";
 	int uploadFileSizeLimit = 20 * 1024 * 1024;
 	
@@ -76,6 +77,6 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 		
 	}
 
-	return "main"; // 메인으로 이동하게끔..
+	return "redirect:/postList.do"; // 메인으로 이동하게끔..
 }
 }

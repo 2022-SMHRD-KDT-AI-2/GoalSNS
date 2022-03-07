@@ -41,6 +41,15 @@ public class MemberDAO {
 		session.close();
 		return cnt;
 	}
+	
+	public int idChk(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int result = session.insert("idChk", vo);
+		session.commit();
+		session.close();
+		return result;
+	}
+
 	public MemberVO Login(MemberVO vo) {
 		SqlSession session=sqlSessionFactory.openSession();
 		MemberVO memvo=session.selectOne("Login", vo);
@@ -48,13 +57,26 @@ public class MemberDAO {
 		return memvo;
 	}
 	
-	public void memberDelete(String pw) {
+	public void memberDelete(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.delete("memberDelete", pw);
+		session.delete("memberDelete", vo);
 		session.commit();
 		session.close();
 	}
 	
+	public void profileEdit(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("profileEdit",vo);
+		session.commit();
+		session.close();
+	}
+	
+	public MemberVO getMemberInfo(String mem_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemberVO vo = session.selectOne("getMemberInfo", mem_id);
+		session.close();
+		return vo;
+	}
 	
 }
 

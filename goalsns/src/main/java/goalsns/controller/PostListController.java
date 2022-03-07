@@ -21,7 +21,7 @@ public class PostListController implements Controller {
 		PostDAO dao = new PostDAO();
 		List<PostVO> list = dao.selectPosts("test1");
 		request.setAttribute("list", list);
-		return "test";
+		return "main";
 	}
 
 }

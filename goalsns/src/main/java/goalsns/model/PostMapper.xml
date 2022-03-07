@@ -33,4 +33,8 @@
   	<select id="getHashtagSeq" resultType="int">
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
   	</select>
+  	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
+  		select * from t_post where mem_id=#{mem_id}
+  	</select>
+
 </mapper>
