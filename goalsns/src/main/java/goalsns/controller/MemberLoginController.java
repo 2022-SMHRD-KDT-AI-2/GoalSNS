@@ -25,11 +25,14 @@ public class MemberLoginController implements Controller {
 		MemberVO memvo=dao.Login(vo);
 		if(memvo!=null) {
 			HttpSession session=request.getSession();
-			request.setAttribute("memvo", memvo);
+			session.setAttribute("memvo", memvo);
 			System.out.print("로그인성공");
 			System.out.print(session);
-			return "main";
-		} 
+
+			return "redirect:/main.do";
+		} else {
+			System.out.print("로그인실패");
+
 			return "index";
 	}
 	

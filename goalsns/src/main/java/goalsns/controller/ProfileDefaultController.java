@@ -17,7 +17,8 @@ public class ProfileDefaultController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//팔로우, 팔로워 수 + 게시물 수
-		String id = "test1";
+		//String id = "test1";
+		String id = (String)request.getParameter("mem_id");
 		MemberDAO mdao = new MemberDAO();
 		PostDAO pdao = new PostDAO();
 		MemberVO mvo = mdao.getMemberInfo(id);
