@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import goalsns.entity.ChellVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
@@ -110,5 +111,11 @@ public class PostDAO {
 		return list;
 	}
 
+	public void ChallInsert(ChellVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("ChallInsert", vo);
+		session.commit();
+		session.close();
+	}
 	
 }
