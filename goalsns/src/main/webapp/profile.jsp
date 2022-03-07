@@ -32,8 +32,9 @@
 				</div>
 				<div class="prof_edit">
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
+				    <input type="hidden" name="mem_id" vlaue="${mvo.mem_id}">
 					<button class="profile_btn">프로필편집</button>
-					<button class="profile_btn follow1">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<button class="profile_btn follow1" onclick="location.href='/goalsns/follow.do'">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 				</div>
 				<div class="prof_reward">
 					<button class="profile_btn reward">챌린지 리워드</button>

@@ -19,7 +19,7 @@ public class HandlerMapping {
 		mappings.put("/logout.do", new MemberLogoutController());
 		mappings.put("/profileEdit.do", new MemberProfileEditController());
 		mappings.put("/profile.do", new ProfileDefaultController());
-
+		mappings.put("/follow.do", new FollowController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

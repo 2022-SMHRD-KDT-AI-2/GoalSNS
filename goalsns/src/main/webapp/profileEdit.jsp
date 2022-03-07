@@ -20,12 +20,8 @@
             <div>이름
             <input type="text" class="form-control" name="mem_name" >
                </div>
-<<<<<<< HEAD
-            <div>사용자 이름 
-               <input type="text" class="form-control" name="mem_id" value="">
-=======
              <div>사용자 이름 
-             <input type="text" class="form-control" readonly="readonly" name="mem_id" value="aaaa"}>
+             <input type="text" class="form-control" readonly="readonly" name="mem_id" value="${mvo.mem_id}">
              </div>
              <div>소개  
              <textarea rows="10" class="form-control" name="mem_about"></textarea>
@@ -33,15 +29,8 @@
             <div class="form-group">
             <label for="email">이메일 주소</label>
             <input type="email" class="form-control" name="mem_email" id="mem_email">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
-            </div>
-            <div>소개  
-              <textarea rows="10" class="form-control" name="mem_about"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="email">이메일 주소</label>
-              <input type="email" class="form-control" id="mem_email">
-            </div>           
+			</div>
+                       
                <button type="submit" class="btn btn-info btn-sm">수정하기</button>          
        </form>
      <div class="panel-footer">UNO</div>

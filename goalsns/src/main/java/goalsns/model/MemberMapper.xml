@@ -46,7 +46,12 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	
-	
+	<insert id="follow" parameterType ="goalsns.entity.MemberVO">
+		insert into t_follow(
+		to_mem
+		) values(#{mem_id})
+		 
+	</insert>	
 	
 	
 </mapper>
