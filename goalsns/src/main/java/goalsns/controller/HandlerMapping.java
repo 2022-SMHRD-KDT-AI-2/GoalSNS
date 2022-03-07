@@ -14,7 +14,7 @@ public class HandlerMapping {
 		mappings.put("/postContent.do", new PostContentController());	
 		mappings.put("/postDelete.do", new PostDeleteController());
 		mappings.put("/userRegister.do", new UserRegisterController());
-		mappings.put("/postContent.do", new PostContentController());	
+		mappings.put("/postContent.po", new PostContentController());	
 		mappings.put("/memberDelete.do", new MemberDeleteController());	
 		mappings.put("/logout.do", new MemberLogoutController());
 		mappings.put("/profileEdit.do", new MemberProfileEditController());
