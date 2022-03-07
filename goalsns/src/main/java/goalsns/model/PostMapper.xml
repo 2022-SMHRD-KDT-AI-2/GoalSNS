@@ -36,5 +36,20 @@
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
   		select * from t_post where mem_id=#{mem_id}
   	</select>
-
+  	
+<!-- 챌린지 해시태그 기능 -->
+  	<select id="challSelect" resultType="goalsns.entity.ChellVO">
+  		select * from t_chell where chell_name=#{chell_name}
+  	</select>
+ 	<insert id="chellInsert" parameterType="goalsns.entity.ChellVO">
+		insert into t_hashtag
+		values (t_hashtag_SEQ.nextval, #{chell_name})
+	</insert>
+ 	<insert id="memChellInsert" parameterType="goalsns.entity.ChellVO">
+		insert into t_mem_chell
+		values (#{mem_id}, #{chell_seq}, T_MEM_CHELL_SEQ.nextval)
+	</insert>
+  	<select id="getChellSeq" resultType="int">
+  		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_CHELL_SEQ'
+  	</select>
 </mapper>

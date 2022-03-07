@@ -17,6 +17,11 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/profile.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	function goProfileEdit(){
+		location.href="/goalsns/profileEdit.do";
+	}
+</script>
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -32,7 +37,7 @@
 				</div>
 				<div class="prof_edit">
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
-					<button class="profile_btn">프로필편집</button>
+					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
 					<button class="profile_btn follow1">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 				</div>
 				<div class="prof_reward">
