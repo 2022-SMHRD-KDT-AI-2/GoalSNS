@@ -19,8 +19,6 @@ public class HandlerMapping {
 		mappings.put("/logout.do", new MemberLogoutController());
 		mappings.put("/profileEdit.do", new MemberProfileEditController());
 		mappings.put("/profile.do", new ProfileDefaultController());
-		
-		
 
 	}
 	public Controller getController(String key) {

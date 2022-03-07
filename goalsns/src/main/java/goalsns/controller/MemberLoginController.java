@@ -2,7 +2,6 @@ package goalsns.controller;
 
 import goalsns.entity.MemberVO;
 import goalsns.model.MemberDAO;
-import goalsns.model.PostDAO;
 
 import java.io.IOException;
 
@@ -18,7 +17,6 @@ public class MemberLoginController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		MemberVO vo=new MemberVO();
-		PostDAO pdao=new PostDAO();
 		MemberDAO dao=new MemberDAO();
 		String mem_id=request.getParameter("mem_id");
 		String mem_pw=request.getParameter("mem_pw");
