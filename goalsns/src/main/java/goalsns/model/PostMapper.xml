@@ -36,5 +36,8 @@
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
   		select * from t_post where mem_id=#{mem_id}
   	</select>
-
+	<insert id="ChallInsert" parameterType="goalsns.entity.ChellVO">
+		insert into T_CHELL
+		values (t_chell_SEQ.nextval, #{chell_name}, #{chell_term})
+	</insert>
 </mapper>
