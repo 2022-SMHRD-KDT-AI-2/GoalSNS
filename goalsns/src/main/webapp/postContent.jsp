@@ -1,23 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./C:/Users/smhrd/Desktop/jquery-3.6.0.min.js"></script>
+    <script src="C:/Users/smhrd/Desktop/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <button id='like'>Like!♥</button><span>0</span>
-    <br>
-    <input type="text"><button class='writeCom'>댓글작성</button>
-    <br>
-    <div id="com">
-        <p>첫댓글<button class='removeCom'>삭제</button></p>
-    </div>  
-    
+	<table>
+	    <button id='like'>Like!♥</button><span>0</span>
+	    <br>
+	    
+	    <input type="text"><button class='writeCom'>댓글작성</button>
+	    <br>
+	    <div id="com">
+	        <p>첫댓글<button class='removeCom'>삭제</button></p>
+	    </div>  
+    </table>
     <script>
       
     
