@@ -11,20 +11,19 @@
     <title>Document</title>
 </head>
 <body>
+	<div>
+		<button id='like'>Like!♥</button><span>0</span>
+	</div>
 	<table>
-	    <button id='like'>Like!♥</button><span>0</span>
-	    <br>
-	    
-	    <input type="text"><button class='writeCom'>댓글작성</button>
-	    <br>
-	    <div id="com">
-	        <p>첫댓글<button class='removeCom'>삭제</button></p>
-	    </div>  
+	    <tr>
+	    	<td>좋아요 순번 </td>
+	    	<td>게시물 순번 </td>
+	    	<td>회원 아이디 </td>
+	    </tr>
     </table>
     <script>
       
-    
-        $(document).on("click","#like",function(e){  //e 
+    	$(document).on("click","#like",function(e){  //e 
             var like = Number($('#like+span').text())
             $('#like+span').text(like+1)
 

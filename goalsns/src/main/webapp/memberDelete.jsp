@@ -11,8 +11,11 @@
    <form method = "post" action="/goalsns/memberDelete.do">
         <h5>회원탈퇴</h5>
 		
-		 <input type="password" name="pw" placeholder="비밀번호">
-		 <input type="submit">
+			<input type="text" name="id" readonly="readonly" value="${MemberVO.test4}">
+			<br>
+			<input type="password" name="pw" placeholder="비밀번호">
+			<br>
+			<input type="submit">
 		        <!-- 로그인 버튼 없어도 된다고 함  onclick="location.href='index.jsp'"   -->	
     </form>
     
