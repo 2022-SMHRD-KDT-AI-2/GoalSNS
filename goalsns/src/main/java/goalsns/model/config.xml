@@ -18,6 +18,6 @@
   <mappers>
     <mapper resource="goalsns/model/MemberMapper.xml"/>
     <mapper resource="goalsns/model/PostMapper.xml"/>
-    <mapper resource="goalsns/model/ProfileMapper.xml"/>
+    <mapper resource="goalsns/model/ChallMapper.xml"/>
   </mappers>
 </configuration>
