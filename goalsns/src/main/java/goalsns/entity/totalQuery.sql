@@ -427,3 +427,6 @@ alter table t_member add mem_img VARCHAR2(200);
 
 alter table t_member modify (mem_img default './profilePic/profile_none.png');
 
+alter SEQUENCE T_CHELL_SEQ nocache;
+
+alter table t_chell drop column chell_term;
