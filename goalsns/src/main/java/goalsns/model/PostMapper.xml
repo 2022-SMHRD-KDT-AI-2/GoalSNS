@@ -52,4 +52,8 @@
   	<select id="getChellSeq" resultType="int">
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_CHELL_SEQ'
   	</select>
+ 	<insert id="postChellInsert" parameterType="goalsns.entity.PostChellVO">
+		insert into t_post_chell
+		values (#{post_seq}, #{chell_seq}, t_post_chell_SEQ.nextval)
+	</insert>
 </mapper>
