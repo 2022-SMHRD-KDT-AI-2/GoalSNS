@@ -1,0 +1,20 @@
+@charset "EUC-KR";
+#conainer{
+
+     display: flex;
+     flex-direction: row;
+     /* width: 200;
+    height: 100; */
+    background-color:whitesmoke;
+    justify-content: center;
+    align-items: stretch;
+    
+}
+.item1{
+	flex-shrink: 0;
+	
+}
+.item2{
+	flex-shrink: 0;
+    flex-basis: content;
+}
