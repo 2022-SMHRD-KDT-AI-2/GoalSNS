@@ -105,6 +105,8 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 				pcvo.setPost_seq(post_seq);
 				pcvo.setChell_seq(chell_seq);
 				dao.postChellInsert(pcvo);
+				mcvo.setChell_seq(chell_seq);
+				mcvo.setMem_id(mem_id);
 				
 			if(dao.memChallSelect(mcvo)==null) {
 				dao.memChellInsert(mcvo);

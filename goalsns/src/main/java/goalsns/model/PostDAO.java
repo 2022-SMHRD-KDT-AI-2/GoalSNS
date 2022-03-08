@@ -148,9 +148,9 @@ public class PostDAO {
 	// (6) 멤버-해시태그 매핑 테이블 조회
 	public MemChellVO memChallSelect(MemChellVO mcvo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		ChellVO vo = session.selectOne("memChallSelect", mcvo); 
+		MemChellVO vo = session.selectOne("memChallSelect", mcvo); 
 		session.close();
-		return mcvo;
+		return vo;
 	}
 	
 	//-----------------------------------프로필 기능 구현을 위한 메소드--------------------------------------
