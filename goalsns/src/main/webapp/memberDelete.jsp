@@ -21,7 +21,6 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 
-
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -44,9 +43,9 @@
              <label for="mem_email">이메일 주소</label>
              <input type="email" class="form-control" name=git"mem_email" id="mem_email"> 
             </div>
-            <div>
-                <label for="mem_pw">비밀 번호</label>
-                <input type="password" name="pw" placeholder="비밀번호">
+             <div class="form-group">
+               <label for="mempwd">비밀 번호</label>
+                 <input type="password" class="form-control" name="memPwd">
             </div>
             <div>
              <button type="submit" class="btn btn-info btn-sm">탈퇴하기</button>   			   
@@ -55,7 +54,6 @@
     </div>	
 </div>
     </form>	
-
   <jsp:include page="footer.jsp" />  
 </body>
 </html>
