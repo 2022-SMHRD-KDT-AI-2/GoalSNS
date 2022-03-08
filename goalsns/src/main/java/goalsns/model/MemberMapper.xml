@@ -51,7 +51,10 @@
 		to_mem
 		) values(#{mem_id})
 		 
-	</insert>	
+	</insert>
+	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
+		select * from t_member where mem_id=#{mem_id}
+	</select>
 	
 	
 </mapper>

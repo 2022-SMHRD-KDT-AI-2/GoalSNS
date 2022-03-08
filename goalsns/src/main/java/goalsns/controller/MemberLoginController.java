@@ -36,4 +36,5 @@ public class MemberLoginController implements Controller {
 			return "index";
 	}
 	
+	}
 }

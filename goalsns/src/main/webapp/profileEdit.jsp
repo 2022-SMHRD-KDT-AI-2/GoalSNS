@@ -21,7 +21,7 @@
             <input type="text" class="form-control" name="mem_name" >
                </div>
              <div>사용자 이름 
-             <input type="text" class="form-control" readonly="readonly" name="mem_id" value="${mvo.mem_id}">
+             <input type="text" class="form-control" readonly="readonly" name="mem_id" value="${memvo.mem_id}">
              </div>
              <div>소개  
              <textarea rows="10" class="form-control" name="mem_about"></textarea>

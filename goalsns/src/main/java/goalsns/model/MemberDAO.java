@@ -86,7 +86,12 @@ public class MemberDAO {
 		session.close();
 		return memvo;
 	}
-	
+	public MemberVO getByMemId(String mem_id) {
+		   SqlSession session=sqlSessionFactory.openSession();   
+		   MemberVO vo=(MemberVO)session.selectOne("getByMemId", mem_id);
+		   session.close();
+		   return vo;
+	   }
 }
 
 

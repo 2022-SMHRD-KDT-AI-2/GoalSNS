@@ -16,17 +16,19 @@ public class MemberProfileEditController implements Controller {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		MemberVO vo=new MemberVO();
-		String mem_name=request.getParameter("mem_name");
-		HttpSession mem_id=request.getSession();
+		String mem_id=request.getParameter("mem_id");
+		String mem_name=request.getParameter("mem_name");		
 		String mem_about=request.getParameter("mem_about");
 		String mem_email=request.getParameter("mem_email");
 		vo.setMem_name(mem_name);
+		vo.setMem_id(mem_id);
 		vo.setMem_about(mem_about);
 		vo.setMem_email(mem_email);
 		MemberDAO dao=new MemberDAO();
 		dao.profileEdit(vo);
 		request.setAttribute("mem_id", mem_id);
 		request.setAttribute("vo", vo);
+		System.out.println(mem_id);
 		return "main";
 	}
 
