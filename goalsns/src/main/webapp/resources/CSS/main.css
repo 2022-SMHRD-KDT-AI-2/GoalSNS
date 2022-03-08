@@ -64,7 +64,15 @@ a{
   color: black;
   margin-left: 480px;
 }
-
+/* 모달창 구성... */
+.mybtn {
+    outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
+    margin-left: 262px;
+}
+/* 끝 */
 .postfile{
   margin: 0%;
 }
@@ -127,7 +135,7 @@ a{
   float: left;
 }
 #comment_textarea{
-  width: 500px;
+  width: 572px;
   resize: none;
   border: none;
 }
@@ -143,6 +151,11 @@ a{
   margin-right: 6px;
   /* float: right; */
   float: right;
+}
+.text_bt{
+	border:none;
+    background-color: transparent;
+    color: #F67600;
 }
 
 
