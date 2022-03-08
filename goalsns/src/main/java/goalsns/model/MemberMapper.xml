@@ -46,13 +46,16 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	<!-- 팔로우 -->
-	<insert id="follow" parameterType ="goalsns.entity.MemberVO">
+	<insert id="follow" parameterType ="String">
 		insert into t_follow(
 		follow_seq
 		to_mem
-		) values(#{mem_id})
-		 
+		) values(follow_seq.nextval,#{mem_id})
 	</insert>
+	<update id="followed" parameterType="goalsns.entity.MemberVO">
+		update t_follow
+		set from_mem()
+	</update>
 	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
 		select * from t_member where mem_id=#{mem_id}
 	</select>
