@@ -45,8 +45,17 @@
 	<select id="getMemberInfo" resultType="goalsns.entity.MemberVO">
 		select * from t_member where mem_id=#{mem_id}
 	</select>
-	
-	
+	<!-- 팔로우 -->
+	<insert id="follow" parameterType ="goalsns.entity.MemberVO">
+		insert into t_follow(
+		follow_seq
+		to_mem
+		) values(#{mem_id})
+		 
+	</insert>
+	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
+		select * from t_member where mem_id=#{mem_id}
+	</select>
 	
 	
 </mapper>
