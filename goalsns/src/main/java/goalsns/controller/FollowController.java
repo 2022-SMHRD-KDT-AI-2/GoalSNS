@@ -22,8 +22,9 @@ public class FollowController implements Controller {
 		FollowVO fvo =new FollowVO();
 		MemberVO mvo=new MemberVO();
 		MemberDAO dao=new MemberDAO();
-		if(to_mem)
+		mvo.setMem_id(to_mem);
 		dao.follow(to_mem);
+		mvo.setMem_id(from_mem);
 		dao.followed(from_mem);
 		return "main";
 	}
