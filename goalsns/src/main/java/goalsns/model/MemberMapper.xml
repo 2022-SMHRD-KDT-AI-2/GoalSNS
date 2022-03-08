@@ -22,7 +22,7 @@
 	</insert>
 	
 	<!-- 아이디 중복체크 -->
-	<select id="idchk" resultType="int">
+	<select id="idCheck" resultType="int">
 		select count(*) from t_member
 		where mem_id = #{mem_id}
 	</select>
