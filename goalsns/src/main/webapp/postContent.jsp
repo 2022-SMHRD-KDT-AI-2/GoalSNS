@@ -140,8 +140,7 @@
   <div class="window">
     <div class="popup"></div>
   </div>
-</div>
-
+</div> 
 
 
 
