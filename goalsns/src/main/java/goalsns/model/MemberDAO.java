@@ -58,11 +58,12 @@ public class MemberDAO {
 		return memvo;
 	}
 	
-	public void memberDelete(MemberVO vo) {
+	public MemberVO memberDelete(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.delete("memberDelete", vo);
 		session.commit();
 		session.close();
+		return vo;
 	}
 	
 	public void profileEdit(MemberVO vo) {

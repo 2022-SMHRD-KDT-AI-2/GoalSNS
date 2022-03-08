@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import goalsns.entity.MemberVO;
 import goalsns.model.MemberDAO;
@@ -20,7 +21,9 @@ public class MemberDeleteController implements Controller {
 		vo.setMem_pw(mem_pw);
 		
 		MemberDAO dao = new MemberDAO();
-		dao.memberDelete(vo);
+		MemberVO memvo=dao.memberDelete(vo);
+		HttpSession session=request.getSession();
+		session.setAttribute("memvo", memvo);
 		return "index";
 		 
 	}
