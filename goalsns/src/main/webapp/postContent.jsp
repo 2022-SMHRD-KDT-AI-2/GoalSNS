@@ -115,6 +115,7 @@
 		<!-- 세번째 줄(좋아요, 대화상자 아이콘) -->
 		<div>
 			<a><i class="fa-regular fa-heart"></i></a>
+			<!-- 아래를 클릭 시, 검색칸의 커서가 켜져야 한다. -->
  			<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
 		</div>
 		
