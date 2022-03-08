@@ -6,6 +6,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -13,6 +14,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import goalsns.entity.ChellVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.MemChellVO;
+import goalsns.entity.MemberVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
@@ -35,7 +37,10 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	
 	String post_content = multi.getParameter("post_content");
 	String post_file = multi.getFilesystemName("post_file");
-	String mem_id = "test1";//★★★★★★ 현재는 test1. 나중에는 현재 로그인 중인 사용자로 수정해야함.
+	//String mem_id = "test1";//★★★★★★ 현재는 test1. 나중에는 현재 로그인 중인 사용자로 수정해야함.
+	HttpSession session=request.getSession();
+	MemberVO memvo = (MemberVO)session.getAttribute("memvo");
+	String mem_id = memvo.getMem_id();
 	
 	PostVO vo = new PostVO();
 	vo.setPost_content(post_content);
@@ -81,6 +86,8 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 				dao.postHashInsert(phvo);
 				
 //-------------------------------------챌린지 해시태그 -------------------------------------
+				//챌린지해시태그-포스트 매핑 테이블 생성
+				//유저-챌린지에 이미 있다면 넣으면 안됨 매핑 테이블에.
 		}else if(content_list[i].charAt(0) == '@') {
 			String chell_name = content_list[i].substring(1);
 			cvo.setChell_name(chell_name);
@@ -101,6 +108,6 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 				dao.memChellInsert(mcvo);
 		}
 	}
-	return "redirect:/postList.do"; // 메인으로 이동하게끔..
+	return "redirect:/main.do"; // 메인으로 이동하게끔..
 }
 }

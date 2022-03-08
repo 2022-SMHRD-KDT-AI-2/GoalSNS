@@ -42,7 +42,7 @@
   		select * from t_chell where chell_name=#{chell_name}
   	</select>
  	<insert id="chellInsert" parameterType="goalsns.entity.ChellVO">
-		insert into t_hashtag
+		insert into t_chell
 		values (t_hashtag_SEQ.nextval, #{chell_name})
 	</insert>
  	<insert id="memChellInsert" parameterType="goalsns.entity.ChellVO">
