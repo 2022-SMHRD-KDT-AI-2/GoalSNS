@@ -15,8 +15,10 @@ public class MemberProfileEditController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		HttpSession session=request.getSession();
+		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
 		MemberVO vo=new MemberVO();
-		String mem_id=request.getParameter("mem_id");
+		String mem_id=memvo.getMem_id();
 		String mem_name=request.getParameter("mem_name");		
 		String mem_about=request.getParameter("mem_about");
 		String mem_email=request.getParameter("mem_email");
@@ -26,8 +28,8 @@ public class MemberProfileEditController implements Controller {
 		vo.setMem_email(mem_email);
 		MemberDAO dao=new MemberDAO();
 		dao.profileEdit(vo);
-		request.setAttribute("mem_id", mem_id);
 		request.setAttribute("vo", vo);
+		request.setAttribute("memvo", memvo);
 		System.out.println(mem_id);
 		return "main";
 	}

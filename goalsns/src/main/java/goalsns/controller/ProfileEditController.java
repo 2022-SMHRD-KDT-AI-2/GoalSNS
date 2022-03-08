@@ -15,11 +15,12 @@ public class ProfileEditController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		MemberVO vo=new MemberVO();
-		String mem_id=(String)request.getParameter("mem_id");
+		HttpSession session=request.getSession();
+		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
 		MemberDAO dao=new MemberDAO();
-		MemberVO memvo=dao.getByMemId(mem_id);
-		request.setAttribute("memvo", memvo);
+		MemberVO vo=new MemberVO();
+		MemberVO mem_vo=dao.getByMemId(vo);
+		request.setAttribute("mem_vo", mem_vo);
 		return "profileEdit";
 	}
 
