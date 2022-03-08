@@ -22,6 +22,7 @@ public class HandlerMapping {
 		mappings.put("/follow.do", new FollowController());
 		mappings.put("/profileEditform.do", new ProfileEditController());
 		mappings.put("/cmt.do", new CmtController());
+		mappings.put("/search.do", new SearchResultController());
 		
 	}
 	public Controller getController(String key) {
