@@ -19,7 +19,7 @@
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 	function goProfileEdit(){
-		location.href="/goalsns/profileEdit.do";
+		location.href="/goalsns/profileEditform.do";
 	}
 </script>
 </head>
@@ -39,6 +39,7 @@
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
 					<button class="profile_btn follow1">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+
 				</div>
 				<div class="prof_reward">
 					<button class="profile_btn reward">챌린지 리워드</button>
@@ -67,7 +68,7 @@
 
 
 
-<div class="point"><img class= "point_img" src="./resources/images/grid_icon.png">  게시물</div>
+<div class="point"><i class="fa-solid fa-table-cells"></i>  게시물</div>
 
 <c:forEach var="post" items="${postList}" varStatus="status">
 	<c:if test="${status.index mod 3 == 0}">
@@ -85,7 +86,7 @@
 	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
 	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
 </div>
- -->
+ --> 
 
 <jsp:include page="footer.jsp" />
 </body>

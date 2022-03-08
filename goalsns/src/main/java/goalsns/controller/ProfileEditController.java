@@ -1,6 +1,7 @@
 package goalsns.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,28 +11,23 @@ import javax.servlet.http.HttpSession;
 import goalsns.entity.MemberVO;
 import goalsns.model.MemberDAO;
 
-public class MemberProfileEditController implements Controller {
+public class ProfileEditController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session=request.getSession();
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
-		MemberVO vo=new MemberVO();
-		String mem_id=memvo.getMem_id();
-		String mem_name=request.getParameter("mem_name");		
-		String mem_about=request.getParameter("mem_about");
-		String mem_email=request.getParameter("mem_email");
-		vo.setMem_name(mem_name);
-		vo.setMem_id(mem_id);
-		vo.setMem_about(mem_about);
-		vo.setMem_email(mem_email);
+		String id=(String)memvo.getMem_id();
 		MemberDAO dao=new MemberDAO();
-		dao.profileEdit(vo);
-		request.setAttribute("vo", vo);
+		MemberVO vo=new MemberVO();
+		vo.setMem_id(id);
+		MemberVO mem_vo=dao.getByMemId(id);
+		request.setAttribute("mem_vo", mem_vo);
 		request.setAttribute("memvo", memvo);
-		System.out.println(mem_id);
-		return "main";
+		request.setAttribute("vo", vo);
+		System.out.println(id);
+		return "profileEdit";
 	}
 
 }
