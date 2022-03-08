@@ -60,5 +60,11 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	
+	<update id="cmt" parameterType="goalsns.entity.CmtVO">
+		update t_cmt
+        set mem_id=#{mem_id}, content=#{content}
+        where cmt_seq=#{cmt_seq}
+	</update>
+	
 	
 </mapper>

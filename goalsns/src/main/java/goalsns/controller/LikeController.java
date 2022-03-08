@@ -11,7 +11,7 @@ public class LikeController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		return "0";
+		return null;
 
 	}
 }
