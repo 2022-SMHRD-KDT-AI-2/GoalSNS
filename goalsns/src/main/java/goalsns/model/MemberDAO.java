@@ -9,8 +9,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import goalsns.entity.CmtVO;
 import goalsns.entity.FollowVO;
 import goalsns.entity.MemberVO;
+
 
 
 public class MemberDAO {
@@ -93,6 +95,13 @@ public class MemberDAO {
 		   session.close();
 		   return idvo;
 	   }
+	
+	public void cmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("cmt", vo);
+		session.commit();
+		session.close();
+	}
 }
 
 
