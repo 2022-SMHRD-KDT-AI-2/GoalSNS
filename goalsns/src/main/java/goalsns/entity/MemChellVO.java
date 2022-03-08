@@ -4,6 +4,7 @@ public class MemChellVO {
 	private String mem_id;
 	private int chell_seq;
 	private int mapping_seq;
+	
 	public String getMem_id() {
 		return mem_id;
 	}

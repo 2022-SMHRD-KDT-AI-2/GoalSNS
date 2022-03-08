@@ -45,11 +45,18 @@
 		insert into t_chell
 		values (t_hashtag_SEQ.nextval, #{chell_name})
 	</insert>
- 	<insert id="memChellInsert" parameterType="goalsns.entity.ChellVO">
+ 	<insert id="memChellInsert" parameterType="goalsns.entity.MemChellVO">
 		insert into t_mem_chell
 		values (#{mem_id}, #{chell_seq}, T_MEM_CHELL_SEQ.nextval)
 	</insert>
   	<select id="getChellSeq" resultType="int">
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_CHELL_SEQ'
+  	</select>
+ 	<insert id="postChellInsert" parameterType="goalsns.entity.PostChellVO">
+		insert into t_post_chell
+		values (#{post_seq}, #{chell_seq}, t_post_chell_SEQ.nextval)
+	</insert>
+  	<select id="memChallSelect" resultType="goalsns.entity.MemChellVO">
+  		select * from t_mem_chell where chell_seq=#{chell_seq} and mem_id=#{mem_id}
   	</select>
 </mapper>
