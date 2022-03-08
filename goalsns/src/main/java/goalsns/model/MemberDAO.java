@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import goalsns.entity.FollowVO;
 import goalsns.entity.MemberVO;
 
 
@@ -79,6 +80,19 @@ public class MemberDAO {
 		return vo;
 	}
 	
+	public int follow(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int memvo=session.insert("follow",vo);
+		session.commit();
+		session.close();
+		return memvo;
+	}
+	public MemberVO getByMemId(String id) {
+		   SqlSession session=sqlSessionFactory.openSession();   
+		   MemberVO idvo=session.selectOne("getByMemId", id);
+		   session.close();
+		   return idvo;
+	   }
 }
 
 
