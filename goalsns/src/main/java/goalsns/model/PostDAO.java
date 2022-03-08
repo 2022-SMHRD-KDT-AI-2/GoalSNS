@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import goalsns.entity.ChellVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.MemChellVO;
+import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 
@@ -134,6 +135,22 @@ public class PostDAO {
 		session.insert("memChellInsert", mcvo);
 		session.commit();
 		session.close();		
+	}
+	
+	// (5) 포스트-챌린지 매핑 테이블 삽입하기
+	public void postChellInsert(PostChellVO pcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("postChellInsert", pcvo);
+		session.commit();
+		session.close();		
+	}
+	
+	// (6) 멤버-해시태그 매핑 테이블 조회
+	public MemChellVO memChallSelect(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		MemChellVO vo = session.selectOne("memChallSelect", mcvo); 
+		session.close();
+		return vo;
 	}
 	
 	//-----------------------------------프로필 기능 구현을 위한 메소드--------------------------------------
