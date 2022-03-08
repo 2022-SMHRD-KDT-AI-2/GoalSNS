@@ -160,3 +160,8 @@ a{
     outline:none;
 
 }
+
+.btn{
+	outline: 0;
+	box-shadow: none;
+}
