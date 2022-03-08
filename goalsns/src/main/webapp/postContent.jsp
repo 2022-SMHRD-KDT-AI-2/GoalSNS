@@ -135,6 +135,22 @@
 </div>
 
 
+<<<<<<< HEAD
+<!-- 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup">
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <jsp:include page="footer.jsp" />
+=======
+<jsp:include page="footer.jsp" />
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 </body>
 </html>
