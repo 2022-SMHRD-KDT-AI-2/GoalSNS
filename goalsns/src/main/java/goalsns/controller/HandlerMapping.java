@@ -21,6 +21,8 @@ public class HandlerMapping {
 		mappings.put("/profile.do", new ProfileDefaultController());
 		mappings.put("/follow.do", new FollowController());
 		mappings.put("/profileEditform.do", new ProfileEditController());
+		mappings.put("/cmt.do", new CmtController());
+		
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);
