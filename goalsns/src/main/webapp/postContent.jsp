@@ -127,6 +127,18 @@
 </div>
 
 
+<!-- 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup">
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <jsp:include page="footer.jsp" />
 </body>
 </html>
