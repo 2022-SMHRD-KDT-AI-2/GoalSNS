@@ -25,6 +25,4 @@ public class LikeVO {
 		this.mem_id = mem_id;
 	}
 	
-	
-
 }
