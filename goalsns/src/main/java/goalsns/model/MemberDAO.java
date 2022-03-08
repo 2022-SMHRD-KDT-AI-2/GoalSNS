@@ -42,9 +42,9 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public int idChk(MemberVO vo) {
+	public int idCheck(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int result = session.insert("idChk", vo);
+		int result = session.insert("idCheck", vo);
 		session.commit();
 		session.close();
 		return result;
@@ -57,11 +57,12 @@ public class MemberDAO {
 		return memvo;
 	}
 	
-	public void memberDelete(MemberVO vo) {
+	public MemberVO memberDelete(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.delete("memberDelete", vo);
 		session.commit();
 		session.close();
+		return vo;
 	}
 	
 	public void profileEdit(MemberVO vo) {

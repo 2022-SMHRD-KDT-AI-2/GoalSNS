@@ -430,3 +430,41 @@ alter table t_member modify (mem_img default './profilePic/profile_none.png');
 alter SEQUENCE T_CHELL_SEQ nocache;
 
 alter table t_chell drop column chell_term;
+
+-- t_post_chell Table Create SQL
+CREATE TABLE t_post_chell
+(
+    post_seq       NUMBER(12, 0)    NOT NULL, 
+    chell_seq    NUMBER(12, 0)    NOT NULL, 
+    mapping_seq    NUMBER(12, 0)    NOT NULL, 
+     PRIMARY KEY (mapping_seq)
+);
+/
+
+COMMENT ON TABLE t_post_chell IS '포스트-챌린지 해시태그 매핑테이블';
+/
+
+COMMENT ON COLUMN t_post_chell.post_seq IS '포스트 순번';
+/
+
+COMMENT ON COLUMN t_post_chell.chell_seq IS '챌린지 해시태그 순번';
+/
+
+COMMENT ON COLUMN t_post_chell.mapping_seq IS '매핑순번';
+/
+
+ALTER TABLE t_post_chell
+    ADD CONSTRAINT FK_t_post_chell_chell_seq_ FOREIGN KEY (chell_seq)
+        REFERENCES t_chell (chell_seq);
+/
+
+ALTER TABLE t_post_chell
+    ADD CONSTRAINT FK_t_post_chell_post_seq_t_p FOREIGN KEY (post_seq)
+        REFERENCES t_post (post_seq);
+/
+
+CREATE SEQUENCE t_post_chell_SEQ
+START WITH 1
+INCREMENT BY 1
+nocache;
+/

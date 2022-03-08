@@ -27,8 +27,9 @@ public class UserRegisterController implements Controller {
 		
 		MemberDAO dao = new MemberDAO();
 		dao.register(vo);
-		return "index";
 		
+		return "index";
+
 	}
 	
 }
