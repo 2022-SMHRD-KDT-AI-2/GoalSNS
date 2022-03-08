@@ -1,0 +1,152 @@
+@charset "EUC-KR";
+/* 전체 큰 틀 */
+.containerbox{
+	display: flex;
+	flex-direction: row;
+	width:70%;
+	height:800px;
+	margin:auto;
+	align-items: stretch;
+	background-color:white;
+}
+
+.postfile{
+	height:800px;
+}
+.left_item{
+	
+}
+.right_item{
+	border: 1px solid #EAEAEA;
+	border-radius: 5px;
+	width:100%
+}
+
+/* right_item_top 쪽 세부사항들 */
+#right_item_top{
+	border-bottom: 1px solid #EAEAEA;
+}
+#peedimg{
+ margin: 12px;
+}
+.mem_id{
+  font-size: 13pt;
+  color: black;
+  text-align: center;
+  padding-right: 10px;
+}
+.mem_id:hover{
+  color: black;
+}
+.follow{
+	font-size: 13px;
+	color: black;
+}
+.follow_click{
+	font-size: 13px;
+	color: #52A1FF;
+}
+.fa-ellipsis{
+  font-size: 20px;
+  color: black;
+  margin-left: 270px;
+}
+a{
+  text-decoration-line: none !important;
+}
+
+/* right_item_middle 쪽 세부사항들 */
+.right_item_middle{
+	overFlow : auto;
+	border-bottom: 1px solid #EAEAEA;
+	height:568px;	
+}
+.me_coments{
+	display: flex;
+	flex-direction: row;
+}
+.me_coments > div{
+	margin: 12px;
+	margin-left: 3px;
+}
+.me_coments > div > div{
+	margin-top: 11.5px;
+}
+
+.me_con{
+	font-size: 13px;
+	
+}
+#post_date{
+    color: #A8A8A8;
+    font-size: 10px;
+ }
+/* 좋아요, 대화상자 아이콘 */
+.fa-heart{
+	font-size: 30px;
+	color: black;
+  	padding: 10px;
+  	margin-left: 6px;
+}
+.fa-comment{
+	font-size: 30px;
+	color: black;
+  	padding: 10px;
+}
+/* 좋아요 개수 */
+ .like_count{
+ 	margin-left: 16px;
+ }
+ .like_count > span{
+ 	font-size:13px;
+ 	font-weight: 750;
+ }
+/* 게시글 작성 날짜 */
+.post_date_div{
+	margin-left: 16px;
+    margin-bottom: 8px;
+}
+/* 댓글달기 상자 */
+ .fa-face-smile-wink{
+	font-size: 30px;
+	color: black;
+}
+ .textsection{
+    border-top: 1px solid #EAEAEA;
+    height: 55px;
+  }
+.textsection1{
+  padding: 10px;
+  margin-left: 6px;
+  float: left;
+}
+.textsection2{
+  padding-top: 13px;
+  padding-bottom: 10px;
+  float: left;
+}
+#comment_textarea{
+  width: 405px;
+  resize: none;
+  border: none;
+}
+#comment_textarea:focus{
+  outline: none;
+}
+
+.textsection3{
+  padding-top: 16px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 6px;
+  float: right;
+}
+button{
+	border:none;
+    background-color: transparent;
+    color: #F67600;
+}
+
+
+
