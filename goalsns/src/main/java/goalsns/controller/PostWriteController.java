@@ -6,6 +6,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -13,6 +14,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import goalsns.entity.ChellVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.MemChellVO;
+import goalsns.entity.MemberVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
@@ -35,7 +37,10 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	
 	String post_content = multi.getParameter("post_content");
 	String post_file = multi.getFilesystemName("post_file");
-	String mem_id = "test1";//★★★★★★ 현재는 test1. 나중에는 현재 로그인 중인 사용자로 수정해야함.
+	//String mem_id = "test1";//★★★★★★ 현재는 test1. 나중에는 현재 로그인 중인 사용자로 수정해야함.
+	HttpSession session=request.getSession();
+	MemberVO memvo = (MemberVO)session.getAttribute("memvo");
+	String mem_id = memvo.getMem_id();
 	
 	PostVO vo = new PostVO();
 	vo.setPost_content(post_content);
