@@ -41,7 +41,7 @@
         	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
         	<span class="follow following">• 팔로잉</span>
         	<!-- <span class="follow follow_click"><a href="#">• 팔로우</a></span> -->
-      		<button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
+      		<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     	</div>
 
 		<!-- 두번째 줄(댓글공간) -->
@@ -129,10 +129,10 @@
 			<div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
         	<form action="/goalsns/cmt.do"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
         	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
-		</div>
-		
-		
+		</div>	
 	</div>
+<<<<<<< HEAD
+=======
 
 
 </div>
@@ -142,28 +142,26 @@
   <div class="window">
     <div class="popup"></div>
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 </div>
 
 <!-- 모달 -->
 <div class="container">
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+        <div class="modal-box">
+          <!-- 내 게시물이라면? 게시글 삭제, 상대방 게시물이라면? 팔로우 취소 -->
+          <a href="#" class="modal-red">팔로우 취소</a>
+          <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
         </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
+        <div class="modal-box">
+          <a href="#" class="black">링크복사</a>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal_cancel">
+          <button class="canbtn" data-dismiss="modal">취소</button>
         </div>
       </div>
       
@@ -174,7 +172,11 @@
 </div>
 
 </div> 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 <jsp:include page="footer.jsp" />
 
 <jsp:include page="footer.jsp" />

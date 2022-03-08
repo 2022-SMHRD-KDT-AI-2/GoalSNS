@@ -13,9 +13,7 @@
 .postfile{
 	height:800px;
 }
-.left_item{
-	
-}
+
 .right_item{
 	border: 1px solid #EAEAEA;
 	border-radius: 5px;
@@ -149,14 +147,84 @@ a{
 
 
 /* 부트스트랩 모달창 */
-.btn {
-	padding:0;
-    background-color: white;
-    border-color: white;
-}
-.btn:hover, .btn:focus{
-	
-    border: none;
-    outline:none;
 
+.mybtn {
+    outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
 }
+<<<<<<< HEAD
+.modal-box{
+	border-bottom: 1px solid #C4C4C4;
+	text-align:center;
+}
+.modal-content{
+	height: auto;
+	width: 400px;
+}
+.modal-red{
+	color: red;
+	font-size: 18px;
+	font-weight: 500;
+	display:block;
+	padding:25px;
+}
+.modal-red:hover{
+	color: red;
+}
+.black{
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+	display:block;
+	padding:25px;
+}
+.black:hover{
+	color: black;
+}
+
+.canbtn{
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+	padding:25px;
+	outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
+    width:390;
+}
+.modal_cancel{
+	text-align:center;
+}
+
+/* 모달 정중앙 */
+.modal {
+        text-align: center;
+        left:200px;
+        bottom: 50px;
+}
+ 
+@media screen and (min-width: 768px) { 
+        .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+        }
+}
+ 
+.modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+}
+	
+=======
+
+.btn{
+	outline: 0;
+	box-shadow: none;
+}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
