@@ -53,7 +53,7 @@
 		) values(#{mem_id})
 		 
 	</insert>
-	<select id="getByMemId" resultType="goalsns.entity.MemberVO">
+	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	

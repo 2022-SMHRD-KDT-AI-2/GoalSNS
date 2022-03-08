@@ -1,5 +1,7 @@
+<%@ page import="goalsns.entity.*" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <% MemberVO vo=(MemberVO)request.getAttribute("vo"); %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -24,7 +26,7 @@
             <input type="text" class="form-control" name="mem_name" >
                </div>
              <div>사용자 이름 
-             <input type="text" class="form-control" readonly="readonly" name="mem_id" value="${memvo.mem_id}">
+             <input type="text" class="form-control" readonly="readonly" name="mem_id" value="<%=vo.getMem_id()%>">
              </div>
              <div>소개  
              <textarea rows="10" class="form-control" name="mem_about"></textarea>
