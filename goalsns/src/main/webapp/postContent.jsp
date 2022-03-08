@@ -132,6 +132,18 @@
         	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
 		</div>	
 	</div>
+
+
+
+</div>
+
+<!-- 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup"></div>
+
+
+
 </div>
 
 <!-- 모달 -->
@@ -160,6 +172,10 @@
 
 </div>
 
+
+</div> 
+
+<jsp:include page="footer.jsp" />
 
 <jsp:include page="footer.jsp" />
 

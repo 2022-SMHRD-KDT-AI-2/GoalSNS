@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import goalsns.entity.CmtVO;
 import goalsns.entity.FollowVO;
+import goalsns.entity.LikeVO;
 import goalsns.entity.MemberVO;
 
 
@@ -107,7 +108,13 @@ public class MemberDAO {
 		session.commit();
 		session.close();
 	}
-
+	
+	public void like(LikeVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("like", vo);
+		session.commit();
+		session.close();
+	}
 }
 
 

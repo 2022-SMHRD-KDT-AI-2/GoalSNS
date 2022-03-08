@@ -27,7 +27,7 @@
     <div id="peedboxtop" >
         <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
         <a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
-      	<a href="#"><i class="fa-solid fa-ellipsis"></i></a>
+      	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     </div>
     <div name="post_file" id="post_file" >
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
@@ -52,7 +52,7 @@
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
       <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-      <div class="textsection3"><button type="submit">게시</button></div></form>
+      <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
   </div>
   
  </div>
