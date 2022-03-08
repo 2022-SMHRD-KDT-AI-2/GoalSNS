@@ -21,7 +21,9 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/postContent.css" rel="stylesheet" type="text/css">
+<!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 모달끝 -->
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -39,7 +41,7 @@
         	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
         	<span class="follow following">• 팔로잉</span>
         	<!-- <span class="follow follow_click"><a href="#">• 팔로우</a></span> -->
-      		<button type="button" class="btn btn-info btn-lg btn-default" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
+      		<button type="button" class="btn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     	</div>
 
 		<!-- 두번째 줄(댓글공간) -->
