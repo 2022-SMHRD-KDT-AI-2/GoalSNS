@@ -86,6 +86,8 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 				dao.postHashInsert(phvo);
 				
 //-------------------------------------챌린지 해시태그 -------------------------------------
+				//챌린지해시태그-포스트 매핑 테이블 생성
+				//유저-챌린지에 이미 있다면 넣으면 안됨 매핑 테이블에.
 		}else if(content_list[i].charAt(0) == '@') {
 			String chell_name = content_list[i].substring(1);
 			cvo.setChell_name(chell_name);
@@ -106,6 +108,6 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 				dao.memChellInsert(mcvo);
 		}
 	}
-	return "redirect:/postList.do"; // 메인으로 이동하게끔..
+	return "redirect:/main.do"; // 메인으로 이동하게끔..
 }
 }
