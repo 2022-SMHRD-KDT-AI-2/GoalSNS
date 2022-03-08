@@ -17,7 +17,7 @@
         <input type="text" name="name" placeholder="성명" >
         <br>
         <input id = "id" type="text" name="id" placeholder="사용자 이름">
-        <button id = "idCheck" type ="button" class = "btn btn-primary btn-sm">ID중복체크</button>
+        <button id = "idCheck" type ="button" class = "btn btn-primary btn-sm" onclick="resultJSON()">ID중복체크</button>
         <span id = "idResult">아이디 중복체크 결과</span>
         <br>
         <input type="password" name="pw" placeholder="비밀번호">
@@ -39,6 +39,16 @@
     			} // error
     		});   // .ajax
     	});  	  // .click
+    	
+    	function resultJSON(data) {
+    		if(data.check == 'true') {
+    			$('#idResult').test('사용할 수 있는 아이디 입니다.');
+    			$('#idResult').css('color','blue');
+    		} else {
+    			$('#idResult').test('사용할 수 없는 아이디 입니다.');
+    			$('#idResult').css('color','red');
+    		}
+    	}
     </script>
 </body>
 </html>
