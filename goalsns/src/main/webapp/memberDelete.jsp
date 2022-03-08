@@ -11,7 +11,7 @@
    <form method = "post" action="/goalsns/memberDelete.do">
         <h5>회원탈퇴</h5>
 		
-			<input type="text" name="id" readonly="readonly" value="${memvo.test4}">
+			<input type="text" name="id" readonly="readonly" value="${memvo.mem_id}">
 			<br>
 			<input type="password" name="pw" placeholder="비밀번호">
 			<br>
