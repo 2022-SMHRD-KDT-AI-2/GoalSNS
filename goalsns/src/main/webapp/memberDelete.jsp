@@ -41,23 +41,32 @@
      
         <div class="item2">
         <h3>회원탈퇴</h3><br>	                 
-            <div class="form-group">
+           
+          <div class="form-group">
+           <div class="pabox">          
             <label for="mem_id"> 사용자 이름 </label>         
-               <input type="text" class="form-control" name="mem_id" value="">  
-                <p>가입한 회원님의 계정을 확인해 주세요.</p>
+            <input type="text" class="form-control" name="mem_id" value="">               
+           </div>
+                <p>가입한 회원님의 계정을 확인해 주세요.</p>           
             </div>           
-             <div class="mem_e">
-             <label for="mem_email">이메일 주소</label>           
-            <input type="email" class="form-control" name="mem_email" id="mem_email"> 
+            
+             <div class="form-group">
+             <div class="pabox">
+             <label for="mem_email">이메일 주소</label>             
+             <input type="email" class="form-control" name="mem_email" id="mem_email"> 
+               </div>
                 <p>가입한 이메일을 확인해주세요.</p>
                </div>
             
           
-            <div class="form-group">              
+            <div class="form-group">   
+            <div class="pabox">        
                 <label for="mempwd">비밀 번호</label>               
-                <input type="password" class="form-control" name="memPwd">               
+                <input type="password" class="form-control" name="memPwd">     
+                </div>             
                  <p>가입한 비밀번호를 입력해주세요.</p>
            </div>
+          
             <div class="btn_1">
              <button type="submit" class="btn btn-info btn-sm">탈퇴하기</button>   	
 		    </div>

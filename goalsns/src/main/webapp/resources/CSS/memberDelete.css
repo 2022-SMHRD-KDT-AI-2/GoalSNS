@@ -1,33 +1,35 @@
 @charset "EUC-KR";
 .container_1{
       /*margin:0;*/
-     background-color:white;
-     justify-content: center;
-     align-items: stretch;
+    background-color:white;
+    /* justify-content: center;*/
+    align-items: stretch;
     
     display:flex; 
     flex-direction: row; 
     width: 70%;
     height:700px;
     margin-left: 200px;
+    
    
 }
 .item1{	
-        position: absolute;
+    position: absolute;
     width: 193px;
     left: 199px;
     height: 700px;
     text-align: center;
     background-color: white;
-     border-right:solid whitesmoke 1px;
+    border-right:solid whitesmoke 1px;
+   
      
 }
 
 .item2{
 	flex-basis: content;
 	position: absolute;
-    top: 195px;
-    
+    top: 186px;
+    padding-left: 520px;
     float: left;
 	
 
@@ -58,7 +60,7 @@ a{
 	line-height: 22px;
 }
 .btn_1{
-	padding-left: 57px;
+	padding-left: 175px;
 		
 }
 .btn-info:hover {
@@ -67,15 +69,24 @@ a{
     border-color: #FF0000;
 }
 h3{
-	padding-left: 47px;
+	padding-left: 160px;
 }
 .btn btn-info btn-sm{
-	 background-color: #FF0000;
-	     border-color: #FF0000;
+	background-color: #FF0000;
+	border-color: #FF0000;
 	 
 }
 p{
 	color: A8A8A8;
 	font-size: 11px;
 }
-
+.form-control{
+	background: white;
+    width: 450px;
+}
+form-group{
+	    margin-bottom: 40px;
+}
+.pabox{
+	padding-bottom: 10px;
+}
