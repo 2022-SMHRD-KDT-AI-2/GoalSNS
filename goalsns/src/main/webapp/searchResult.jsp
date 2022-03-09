@@ -20,12 +20,12 @@
 <jsp:include page="menu.jsp" />
 
 <div class="top_space">
-	<div><span class="search_title">@물마시기</span></div>
+	<div><span class="search_title">${search}</span></div>
 	<div><span class="search_count">게시물 ${postCnt}</span></div>
 	<div><span class="search_popular">인기 게시물</span></div>
 </div>
 
-<c:forEach var="post" items="${postList}" varStatus="status">
+<c:forEach var="post" items="${list}" varStatus="status">
 	<c:if test="${status.index mod 3 == 0}">
 		<div class="img_row">	
 	</c:if>
