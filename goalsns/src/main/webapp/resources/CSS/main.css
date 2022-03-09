@@ -12,7 +12,7 @@ h2{
   div #peedbox {
     background-color: white;
     width: 700px;
-    margin-bottom: 0px;
+    margin-bottom: 25px;
     float: left;
     border: 1px solid #EAEAEA;
     border-radius: 5px;
@@ -70,7 +70,7 @@ a{
     box-shadow: none;
     background-color: white;
     border: 0;
-    margin-left: 262px;
+    margin-left: 12px;
 }
 /* 끝 */
 .postfile{
@@ -100,21 +100,44 @@ a{
   .post_id{
     font-size: 13pt;
     padding-bottom: 10px;
+    margin-left: 16px;
     
   }
   .post_con{
     color: #6F6E6E;
     font-size: 13px; 
   }
+  /* 일반해시태그, 챌린지해시태그 색 */
+  .hashtag, .hashtag:hover{
+  	color: #5277C8;
+  }
+  .hashtag:active{
+  	color: #5277C8;
+  	opacity:0.5;
+  }
+  
+  .chall_hashtag, .chall_hashtag:hover{
+  	color: #F37321;
+  }
+ .chall_hashtag:active{
+  	color:#F37321;
+  	opacity:0.5;
+  }
+  
+  
+  
+  /* 끝 */
   .plus{
     color: #A8A8A8;
   }
   .divplus{
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-left: 16px;
   }
   .post_date{
     padding-top: 8px;
+    margin-left: 16px;
   }
   #post_date{
     color: #A8A8A8;
@@ -130,12 +153,13 @@ a{
   float: left;
 }
 .textsection2{
-  padding-top: 13px;
+  padding-top: 14px;
   padding-bottom: 10px;
+  padding-left: 3px;
   float: left;
 }
 #comment_textarea{
-  width: 572px;
+  width: 582px;
   resize: none;
   border: none;
 }
@@ -147,9 +171,7 @@ a{
   padding-top: 16px;
   padding-bottom: 10px;
   padding-left: 10px;
-  padding-right: 10px;
   margin-right: 6px;
-  /* float: right; */
   float: right;
 }
 .text_bt{
