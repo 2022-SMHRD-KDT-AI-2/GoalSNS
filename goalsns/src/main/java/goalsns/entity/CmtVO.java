@@ -8,6 +8,21 @@ public class CmtVO {
 	private String cmt_content;
 	private Date cmt_date;
 	private String mem_id;
+	
+	
+	
+	public CmtVO() {
+		
+	}
+
+	public CmtVO(int cmt_seq, int post_seq, String cmt_content, Date cmt_date, String mem_id) {
+		this.cmt_seq = cmt_seq;
+		this.post_seq = post_seq;
+		this.cmt_content = cmt_content;
+		this.cmt_date = cmt_date;
+		this.mem_id = mem_id;
+	}
+	
 	public int getCmt_seq() {
 		return cmt_seq;
 	}
