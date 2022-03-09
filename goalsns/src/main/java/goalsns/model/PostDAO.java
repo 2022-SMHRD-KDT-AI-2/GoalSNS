@@ -163,6 +163,24 @@ public class PostDAO {
 		return list;
 	}
 
+	//-----------------------------------검색 기능 구현을 위한 메소드--------------------------------------
+	
+	// (1) 검색 단어를 포함하는 챌린지 해시태그 리스트 가져오기.
+	public List<PostChellVO> autoSearchChell(String chell_name) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PostChellVO> list = session.selectList("autoSearchChell", chell_name); 
+		session.close();
+		return list;
+	}
+	
+	// (2) 검색 단어를 포함하는 해시태그 리스트 가져오기.
+	public List<PostHashVO> autoSearchHash(String hashtag_name) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PostHashVO> list = session.selectList("autoSearchHash", hashtag_name); 
+		session.close();
+		return list;
+	}
+
 
 	
 }
