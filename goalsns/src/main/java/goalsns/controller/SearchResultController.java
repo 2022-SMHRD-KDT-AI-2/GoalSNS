@@ -1,17 +1,15 @@
 package goalsns.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONArray;
-
-import goalsns.entity.PostChellVO;
-import goalsns.entity.PostHashVO;
+import goalsns.entity.ChellVO;
+import goalsns.entity.HashtagVO;
+import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
 
 public class SearchResultController implements Controller {
@@ -24,25 +22,32 @@ public class SearchResultController implements Controller {
 		String search = (String) request.getParameter("search");
 		PostDAO dao = new PostDAO();
 		
-		List<PostChellVO> chellList = dao.autoSearchChell(search);
-		List<PostHashVO> hashList = dao.autoSearchHash(search);
+		ChellVO cvo = dao.getSeqByChellName(search);
+		HashtagVO hvo = dao.getSeqByHashName(search);
 		int postCnt = 0;
+		List<PostVO> postList = null;
 		
-		if(chellList != null) {
-			request.setAttribute("list", chellList);
-			postCnt = chellList.size();
+		if(cvo != null) {
+			int chellId = cvo.getChell_seq();
+			postList = dao.searchChellBySeq(chellId);
+			postCnt = postList.size();
+			search = '@'+search;
+			
 		}
-		else if(hashList != null) {
-			request.setAttribute("list", hashList);
-			postCnt = hashList.size();
+		else if(hvo != null) {
+			int hashId = hvo.getHashtag_seq();
+			postList = dao.searchHashBySeq(hashId);
+			postCnt = postList.size();
+			search = '#'+search;
 		}
 		else {
-			//¾øÀ½.
+			return "noSearchResult";
 		}
-		
+		request.setAttribute("list", postList);
+		request.setAttribute("search", search);
 		request.setAttribute("postCnt", postCnt);
 		
-		return "test";
+		return "searchResult";
 	}
 
 }

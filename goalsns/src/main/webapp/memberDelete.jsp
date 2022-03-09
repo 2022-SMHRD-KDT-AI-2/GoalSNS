@@ -47,8 +47,8 @@
                 <p>가입한 회원님의 계정을 확인해 주세요.</p>
             </div>           
              <div class="mem_e">
-             <label for="mem_email">이메일 주소</label>             
-             <input type="email" class="form-control" name="mem_email" id="mem_email"> 
+             <label for="mem_email">이메일 주소</label>           
+            <input type="email" class="form-control" name="mem_email" id="mem_email"> 
                 <p>가입한 이메일을 확인해주세요.</p>
                </div>
             

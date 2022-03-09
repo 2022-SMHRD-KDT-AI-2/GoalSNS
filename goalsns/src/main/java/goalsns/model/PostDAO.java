@@ -9,7 +9,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import goalsns.entity.ChellVO;
+import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
+import goalsns.entity.LikeVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
@@ -165,20 +167,51 @@ public class PostDAO {
 
 	//-----------------------------------검색 기능 구현을 위한 메소드--------------------------------------
 	
-	// (1) 검색 단어를 포함하는 챌린지 해시태그 리스트 가져오기.
-	public List<PostChellVO> autoSearchChell(String chell_name) {
+	// (1) 검색단어를 이름으로 가진 챌린지 해시태그 아이디 가져오기.
+	public ChellVO getSeqByChellName(String chell_name) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<PostChellVO> list = session.selectList("autoSearchChell", chell_name); 
+		ChellVO cvo = session.selectOne("getSeqByChellName", chell_name); 
+		session.close();
+		return cvo;
+	}
+	
+	// (2) 검색단어를 이름으로 가진 해시태그 아이디 가져오기.
+	public HashtagVO getSeqByHashName(String hashtag_name) {
+		SqlSession session = sqlSessionFactory.openSession();
+		HashtagVO hvo = session.selectOne("getSeqByHashName", hashtag_name); 
+		session.close();
+		return hvo;
+	}
+	
+	// (2) 검색 단어를 포함하는 해시태그 리스트 가져오기.
+	public List<PostVO> searchChellBySeq(int chell_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PostVO> list = session.selectList("searchChellBySeq", chell_seq); 
 		session.close();
 		return list;
 	}
 	
-	// (2) 검색 단어를 포함하는 해시태그 리스트 가져오기.
-	public List<PostHashVO> autoSearchHash(String hashtag_name) {
+	// (3) 포스트 아이디 리스트를 통해 포스트 VO 리스트를 반환.
+	public List<PostVO> searchHashBySeq(int hashtag_seq) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<PostHashVO> list = session.selectList("autoSearchHash", hashtag_name); 
+		List<PostVO> list = session.selectList("searchHashBySeq", hashtag_seq); 
 		session.close();
 		return list;
+	}	
+	
+	public int cmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int memvo = session.insert("cmt", vo);
+		session.commit();
+		session.close();
+		return memvo;
+	}
+	
+	public void like(LikeVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("like", vo);
+		session.commit();
+		session.close();
 	}
 
 

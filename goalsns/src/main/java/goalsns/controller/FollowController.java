@@ -15,17 +15,14 @@ public class FollowController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		MemberVO memvo = (MemberVO)session.getAttribute("memvo"); // 자신의 아이디
-		String from_mem=(String)memvo.getMem_id();
-		String to_mem = request.getParameter("123"); // 상대의 아이디
+		String from_mem=request.getParameter("mem_id"); // 자신의 아이디
+		String to_mem = request.getParameter("mem_id"); // 상대의 아이디
 		FollowVO fvo =new FollowVO();
-		MemberVO mvo=new MemberVO();
 		MemberDAO dao=new MemberDAO();
-		mvo.setMem_id(to_mem);
-		dao.follow(to_mem);
-		mvo.setMem_id(from_mem);
-		dao.followed(from_mem);
+		fvo.setTo_mem(to_mem);
+		fvo.setFrom_mem(from_mem);
+		dao.follow(fvo);
+		System.out.println("팔로우성공");
 		return "main";
 	}
 

@@ -46,25 +46,37 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	<!-- 팔로우 -->
-	<insert id="follow" parameterType ="String">
+	<insert id="follow" parameterType ="goalsns.entity.FollowVO">
 		insert into t_follow(
-		follow_seq
+		follow_seq,
 		to_mem
-		) values(follow_seq.nextval,#{mem_id})
+		) values(follow_seq.nextval, #{to_mem})
 	</insert>
-	<update id="followed" parameterType="goalsns.entity.MemberVO">
+	<update id="followed" parameterType="goalsns.entity.FollowVO">
 		update t_follow
-		set from_mem()
+		set from_mem=#{to_mem}
+		where to_mem=#{to_mem}
 	</update>
 	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	
-	<update id="cmt" parameterType="goalsns.entity.CmtVO">
-		update t_cmt
-        set mem_id=#{mem_id}, content=#{content}
-        where cmt_seq=#{cmt_seq}
-	</update>
+	<!-- 댓글 -->
+	<insert id="cmt" parameterType="goalsns.entity.CmtVO">
+		insert into t_cmt (
+		cmt_seq,
+		mem_id,
+		cmt_content 
+		) values(cmt_seq.nextval, #{mem_id}, #{cmt_content})
+	</insert>
 	
+	<!-- 좋아요 -->
+	<insert id="like" parameterType="goalsns.entity.LikeVO">
+		insert into t_like(
+		like_seq,
+		post_seq,
+		mem_id
+		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
+	</insert>
 	
 </mapper>
