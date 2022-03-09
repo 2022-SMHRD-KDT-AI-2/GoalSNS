@@ -15,7 +15,7 @@ public class FollowController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String from_mem=request.getParameter("mem_id"); // 자신의 아이디
+		String from_mem=request.getParameter("mem_id"); // 상대의 아이디
 		String to_mem = request.getParameter("mem_id"); // 상대의 아이디
 		FollowVO fvo =new FollowVO();
 		MemberDAO dao=new MemberDAO();

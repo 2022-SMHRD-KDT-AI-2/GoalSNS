@@ -82,7 +82,12 @@ public class MemberDAO {
 		session.close();
 		return vo;
 	}
-	
+	public List<FollowVO> followAll() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<FollowVO> list = session.selectList("followAll");
+		session.close();
+		return list;
+	}
 	public int follow(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo=session.insert("follow",vo);
@@ -90,6 +95,19 @@ public class MemberDAO {
 		session.close();
 		return memvo;
 	}
+	public void unFollow(FollowVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("follow",vo);
+		session.commit();
+		session.close();
+	}
+	public FollowVO getFollowInfo(String to_mem) {
+		SqlSession session = sqlSessionFactory.openSession();
+		FollowVO vo = session.selectOne("getFollowInfo", to_mem);
+		session.close();
+		return vo;
+	}
+	
 	public MemberVO getByMemId(String id) {
 		   SqlSession session=sqlSessionFactory.openSession();   
 		   MemberVO idvo=session.selectOne("getByMemId", id);
@@ -97,6 +115,13 @@ public class MemberDAO {
 		   return idvo;
 	   }
 	
+	public int cmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int memvo = session.insert("cmt", vo);
+		session.commit();
+		session.close();
+		return memvo;
+	}
 	
 	
 }

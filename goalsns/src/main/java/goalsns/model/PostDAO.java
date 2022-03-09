@@ -214,7 +214,20 @@ public class PostDAO {
 		session.close();
 		return memvo;
 	}
+	
+	public void likeDelete(int like_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("likeDelete", like_seq);
+		session.commit();
+		session.close();
+	}
 
+	public void cmtDelete(int cmt_seq) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.delete("cmtDelete", cmt_seq);
+		session.commit();
+		session.close();
+	}
 
 	
 }
