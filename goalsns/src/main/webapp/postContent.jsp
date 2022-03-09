@@ -126,6 +126,9 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-box">
+        <c:if test="${memvo.mem_id == vo.mem_id}">
+        	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
+        </c:if>
           <!-- 내 게시물이라면? 게시글 삭제, 상대방 게시물이라면? 팔로우 취소 -->
           <a href="#" class="modal-red">팔로우 취소</a>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
