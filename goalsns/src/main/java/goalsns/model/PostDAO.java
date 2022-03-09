@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import goalsns.entity.ChellVO;
+import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.PostChellVO;
@@ -196,6 +197,14 @@ public class PostDAO {
 		session.close();
 		return list;
 	}	
+	
+	public int cmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int memvo = session.insert("cmt", vo);
+		session.commit();
+		session.close();
+		return memvo;
+	}
 
 
 	

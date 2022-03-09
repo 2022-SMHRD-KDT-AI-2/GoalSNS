@@ -61,9 +61,10 @@
 	<insert id="cmt" parameterType="goalsns.entity.CmtVO">
 		insert into t_cmt (
 		cmt_seq,
+		post_seq,
 		mem_id,
 		cmt_content 
-		) values(cmt_seq.nextval, #{mem_id}, #{cmt_content})
+		) values(t_cmt_seq.nextval, #{post_seq}, #{mem_id}, #{cmt_content})
 	</insert>
 	
 	
