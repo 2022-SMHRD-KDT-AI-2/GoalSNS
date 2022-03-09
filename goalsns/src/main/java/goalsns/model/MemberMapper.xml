@@ -66,23 +66,4 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	
-	<!-- 댓글 -->
-	<insert id="cmt" parameterType="goalsns.entity.CmtVO">
-		insert into t_cmt (
-		cmt_seq,
-		post_seq,
-		mem_id,
-		cmt_content 
-		) values(t_cmt_seq.nextval, #{post_seq}, #{mem_id}, #{cmt_content})
-	</insert>
-	
-	<!-- 좋아요 -->
-	<insert id="like" parameterType="goalsns.entity.LikeVO">
-		insert into t_like(
-		like_seq,
-		post_seq,
-		mem_id
-		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
-	</insert>
-	
 </mapper>

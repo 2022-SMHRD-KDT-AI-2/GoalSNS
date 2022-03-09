@@ -72,4 +72,33 @@
   	<select id="searchHashBySeq" resultType="goalsns.entity.PostVO">
   		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq})
   	</select>
+  	
+  	<!-- 댓글 -->
+	<insert id="cmt" parameterType="goalsns.entity.CmtVO">
+		insert into t_cmt (
+		cmt_seq,
+		post_seq,
+		mem_id,
+		cmt_content 
+		) values(t_cmt_seq.nextval, #{post_seq}, #{mem_id}, #{cmt_content})
+	</insert>
+	
+	<!-- 좋아요 -->
+	<insert id="like" parameterType="goalsns.entity.LikeVO">
+		insert into t_like(
+		like_seq,
+		post_seq,
+		mem_id
+		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
+	</insert>
+	<!-- 좋아요 삭제 -->
+	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
+		delete from t_like 
+		where like_seq=#{like_seq}
+	</delete>
+	<!-- 좋아요 -->
+	<delete id = "cmtDelete" parameterType="goalsns.entity.CmtVO">
+		delete from t_cmt 
+		where cmt_seq=#{cmt_seq}
+	</delete>
 </mapper>
