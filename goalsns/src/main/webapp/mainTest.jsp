@@ -1,0 +1,123 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+ 
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<jsp:include page="menu.jsp" />
+<!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
+<div id="jb-container">
+  <div id="peedbox">
+    <div id="peedboxtop" >
+        <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+        <a href="#" name="mem_id" class="mem_id">글쓴아이디</a>
+      	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+    <div name="post_file" id="post_file" >
+      <img src="./resources/images/profile.png" class="postfile"width="100%">
+    </div>
+    <section>
+ 		<a><i class="fa-regular fa-heart"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+    </section>
+    <div>
+      <span name="mem_id" class="post_id">글쓴아이디</span>
+      <span class="post_con">포스트컨텐츠 #일반해시태그 @챌린지해시태그</span>
+   </div>
+   <div class="divplus">
+      <a href="#" class="plus">댓글 23개 모두 보기</a>
+   </div>
+   <div>
+      <span name="mem_id" class="post_id">idididididididid</span>
+      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+   </div>
+   <div name="post_date" class="post_date"><span id="post_date">2022.02.10</span></div>
+  
+  <div class="textsection">
+	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
+  </div>
+  
+ </div>
+ <div id="peedbox">
+    <div id="peedboxtop" >
+        <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+        <a href="#" name="mem_id" class="mem_id">글쓴아이디</a>
+      	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+    <div name="post_file" id="post_file" >
+      <img src="./resources/images/profile.png" class="postfile"width="100%">
+    </div>
+    <section>
+ 		<a><i class="fa-regular fa-heart"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+    </section>
+    <div>
+      <span name="mem_id" class="post_id">글쓴아이디</span>
+      <span class="post_con">포스트컨텐츠 #일반해시태그 @챌린지해시태그</span>
+   </div>
+   <div class="divplus">
+      <a href="#" class="plus">댓글 23개 모두 보기</a>
+   </div>
+   <div>
+      <span name="mem_id" class="post_id">idididididididid</span>
+      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+   </div>
+   <div name="post_date" class="post_date"><span id="post_date">2022.02.10</span></div>
+  
+  <div class="textsection">
+	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
+  </div>
+  
+ </div>
+
+
+
+  <div>
+    <div id="sidebar">
+      <h2>인기 챌린지 해시태그</h2>
+      <div class="chell1">#30일_물마시기_챌린지</div>
+      <div id="chellcount1">1233명 참여 중</div>
+      <div class="chell2">#30일_물마시기_챌린지</div>
+      <div id="chellcount2">1233명 참여 중</div>
+      <div class="chell3">#30일_물마시기_챌린지</div>
+      <div id="chellcount3">1233명 참여 중</div>
+      <div class="chell4">#30일_물마시기_챌린지</div>
+      <div id="chellcount4">1233명 참여 중</div>
+      <div class="chell5">#30일_물마시기_챌린지</div>
+      <div id="chellcount5">1233명 참여 중</div>
+      <div class="chell6">#30일_물마시기_챌린지</div>
+      <div id="chellcount6">1233명 참여 중</div>
+    </div>
+    <div id="sidebar2">
+      <h2>유저랭킹</h2>
+      <div class="userrank1">1. Hello_chall</div>
+      <div class="userrank2">2. Hello_chall</div>
+      <div class="userrank3">3. Hello_chall</div>
+      <div class="userrank4">4. Hello_chall</div>
+      <div class="userrank5">5. Hello_chall</div>
+    </div>
+  </div>
+  
+</div>
+<jsp:include page="footer.jsp" />
+</body>
+</html>
