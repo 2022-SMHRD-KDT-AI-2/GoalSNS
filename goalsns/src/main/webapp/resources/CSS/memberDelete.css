@@ -1,20 +1,56 @@
 @charset "EUC-KR";
-#conainer{
+.container_1{
+      /*margin:0;*/
+     background-color:whitesmoke;
+     justify-content: center;
+     align-items: stretch;
+    
+    display:flex; 
+    flex-direction: row; 
+    width: 70%;
+    height:700px;
+    margin-left: 200px;
+   
+}
+.item1{	
+     position: absolute;   
+     background: whitesmoke;
+     width: 10%;
+     left: 10%;
+     height: 700px;	
+     text-align: center;
+     border-right:solid black 1px;
+     
+}
 
-     display: flex;
-     flex-direction: row;
-     /* width: 200;
-    height: 100; */
-    background-color:whitesmoke;
-    justify-content: center;
-    align-items: stretch;
+.item2{
+	flex-basis: content;
+	position: absolute;
+    top: 195px;
+}
+.profilEidt_1{
+	flex-basis: content;
+	position: absolute;
+    top: 85px;
+    left:55px;
+    border-right:solid black 1px;
+    width: 136px;
+    height: 100px;	
+    
     
 }
-.item1{
-	flex-shrink: 0;
-	
+.delete{
+	flex-basis: content;
+	position: absolute;
+    top: 135px;
+    left: 55px;
+     border-right:solid black 1px;
+     width: 136px;
+     height: 100px;	
 }
-.item2{
-	flex-shrink: 0;
-    flex-basis: content;
-}
+
+
+
+
+
+
