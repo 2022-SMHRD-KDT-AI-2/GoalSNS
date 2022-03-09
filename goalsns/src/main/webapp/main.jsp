@@ -22,6 +22,9 @@
 	function goContent(post_seq){
 		location.href="/goalsns/postContent.do?post_seq="+post_seq;
 	}
+	function goLike(post_seq){
+		location.href="/goalsns/like.do?post_seq="+post_seq;
+	}
 	
 	
 	
@@ -42,7 +45,7 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goLike(${vo.post_seq})"></i></a>
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>

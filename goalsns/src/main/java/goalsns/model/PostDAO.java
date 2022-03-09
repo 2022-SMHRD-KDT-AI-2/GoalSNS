@@ -207,11 +207,12 @@ public class PostDAO {
 		return memvo;
 	}
 	
-	public void like(LikeVO vo) {
+	public int like(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.update("like", vo);
+		int memvo = session.insert("like", vo);
 		session.commit();
 		session.close();
+		return memvo;
 	}
 
 
