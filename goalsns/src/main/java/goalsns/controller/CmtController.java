@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import goalsns.entity.CmtVO;
 import goalsns.entity.MemberVO;
-import goalsns.model.MemberDAO;
+import goalsns.model.PostDAO;
 
 public class CmtController implements Controller {
 
@@ -20,18 +20,19 @@ public class CmtController implements Controller {
 		HttpSession session=request.getSession();
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo"); 
 		String mem_id=(String)memvo.getMem_id();
-		int cmt_seq = Integer.parseInt(request.getParameter("cmt_seq"));
+		
+		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
 		String cmt_content = request.getParameter("content");
 		
 		CmtVO vo = new CmtVO();
-		vo.setCmt_seq(cmt_seq);
+		vo.setCmt_seq(post_seq);
 		vo.setMem_id(mem_id);
 		vo.setCmt_content(cmt_content);
 		
-		MemberDAO dao = new MemberDAO();
+		PostDAO dao = new PostDAO();
 		dao.cmt(vo);
 		
-		return "mainTest";
+		return "main";
 
 	}
 
