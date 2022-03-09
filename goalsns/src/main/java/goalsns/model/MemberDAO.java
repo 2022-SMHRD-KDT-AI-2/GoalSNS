@@ -92,7 +92,7 @@ public class MemberDAO {
 	}
 	public void followed(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int memvo=session.update("followed",vo);
+		session.update("followed",vo);
 		session.commit();
 		session.close();
 	}

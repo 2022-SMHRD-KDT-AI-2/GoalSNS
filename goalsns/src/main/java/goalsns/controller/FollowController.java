@@ -22,12 +22,13 @@ public class FollowController implements Controller {
 		FollowVO fvo =new FollowVO();
 		MemberDAO dao=new MemberDAO();
 		fvo.setTo_mem(to_mem);
-		dao.follow(fvo);
 		fvo.setFrom_mem(from_mem);
+		dao.follow(fvo);
 		dao.followed(fvo);
 		System.out.println("ÆÈ·Î¿ì¼º°ø");
 		System.out.println(to_mem);
 		System.out.println(from_mem);
+		System.out.println(memvo.getMem_id());
 		return "main";
 	}
 

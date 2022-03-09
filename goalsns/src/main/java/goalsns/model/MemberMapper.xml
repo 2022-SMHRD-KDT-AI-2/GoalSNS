@@ -54,7 +54,7 @@
 	</insert>
 	<update id="followed" parameterType="goalsns.entity.FollowVO">
 		update t_follow
-		set from_mem(#{to_mem})
+		set from_mem=#{to_mem}
 		where to_mem=#{to_mem}
 	</update>
 	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
