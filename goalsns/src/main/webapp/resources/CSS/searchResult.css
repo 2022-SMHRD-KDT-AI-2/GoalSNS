@@ -1,1 +1,10 @@
 @charset "EUC-KR";
+
+.top_space{
+	margin-left:200px;
+}
+
+.search_title{
+	color: #F37321;
+	font-size: 45px;
+}
