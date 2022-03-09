@@ -17,9 +17,12 @@
 <body>
 <jsp:include page="menu.jsp" />
 
-<div>
-
+<div class="top_space">
+	<div><span class="search_title">@물마시기</span></div>
+	<div>게시물<span></span>500,505,500</div>
+	<div><span>인기 게시물</span></div>
 </div>
+
 
 
 <jsp:include page="footer.jsp" />
