@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import goalsns.entity.LikeVO;
 import goalsns.entity.MemberVO;
-import goalsns.model.MemberDAO;
 import goalsns.model.PostDAO;
 
 public class LikeController implements Controller {
