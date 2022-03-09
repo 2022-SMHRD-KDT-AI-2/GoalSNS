@@ -48,9 +48,9 @@
 	<!-- 팔로우 -->
 	<insert id="follow" parameterType ="goalsns.entity.FollowVO">
 		insert into t_follow(
-		follow_seq
+		follow_seq,
 		to_mem
-		) values(follow_seq.nextval,#{to_mem})
+		) values(follow_seq.nextval, #{to_mem})
 	</insert>
 	<update id="followed" parameterType="goalsns.entity.FollowVO">
 		update t_follow

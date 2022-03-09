@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import goalsns.entity.PostChellVO;
-import goalsns.entity.PostHashVO;
+import goalsns.entity.ChellVO;
+import goalsns.entity.HashtagVO;
 import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
 
@@ -22,24 +22,26 @@ public class SearchResultController implements Controller {
 		String search = (String) request.getParameter("search");
 		PostDAO dao = new PostDAO();
 		
-		List<Integer> chellList = dao.autoSearchChell(search);
-		List<Integer> hashList = dao.autoSearchHash(search);
+		ChellVO cvo = dao.getSeqByChellName(search);
+		HashtagVO hvo = dao.getSeqByHashName(search);
 		int postCnt = 0;
 		List<PostVO> postList = null;
 		
-		if(chellList != null) {
-			postCnt = chellList.size();
+		if(cvo != null) {
+			int chellId = cvo.getChell_seq();
+			postList = dao.searchChellBySeq(chellId);
+			postCnt = postList.size();
 			search = '@'+search;
-			postList = dao.getPostsBySeq(chellList);
 			
 		}
-		else if(hashList != null) {
-			postCnt = hashList.size();
+		else if(hvo != null) {
+			int hashId = hvo.getHashtag_seq();
+			postList = dao.searchHashBySeq(hashId);
+			postCnt = postList.size();
 			search = '#'+search;
-			postList = dao.getPostsBySeq(hashList);
 		}
 		else {
-			//¾øÀ½.
+			return "noSearchResult";
 		}
 		request.setAttribute("list", postList);
 		request.setAttribute("search", search);
