@@ -112,12 +112,7 @@ public class MemberDAO {
 		return memvo;
 	}
 	
-	public void like(LikeVO vo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.update("like", vo);
-		session.commit();
-		session.close();
-	}
+	
 }
 
 

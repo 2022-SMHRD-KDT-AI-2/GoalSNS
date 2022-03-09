@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import goalsns.entity.ChellVO;
 import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
+import goalsns.entity.LikeVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
@@ -204,6 +205,13 @@ public class PostDAO {
 		session.commit();
 		session.close();
 		return memvo;
+	}
+	
+	public void like(LikeVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("like", vo);
+		session.commit();
+		session.close();
 	}
 
 
