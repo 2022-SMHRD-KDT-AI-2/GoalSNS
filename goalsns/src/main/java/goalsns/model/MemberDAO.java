@@ -82,7 +82,12 @@ public class MemberDAO {
 		session.close();
 		return vo;
 	}
-	
+	public List<FollowVO> followAll() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<FollowVO> list = session.selectList("FollowAll");
+		session.close();
+		return list;
+	}
 	public int follow(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo=session.insert("follow",vo);

@@ -46,6 +46,9 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	<!-- 팔로우 -->
+	<select id="followAll" parameterType="goalsns.entity.FollowVO">
+		select * from t_follow
+	</select>
 	<insert id="follow" parameterType ="goalsns.entity.FollowVO">
 		insert into t_follow(
 		follow_seq,
