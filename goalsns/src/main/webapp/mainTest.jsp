@@ -34,10 +34,14 @@
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
  		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
-    </section>
+    </section>http://localhost:8081/goalsns/mainTest.jsp#
     <div>
       <span name="mem_id" class="post_id">글쓴아이디</span>
-      <span class="post_con">포스트컨텐츠 #일반해시태그 @챌린지해시태그</span>
+      <span class="post_con">포스트컨텐츠
+       <!-- 밑의 2줄이 추가 됨.(위의 post_con span태그 안에 넣어야함!!) -->
+       <!-- <a href="#" class="hashtag">#일반해시태그</a> -->
+       <!-- <a href="#" class="chall_hashtag">@챌린지해시태그</a> -->
+      	</span>
    </div>
    <div class="divplus">
       <a href="#" class="plus">댓글 23개 모두 보기</a>
