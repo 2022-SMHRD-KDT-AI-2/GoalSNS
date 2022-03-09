@@ -60,13 +60,16 @@
   		select * from t_mem_chell where chell_seq=#{chell_seq} and mem_id=#{mem_id}
   	</select>
  <!-- 검색 기능 -->
-  	<select id="autoSearchChell" resultType="goalsns.entity.PostChellVO">
-  		select post_seq from t_post_chell where chell_seq = (select chell_seq from t_chell where chell_name = #{chell_name})
+  	<select id="getSeqByChellName" resultType="goalsns.entity.ChellVO">
+  		select * from t_chell where chell_name = #{chell_name}
   	</select>
-  	<select id="autoSearchHash" resultType="goalsns.entity.PostHashVO">
-  		select post_seq from t_post_hashtag where hashtag_seq = (select hashtag_seq from t_hashtag where hashtag_name = #{hashtag_name})
+  	<select id="getSeqByHashName"  resultType="goalsns.entity.HashtagVO">
+  		select * from t_hashtag where hashtag_name = #{hashtag_name}
   	</select>
-  	  	<select id="getPostsBySeq" parameterType="java.util.List" resultType="goalsns.entity.PostVO">
-  		select * from t_post where post_seq in #{seqList}
+  	<select id="searchChellBySeq" resultType="goalsns.entity.PostVO">
+  		select * from t_post where post_seq in (select post_seq from t_post_chell where chell_seq = #{chell_seq})
+  	</select>
+  	<select id="searchHashBySeq" resultType="goalsns.entity.PostVO">
+  		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq})
   	</select>
 </mapper>
