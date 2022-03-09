@@ -1,7 +1,7 @@
 @charset "EUC-KR";
 .container_1{
       /*margin:0;*/
-     background-color:whitesmoke;
+     background-color:white;
      justify-content: center;
      align-items: stretch;
     
@@ -13,13 +13,13 @@
    
 }
 .item1{	
-     position: absolute;   
-     background: whitesmoke;
-     width: 10%;
-     left: 10%;
-     height: 700px;	
-     text-align: center;
-     border-right:solid black 1px;
+        position: absolute;
+    width: 193px;
+    left: 199px;
+    height: 700px;
+    text-align: center;
+    background-color: white;
+     border-right:solid whitesmoke 1px;
      
 }
 
@@ -27,30 +27,55 @@
 	flex-basis: content;
 	position: absolute;
     top: 195px;
+    
+    float: left;
+	
+
 }
 .profilEidt_1{
 	flex-basis: content;
 	position: absolute;
     top: 85px;
-    left:55px;
-    border-right:solid black 1px;
-    width: 136px;
+    left:32px;
+    border-right:solid whitesmoke 1px;
+    width: 160px;
     height: 100px;	
+   
     
-    
+}
+a{
+	color: gray;
+	font-size: 15px;
+	line-height: 22px;
 }
 .delete{
 	flex-basis: content;
 	position: absolute;
     top: 135px;
-    left: 55px;
-     border-right:solid black 1px;
-     width: 136px;
-     height: 100px;	
+    left: 32px;
+    border-right:solid black 1px;
+    width: 160px;
+    height: 20px;	
 }
-
-
-
-
-
+.btn_1{
+	padding-left: 82px;
+		
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+h3{
+	padding-left: 65px;
+}
+.btn btn-info btn-sm{
+	 background-color: #FF0000;
+	     border-color: #FF0000;
+	 
+}
+p{
+	color: A8A8A8;
+	font-size: 11px;
+}
 

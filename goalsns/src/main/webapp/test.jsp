@@ -13,23 +13,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
- 
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">Panel Heading</div>
-    <div class="panel-body">
-
-    	<c:forEach var="vo" items="${list}">
-    	<!-- 프로필 이미지 경로 -->
-    		<p>${vo.mem_id}</p>
-    		<p>${vo.post_file}</p>
-    		<p>${vo.post_content}</p>
-    		<p>${vo.post_date}</p>
-    		<br>
-    	</c:forEach>
-    </div>
-  </div>
-</div>
-
-</body>
+	<p>${postCnt}개의 게시물</p>
+	<c:forEach var="post" items="${list}">
+		<p>${post.post_seq}</p>
+	</c:forEach>
 </html>

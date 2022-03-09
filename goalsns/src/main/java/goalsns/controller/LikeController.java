@@ -18,9 +18,6 @@ public class LikeController implements Controller {
 		int like_seq = Integer.parseInt(request.getParameter("seq"));
 		String mem_id = request.getParameter("id");
 		
-		
-		
-		
 		return "postContent";
 
 

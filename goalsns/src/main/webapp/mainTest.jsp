@@ -18,32 +18,30 @@
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 </head>
-<script type="text/javascript">
-	function goContent(post_seq){
-		location.href="/goalsns/postContent.do?post_seq="+post_seq;
-	}
-</script>
 <body>
 <jsp:include page="menu.jsp" />
 <!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
 <div id="jb-container">
-<c:forEach var="vo" items="${list}">
   <div id="peedbox">
     <div id="peedboxtop" >
         <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        <a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        <a href="#" name="mem_id" class="mem_id">글쓴아이디</a>
       	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     </div>
     <div name="post_file" id="post_file" >
-      <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
+      <img src="./resources/images/profile.png" class="postfile"width="100%">
     </div>
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
-    </section>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+    </section>http://localhost:8081/goalsns/mainTest.jsp#
     <div>
-      <span name="mem_id" class="post_id">${vo.mem_id}</span>
-      <span class="post_con">${vo.post_content}</span>
+      <span name="mem_id" class="post_id">글쓴아이디</span>
+      <span class="post_con">포스트컨텐츠
+       <!-- 밑의 2줄이 추가 됨.(위의 post_con span태그 안에 넣어야함!!) -->
+       <!-- <a href="#" class="hashtag">#일반해시태그</a> -->
+       <!-- <a href="#" class="chall_hashtag">@챌린지해시태그</a> -->
+      	</span>
    </div>
    <div class="divplus">
       <a href="#" class="plus">댓글 23개 모두 보기</a>
@@ -52,16 +50,48 @@
       <span name="mem_id" class="post_id">idididididididid</span>
       <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
    </div>
-   <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
+   <div name="post_date" class="post_date"><span id="post_date">2022.02.10</span></div>
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-      <form action="/goalsns/cmt.do"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
       <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
   </div>
   
  </div>
- </c:forEach>
+ <div id="peedbox">
+    <div id="peedboxtop" >
+        <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+        <a href="#" name="mem_id" class="mem_id">글쓴아이디</a>
+      	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+    <div name="post_file" id="post_file" >
+      <img src="./resources/images/profile.png" class="postfile"width="100%">
+    </div>
+    <section>
+ 		<a><i class="fa-regular fa-heart"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+    </section>
+    <div>
+      <span name="mem_id" class="post_id">글쓴아이디</span>
+      <span class="post_con">포스트컨텐츠 #일반해시태그 @챌린지해시태그</span>
+   </div>
+   <div class="divplus">
+      <a href="#" class="plus">댓글 23개 모두 보기</a>
+   </div>
+   <div>
+      <span name="mem_id" class="post_id">idididididididid</span>
+      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+   </div>
+   <div name="post_date" class="post_date"><span id="post_date">2022.02.10</span></div>
+  
+  <div class="textsection">
+	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
+      <form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
+  </div>
+  
+ </div>
 
 
 
