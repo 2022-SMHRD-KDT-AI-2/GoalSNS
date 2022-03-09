@@ -18,6 +18,11 @@
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 </head>
+<script type="text/javascript">
+	function goContent(post_seq){
+		location.href="/goalsns/postContent.do?post_seq="+post_seq;
+	}
+</script>
 <body>
 <jsp:include page="menu.jsp" />
 <!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
