@@ -18,7 +18,7 @@ public class UnFollowController implements Controller {
 			MemberDAO dao=new MemberDAO();
 			fvo.setTo_mem(to_mem);
 			dao.unFollow(fvo);
-		return null;
+		return "profile";
 	}
 	
 }
