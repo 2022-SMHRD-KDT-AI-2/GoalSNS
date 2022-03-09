@@ -34,7 +34,7 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
@@ -47,7 +47,7 @@
       <span name="mem_id" class="post_id">idididididididid</span>
       <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
    </div>
-   <div name="post_date" class="post_date"><span id="post_date">2022.02.10</span></div>
+   <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>

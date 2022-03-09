@@ -30,13 +30,13 @@
 <div class="containerbox">
 
 	<div name="post_file" id="post_file" class="left_item">
-	      <img src="./resources/images/postfile.jpg" class="postfile">
+	      <img src="./postPic/${vo.post_file}" class="postfile">
 	</div>
 	<div class="right_item">
 		<!--첫번째 줄 -->
 		<div id="right_item_top" >
         	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        	<a href="#" name="mem_id" class="mem_id">didididididid</a>
+        	<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
         	<!-- 내가 상대방을 팔로우 했다면, 팔로잉보여지게(클릭X),
         	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
         	<span class="follow following">• 팔로잉</span>
@@ -50,10 +50,10 @@
 				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
         		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">didididididid</a>
-        				<span class="me_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+        				<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        				<span class="me_con">${vo.post_content}</span>
         			</div>
-        			<span id="post_date">2022.02.10</span>
+        			<span id="post_date">${vo.post_date}</span>
         		</div>
 			</div>
 			
