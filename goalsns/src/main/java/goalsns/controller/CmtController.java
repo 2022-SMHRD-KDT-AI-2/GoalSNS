@@ -25,7 +25,7 @@ public class CmtController implements Controller {
 		String cmt_content = request.getParameter("content");
 		
 		CmtVO vo = new CmtVO();
-		vo.setCmt_seq(post_seq);
+		vo.setPost_seq(post_seq); 
 		vo.setMem_id(mem_id);
 		vo.setCmt_content(cmt_content);
 		

@@ -22,6 +22,9 @@
 	function goContent(post_seq){
 		location.href="/goalsns/postContent.do?post_seq="+post_seq;
 	}
+	
+	
+	
 </script>
 <body>
 <jsp:include page="menu.jsp" />
