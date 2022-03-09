@@ -44,8 +44,8 @@
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
     </div>
     <section>
- 		<a><i class="fa-regular fa-heart"></i></a>
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goLike(${vo.post_seq})"></i></a>
+ 		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
+ 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
