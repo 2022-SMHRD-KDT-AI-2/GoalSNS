@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                 
-                  <a class="navbar-brand" href="/goalsns/main.jsp"><img src="./resources/images/logo.png" height="50px"></a>
+                  <a class="navbar-brand" href="/goalsns/main.do"><img src="./resources/images/logo.png" height="50px"></a>
                 </div>
                 <form class="navbar-form navbar-left" action="/goalsns/search.do">
                     <div class="form-group">
@@ -17,7 +17,7 @@
                 </form>
               <div class="test">
                 <ul class="nav navbar-nav">
-                  <li><a href="/goalsns/main.jsp"><i class="fa-solid fa-house"></i></a></li>
+                  <li><a href="/goalsns/main.do"><i class="fa-solid fa-house"></i></a></li>
                   <li><a href="/goalsns/postWrite.jsp"><i class="fa-regular fa-square-plus"></i></a></li>
                   <li><a href="/goalsns/profile.do?mem_id=${memvo.mem_id}"><img class="img-circle" src="./resources/images/profile.png" width=26.5px height=26.5px></a></li>
                   <li><a href="/goalsns/logout.do"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a></li>
