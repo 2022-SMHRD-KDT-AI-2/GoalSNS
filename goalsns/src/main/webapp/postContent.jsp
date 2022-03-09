@@ -31,7 +31,8 @@
 <div class="containerbox">
 
 	<div name="post_file" id="post_file" class="left_item">
-	      <img src="./postPic/${vo.post_file}" class="postfile">
+	      <%-- <img src="./postPic/${vo.post_file}" class="postfile"> --%>
+	      <img src="./resources/images/small.jpg" class="postfile">
 	</div>
 	<div class="right_item">
 		<!--첫번째 줄 -->
@@ -78,37 +79,7 @@
         			</div>
         			<span id="post_date">2022.02.10</span>
         		</div>
-			</div>			
-			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        		<div>
-        			<div>
-        				<a href="#" name="mem_id" class="mem_id">didididididid</a>
-        				<span class="me_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
-        			</div>
-        			<span id="post_date">2022.02.10</span>
-        		</div>
-			</div>				
-			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        		<div>
-        			<div>
-        				<a href="#" name="mem_id" class="mem_id">didididididid</a>
-        				<span class="me_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
-        			</div>
-        			<span id="post_date">2022.02.10</span>
-        		</div>
-			</div>			
-			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        		<div>
-        			<div>
-        				<a href="#" name="mem_id" class="mem_id">didididididid</a>
-        				<span class="me_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
-        			</div>
-        			<span id="post_date">2022.02.10</span>
-        		</div>
-			</div>
+			</div>	
 			<!-- 여기까지 댓글 추가 -->
 				
 		</div>
@@ -175,8 +146,6 @@
 
 
 </div> 
-
-<jsp:include page="footer.jsp" />
 
 <jsp:include page="footer.jsp" />
 
