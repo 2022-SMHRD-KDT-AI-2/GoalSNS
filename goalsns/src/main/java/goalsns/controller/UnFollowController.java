@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import goalsns.entity.FollowVO;
+import goalsns.model.MemberDAO;
 
 public class UnFollowController implements Controller {
 
@@ -14,6 +15,7 @@ public class UnFollowController implements Controller {
 			throws ServletException, IOException {
 			String to_mem=request.getParameter("mem_id");
 			FollowVO fvo=new FollowVO();
+			MemberDAO dao=new MemberDAO();
 			fvo.setTo_mem(to_mem);
 			dao.unFollow(fvo);
 		return null;

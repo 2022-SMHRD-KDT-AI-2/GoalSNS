@@ -90,13 +90,13 @@ public class MemberDAO {
 		session.close();
 		return memvo;
 	}
-	public FollewVO unFollow(FollowVO vo) {
+	public void unFollow(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		FollewVO memvo=session.delete("follow",vo);
+		session.delete("follow",vo);
 		session.commit();
 		session.close();
-		return memvo;
 	}
+	
 	public MemberVO getByMemId(String id) {
 		   SqlSession session=sqlSessionFactory.openSession();   
 		   MemberVO idvo=session.selectOne("getByMemId", id);
@@ -104,6 +104,13 @@ public class MemberDAO {
 		   return idvo;
 	   }
 	
+	public int cmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int memvo = session.insert("cmt", vo);
+		session.commit();
+		session.close();
+		return memvo;
+	}
 	
 	public void like(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();

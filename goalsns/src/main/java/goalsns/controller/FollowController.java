@@ -21,7 +21,6 @@ public class FollowController implements Controller {
 		MemberDAO dao=new MemberDAO();
 		fvo.setTo_mem(to_mem);
 		fvo.setFrom_mem(from_mem);
-		if(mem_id)
 		dao.follow(fvo);
 		System.out.println("ÆÈ·Î¿ì¼º°ø");
 		return "main";

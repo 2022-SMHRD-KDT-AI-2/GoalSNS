@@ -53,6 +53,10 @@
 		from_mem
 		) values(t_follow_seq.NEXTVAL, #{to_mem}, #{from_mem})
 	</insert>
+	<delete id="unFollow" parameterType="goalsns.entity.FollowVO">
+		delete from t_follow 
+		where to_mem=#{to_mem}
+	</delete>
 	
 	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">
 		select * from t_member where mem_id=#{mem_id}
