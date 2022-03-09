@@ -83,16 +83,16 @@ public class MemberDAO {
 		return vo;
 	}
 	
-	public int follow(String to_mem) {
+	public int follow(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int memvo=session.insert("follow",to_mem);
+		int memvo=session.insert("follow",vo);
 		session.commit();
 		session.close();
 		return memvo;
 	}
-	public void followed(String from_mem) {
+	public void followed(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int memvo=session.update("followed",from_mem);
+		session.update("followed",vo);
 		session.commit();
 		session.close();
 	}
