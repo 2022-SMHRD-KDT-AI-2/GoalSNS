@@ -92,7 +92,7 @@ public class MemberDAO {
 	}
 	public FollewVO unFollow(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int memvo=session.delete("follow",vo);
+		FollewVO memvo=session.delete("follow",vo);
 		session.commit();
 		session.close();
 		return memvo;
