@@ -90,6 +90,13 @@ public class MemberDAO {
 		session.close();
 		return memvo;
 	}
+	public FollewVO unFollow(FollowVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int memvo=session.delete("follow",vo);
+		session.commit();
+		session.close();
+		return memvo;
+	}
 	public MemberVO getByMemId(String id) {
 		   SqlSession session=sqlSessionFactory.openSession();   
 		   MemberVO idvo=session.selectOne("getByMemId", id);
