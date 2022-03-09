@@ -9,7 +9,7 @@
                 
                   <a class="navbar-brand" href="/goalsns/main.jsp"><img src="./resources/images/logo.png" height="50px"></a>
                 </div>
-                <form class="navbar-form navbar-left" action="/action_page.php">
+                <form class="navbar-form navbar-left" action="/goalsns/search.do">
                     <div class="form-group">
                       <input type="text" class="form-control" placeholder="검색" name="search">
                     </div>
