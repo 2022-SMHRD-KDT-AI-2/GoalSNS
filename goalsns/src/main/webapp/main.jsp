@@ -59,7 +59,7 @@
       <form action="/goalsns/cmt.do"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
       <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
   </div>
-  
+
  </div>
  </c:forEach>
 

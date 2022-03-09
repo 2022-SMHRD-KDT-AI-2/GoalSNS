@@ -1,17 +1,15 @@
 package goalsns.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONArray;
-
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
+import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
 
 public class SearchResultController implements Controller {
@@ -24,25 +22,30 @@ public class SearchResultController implements Controller {
 		String search = (String) request.getParameter("search");
 		PostDAO dao = new PostDAO();
 		
-		List<PostChellVO> chellList = dao.autoSearchChell(search);
-		List<PostHashVO> hashList = dao.autoSearchHash(search);
+		List<Integer> chellList = dao.autoSearchChell(search);
+		List<Integer> hashList = dao.autoSearchHash(search);
 		int postCnt = 0;
+		List<PostVO> postList = null;
 		
 		if(chellList != null) {
-			request.setAttribute("list", chellList);
 			postCnt = chellList.size();
+			search = '@'+search;
+			postList = dao.getPostsBySeq(chellList);
+			
 		}
 		else if(hashList != null) {
-			request.setAttribute("list", hashList);
 			postCnt = hashList.size();
+			search = '#'+search;
+			postList = dao.getPostsBySeq(hashList);
 		}
 		else {
 			//¾øÀ½.
 		}
-		
+		request.setAttribute("list", postList);
+		request.setAttribute("search", search);
 		request.setAttribute("postCnt", postCnt);
 		
-		return "test";
+		return "searchResult";
 	}
 
 }
