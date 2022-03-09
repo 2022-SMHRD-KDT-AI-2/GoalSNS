@@ -61,11 +61,13 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	
-	<update id="cmt" parameterType="goalsns.entity.CmtVO">
-		update t_cmt
-        set mem_id=#{mem_id}, content=#{content}
-        where cmt_seq=#{cmt_seq}
-	</update>
+	<insert id="cmt" parameterType="goalsns.entity.CmtVO">
+		insert into t_cmt (
+		cmt_seq,
+		mem_id,
+		cmt_content 
+		) values(cmt_seq.nextval, #{mem_id}, #{cmt_content})
+	</insert>
 	
 	
 </mapper>
