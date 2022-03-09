@@ -166,20 +166,28 @@ public class PostDAO {
 	//-----------------------------------검색 기능 구현을 위한 메소드--------------------------------------
 	
 	// (1) 검색 단어를 포함하는 챌린지 해시태그 리스트 가져오기.
-	public List<PostChellVO> autoSearchChell(String chell_name) {
+	public List<Integer> autoSearchChell(String chell_name) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<PostChellVO> list = session.selectList("autoSearchChell", chell_name); 
+		List<Integer> list = session.selectList("autoSearchChell", chell_name); 
 		session.close();
 		return list;
 	}
 	
 	// (2) 검색 단어를 포함하는 해시태그 리스트 가져오기.
-	public List<PostHashVO> autoSearchHash(String hashtag_name) {
+	public List<Integer> autoSearchHash(String hashtag_name) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<PostHashVO> list = session.selectList("autoSearchHash", hashtag_name); 
+		List<Integer> list = session.selectList("autoSearchHash", hashtag_name); 
 		session.close();
 		return list;
 	}
+	
+	// (3) 포스트 아이디 리스트를 통해 포스트 VO 리스트를 반환.
+	public List<PostVO> getPostsBySeq(List<Integer> seqList) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PostVO> list = session.selectList("getPostsBySeq", seqList); 
+		session.close();
+		return list;
+	}	
 
 
 	
