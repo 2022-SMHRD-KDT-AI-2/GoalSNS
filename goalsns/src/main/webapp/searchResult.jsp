@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,16 +21,19 @@
 
 <div class="top_space">
 	<div><span class="search_title">@물마시기</span></div>
-	<div><span class="search_count">게시물 500,505,500</span></div>
+	<div><span class="search_count">게시물 ${postCnt}</span></div>
 	<div><span class="search_popular">인기 게시물</span></div>
 </div>
 
-<div class="img_row">
-	<div class="imgbox" ><img src="./resources/images/profile.png"></div>
-	<div class="imgbox" ><img src="./resources/images/profile.png"></div>
-	<div class="imgbox" ><img src="./resources/images/profile.png"></div>
-</div>
-
+<c:forEach var="post" items="${postList}" varStatus="status">
+	<c:if test="${status.index mod 3 == 0}">
+		<div class="img_row">	
+	</c:if>
+		<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+	<c:if test="${((status.index+1) mod 3 == 0) || status.last}">
+		</div>
+	</c:if>
+</c:forEach>
 
 
 <jsp:include page="footer.jsp" />
