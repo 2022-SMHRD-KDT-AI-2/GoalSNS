@@ -21,8 +21,8 @@
 	function goProfileEdit(){
 		location.href="/goalsns/profileEditform.do";
 	}
-	function Follow(){
-		location.href="/goalsns/follow.do?mem_id="+${mvo.mem_id};
+	function goFollow(mem_id){
+		location.href="/goalsns/follow.do?mem_id="+mem_id;
 	}
 </script>
 </head>
@@ -41,7 +41,8 @@
 				<div class="prof_edit">
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
-					<button class="profile_btn follow1" onclick="Follow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
+					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 
 				</div>
 				<div class="prof_reward">
