@@ -14,11 +14,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/noSearchResult.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <jsp:include page="menu.jsp" />
 
 
+<div class="all_sorry">
+	<div><span class="oops">Oops!</span></div>
+	<div><i class="fa-regular fa-face-sad-tear"></i></div>
+	<div><span class="canyou">'검색결과'에 대한 검색 결과를 찾을 수가 없어요.</span></div>
+	<div><span class="canyou">다른 검색어로 검색을 해보시겠어요?</span></div>
+</div>
 
 <jsp:include page="footer.jsp" />
 </body>
