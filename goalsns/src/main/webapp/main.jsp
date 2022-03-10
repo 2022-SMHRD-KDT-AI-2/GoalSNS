@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<% pageContext.setAttribute("chell", "@"); %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
@@ -59,7 +61,12 @@
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
-      <span class="post_con">${vo.post_content}</span>
+      <c:if test="${fn:contains(vo.post_content,'#')}">
+      <a href="#" class="hashtag">${vo.post_content}</a>
+      </c:if>
+      <c:if test="${fn:contains(vo.post_content,'@')}">
+      <a href="#" class="chall_hashtag">${vo.post_content}</a>
+      </c:if>
    </div>
    <div class="divplus">
       <a href="#" class="plus">댓글 23개 모두 보기</a>
