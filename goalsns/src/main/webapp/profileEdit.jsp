@@ -32,10 +32,10 @@
        
 		<div class="item1">
             <div class="profilEidt_1">
-                <a href="">프로필 편집</a>
+                <a class="a_1" href="">프로필 편집</a>
             </div>
             <div class="delete">
-                <a href="">회원 탈퇴</a>
+                <a class="a_2" href="">회원 탈퇴</a>
             </div>
         </div>
      
@@ -66,11 +66,12 @@
                 <p>자신만의 id이름으로 활동해보세요.</p>           
             </div>           
             
+            <div class="form-group">
             <div>
-            <div>소개  
-             <textarea rows="10" class="form-control" name="mem_about"></textarea>
+             <label for="mem_about">소개 </label> 
+             <textarea rows="5" class="form-control" name="mem_about"></textarea>
              </div>
-                <strong>게인정보</strong>
+                <strong>개인정보</strong>
                 <p>비지니스나 반려동물 등에 사용된 계정인 경우에도 회원님의 개인정보를 입력<br>
                 하세요. 공개 프로필에는 포함되지 않습니다.</p>
             </div>
