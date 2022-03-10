@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="goalsns.model.MemberMapper">
+	<!-- 로그인 -->
 	<select id="Login" parameterType="goalsns.entity.MemberVO" resultType="goalsns.entity.MemberVO">
 	select * from t_member
 	where mem_id=#{mem_id}
@@ -32,7 +33,7 @@
 		delete from t_member 
 		where mem_pw=#{mem_pw}
 	</delete>
-	
+	<!-- 프로필 수정 -->
 	<update id="profileEdit" parameterType="goalsns.entity.MemberVO">
 	update t_member
 	set mem_name=#{mem_name},
@@ -51,9 +52,11 @@
 		select * from t_follow
 		where from_mem=#{from_mem}
 	</select>
+	<!-- 특정된 팔로우한사람 가져오기 -->
 	<select id="getFollowInfo" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
 	</select>
+	<!-- 팔로우 -->
 	<insert id="follow" parameterType ="goalsns.entity.FollowVO">
 		insert into t_follow(
 		follow_seq,
@@ -65,6 +68,7 @@
 	<delete id="unFollow" parameterType="goalsns.entity.FollowVO">
 		delete from t_follow
 		where to_mem=#{to_mem}
+		and from_mem=#{from_mem}
 	</delete>
 
 	<select id="getByMemId" parameterType="String" resultType="goalsns.entity.MemberVO">

@@ -22,10 +22,19 @@ public class HandlerMapping {
 		mappings.put("/profileEdit.do", new MemberProfileEditController());
 		mappings.put("/profile.do", new ProfileDefaultController());
 		mappings.put("/follow.do", new FollowController());
+<<<<<<< HEAD
+=======
+		mappings.put("/unfollow.do", new UnFollowController());
+		mappings.put("/profileEditform.do", new ProfileEditController());
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 		mappings.put("/cmt.do", new CmtController());
 		mappings.put("/search.do", new SearchResultController());
+<<<<<<< HEAD
 		mappings.put("/like.do", new LikeController());
 		mappings.put("/profileEditForm.do", new ProfileEditFormController());
+=======
+		mappings.put("/like.do", new LikeController());
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
 		mappings.put("/likeDelete.do", new LikeDeleteController());
 		mappings.put("/cmtDelete.do", new CmtDeleteController());
 		mappings.put("/followList.do", new FollowListController());
