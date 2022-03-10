@@ -53,6 +53,7 @@
 					<c:if test="${empty memfo}">
 					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
 					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<!-- <button class="profile_btn">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button> -->
 					</c:if>
 					</c:if>
 				</div>
