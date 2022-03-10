@@ -61,12 +61,17 @@
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
-      <c:if test="${fn:contains(vo.post_content,'#')}">
-      <a href="#" class="hashtag">${vo.post_content}</a>
+      <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
+      <c:if test="${fn:contains(f,'#')}">
+      <a href="#" class="hashtag">${f}</a>
       </c:if>
-      <c:if test="${fn:contains(vo.post_content,'@')}">
-      <a href="#" class="chall_hashtag">${vo.post_content}</a>
+      <c:if test="${fn:contains(f,'@')}">
+      <a href="#" class="chall_hashtag">${f}</a>
       </c:if>
+      <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
+      <span>${f}</span>
+      </c:if>
+      </c:forEach>
    </div>
    <div class="divplus">
       <a href="#" class="plus">댓글 23개 모두 보기</a>
