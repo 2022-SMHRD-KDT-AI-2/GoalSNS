@@ -16,6 +16,7 @@ import goalsns.entity.MemChellVO;
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
+import goalsns.entity.TrendVO;
 
 public class PostDAO {
 	private static SqlSessionFactory sqlSessionFactory;
@@ -61,6 +62,14 @@ public class PostDAO {
 		session.delete("postDelete", post_seq);
 		session.commit();
 		session.close();
+	}
+	
+	// (5) 인기 챌린지 해시태그
+	public List<TrendVO> getTrend(){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<TrendVO> list = session.selectList("getTrend"); 
+		session.close();
+		return list;
 	}
 	
 	//-----------------------------------일반 해시태그 기능 구현을 위한 메소드--------------------------------------
