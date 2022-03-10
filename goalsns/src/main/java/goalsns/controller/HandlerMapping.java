@@ -25,6 +25,7 @@ public class HandlerMapping {
 		mappings.put("/search.do", new SearchResultController());
 		mappings.put("/like.do", new LikeController());
 		mappings.put("/following.do", new FollowDefaultController());
+		mappings.put("/followList.do", new FollowListController());
 		
 	}
 	public Controller getController(String key) {
