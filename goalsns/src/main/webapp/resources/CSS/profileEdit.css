@@ -8,7 +8,7 @@
     display:flex; 
     flex-direction: row; 
     width: 70%;
-    height:700px;
+    height:820px;
     margin-left: 200px;
     
    
@@ -17,7 +17,7 @@
     position: absolute;
     width: 193px;
     left: 199px;
-    height: 700px;
+    height: 820px;
     text-align: center;
     background-color: white;
     border-right:solid whitesmoke 1px;
@@ -28,7 +28,7 @@
 .item2{
 	flex-basis: content;
 	position: absolute;
-    top: 186px;
+    top: 120px;
     padding-left: 520px;
     float: left;
 }
@@ -52,6 +52,16 @@
     width: 160px;
     height: 20px;	
 } 
+.a_1{
+	color: black;
+	font-size: 15px;
+	line-height: 22px;
+}
+.a_2{
+	color: gray;
+	font-size: 15px;
+	line-height: 22px;
+}
 .profilePic{
 	 width: 70px;
     height: 70px; 
@@ -71,5 +81,29 @@
      border-radius: 70%;
 	
 }
-	
-	
+.btn_1{
+	padding-left: 175px;
+		
+}	
+.form-control{
+	background: white;
+    width: 490px;
+}
+form-group{
+	    margin-bottom: 40px;
+	    font-size: 13px;
+        line-height: 19px;
+}
+p{
+	   font-size: 11px;
+       line-height: 19px;
+       color:  #A8A8A8;
+}
+strong{
+	   font-size: 13px;
+       line-height: 19px;
+       color: #A8A8A8;
+}
+.pabox{
+	padding-bottom: 10px;
+}	
