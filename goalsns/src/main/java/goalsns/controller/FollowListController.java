@@ -1,22 +1,23 @@
 package goalsns.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import goalsns.model.PostDAO;
+import goalsns.entity.FollowVO;
+import goalsns.model.MemberDAO;
 
-public class CmtDeleteController implements Controller {
+public class FollowListController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
-		PostDAO dao = new PostDAO();
-		dao.cmtDelete(post_seq);
-		return "redirect:/main.do";
+		MemberDAO dao=new MemberDAO();
+		List<FollowVO> flist=dao.followAll();
+		request.setAttribute("flist", flist);
+		return "test3";
 	}
 
 }

@@ -32,7 +32,7 @@ public class CmtController implements Controller {
 		PostDAO dao = new PostDAO();
 		dao.cmt(vo);
 		
-		return "main";
+		return "redirect:/main.do";
 
 	}
 

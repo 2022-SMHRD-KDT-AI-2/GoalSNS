@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//import goalsns.entity.LikeVO;
 import goalsns.model.PostDAO;
 
 public class LikeDeleteController implements Controller {
@@ -13,10 +14,14 @@ public class LikeDeleteController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int like_seq = Integer.parseInt(request.getParameter("like_seq"));
+		//String mem_id =request.getParameter("mem_id");
+		
+		//LikeVO vo = new LikeVO();
+		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
+		//vo.setMem_id(mem_id);
 		PostDAO dao = new PostDAO();
-		dao.likeDelete(like_seq);
-		return "main";
+		dao.likeDelete(post_seq);
+		return "redirect:/main.do";
 	}
 
 }

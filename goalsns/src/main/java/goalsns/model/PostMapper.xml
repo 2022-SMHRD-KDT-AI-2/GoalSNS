@@ -97,11 +97,11 @@
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
 		delete from t_like 
-		where like_seq=#{like_seq}
+		where post_seq=#{post_seq}
 	</delete>
 	<!-- 좋아요 -->
 	<delete id = "cmtDelete" parameterType="goalsns.entity.CmtVO">
 		delete from t_cmt 
-		where cmt_seq=#{cmt_seq}
+		where post_seq=#{post_seq}
 	</delete>
 </mapper>

@@ -28,7 +28,12 @@
 	function goLike(post_seq){
 		location.href="/goalsns/like.do?post_seq="+post_seq;
 	}
-	
+	//function goDeleteLike(post_seq){
+	//	location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
+	//}
+	//function goDeleteContent(post_seq){
+	//	location.href="/goalsns/cmtDelete.do?post_seq="+post_seq;
+	//}
 	
 	
 </script>
@@ -48,7 +53,9 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
+ 		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a> -->
  		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
+ 		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
@@ -94,11 +101,14 @@
     </div>
     <div id="sidebar2">
       <h2>유저랭킹</h2>
-      <div class="userrank1">1. Hello_chall</div>
+      <c:forEach var="mem" items="${rank}" varStatus="i">
+      <div class="userrank1">${i.count}. ${mem}</div>
+<!--       <div class="userrank1">1. Hello_chall</div>
       <div class="userrank2">2. Hello_chall</div>
       <div class="userrank3">3. Hello_chall</div>
       <div class="userrank4">4. Hello_chall</div>
-      <div class="userrank5">5. Hello_chall</div>
+      <div class="userrank5">5. Hello_chall</div> -->
+      </c:forEach>
     </div>
   </div>
   
