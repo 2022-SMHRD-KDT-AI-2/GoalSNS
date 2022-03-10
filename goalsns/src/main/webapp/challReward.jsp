@@ -77,10 +77,20 @@
 
 <!-- 리워드 부분 나오기!  -->
 
-<div class="chall_box">
-	<div>@물마시기_챌린지</div>
-	<div>성공!</div>
-	<div>달성표</div>
+<div class="reward_box">
+	<div class="re_box_title">@물마시기_챌린지</div>
+	<div class="re_box_middle">성공!</div>
+	<div class="re_box_bottom">달성표</div>
+</div>
+<div class="reward_box">
+	<div class="re_box_title">@물마시기_챌린지</div>
+	<div class="re_box_middle">성공!</div>
+	<div class="re_box_bottom">달성표</div>
+</div>
+<div class="reward_box">
+	<div class="re_box_title">@물마시기_챌린지</div>
+	<div class="re_box_middle">성공!</div>
+	<div class="re_box_bottom">달성표</div>
 </div>
 
 

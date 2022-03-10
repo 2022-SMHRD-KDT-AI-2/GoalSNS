@@ -41,7 +41,7 @@
      
         <div class="item2">
         
-       <div class="form-group">
+       <div class="edit_form">
        <h3>challin_shot</h3>
         <a class="profilePic" target="_self">
 	     <img class="profilePic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
@@ -49,38 +49,38 @@
 	   </a>
 	    </div>             
           
-          <div class="form-group">
+          <div class="edit_form">
            <div class="pabox">          
             <div class="test"><label for="mem_name"><span class="space">이름</span></label> </div>         
-            <input type="text" class="form-control" name="mem_name" value="">               
+            <input type="text" class="form_impormation" name="mem_name" value="">               
            </div>
                 <p>사람들이 이름,별명 또는 비즈니스 이름 등 회원님의 얄려진 이름을 사용하여<br>
                   회원님의 계정을 찾을 수 있도록 도와주세요. </p>           
             </div>   
            
-          <div class="form-group">
+          <div class="edit_form">
            <div class="pabox">          
             <div class="test"><label for="mem_id"><span class="space">사용자 이름 </span></label>  </div>        
-            <input type="text" class="form-control" name="mem_id" value="">               
+            <input type="text" class="form_impormation" name="mem_id" value="">               
            </div>
                 <p>자신만의 id이름으로 활동해보세요.</p>           
             </div>           
             
-            <div class="form-group">
+            <div class="edit_form">
             <div>
              <div class="test"><label for="mem_about"><span class="space">소개</span></label></div>
-             <textarea rows="5" class="form-control" name="mem_about"></textarea>
+             <textarea rows="5" class="selfarea" name="mem_about"></textarea>
              </div>
                 <strong>개인정보</strong>
                 <p>비지니스나 반려동물 등에 사용된 계정인 경우에도 회원님의 개인정보를 입력<br>
                 하세요. 공개 프로필에는 포함되지 않습니다.</p>
             </div>
             
-             <div class="form-group">
+             <div class="edit_form">
                
                  <div class="test"><label for="mem_email"><span class="space">이메일 주소</span></label></div>            
                   <div class="pabox">
-                 <input type="email" class="form-control" name="mem_email" id="mem_email"> 
+                 <input type="email" class="form_impormation" name="mem_email" id="mem_email"> 
                </div>
                 <p>가입한 이메일을 확인해주세요.</p>
              </div>
