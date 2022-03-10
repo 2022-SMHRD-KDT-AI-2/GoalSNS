@@ -13,10 +13,10 @@ public class CmtDeleteController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int cmt_seq = Integer.parseInt(request.getParameter("cmt_seq"));
+		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
 		PostDAO dao = new PostDAO();
-		dao.cmtDelete(cmt_seq);
-		return "main";
+		dao.cmtDelete(post_seq);
+		return "redirect:/main.do";
 	}
 
 }
