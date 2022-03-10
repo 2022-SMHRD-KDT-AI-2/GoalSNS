@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import goalsns.entity.MemberVO;
 import goalsns.entity.PostVO;
+import goalsns.model.MemberDAO;
 import goalsns.model.PostDAO;
 
 public class MainController implements Controller {
@@ -24,6 +25,14 @@ public class MainController implements Controller {
 		String mem_id = memvo.getMem_id();
 		List<PostVO> list = dao.selectPosts(mem_id);
 		request.setAttribute("list", list);
+		
+		// -------------- 인기 챌린지 해시태그 -----------------------
+		
+		
+		// ------------------- 유저 랭킹 --------------------------
+		MemberDAO mdao = new MemberDAO();
+		List<String> rank = mdao.getMemRank();
+		request.setAttribute("rank", rank);
 		return "main";
 	}
 
