@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import goalsns.entity.MemberVO;
 import goalsns.entity.PostVO;
+import goalsns.entity.TrendVO;
 import goalsns.model.MemberDAO;
 import goalsns.model.PostDAO;
 
@@ -27,7 +28,8 @@ public class MainController implements Controller {
 		request.setAttribute("list", list);
 		
 		// -------------- 인기 챌린지 해시태그 -----------------------
-		
+		List<TrendVO> trend = dao.getTrend();
+		request.setAttribute("trend", trend);
 		
 		// ------------------- 유저 랭킹 --------------------------
 		MemberDAO mdao = new MemberDAO();
