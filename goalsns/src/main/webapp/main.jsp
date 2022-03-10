@@ -17,6 +17,9 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+<!-- 모달창  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 모달창 끝  -->
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
@@ -100,6 +103,42 @@
   </div>
   
 </div>
+
+<!-- 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup"></div>
+</div>
+
+<!-- 모달 -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-box">
+        <c:if test="${memvo.mem_id == vo.mem_id}">
+        	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
+        </c:if>
+          <!-- 내 게시물이라면? 게시글 삭제,
+           상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
+          <a href="#" class="modal-red">팔로우 취소</a>
+          <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
+          <!-- <a href="#" class="modal-blue">팔로우</a> -->
+        </div>
+        <div class="modal-box">
+          <a href="#" class="black">링크복사</a>
+        </div>
+        <div class="modal_cancel">
+          <button class="canbtn" data-dismiss="modal">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 모달 끝 -->
 <jsp:include page="footer.jsp" />
 </body>
 </html>

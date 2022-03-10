@@ -113,9 +113,6 @@
 <div class="background">
   <div class="window">
     <div class="popup"></div>
-
-
-
 </div>
 
 <!-- 모달 -->
@@ -129,9 +126,11 @@
         <c:if test="${memvo.mem_id == vo.mem_id}">
         	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
         </c:if>
-          <!-- 내 게시물이라면? 게시글 삭제, 상대방 게시물이라면? 팔로우 취소 -->
+          <!-- 내 게시물이라면? 게시글 삭제,
+           상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
           <a href="#" class="modal-red">팔로우 취소</a>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
+          <!-- <a href="#" class="modal-blue">팔로우</a> -->
         </div>
         <div class="modal-box">
           <a href="#" class="black">링크복사</a>
@@ -149,7 +148,7 @@
 
 
 </div> 
-
+<!-- 모달 끝  -->
 <jsp:include page="footer.jsp" />
 
 </body>
