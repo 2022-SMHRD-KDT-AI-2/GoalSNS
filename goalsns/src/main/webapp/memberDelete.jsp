@@ -45,7 +45,7 @@
           <div class="form-group">
            <div class="pabox">          
             <!-- <label for="mem_id"> 사용자 이름 </label>   -->
-            <div class="test"><label  for="mem_id"> 사용자 이름 </label></div>        
+            <div class="test"><label  for="mem_id"> <span class="space">사용자 이름</span> </label></div>        
             <input type="text" class="form-control" name="mem_id" value="">               
            </div>
                 <p>가입한 회원님의 계정을 확인해 주세요.</p>           
@@ -53,7 +53,7 @@
             
              <div class="form-group">
              <div class="pabox">
-             <div class="test"><label  for="mem_email">이메일 주소</label></div>                
+             <div class="test"><label  for="mem_email"><span class="space">이메일 주소</span></label></div>                
              <input type="email" class="form-control" name="mem_email" id="mem_email"> 
                </div>
                 <p>가입한 이메일을 확인해주세요.</p>
@@ -62,7 +62,7 @@
           
             <div class="form-group">   
             <div class="pabox">        
-              <div class="test"><label   for="mem_pw">비밀 번호</label></div>                
+             <div class="test"><label   for="mem_pw"><span class="space">비밀 번호</span></label></div>              
                <input type="password" class="form-control" name="mem_pw">     
               </div>             
               <p>가입한 비밀번호를 입력해주세요.</p>

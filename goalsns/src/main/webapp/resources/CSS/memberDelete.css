@@ -65,7 +65,8 @@
 	line-height: 22px;
 }
 .btn_1{
-	padding-left: 175px;
+	padding-left: 231px;
+	padding-top: 50px;	
 		
 }
 .btn-info:hover {
@@ -74,7 +75,8 @@
     border-color: #FF0000;
 }
 h3{
-	padding-left: 160px;
+	padding-left: 206px;
+	padding-bottom: 30px;
 }
 .btn btn-info btn-sm{
 	background-color: #FF0000;
@@ -108,8 +110,12 @@ input 창 길이는 input에 width를 통해 바꿨구여,
 }
 label{
 	text-align:right;
-	    display: inline-block;
+    display: inline-block;
     max-width: 100%;
     margin-bottom: 16px;
     font-weight: 700;
+}
+.space{
+    float:right;
+	width: 80px;
 }

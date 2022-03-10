@@ -28,7 +28,7 @@
     top: 120px;
     padding-left: 400px;
     float: left;
-    text-align:center;
+    text-align:left;
 }
 .profilEidt_1{
 	flex-basis: content;
@@ -65,35 +65,52 @@
 }
 
 .profilePic_1{		
-	align:"left"; 
-	border:"0";
-	width: 50px;
+    width: 50px;
     height: 50px;
     object-fit: cover;
-    border-radius: 70%;	
+    border-radius: 70%;
+    float: right;
+    margin-right: 16px;
+    margin-top: 55px;
+
+}
+h3{
+	float: right;
+    padding-right: 360px;
+    margin-top: 70px;
+}
+span{
+	
 }
 .btn_1{
-	padding-left: 175px;		
+    padding-left: 290px;
+    padding-top: 50px;	
 }	
 .form-control{
 	background: white;
     width: 490px;
+    float: right;
+    margin-bottom: 10px;
 }
 form-group{
 	margin-bottom: 40px;
 	font-size: 13px;
     line-height: 19px;
+        margin-bottom: 15px;
+    padding-bottom: 21px;
 }
 p{
 	font-size: 11px;
     line-height: 19px;
     color:  #A8A8A8;
-    margin: 2 0 10px;
+    padding-left: 110px;
+  
 }
 strong{
     font-size: 13px;
     line-height: 19px;
     color: #A8A8A8;
+    padding-left: 110px;
 }
 .pabox{
 	padding-bottom: 10px;
@@ -112,3 +129,11 @@ label{
     margin-bottom: 16px;
     font-weight: 700;
 }	
+.space{
+	float:right;
+	width: 80px;
+	
+}
+.picture{
+	margin-left: 110px;
+}
