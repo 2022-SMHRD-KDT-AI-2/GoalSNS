@@ -44,7 +44,8 @@
            
           <div class="form-group">
            <div class="pabox">          
-            <label for="mem_id"> 사용자 이름 </label>         
+            <!-- <label for="mem_id"> 사용자 이름 </label>   -->
+            <div class="test"><label for="mem_id"> 사용자 이름 </label></div>        
             <input type="text" class="form-control" name="mem_id" value="">               
            </div>
                 <p>가입한 회원님의 계정을 확인해 주세요.</p>           
