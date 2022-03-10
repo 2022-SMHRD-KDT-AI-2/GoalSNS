@@ -42,8 +42,9 @@
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
 					<a href="/goalsns/following.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
-
+					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus"></span></button>
+					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
+					<button class="profile_btn following1">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
 				</div>
 				<div class="prof_reward">
 					<button class="profile_btn reward">챌린지 리워드</button>
@@ -55,10 +56,10 @@
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
 				<div class="follower">
-					<button class="prof_text">팔로워 20</button>
+					<button class="prof_text prof_follower" data-toggle="modal" data-target="#myModal">팔로워 20</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text">팔로우 19</button>
+					<button class="prof_text prof_follow" data-toggle="modal" data-target="#myModal">팔로우 19</button>
 				</div>
 			</div>
 
@@ -72,7 +73,7 @@
 
 
 
-<div class="point"><i class="fa-solid fa-table-cells"></i>  게시물</div>
+<div class="point"><img class="point_img" src="./resources/images/grid_icon.png">  게시물</div>
 
 <c:forEach var="post" items="${postList}" varStatus="status">
 	<c:if test="${status.index mod 3 == 0}">
@@ -91,6 +92,107 @@
 	<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
 </div>
  --> 
+
+
+<!-- 팔로워 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup"></div>
+</div>
+<!-- 모달 -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      
+      <div class="modal-content">
+      
+        <div class="modal-box">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <span class="model_title">팔로워</span>
+        </div>
+        
+        <div class="follower-box">
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        <div class="follower_list">
+	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        </div>
+	        
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<!-- 팔로워 모달 끝 -->
+
+<!-- 팔로우 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup"></div>
+</div>
+<!-- 모달 -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-box">
+        <c:if test="${memvo.mem_id == vo.mem_id}">
+        	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
+        </c:if>
+          <!-- 내 게시물이라면? 게시글 삭제,
+           상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
+          <a href="#" class="modal-red">팔로우 취소</a>
+          <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
+          <!-- <a href="#" class="modal-blue">팔로우</a> -->
+        </div>
+        <div class="modal-box">
+          <a href="#" class="black">링크복사</a>
+        </div>
+        <div class="modal_cancel">
+          <button class="canbtn" data-dismiss="modal">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 팔로우 모달 끝 -->
+
+
 
 <jsp:include page="footer.jsp" />
 </body>

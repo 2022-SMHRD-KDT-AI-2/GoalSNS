@@ -155,6 +155,14 @@ public class PostDAO {
 		return vo;
 	}
 	
+	// (7) 포스트 데이터에 챌린지 해시태그 아이디 업데이트
+	public void postChellUpdate(PostVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("postChellUpdate", vo);
+		session.commit();
+		session.close();
+	}
+	
 	//-----------------------------------프로필 기능 구현을 위한 메소드--------------------------------------
 	
 	// (1) 해당 유저의 포스트 리스트 가져오기.
@@ -166,7 +174,6 @@ public class PostDAO {
 	}
 
 	//-----------------------------------검색 기능 구현을 위한 메소드--------------------------------------
-	
 	// (1) 검색단어를 이름으로 가진 챌린지 해시태그 아이디 가져오기.
 	public ChellVO getSeqByChellName(String chell_name) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -215,19 +222,18 @@ public class PostDAO {
 		return memvo;
 	}
 	
-	public void likeDelete(int like_seq) {
+	public void likeDelete(int post_seq) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.delete("likeDelete", like_seq);
+		session.delete("likeDelete", post_seq);
 		session.commit();
 		session.close();
 	}
 
-	public void cmtDelete(int cmt_seq) {
+	public void cmtDelete(int post_seq) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.delete("cmtDelete", cmt_seq);
+		session.delete("cmtDelete", post_seq);
 		session.commit();
 		session.close();
 	}
 
-	
 }

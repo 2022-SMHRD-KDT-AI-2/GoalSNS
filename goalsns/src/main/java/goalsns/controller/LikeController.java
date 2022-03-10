@@ -29,7 +29,7 @@ public class LikeController implements Controller {
 		PostDAO dao = new PostDAO();
 		dao.like(vo);
 		
-		return "main";
+		return "redirect:/main.do";
 
 
 	}

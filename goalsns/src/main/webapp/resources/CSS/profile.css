@@ -35,6 +35,9 @@
 }
 
 /* 세부적인 profile-box 지정*/
+.img-circle{
+	border: 1px solid #C4C4C4;
+}
 .prof_img{
 	padding:40px;
 	margin-left:40px;
@@ -74,7 +77,10 @@
 	background-color:#52A1FF;
 }
 .fa-user-plus{
-	font-size:15.5px;
+	font-size:18.4px;
+}
+.fa-user{
+	font-size:19.5px;
 }
 
 
@@ -129,5 +135,62 @@
 	 margin-bottom:4px;
 }
 
+/* 팔로워 모달창 */
+.modal-content{
+	height: 450px;
+    width: 450px;
+}
+.modal-box{
+	border-bottom: 1px solid #C4C4C4;
+	text-align:center;
+	padding: 11px;
+}
+.model_title{
+	font-size: 18px;
+    font-weight: 540;
+}
+.mem_id{
+  font-size: 13pt;
+  color: black;
+}
+.mem_id:hover{
+  color: black;
+  text-decoration:none;
+}
+/* 닫기버튼 색 */
+.follower_box{
+	overflow : auto;
+}
+.follower_list{
+	margin:10px;
+}
+#peedimg{
+	margin-left:10px;
+	margin-right:10px;
+}
+
+
+
+/* 모달 정중앙 */
+.modal {
+        text-align: center;
+        left:200px;
+        bottom: 50px;
+}
+ 
+@media screen and (min-width: 768px) { 
+        .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+        }
+}
+ 
+.modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+}
 
 

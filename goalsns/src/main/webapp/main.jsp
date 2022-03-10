@@ -17,6 +17,9 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+<!-- 모달창  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 모달창 끝  -->
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
@@ -25,7 +28,12 @@
 	function goLike(post_seq){
 		location.href="/goalsns/like.do?post_seq="+post_seq;
 	}
-	
+	function goDeleteLike(post_seq){
+		location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
+	}
+	//function goDeleteContent(post_seq){
+	//	location.href="/goalsns/cmtDelete.do?post_seq="+post_seq;
+	//}
 	
 	
 </script>
@@ -45,7 +53,9 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
+ 		<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>
  		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
+ 		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
@@ -91,15 +101,54 @@
     </div>
     <div id="sidebar2">
       <h2>유저랭킹</h2>
-      <div class="userrank1">1. Hello_chall</div>
+      <c:forEach var="mem" items="${rank}" varStatus="i">
+      <div class="userrank1">${i.count}. ${mem}</div>
+<!--       <div class="userrank1">1. Hello_chall</div>
       <div class="userrank2">2. Hello_chall</div>
       <div class="userrank3">3. Hello_chall</div>
       <div class="userrank4">4. Hello_chall</div>
-      <div class="userrank5">5. Hello_chall</div>
+      <div class="userrank5">5. Hello_chall</div> -->
+      </c:forEach>
     </div>
   </div>
   
 </div>
+
+<!-- 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup"></div>
+</div>
+
+<!-- 모달 -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-box">
+        <c:if test="${memvo.mem_id == vo.mem_id}">
+        	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
+        </c:if>
+          <!-- 내 게시물이라면? 게시글 삭제,
+           상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
+          <a href="#" class="modal-red">팔로우 취소</a>
+          <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
+          <!-- <a href="#" class="modal-blue">팔로우</a> -->
+        </div>
+        <div class="modal-box">
+          <a href="#" class="black">링크복사</a>
+        </div>
+        <div class="modal_cancel">
+          <button class="canbtn" data-dismiss="modal">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 모달 끝 -->
 <jsp:include page="footer.jsp" />
 </body>
 </html>

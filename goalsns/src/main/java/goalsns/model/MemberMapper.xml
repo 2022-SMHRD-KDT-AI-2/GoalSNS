@@ -69,4 +69,13 @@
 		select * from t_member where mem_id=#{mem_id}
 	</select>
 	
+	<!-- 유저 랭킹 -->
+	<select id="getMemRank" resultType="java.lang.String">
+		select mem_id 
+		from (select mem_id, count(post_seq) from t_post where chell_seq is not null
+		and post_date BETWEEN TO_DATE('2022-03-01', 'YYYY-MM-DD') AND TO_DATE('2022-03-31', 'YYYY-MM-DD') 
+		group by mem_id order by count(post_seq))
+		<![CDATA[where rownum<=5]]>
+	</select>
+	
 </mapper>
