@@ -1,5 +1,32 @@
 @charset "EUC-KR";
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .all_sorry{
      text-align: center;
 }
 
+.oops{
+	 font-family: 'NeoDunggeunmo';
+	 font-size:70pt;
+	 color: #C4C4C4;
+}
+.fa-face-sad-tear{
+	 font-size:100pt;
+	 color: #C4C4C4;
+}
+.canyou{
+	font-family: 'NeoDunggeunmo';
+	font-size:20pt;
+	color: #C4C4C4;
+}
+
+.all_sorry > div:nth-child(1){
+	margin-top:160px;
+}
+.all_sorry div:nth-child(3){
+	margin-top:50px;
+}
