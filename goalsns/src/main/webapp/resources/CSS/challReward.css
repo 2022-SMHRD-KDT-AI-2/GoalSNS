@@ -124,13 +124,19 @@
 }
 
 .point_img{
-	 width: 15px;
-	 height: 15px;
+	 width: 19px;
+	 height: 18px;
 	 margin-bottom:4px;
 }
 
 .img-circle{
 	border: 1px solid #C4C4C4;
+}
+
+/* Ã§¸°Áö ¹Ú½º */
+.chall_box{
+	display:flex;
+	flex-direction: column;
 }
 
 

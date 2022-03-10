@@ -77,7 +77,11 @@
 
 <!-- 리워드 부분 나오기!  -->
 
-
+<div class="chall_box">
+	<div>@물마시기_챌린지</div>
+	<div>성공!</div>
+	<div>달성표</div>
+</div>
 
 
 
