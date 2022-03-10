@@ -32,10 +32,10 @@
        
 		<div class="item1">
             <div class="profilEidt_1">
-                <a href="">프로필 편집</a>
+                <a class="a_1" href="">프로필 편집</a>
             </div>
             <div class="delete">
-                <a href="">회원 탈퇴</a>
+                <a class="a_2" href="">회원 탈퇴</a>
             </div>
         </div>
      
@@ -45,7 +45,7 @@
           <div class="form-group">
            <div class="pabox">          
             <!-- <label for="mem_id"> 사용자 이름 </label>   -->
-            <div class="test"><label for="mem_id"> 사용자 이름 </label></div>        
+            <div class="test"><label  for="mem_id"> 사용자 이름 </label></div>        
             <input type="text" class="form-control" name="mem_id" value="">               
            </div>
                 <p>가입한 회원님의 계정을 확인해 주세요.</p>           
@@ -53,7 +53,7 @@
             
              <div class="form-group">
              <div class="pabox">
-             <label for="mem_email">이메일 주소</label>             
+             <div class="test"><label  for="mem_email">이메일 주소</label></div>                
              <input type="email" class="form-control" name="mem_email" id="mem_email"> 
                </div>
                 <p>가입한 이메일을 확인해주세요.</p>
@@ -62,10 +62,10 @@
           
             <div class="form-group">   
             <div class="pabox">        
-                <label for="mempwd">비밀 번호</label>               
-                <input type="password" class="form-control" name="memPwd">     
-                </div>             
-                 <p>가입한 비밀번호를 입력해주세요.</p>
+              <div class="test"><label   for="mem_pw">비밀 번호</label></div>                
+               <input type="password" class="form-control" name="mem_pw">     
+              </div>             
+              <p>가입한 비밀번호를 입력해주세요.</p>
            </div>
           
             <div class="btn_1">

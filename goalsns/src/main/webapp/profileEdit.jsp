@@ -51,7 +51,7 @@
           
           <div class="form-group">
            <div class="pabox">          
-            <label for="mem_name"> 이름 </label>         
+            <div class="test"><label for="mem_name"> 이름 </label>         
             <input type="text" class="form-control" name="mem_name" value="">               
            </div>
                 <p>사람들이 이름,별명 또는 비즈니스 이름 등 회원님의 얄려진 이름을 사용하여<br>
@@ -60,7 +60,7 @@
            
           <div class="form-group">
            <div class="pabox">          
-            <label for="mem_id"> 사용자 이름 </label>         
+            <div class="test"><label for="mem_id"> 사용자 이름 </label>         
             <input type="text" class="form-control" name="mem_id" value="">               
            </div>
                 <p>자신만의 id이름으로 활동해보세요.</p>           
@@ -68,7 +68,7 @@
             
             <div class="form-group">
             <div>
-             <label for="mem_about">소개 </label> 
+             <div class="test"><label for="mem_about">소개 </label> 
              <textarea rows="5" class="form-control" name="mem_about"></textarea>
              </div>
                 <strong>개인정보</strong>

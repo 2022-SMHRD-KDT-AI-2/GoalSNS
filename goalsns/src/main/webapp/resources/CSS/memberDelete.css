@@ -8,16 +8,16 @@
     display:flex; 
     flex-direction: row; 
     width: 70%;
-    height:700px;
-    margin-left: 200px;
+    height:820px;
+    margin-left: 400px;
     
    
 }
 .item1{	
     position: absolute;
     width: 193px;
-    left: 199px;
-    height: 700px;
+    left: 210px;
+    height: 820px;
     text-align: center;
     background-color: white;
     border-right:solid whitesmoke 1px;
@@ -29,19 +29,19 @@
 	flex-basis: content;
 	position: absolute;
     top: 186px;
-    padding-left: 520px;
+    padding-left: 400px;
     float: left;
 	
 
 }
 .profilEidt_1{
-	flex-basis: content;
-	position: absolute;
+    flex-basis: content;
+    position: absolute;
     top: 85px;
-    left:32px;
-    border-right:solid whitesmoke 1px;
-    width: 160px;
-    height: 100px;	
+    left: 19px;
+    border-right: solid whitesmoke 1px;
+    width: 174px;
+    height: 20px;	
    
     
 }
@@ -49,13 +49,18 @@
 	flex-basis: content;
 	position: absolute;
     top: 135px;
-    left: 32px;
+    left: 19px;
     border-right:solid black 1px;
-    width: 160px;
+    width: 174px;
     height: 20px;	
 }
-a{
+.a_1{
 	color: gray;
+	font-size: 15px;
+	line-height: 22px;
+}
+.a_2{
+	color: black;
 	font-size: 15px;
 	line-height: 22px;
 }
@@ -77,8 +82,9 @@ h3{
 	 
 }
 p{
-	color: A8A8A8;
-	font-size: 11px;
+	  font-size: 11px;
+       line-height: 19px;
+       color:  #A8A8A8;
 }
 .form-control{
 	background: white;
@@ -97,4 +103,13 @@ input 창 길이는 input에 width를 통해 바꿨구여,
 .test{
 	float:left;
 	padding-top: 10px;
+	padding-right: 25px;
+	
+}
+label{
+	text-align:right;
+	    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 16px;
+    font-weight: 700;
 }
