@@ -45,12 +45,13 @@
 	<select id="getMemberInfo" resultType="goalsns.entity.MemberVO">
 		select * from t_member where mem_id=#{mem_id}
 	</select>
-	<!-- 팔로우 -->
+	<!-- 팔로우리스트 가져오기 -->
 	<select id="followAll" resultType="goalsns.entity.FollowVO">
 		select * from t_follow
+		where from_mem=#{from_mem}
 	</select>
 	<select id="getFollowInfo" resultType="goalsns.entity.FollowVO">
-		select * from t_follow where to_mem=#{to_mem}
+		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
 	</select>
 	<insert id="follow" parameterType ="goalsns.entity.FollowVO">
 		insert into t_follow(
@@ -59,7 +60,7 @@
 		from_mem
 		) values(t_follow_seq.NEXTVAL, #{to_mem}, #{from_mem})
 	</insert>
-
+	<!-- 언팔로우 -->
 	<delete id="unFollow" parameterType="goalsns.entity.FollowVO">
 		delete from t_follow
 		where to_mem=#{to_mem}

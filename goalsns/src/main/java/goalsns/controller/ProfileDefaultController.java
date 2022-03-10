@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import goalsns.entity.FollowVO;
 import goalsns.entity.MemberVO;
@@ -19,13 +20,17 @@ public class ProfileDefaultController implements Controller {
 			throws ServletException, IOException {
 		//팔로우, 팔로워 수 + 게시물 수
 		//String id = "test1";
+		HttpSession session=request.getSession();
+		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
 		String id = (String)request.getParameter("mem_id");
-		String to_mem=request.getParameter("mem_id");
+		String from_mem=(String)memvo.getMem_id();
 		MemberDAO mdao = new MemberDAO();
 		PostDAO pdao = new PostDAO();
 		FollowVO fvo=new FollowVO();
+		fvo.setTo_mem(id);
+		fvo.setFrom_mem(from_mem);
 		MemberVO mvo = mdao.getMemberInfo(id);
-		FollowVO memfo=mdao.getFollowInfo(to_mem);
+		List<FollowVO> memfo=mdao.getFollowInfo(fvo);
 		List<PostVO> postList = pdao.getMemberPosts(id);
 		int postCnt = postList.size();
 		request.setAttribute("postList", postList);
