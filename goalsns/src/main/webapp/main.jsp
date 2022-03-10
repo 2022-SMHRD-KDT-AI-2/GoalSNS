@@ -101,11 +101,14 @@
     </div>
     <div id="sidebar2">
       <h2>유저랭킹</h2>
-      <div class="userrank1">1. Hello_chall</div>
+      <c:forEach var="mem" items="${rank}" varStatus="i">
+      <div class="userrank1">${i.count}. ${mem}</div>
+<!--       <div class="userrank1">1. Hello_chall</div>
       <div class="userrank2">2. Hello_chall</div>
       <div class="userrank3">3. Hello_chall</div>
       <div class="userrank4">4. Hello_chall</div>
-      <div class="userrank5">5. Hello_chall</div>
+      <div class="userrank5">5. Hello_chall</div> -->
+      </c:forEach>
     </div>
   </div>
   

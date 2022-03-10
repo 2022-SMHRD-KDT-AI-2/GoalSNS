@@ -123,6 +123,13 @@ public class MemberDAO {
 		return memvo;
 	}
 	
+	// À¯Àú ·©Å·
+	public List<String> getMemRank() {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<String> rank = session.selectList("getMemRank");
+		session.close();
+		return rank;
+	}
 	
 }
 
