@@ -1,0 +1,75 @@
+@charset "EUC-KR";
+.container_1{
+      /*margin:0;*/
+    background-color:white;
+    /* justify-content: center;*/
+    align-items: stretch;
+    
+    display:flex; 
+    flex-direction: row; 
+    width: 70%;
+    height:700px;
+    margin-left: 200px;
+    
+   
+}
+.item1{	
+    position: absolute;
+    width: 193px;
+    left: 199px;
+    height: 700px;
+    text-align: center;
+    background-color: white;
+    border-right:solid whitesmoke 1px;
+   
+     
+}
+
+.item2{
+	flex-basis: content;
+	position: absolute;
+    top: 186px;
+    padding-left: 520px;
+    float: left;
+}
+.profilEidt_1{
+	flex-basis: content;
+	position: absolute;
+    top: 85px;
+    left:32px;
+    border-right:solid black 1px;
+    width: 160px;
+    height: 20px;	
+   
+    
+}
+.delete{
+	flex-basis: content;
+	position: absolute;
+    top: 135px;
+    left: 32px;
+    /*border-right:solid whitesmoke 1px;*/
+    width: 160px;
+    height: 20px;	
+} 
+.profilePic{
+	 width: 70px;
+    height: 70px; 
+   
+    overflow: hidden;
+	
+}
+
+.profilePic_1{
+	
+	
+	align:"left"; 
+	border:"0";
+	 width: 100px;
+    height: 100px;
+    object-fit: cover;
+     border-radius: 70%;
+	
+}
+	
+	
