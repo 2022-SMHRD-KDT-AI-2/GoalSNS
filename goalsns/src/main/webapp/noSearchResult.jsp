@@ -21,7 +21,7 @@
 
 
 <div class="all_sorry">
-	<div><span class="oops">Oops!</span></div>
+	<div><span class="oops">&nbsp;Oops!</span></div>
 	<div><i class="fa-regular fa-face-sad-tear"></i></div>
 	<div><span class="canyou">'검색결과'에 대한 검색 결과를 찾을 수가 없어요.</span></div>
 	<div><span class="canyou">다른 검색어로 검색을 해보시겠어요?</span></div>
