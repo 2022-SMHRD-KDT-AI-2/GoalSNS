@@ -8,6 +8,7 @@ public class HandlerMapping {
 	public HandlerMapping() {
 		mappings = new HashMap<String, Controller>();
 		//¿¹½Ã - mappings.put("/boardList.do", new BoardListController());
+		
 		mappings.put("/postWrite.do", new PostWriteController());
 		mappings.put("/login.do", new MemberLoginController());
 		mappings.put("/main.do", new MainController());
@@ -27,7 +28,6 @@ public class HandlerMapping {
 
 		mappings.put("/likeDelete.do", new LikeDeleteController());
 		mappings.put("/cmtDelete.do", new CmtDeleteController());
-
 		mappings.put("/followList.do", new FollowListController());
 
 		
