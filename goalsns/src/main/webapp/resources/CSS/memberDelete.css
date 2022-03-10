@@ -82,11 +82,19 @@ p{
 }
 .form-control{
 	background: white;
-    width: 450px;
+    width: 350px;
 }
-form-group{
+.form-group{
 	    margin-bottom: 40px;
 }
 .pabox{
 	padding-bottom: 10px;
+	width: 800px;
+}
+/* 여기 아래처럼 사용자 이름에 div 줘서 float:left 속성을 주면 될것같아요!
+input 창 길이는 input에 width를 통해 바꿨구여, 
+사용자 이름 살짝 아래로 내릴려고 padding-top: 10px 줬어여~~*/
+.test{
+	float:left;
+	padding-top: 10px;
 }
