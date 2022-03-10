@@ -166,7 +166,6 @@ public class PostDAO {
 	}
 
 	//-----------------------------------검색 기능 구현을 위한 메소드--------------------------------------
-	
 	// (1) 검색단어를 이름으로 가진 챌린지 해시태그 아이디 가져오기.
 	public ChellVO getSeqByChellName(String chell_name) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -229,5 +228,4 @@ public class PostDAO {
 		session.close();
 	}
 
-	
 }
