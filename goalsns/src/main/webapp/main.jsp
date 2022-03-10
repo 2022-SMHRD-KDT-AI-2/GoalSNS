@@ -28,9 +28,9 @@
 	function goLike(post_seq){
 		location.href="/goalsns/like.do?post_seq="+post_seq;
 	}
-	//function goDeleteLike(post_seq){
-	//	location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
-	//}
+	function goDeleteLike(post_seq){
+		location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
+	}
 	//function goDeleteContent(post_seq){
 	//	location.href="/goalsns/cmtDelete.do?post_seq="+post_seq;
 	//}
@@ -53,7 +53,7 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
- 		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a> -->
+ 		<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>
  		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
