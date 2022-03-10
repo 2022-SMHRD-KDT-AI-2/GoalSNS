@@ -111,6 +111,11 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 			if(dao.memChallSelect(mcvo)==null) {
 				dao.memChellInsert(mcvo);
 			}
+			
+			PostVO pvo = new PostVO();
+			pvo.setChell_seq(chell_seq);
+			pvo.setPost_seq(post_seq);
+			dao.postChellUpdate(pvo);
 		}
 	}
 	return "redirect:/main.do"; // 메인으로 이동하게끔..

@@ -8,7 +8,7 @@
     display:flex; 
     flex-direction: row; 
     width: 70%;
-    height:700px;
+    height:820px;
     margin-left: 200px;
     
    
@@ -17,7 +17,7 @@
     position: absolute;
     width: 193px;
     left: 199px;
-    height: 700px;
+    height: 820px;
     text-align: center;
     background-color: white;
     border-right:solid whitesmoke 1px;
@@ -28,20 +28,18 @@
 .item2{
 	flex-basis: content;
 	position: absolute;
-    top: 186px;
+    top: 120px;
     padding-left: 520px;
     float: left;
-	
-
 }
 .profilEidt_1{
 	flex-basis: content;
 	position: absolute;
     top: 85px;
     left:32px;
-    border-right:solid whitesmoke 1px;
+    border-right:solid black 1px;
     width: 160px;
-    height: 100px;	
+    height: 20px;	
    
     
 }
@@ -50,51 +48,62 @@
 	position: absolute;
     top: 135px;
     left: 32px;
-    border-right:solid black 1px;
+    /*border-right:solid whitesmoke 1px;*/
     width: 160px;
     height: 20px;	
+} 
+.a_1{
+	color: black;
+	font-size: 15px;
+	line-height: 22px;
 }
-a{
+.a_2{
 	color: gray;
 	font-size: 15px;
 	line-height: 22px;
 }
+.profilePic{
+	 width: 70px;
+    height: 70px; 
+   
+    overflow: hidden;
+	
+}
+
+.profilePic_1{
+	
+	
+	align:"left"; 
+	border:"0";
+	 width: 100px;
+    height: 100px;
+    object-fit: cover;
+     border-radius: 70%;
+	
+}
 .btn_1{
 	padding-left: 175px;
 		
-}
-.btn-info:hover {
-    color: #fff;
-    background-color: #FF0000;
-    border-color: #FF0000;
-}
-h3{
-	padding-left: 160px;
-}
-.btn btn-info btn-sm{
-	background-color: #FF0000;
-	border-color: #FF0000;
-	 
-}
-p{
-	color: A8A8A8;
-	font-size: 11px;
-}
+}	
 .form-control{
 	background: white;
-    width: 350px;
+    width: 490px;
 }
-.form-group{
+form-group{
 	    margin-bottom: 40px;
+	    font-size: 13px;
+        line-height: 19px;
+}
+p{
+	   font-size: 11px;
+       line-height: 19px;
+       color:  #A8A8A8;
+}
+strong{
+	   font-size: 13px;
+       line-height: 19px;
+       color: #A8A8A8;
 }
 .pabox{
 	padding-bottom: 10px;
-	width: 800px;
-}
-/* 여기 아래처럼 사용자 이름에 div 줘서 float:left 속성을 주면 될것같아요!
-input 창 길이는 input에 width를 통해 바꿨구여, 
-사용자 이름 살짝 아래로 내릴려고 padding-top: 10px 줬어여~~*/
-.test{
-	float:left;
-	padding-top: 10px;
-}
+}	

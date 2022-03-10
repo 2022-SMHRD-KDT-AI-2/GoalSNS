@@ -62,17 +62,7 @@ a{
 .fa-ellipsis{
   font-size: 20px;
   color: black;
-  margin-left: 480px;
 }
-/* 모달창 구성... */
-.mybtn {
-    outline: 0;
-    box-shadow: none;
-    background-color: white;
-    border: 0;
-    margin-left: 12px;
-}
-/* 끝 */
 .postfile{
   margin: 0%;
 }
@@ -196,4 +186,90 @@ a{
     padding-bottom: 16.6px;
     font-size: 13pt;
   }
+  
+/* ...눌렀을 때, 모달창 구성 */
+.mybtn {
+    outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
+    float: right;
+    margin: 12px;
+    padding-top: 15px;
+}  
+.modal-box{
+	border-bottom: 1px solid #C4C4C4;
+	text-align:center;
+}
+.modal-content{
+	height: auto;
+	width: 400px;
+}
+.modal-red{
+	color: red;
+	font-size: 18px;
+	font-weight: 500;
+	display:block;
+	padding:25px;
+}
+.modal-red:hover{
+	color: red;
+}
+.modal-blue{
+	color: #52A1FF;
+	font-size: 18px;
+	font-weight: 500;
+	display:block;
+	padding:25px;
+}
+.modal-blue:hover{
+	color: #52A1FF;
+}
+.black{
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+	display:block;
+	padding:25px;
+}
+.black:hover{
+	color: black;
+}
+
+.canbtn{
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+	padding:25px;
+	outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
+    width:390;
+}
+.modal_cancel{
+	text-align:center;
+}
+
+/* 모달 정중앙 */
+.modal {
+        text-align: center;
+        left:200px;
+        bottom: 50px;
+}
+ 
+@media screen and (min-width: 768px) { 
+        .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+        }
+}
+ 
+.modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+}
   

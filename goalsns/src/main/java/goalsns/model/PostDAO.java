@@ -155,6 +155,14 @@ public class PostDAO {
 		return vo;
 	}
 	
+	// (7) 포스트 데이터에 챌린지 해시태그 아이디 업데이트
+	public void postChellUpdate(PostVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.update("postChellUpdate", vo);
+		session.commit();
+		session.close();
+	}
+	
 	//-----------------------------------프로필 기능 구현을 위한 메소드--------------------------------------
 	
 	// (1) 해당 유저의 포스트 리스트 가져오기.
