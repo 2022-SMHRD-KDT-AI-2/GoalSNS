@@ -17,7 +17,7 @@
 <link href="./resources/CSS/searchResult.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+<jsp:include page="menu.jsp" />
 <div class="top_space">
 	<div><span class="search_title">${search}</span></div>
 	<div><span class="search_count">게시물 ${postCnt}</span></div>
@@ -28,7 +28,7 @@
 	<c:if test="${status.index mod 3 == 0}">
 		<div class="img_row">	
 	</c:if>
-		<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+		<div class="imgbox"><a href="/goalsns/postContent.do?post_seq=${post.post_seq}"><img src="./postPic/${post.post_file}"></a></div>
 	<c:if test="${((status.index+1) mod 3 == 0) || status.last}">
 		</div>
 	</c:if>

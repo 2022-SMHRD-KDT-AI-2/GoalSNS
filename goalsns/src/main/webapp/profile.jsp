@@ -22,7 +22,7 @@
 <!-- 모달끝 -->
 <script type="text/javascript">
 	function goProfileEdit(){
-		location.href="/goalsns/profileEditform.do";
+		location.href="/goalsns/profileEditForm.do";
 	}
 	function goFollow(mem_id){
 		location.href="/goalsns/follow.do?mem_id="+mem_id;
