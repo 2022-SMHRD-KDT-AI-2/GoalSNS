@@ -23,7 +23,6 @@ public class HandlerMapping {
 		mappings.put("/profile.do", new ProfileDefaultController());
 		mappings.put("/follow.do", new FollowController());
 		mappings.put("/unfollow.do", new UnFollowController());
-		mappings.put("/profileEditform.do", new ProfileEditController());
 		mappings.put("/cmt.do", new CmtController());
 		mappings.put("/search.do", new SearchResultController());
 		mappings.put("/profileEditForm.do", new ProfileEditFormController());
