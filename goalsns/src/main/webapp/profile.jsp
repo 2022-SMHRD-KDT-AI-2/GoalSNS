@@ -46,7 +46,7 @@
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
 					<c:if test="${memvo.mem_id!=mvo.mem_id}">
 					<c:if test="${!empty memfo}">
-					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">언팔로우</a>
+					<a href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
 					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">언팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 					</c:if>
