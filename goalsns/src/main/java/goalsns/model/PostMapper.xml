@@ -36,6 +36,11 @@
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
   		select * from t_post where mem_id=#{mem_id}
   	</select>
+  	<select id="getTrend" resultType="goalsns.entity.TrendVO">
+  		select mc.chell_seq, mc.cnt, c.chell_name
+from (select * from (select chell_seq, count(mem_id) as cnt from t_mem_chell group by chell_seq order by count(mem_id)) <![CDATA[where rownum<=6]]>) mc, t_chell c
+where c.chell_seq = mc.chell_seq
+  	</select>
   	
 <!-- 챌린지 해시태그 기능 -->
   	<select id="challSelect" resultType="goalsns.entity.ChellVO">

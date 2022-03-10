@@ -86,7 +86,11 @@
   <div>
     <div id="sidebar">
       <h2>인기 챌린지 해시태그</h2>
-      <div class="chell1">#30일_물마시기_챌린지</div>
+      <c:forEach var="t" items="${trend}" varStatus="i">
+      <div class="chell1">@${t.chell_name}</div>
+      <div id="chellcount1">${t.cnt}명 참여 중</div>
+      </c:forEach>
+<!--       <div class="chell1">#30일_물마시기_챌린지</div>
       <div id="chellcount1">1233명 참여 중</div>
       <div class="chell2">#30일_물마시기_챌린지</div>
       <div id="chellcount2">1233명 참여 중</div>
@@ -97,7 +101,7 @@
       <div class="chell5">#30일_물마시기_챌린지</div>
       <div id="chellcount5">1233명 참여 중</div>
       <div class="chell6">#30일_물마시기_챌린지</div>
-      <div id="chellcount6">1233명 참여 중</div>
+      <div id="chellcount6">1233명 참여 중</div> -->
     </div>
     <div id="sidebar2">
       <h2>유저랭킹</h2>
