@@ -27,6 +27,7 @@ public class FollowController implements Controller {
 		String from_mem=(String)memvo.getMem_id(); // 자신의 아이디
 		fvo.setTo_mem(to_mem);
 		fvo.setFrom_mem(from_mem);
+		//팔로우DB에 저장
 		dao.follow(fvo);
 		PostDAO pdao = new PostDAO();
 		List<FollowVO> memfo=dao.getFollowInfo(fvo);
