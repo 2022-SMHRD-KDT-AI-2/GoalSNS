@@ -22,10 +22,10 @@
 <!-- 모달끝 -->
 <script type="text/javascript">
 	function goProfileEdit(){
-		location.href="/goalsns/profileEditform.do";
+		location.href="/goalsns/profileEditForm.do";
 	}
 	function goFollow(mem_id){
-		location.href="/goalsns/following.do?mem_id="+mem_id;
+		location.href="/goalsns/follow.do?mem_id="+mem_id;
 	}
 </script>
 </head>
@@ -44,10 +44,17 @@
 				<div class="prof_edit">
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
-					<a href="/goalsns/following.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus"></span></button>
+					<c:if test="${memvo.mem_id!=mvo.mem_id}">
+					<c:if test="${!empty memfo}">
+					<a href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn following1">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">언팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					</c:if>
+					<c:if test="${empty memfo}">
+					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
+					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					</c:if>
+					</c:if>
 				</div>
 				<div class="prof_reward">
 					<button class="profile_btn reward">챌린지 리워드</button>
