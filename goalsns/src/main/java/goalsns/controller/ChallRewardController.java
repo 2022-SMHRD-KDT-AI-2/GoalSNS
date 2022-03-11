@@ -39,6 +39,7 @@ public class ChallRewardController implements Controller {
 		request.setAttribute(커다란리스트, 커다란리스트);
 		
 		return "challReward";
+		
 	}
 
 }
