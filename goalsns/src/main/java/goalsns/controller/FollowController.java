@@ -36,6 +36,7 @@ public class FollowController implements Controller {
 		List<FollowVO> followlist=dao.followAll(fvo);
 		List<FollowVO> followedlist=dao.followedAll(fvo);
 		int postCnt = postList.size();
+		if(from_mem!=id) {
 		request.setAttribute("mvo", mvo);
 		request.setAttribute("memfo", memfo);
 		request.setAttribute("postList", postList);
@@ -43,5 +44,8 @@ public class FollowController implements Controller {
 		request.setAttribute("followlist", followlist);
 		request.setAttribute("followedlist", followedlist);
 		return "profile";
+		}else {
+			return "redirect:/profile.do";
+		}
 	}
 }

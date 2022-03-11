@@ -35,7 +35,8 @@
       <img src="./resources/images/profile.png" class="postfile"width="100%">
     </div>
     <section>
- 		<a><i class="fa-regular fa-heart"></i></a>
+ 		<button onclike="like()"><i class="fa-regular fa-heart"></i></button>
+ 		<i class="fa-solid fa-heart"></i>
  		<button type="button" class="cutes" data-toggle="modal" data-target="#cute"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
     </section>http://localhost:8081/goalsns/mainTest.jsp#
     <div>

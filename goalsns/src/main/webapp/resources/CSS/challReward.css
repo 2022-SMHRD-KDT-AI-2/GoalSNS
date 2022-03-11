@@ -191,10 +191,26 @@
 	color:#E8E8E8;
 	padding-top: 50px;
 }
-
 .fa-trophy{
-	font-size:50px;
-	color: red;
+	font-size:60px;
+}
+.red{
+	color:#FF6770;
+}
+.yellow{
+	color:#FFF069;
+}
+.green{
+	color:#87F16D;
+}
+.blue{
+	color:#6D94F8;
+}
+.rainbow{
+	  background:linear-gradient(to right bottom, #FF6770 15%,  #FFF069, #87F16D, #6D94F8, #CC64DD,#CC64DD);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
 }
 
 
