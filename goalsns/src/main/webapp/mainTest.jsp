@@ -17,6 +17,9 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="./resources/js/all.js"></script>
+
 <!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달끝 -->
@@ -35,8 +38,15 @@
       <img src="./resources/images/profile.png" class="postfile"width="100%">
     </div>
     <section>
- 		<button onclike="like()"><i class="fa-regular fa-heart"></i></button>
- 		<i class="fa-solid fa-heart"></i>
+    
+    
+    <!-- heart hover 시 연하게 바뀜! -->
+ 		<button id="heart"><i class="fa-regular fa-heart"></i></button>
+ 		<button id="disheart"><i class="fa-solid fa-heart"></i></button>
+ 		
+ 		
+ 		
+ 		
  		<button type="button" class="cutes" data-toggle="modal" data-target="#cute"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
     </section>http://localhost:8081/goalsns/mainTest.jsp#
     <div>
