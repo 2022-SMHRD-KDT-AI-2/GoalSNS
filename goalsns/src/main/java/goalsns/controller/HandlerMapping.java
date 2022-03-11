@@ -30,6 +30,7 @@ public class HandlerMapping {
 		mappings.put("/likeDelete.do", new LikeDeleteController());
 		mappings.put("/cmtDelete.do", new CmtDeleteController());
 		mappings.put("/followList.do", new FollowListController());
+		mappings.put("/cmtList.do", new CmtListController());
 
 		
 	}

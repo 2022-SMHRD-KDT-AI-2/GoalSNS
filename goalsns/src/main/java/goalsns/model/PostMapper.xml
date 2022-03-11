@@ -99,14 +99,22 @@ where c.chell_seq = mc.chell_seq
 		mem_id
 		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
 	</insert>
+	
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
 		delete from t_like 
 		where post_seq=#{post_seq}
 	</delete>
-	<!-- 좋아요 -->
+	<!-- 댓글 삭제 -->
 	<delete id = "cmtDelete" parameterType="goalsns.entity.CmtVO">
 		delete from t_cmt 
 		where post_seq=#{post_seq}
 	</delete>
+	
+	<!-- 댓글 리스트 -->
+	<select id="selectAll" resultType = "goalsns.entity.CmtVO">
+		select from t_cmt 
+		<![CDATA[where ROWNUM <= 4]]>
+	</select>
+	
 </mapper>
