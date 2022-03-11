@@ -124,14 +124,12 @@
           <span class="model_title">팔로워</span>
         </div>
         <div class="follower-box">
+        	<c:forEach var="fled" items="${followedlist}">
 	        <div class="follower_list">
 	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        	<a href="#" name="mem_id" class="mem_id">${fled.from_mem}</a> 
 	        </div>
-	        <div class="follower_list">
-	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
-	        </div>        
+	        </c:forEach>
         </div>       
       </div>    
     </div>
@@ -157,16 +155,13 @@
           <span class="model_title">팔로잉</span>
         </div>       
         <div class="follower-box">
+	        <c:forEach var="fl" items="${followlist}">
 	        <div class="follower_list">
 	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
-	        	<button class="unfollow">팔로잉</button>  	
+	        	<a href="#" name="mem_id" class="mem_id">${fl.to_mem}</a>
+	        	<button class="unfollow">팔로잉</button>  
 	        </div>
-	        <div class="follower_list">
-	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
-	        	<button class="unfollow">팔로잉</button>  	
-	        </div> 
+	        </c:forEach>
         </div>
       </div>        
     </div>
