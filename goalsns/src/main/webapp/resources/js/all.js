@@ -1,9 +1,10 @@
 $(document).on('click','#heart',function(){
-	$('.fa-heart').css({
+	$('#disheart').css({
 		'color':'red'
 	})
 })
 $(document).on('click','#disheart',function(){
-	$('.heart').css({
+	$('#disheart').css({
+		'color':'black'
 	})
 })
