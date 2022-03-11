@@ -12,6 +12,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="font-awesome-animation.min.css">
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
@@ -40,7 +41,7 @@
 					<c:if test="${!empty memfo}">
 					<a href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">언팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<button class="profile_btn" onclick="goUnFollow(${mvo.mem_id})">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
@@ -77,7 +78,21 @@
 
 <!-- 리워드 부분 나오기!  -->
 
-
+<div class="reward_box">
+	<div class="re_box_title">@물마시기_챌린지</div>
+	<div class="re_box_middle">
+		<div class="re_color"><i class="fa-solid fa-trophy red"></i></div>
+		<!-- <div class="re_color"><i class="fa-solid fa-trophy yellow"></i></div>
+		<div class="re_color"><i class="fa-solid fa-trophy green"></i></div>
+		<div class="re_color"><i class="fa-solid fa-trophy blue"></i></div>
+		<div class="re_color"><i class="fa-solid fa-trophy rainbow"></i></div> -->
+		<div class="sign"> | </div>
+		<div class="re_percent">90%</div>
+		<div class="sign"> | </div>
+		<div class="re_date">20일 성공!</div>
+	</div>
+	<div class="re_box_bottom"><div>달성표</div></div>
+</div>
 
 
 

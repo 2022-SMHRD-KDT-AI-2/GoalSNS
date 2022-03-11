@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,10 +33,10 @@
        
 		<div class="item1">
             <div class="profilEidt_1">
-                <a class="a_1" href="">프로필 편집</a>
+                <a class="a_1" href="/goalsns/profileEdit.jsp">프로필 편집</a>
             </div>
             <div class="delete">
-                <a class="a_2" href="">회원 탈퇴</a>
+                <a class="a_2" href="/goalsns/memberDelete.jsp">회원 탈퇴</a>
             </div>
         </div>
      
@@ -46,7 +47,7 @@
            <div class="pabox">          
             <!-- <label for="mem_id"> 사용자 이름 </label>   -->
             <div class="test"><label  for="mem_id"> <span class="space">사용자 이름</span> </label></div>        
-            <input type="text" class="form-control" name="mem_id" value="">               
+            <input type="text" class="form-control" name="mem_id" value="${memvo.mem_id}" readonly="readonly">               
            </div>
                 <p>가입한 회원님의 계정을 확인해 주세요.</p>           
             </div>           
@@ -54,7 +55,7 @@
              <div class="form-group">
              <div class="pabox">
              <div class="test"><label  for="mem_email"><span class="space">이메일 주소</span></label></div>                
-             <input type="email" class="form-control" name="mem_email" id="mem_email"> 
+             <input type="email" class="form-control" name="mem_email" id="mem_email" value="${memvo.mem_email}" readonly="readonly"> 
                </div>
                 <p>가입한 이메일을 확인해주세요.</p>
                </div>
@@ -69,7 +70,7 @@
            </div>
           
             <div class="btn_1">
-             <button type="submit" class="btn btn-info btn-sm">탈퇴하기</button>   	
+             <button type="submit" class="btn btn-danger btn-sm">탈퇴하기</button>   	
 		    </div>
         </div>  
      </form>	     

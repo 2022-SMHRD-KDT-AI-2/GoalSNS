@@ -17,6 +17,9 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+<!-- 모달 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 모달끝 -->
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -32,8 +35,9 @@
       <img src="./resources/images/profile.png" class="postfile"width="100%">
     </div>
     <section>
- 		<a><i class="fa-regular fa-heart"></i></a>
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+ 		<button onclike="like()"><i class="fa-regular fa-heart"></i></button>
+ 		<i class="fa-solid fa-heart"></i>
+ 		<button type="button" class="cutes" data-toggle="modal" data-target="#cute"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
     </section>http://localhost:8081/goalsns/mainTest.jsp#
     <div>
       <span name="mem_id" class="post_id">글쓴아이디</span>
@@ -72,7 +76,7 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart"></i></a>
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+ 		<button type="button" class="cutes" data-toggle="modal" data-target="#cute"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
     </section>
     <div>
       <span name="mem_id" class="post_id">글쓴아이디</span>
@@ -124,6 +128,32 @@
   </div>
   
 </div>
+
+<!-- 모달창 -->
+<div class="background">
+  <div class="window">
+    <div class="popup"></div>
+</div>
+
+<!-- 모달 -->
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="cute" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-box">
+			여기 안에 프로필화면
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<!-- 모달 끝  -->
+
+
+
+
 
 <jsp:include page="footer.jsp" />
 

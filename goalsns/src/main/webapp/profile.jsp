@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
@@ -27,6 +28,9 @@
 	function goFollow(mem_id){
 		location.href="/goalsns/follow.do?mem_id="+mem_id;
 	}
+	function goUnFollow(mem_id){
+		location.href="/goalsns/follow.do?mem_id="+mem_id;
+	}
 </script>
 </head>
 <body>
@@ -34,7 +38,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="#"><img class="img-circle" src="./resources/images/profile.png" width="200" height="200"></a>
+			<a href="#"><img class="img-circle" src="./profilePic/${memvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
@@ -48,12 +52,11 @@
 					<c:if test="${!empty memfo}">
 					<a href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">언팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<button class="profile_btn" onclick="goUnFollow(${mvo.mem_id})">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
 					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
-					<!-- <button class="profile_btn">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button> -->
 					</c:if>
 					</c:if>
 				</div>
@@ -67,10 +70,10 @@
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
 				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 20</button>
+					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(followedlist)}</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 19</button>
+					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(followlist)}</button>
 				</div>
 			</div>
 
@@ -122,14 +125,12 @@
           <span class="model_title">팔로워</span>
         </div>
         <div class="follower-box">
+        	<c:forEach var="fled" items="${followedlist}">
 	        <div class="follower_list">
 	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
+	        	<a href="#" name="mem_id" class="mem_id">${fled.from_mem}</a> 
 	        </div>
-	        <div class="follower_list">
-	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
-	        </div>        
+	        </c:forEach>
         </div>       
       </div>    
     </div>
@@ -155,16 +156,13 @@
           <span class="model_title">팔로잉</span>
         </div>       
         <div class="follower-box">
+	        <c:forEach var="fl" items="${followlist}">
 	        <div class="follower_list">
 	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
-	        	<button class="unfollow">팔로잉</button>  	
+	        	<a href="#" name="mem_id" class="mem_id">${fl.to_mem}</a>
+	        	<button class="unfollow">팔로잉</button>  
 	        </div>
-	        <div class="follower_list">
-	        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="#" name="mem_id" class="mem_id">challin_shot</a>
-	        	<button class="unfollow">팔로잉</button>  	
-	        </div> 
+	        </c:forEach>
         </div>
       </div>        
     </div>

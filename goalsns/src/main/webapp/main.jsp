@@ -46,7 +46,7 @@
 <c:forEach var="vo" items="${list}">
   <div id="peedbox">
     <div id="peedboxtop" >
-        <a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+        <a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
         <a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
       	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     </div>
@@ -61,12 +61,17 @@
     </section>
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
-      <c:if test="${fn:contains(vo.post_content,'#')}">
-      <a href="#" class="hashtag">${vo.post_content}</a>
+      <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
+      <c:if test="${fn:contains(f,'#')}">
+      <a href="#" class="hashtag">${f}</a>
       </c:if>
-      <c:if test="${fn:contains(vo.post_content,'@')}">
-      <a href="#" class="chall_hashtag">${vo.post_content}</a>
+      <c:if test="${fn:contains(f,'@')}">
+      <a href="#" class="chall_hashtag">${f}</a>
       </c:if>
+      <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
+      <span>${f}</span>
+      </c:if>
+      </c:forEach>
    </div>
    <div class="divplus">
       <a href="#" class="plus">댓글 23개 모두 보기</a>

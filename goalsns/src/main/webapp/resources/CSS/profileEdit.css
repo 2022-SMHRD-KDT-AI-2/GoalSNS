@@ -10,7 +10,8 @@
     width: 70%;
     height:820px;
     margin-left: 400px;
-    
+    border:solid #EAEAEA 1px;
+    border-radius: 5px; 
    
 }
 .item1{	
@@ -20,7 +21,12 @@
     height: 820px;
     text-align: center;
     background-color: white;
-    border-right:solid whitesmoke 1px;     
+    border-right:solid #E5E5E5 1px;
+    border-top:solid 1px #EAEAEA;   
+    border-left:solid 1px #EAEAEA;   
+    border-bottom:solid 1px #EAEAEA;
+    border-radius: 5px; 
+    
 }
 .item2{
 	flex-basis: content;
@@ -83,20 +89,32 @@ span{
 	
 }
 .btn_1{
-    padding-left: 290px;
-    padding-top: 50px;	
+    padding-left: 290px;	
 }	
-.form-control{
+.form_impormation{
 	background: white;
     width: 490px;
     float: right;
     margin-bottom: 10px;
+    border-radius: 3px;
+    border:solid 1px #E8E8E8;
+    height: 40px;
 }
-form-group{
+.selfarea{
+	background: white;
+    width: 490px;
+    float: right;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border:solid 1px #E8E8E8;
+    height: 60px;
+}
+
+.edit_form{
 	margin-bottom: 40px;
 	font-size: 13px;
     line-height: 19px;
-        margin-bottom: 15px;
+    margin-bottom: 15px;
     padding-bottom: 21px;
 }
 p{
@@ -116,7 +134,7 @@ strong{
 	padding-bottom: 10px;
 	
 }
-.test{
+.edit_id{
 	float:left;
 	padding-top: 10px;
 	padding-right: 25px;
@@ -136,4 +154,7 @@ label{
 }
 .picture{
 	margin-left: 110px;
+}
+.profilePic_1{
+	border: 1px solid #C4C4C4;
 }
