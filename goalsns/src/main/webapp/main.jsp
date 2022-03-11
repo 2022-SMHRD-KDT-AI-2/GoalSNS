@@ -30,9 +30,9 @@
 	function goLike(post_seq){
 		location.href="/goalsns/like.do?post_seq="+post_seq;
 	}
-	function goDeleteLike(post_seq){
-		location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
-	}
+	//function goDeleteLike(post_seq){
+	//	location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
+	//}
 	//function goDeleteContent(post_seq){
 	//	location.href="/goalsns/cmtDelete.do?post_seq="+post_seq;
 	//}
@@ -55,7 +55,7 @@
     </div>
     <section>
  		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
- 		<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>
+ 		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
  		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
@@ -67,7 +67,7 @@
       </c:if>
       <c:if test="${fn:contains(f,'@')}">
       <a href="#" class="chall_hashtag">${f}</a>
-      </c:if>
+      </c:if>ㅌ`
       <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
       <span>${f}</span>
       </c:if>
@@ -77,8 +77,8 @@
       <a href="#" class="plus">댓글 23개 모두 보기</a>
    </div>
    <div>
-      <span name="mem_id" class="post_id">idididididididid</span>
-      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+      <span name="mem_id" class="post_id">123213</span>
+      <span class="post_con">ddddddddd</span>
    </div>
    <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
   

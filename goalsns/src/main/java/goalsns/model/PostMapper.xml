@@ -8,7 +8,7 @@
 		values (t_post_SEQ.nextval, #{post_content}, #{post_file}, #{mem_id})
 	</insert>
 	<select id="selectPosts" resultType="goalsns.entity.PostVO">
-  		select * from t_post where mem_id=(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc
+  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc
   	</select>
   	<select id="getPostByIdx" parameterType="int" resultType="goalsns.entity.PostVO">
   		select * from t_post where post_seq=#{post_seq}
@@ -34,7 +34,7 @@
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
   	</select>
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
-  		select * from t_post where mem_id=(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id}
+  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id}
   	</select>
   	<select id="getTrend" resultType="goalsns.entity.TrendVO">
   		select mc.chell_seq, mc.cnt, c.chell_name
@@ -99,14 +99,42 @@ where c.chell_seq = mc.chell_seq
 		mem_id
 		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
 	</insert>
+	
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
 		delete from t_like 
 		where post_seq=#{post_seq}
 	</delete>
-	<!-- 좋아요 -->
+	<!-- 댓글 삭제 -->
 	<delete id = "cmtDelete" parameterType="goalsns.entity.CmtVO">
 		delete from t_cmt 
 		where post_seq=#{post_seq}
 	</delete>
+
+	<!-- 챌린지 리워드 -->
+	<select id="getChellList" parameterType="goalsns.entity.MemberVO" resultType="goalsns.entity.MemChellVO">
+  		select * from t_mem_chell where mem_id = #{mem_id}
+  	</select>
+	<select id="getReward1" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.PostVO">
+  		select * from t_post where chell_seq = #{chell_seq} and mem_id = #{mem_id} order by post_date
+  	</select>
+ 	<select id="getReward2" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.TrackerVO">
+ 	<![CDATA[
+  		select DISTINCT c.today_str as monthly, TO_CHAR(p.post_date) as success, DECODE(TO_CHAR(p.post_date), NULL, 0, 1) AS SYNC_CHECK
+		from ( SELECT TO_CHAR (FIRST_DAY + LEVEL - 1) TODAY_STR
+		 		FROM (SELECT TRUNC(SYSDATE, 'MM') FIRST_DAY FROM DUAL)
+		 		CONNECT BY FIRST_DAY + LEVEL - 1 <= TRUNC(LAST_DAY(SYSDATE))) c
+		left join (select * from t_post where chell_seq=#{chell_seq} and mem_id=#{mem_id}) p 
+		on TO_CHAR(p.post_date) = c.today_str
+		order by c.today_str
+	]]>
+  	</select>
+
+	
+	<!-- 댓글 리스트 -->
+	<select id="selectAll" resultType = "goalsns.entity.CmtVO">
+		select from t_cmt 
+		order by mem_id desc
+	</select>
+	
 </mapper>

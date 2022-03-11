@@ -1,6 +1,8 @@
 package goalsns.model;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -13,9 +15,11 @@ import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.LikeVO;
 import goalsns.entity.MemChellVO;
+import goalsns.entity.MemberVO;
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
+import goalsns.entity.TrackerVO;
 import goalsns.entity.TrendVO;
 
 public class PostDAO {
@@ -215,6 +219,42 @@ public class PostDAO {
 		return list;
 	}	
 	
+	//-----------------------------------챌린지 리워드--------------------------------------
+	
+	// (1) 해당 멤버에 대한 챌린지 해시태그 리스트 반환.
+	public int[] getChellList(MemberVO mvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MemChellVO> list = session.selectList("getChellList", mvo); 
+		int[] chellList = new int[list.size()];
+		for(int i=0; i<list.size(); i++) {
+			chellList[i] = list.get(i).getChell_seq();
+		}
+		session.close();
+		return chellList;
+	}
+	
+	// (2) 리워드1
+	public String[] getReward1(MemChellVO mcvo) {
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		SqlSession session = sqlSessionFactory.openSession();
+		List<PostVO> list = session.selectList("getReward1", mcvo); 
+		String[] dateList = new String[list.size()];
+		for(int i=0; i<list.size(); i++) {
+			dateList[i] = dateFormat.format(list.get(i).getPost_date());
+		}
+		session.close();
+		return dateList;
+	}
+
+	// (3) 리워드2
+	public List<TrackerVO> getReward2(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<TrackerVO> list = session.selectList("getReward2", mcvo); 
+		session.close();
+		return list;
+	}
+	
+	//-----------------------------------댓글, 좋아요--------------------------------------
 	public int cmt(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo = session.insert("cmt", vo);
@@ -222,7 +262,7 @@ public class PostDAO {
 		session.close();
 		return memvo;
 	}
-	
+	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
 	public int like(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo = session.insert("like", vo);
@@ -243,6 +283,13 @@ public class PostDAO {
 		session.delete("cmtDelete", post_seq);
 		session.commit();
 		session.close();
+	}
+	
+	public List<CmtVO> selectAll(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<CmtVO> list = session.selectList("selectAll",vo);
+		session.close();
+		return list;	
 	}
 
 }

@@ -26,6 +26,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달끝 -->
 </head>
+<script type="text/javascript">
+	function goContent(post_seq){
+		location.href="/goalsns/postContent.do?post_seq="+post_seq;
+	}
+	function goLike(post_seq){
+		location.href="/goalsns/like.do?post_seq="+post_seq;
+	}
+</script>
 <body>
 <jsp:include page="menu.jsp" />
 <div class="containerbox">
@@ -86,9 +94,9 @@
 		
 		<!-- 세번째 줄(좋아요, 대화상자 아이콘) -->
 		<div>
-			<a><i class="fa-regular fa-heart"></i></a>
+			<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})" ></i></a>
 			<!-- 아래를 클릭 시, 검색칸의 커서가 켜져야 한다. -->
- 			<a><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+ 			<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
 		</div>
 		
 		<!-- 네번째 줄(좋아요 몇개) -->
