@@ -276,3 +276,25 @@ a{
         vertical-align: middle;
 }
   
+/* cute 모달창 */
+/* 부트스트랩 모달창 */
+
+.cutes {
+    outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border: 0;
+    padding:0;
+}
+
+/* .modal-box{
+	border-bottom: 1px solid #C4C4C4;
+	text-align:center;
+}
+.modal-content{
+	height: auto;
+	width: 400px;
+} */
+
+  
+  

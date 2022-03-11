@@ -147,7 +147,7 @@
 	background-color:white;
 	width: 70%;
     height: 380px;
-    margin: 40px auto;
+    margin: 50px auto;
     border: 1px solid #EAEAEA;
     justify-content: space-between;
     border-radius:5px;
@@ -163,11 +163,48 @@
 }
 .re_box_middle{
 	height:300px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center; 
 }
+
+.re_color{
+	font-size: 20pt;
+	font-family: 'NeoDunggeunmo';
+	padding: 50px;
+    padding-top: 80px;
+}
+.re_percent{
+	font-size: 20pt;
+	font-family: 'NeoDunggeunmo';
+	padding: 50px;
+    padding-top: 80px;
+}
+.re_date{
+	font-size: 20pt;
+	font-family: 'NeoDunggeunmo';
+	padding: 50px;
+    padding-top: 80px;
+}
+.sign{
+	font-size: 50pt;
+	color:#E8E8E8;
+	padding-top: 50px;
+}
+
+.fa-trophy{
+	font-size:50px;
+	color: red;
+}
+
+
 .re_box_bottom{
 	height:300px;
 }
-
+.re_box_bottom > div{
+	margin:40px;
+	border-top: 1px solid #E8E8E8;
+}
 
 /* 팔로워 모달창 */
 .modal-content{
