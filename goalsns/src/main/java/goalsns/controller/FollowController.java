@@ -33,11 +33,15 @@ public class FollowController implements Controller {
 		List<FollowVO> memfo=dao.getFollowInfo(fvo);
 		MemberVO mvo = dao.getMemberInfo(id);
 		List<PostVO> postList = pdao.getMemberPosts(to_mem);
+		List<FollowVO> followlist=dao.followAll(fvo);
+		List<FollowVO> followedlist=dao.followedAll(fvo);
 		int postCnt = postList.size();
 		request.setAttribute("mvo", mvo);
 		request.setAttribute("memfo", memfo);
 		request.setAttribute("postList", postList);
 		request.setAttribute("postCnt", postCnt);
+		request.setAttribute("followlist", followlist);
+		request.setAttribute("followedlist", followedlist);
 		return "profile";
 	}
 }

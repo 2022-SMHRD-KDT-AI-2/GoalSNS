@@ -37,7 +37,7 @@
 	<div class="right_item">
 		<!--첫번째 줄 -->
 		<div id="right_item_top" >
-        	<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+        	<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
         	<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
         	<!-- 내가 상대방을 팔로우 했다면, 팔로잉보여지게(클릭X),
         	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
