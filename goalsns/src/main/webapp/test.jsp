@@ -13,8 +13,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<p>${postCnt}개의 게시물</p>
-	<c:forEach var="post" items="${list}">
-		<p>${post.post_seq}</p>
-	</c:forEach>
+	<a href="/goalsns/challreward.do">챌린지리워드</a>
 </html>
