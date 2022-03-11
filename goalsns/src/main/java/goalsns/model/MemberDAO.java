@@ -46,10 +46,9 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public int idCheck(MemberVO vo) {
+	public MemberVO idCheck(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int result = session.insert("idCheck", vo);
-		session.commit();
+		MemberVO result = session.selectOne("idCheck", vo);
 		session.close();
 		return result;
 	}
