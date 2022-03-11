@@ -24,6 +24,7 @@ public class ChallRewardController implements Controller {
 		 * (2) 챌린지 해시태그 아이디에 관한 해당 로그인 유저의 월별 달성도 출력. (작은 리스트)
 		 * (3) 챌린지 해시태그 아이디에 관한 해당 로그인 유저의 월별 달성표 출력. (작은 리스트)
 		 * 리스트[ [해시태그아이디, 리워드1, 리워드2] [해시태아이디, 리워드1, 리워드2] ...] 
+		 * 커다란 리스트 엔티티, 달성도 엔티티, 달성표 엔티티(이미 만듦)
 		 */
 		PostDAO pdao = new PostDAO();
 		MemChellVO cvo = new MemChellVO();
