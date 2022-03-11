@@ -52,6 +52,10 @@
 		select * from t_follow
 		where from_mem=#{from_mem}
 	</select>
+	<select id="followAllcount" resultType="int">
+		select count(*) from t_follow
+		where from_mem=#{from_mem}
+	</select>
 	<!-- 팔로워리스트 가져오기 -->
 	<select id="followedAll" resultType="goalsns.entity.FollowVO">
 		select * from t_follow
