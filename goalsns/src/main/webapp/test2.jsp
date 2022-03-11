@@ -11,6 +11,7 @@
 </head>
 <body>
 <c:forEach var="reward" items="${rewardList}">
+	<p></p>
 	
 	<hr>
 </c:forEach>
