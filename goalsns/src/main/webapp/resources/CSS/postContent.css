@@ -20,6 +20,8 @@
 	border: 1px solid #EAEAEA;
 	border-radius: 5px;
 	width:100%;
+	display: flex;
+    flex-direction: column;
 }
 
 /* right_item_top 率 技何荤亲甸 */
@@ -57,7 +59,8 @@ a{
 /* right_item_middle 率 技何荤亲甸 */
 .right_item_middle{
 	overFlow : auto;
-	border-bottom: 1px solid #EAEAEA;	
+	border-bottom: 1px solid #EAEAEA;
+	flex-grow: 2;	
 }
 .me_coments{
 	display: flex;
