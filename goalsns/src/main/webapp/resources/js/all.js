@@ -1,3 +1,9 @@
-function like(){
-	
-}
+$(document).on('click','#heart',function(){
+	$('.fa-heart').css({
+		'color':'red'
+	})
+})
+$(document).on('click','#disheart',function(){
+	$('.heart').css({
+	})
+})
