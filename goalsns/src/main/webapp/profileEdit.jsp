@@ -41,9 +41,9 @@
         </div>
      
         <div class="item2">
-        
 
        <div class="edit_form">
+
        <h3>challin_shot</h3>
 
        <div class="form-group">
@@ -59,8 +59,6 @@
            <div class="pabox">          
             <div class="test"><label for="mem_name"><span class="space">이름</span></label> </div>         
 
-            <input type="text" class="form_impormation" name="mem_name" value="">               
-
             <input type="text" class="form-control" name="mem_name" value="${memvo.mem_name}">               
 
            </div>
@@ -71,8 +69,6 @@
           <div class="edit_form">
            <div class="pabox">          
             <div class="test"><label for="mem_id"><span class="space">사용자 이름 </span></label>  </div>        
-
-            <input type="text" class="form_impormation" name="mem_id" value="">               
 
             <input type="text" class="form-control" name="mem_id" value="${memvo.mem_id}" readonly="readonly">               
 
@@ -86,6 +82,7 @@
 
              <textarea rows="5" class="selfarea" name="mem_about"></textarea>
 
+
              <textarea rows="5" class="form-control" name="mem_about">${memvo.mem_about}</textarea>
 
              </div>
@@ -98,11 +95,17 @@
                
                  <div class="test"><label for="mem_email"><span class="space">이메일 주소</span></label></div>            
                   <div class="pabox">
+<<<<<<< HEAD
 
                  <input type="email" class="form_impormation" name="mem_email" id="mem_email"> 
 
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
                  <input type="email" class="form-control" name="mem_email" id="mem_email" value="${memvo.mem_email}"> 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
                </div>
                 <p>가입한 이메일을 확인해주세요.</p>
              </div>
