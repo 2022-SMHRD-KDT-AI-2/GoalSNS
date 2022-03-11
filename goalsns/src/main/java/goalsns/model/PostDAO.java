@@ -16,6 +16,7 @@ import goalsns.entity.MemChellVO;
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
+import goalsns.entity.TrackerVO;
 import goalsns.entity.TrendVO;
 
 public class PostDAO {
@@ -215,6 +216,37 @@ public class PostDAO {
 		return list;
 	}	
 	
+	//-----------------------------------챌린지 리워드--------------------------------------
+	
+	// (1) 해당 멤버에 대한 챌린지 해시태그 리스트 반환.
+	public int[] getChellList(String mem_id) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MemChellVO> list = session.selectList("getChellList", mem_id); 
+		int[] chellList = new int[list.size()];
+		for(int i=0; i<list.size(); i++) {
+			chellList[i] = list.get(i).getChell_seq();
+		}
+		session.close();
+		return chellList;
+	}
+	
+	// (2) 리워드1
+	public List<String> getReward1(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<String> list = session.selectList("getReward1", mcvo); 
+		session.close();
+		return list;
+	}
+
+	// (3) 리워드2
+	public List<TrackerVO> getReward2(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<TrackerVO> list = session.selectList("getReward2", mcvo); 
+		session.close();
+		return list;
+	}
+	
+	//-----------------------------------댓글, 좋아요--------------------------------------
 	public int cmt(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo = session.insert("cmt", vo);

@@ -109,4 +109,22 @@ where c.chell_seq = mc.chell_seq
 		delete from t_cmt 
 		where post_seq=#{post_seq}
 	</delete>
+	<!-- 챌린지 리워드 -->
+	<select id="getChellList" resultType="goalsns.entity.MemChellVO">
+  		select * from t_mem_chell where mem_id = ${mem_id}
+  	</select>
+	<select id="getReward1" resultType="java.lang.String">
+  		select post_date from t_post where chell_seq = #{chell_seq} and mem_id = ${mem_id} order by post_date
+  	</select>
+ 	<select id="getReward2" resultType="goalsns.entity.TrackerVO">
+ 	<![CDATA[
+  		select DISTINCT c.today_str as monthly, TO_CHAR(p.post_date) as success, DECODE(TO_CHAR(p.post_date), NULL, 0, 1) AS SYNC_CHECK
+		from ( SELECT TO_CHAR (FIRST_DAY + LEVEL - 1) TODAY_STR
+		 		FROM (SELECT TRUNC(SYSDATE, 'MM') FIRST_DAY FROM DUAL)
+		 		CONNECT BY FIRST_DAY + LEVEL - 1 <= TRUNC(LAST_DAY(SYSDATE))) c
+		left join (select * from t_post where chell_seq=#{chell_seq} and mem_id=${mem_id}) p 
+		on TO_CHAR(p.post_date) = c.today_str
+		order by c.today_str
+	]]>
+  	</select>
 </mapper>
