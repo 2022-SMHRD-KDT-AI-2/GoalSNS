@@ -285,9 +285,9 @@ public class PostDAO {
 		session.close();
 	}
 	
-	public List<CmtVO> selectAll() {
+	public List<CmtVO> selectAll(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<CmtVO> list = session.selectList("selectAll");
+		List<CmtVO> list = session.selectList("selectAll",vo);
 		session.close();
 		return list;	
 	}
