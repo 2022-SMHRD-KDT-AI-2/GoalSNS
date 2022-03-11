@@ -60,7 +60,7 @@ public class MemberProfileEditController implements Controller {
 		
 		dao.profileEdit(vo);
 
-		return "redirect:/main.do";
+		return "redirect:/profileEditForm.do";
 	}
 
 }
