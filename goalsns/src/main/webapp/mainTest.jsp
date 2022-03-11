@@ -41,8 +41,8 @@
     
     
     <!-- heart hover 시 연하게 바뀜! -->
- 		<button id="heart"><i class="fa-regular fa-heart"></i></button>
- 		<button id="disheart"><i class="fa-solid fa-heart"></i></button>
+ 		<button id="heart"><i class="fa-regular fa-heart heart"></i></button>
+ 		<button id="fullheart"><i class="fa-solid fa-heart fullheart"></i></button>
  		
  		
  		

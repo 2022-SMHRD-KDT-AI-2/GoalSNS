@@ -1,10 +1,14 @@
-$(document).on('click','#heart',function(){
-	$('#disheart').css({
-		'color':'red'
-	})
+/*$('#heart').toggle();*/
+$(function(){
+	var Button = 
 })
-$(document).on('click','#disheart',function(){
-	$('#disheart').css({
-		'color':'black'
+
+$(document).on('click','#heart',function(){
+	$('.fullheart').css({
+		'color':'red'
+	});
+	.attr({
+		""
 	})
+	
 })
