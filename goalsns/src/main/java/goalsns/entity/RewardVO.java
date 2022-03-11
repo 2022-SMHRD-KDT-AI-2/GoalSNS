@@ -4,12 +4,12 @@ import java.util.List;
 
 public class RewardVO {
 	private int chell_seq;
-	private List<String> reward1;
+	private TrophyVO reward1;
 	private List<TrackerVO> reward2;
 	
 	public RewardVO() {};
 	
-	public RewardVO(int chell_seq, List<String> reward1, List<TrackerVO> reward2) {
+	public RewardVO(int chell_seq, TrophyVO reward1, List<TrackerVO> reward2) {
 		super();
 		this.chell_seq = chell_seq;
 		this.reward1 = reward1;
@@ -21,10 +21,10 @@ public class RewardVO {
 	public void setChell_seq(int chell_seq) {
 		this.chell_seq = chell_seq;
 	}
-	public List<String> getReward1() {
+	public TrophyVO getReward1() {
 		return reward1;
 	}
-	public void setReward1(List<String> reward1) {
+	public void setReward1(TrophyVO reward1) {
 		this.reward1 = reward1;
 	}
 	public List<TrackerVO> getReward2() {

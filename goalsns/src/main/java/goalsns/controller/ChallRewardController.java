@@ -1,7 +1,6 @@
 package goalsns.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.MemberVO;
 import goalsns.entity.RewardVO;
+import goalsns.entity.TrophyVO;
 import goalsns.model.PostDAO;
 
 public class ChallRewardController implements Controller {
@@ -30,14 +30,29 @@ public class ChallRewardController implements Controller {
 		PostDAO pdao = new PostDAO();
 		MemChellVO mcvo = new MemChellVO();
 		mcvo.setMem_id(mem_id);
-		int[] chellList = pdao.getChellList(mem_id);
+		MemberVO mvo = new MemberVO();
+		mvo.setMem_id(mem_id);
+		int[] chellList = pdao.getChellList(mvo);
 		int size = chellList.length; 
+		int cnt = 0;
 		RewardVO[] rewardList = new RewardVO[size];
+		TrophyVO[] trophyList = new TrophyVO[size];
+
+		
 		for(int i=0; i<size; i++) {
+			rewardList[i] = new RewardVO();
+			
 			rewardList[i].setChell_seq(chellList[i]);
 			mcvo.setChell_seq(chellList[i]);
-			rewardList[i].setReward1(pdao.getReward1(mcvo));
-			rewardList[i].setReward2(pdao.getReward2(mcvo));
+			trophyList[i] = new TrophyVO();
+			cnt = pdao.getReward1(mcvo).length;
+			trophyList[i].setCnt(cnt);
+			trophyList[i].calcRate(cnt);
+			System.out.println("rate: "+trophyList[i].getRate());
+			trophyList[i].calcColor(trophyList[i].getRate());
+			rewardList[i].setReward1(trophyList[i]);
+			
+			rewardList[i].setReward2(pdao.getReward2(mcvo)); //check가 다 0으로 뜨긴하는데 success는 null/no null 제대로 인듯.
 		}
 		request.setAttribute("rewardList", rewardList);
 		

@@ -1,6 +1,8 @@
 package goalsns.model;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -13,6 +15,7 @@ import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.LikeVO;
 import goalsns.entity.MemChellVO;
+import goalsns.entity.MemberVO;
 import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
@@ -219,9 +222,9 @@ public class PostDAO {
 	//-----------------------------------챌린지 리워드--------------------------------------
 	
 	// (1) 해당 멤버에 대한 챌린지 해시태그 리스트 반환.
-	public int[] getChellList(String mem_id) {
+	public int[] getChellList(MemberVO mvo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<MemChellVO> list = session.selectList("getChellList", mem_id); 
+		List<MemChellVO> list = session.selectList("getChellList", mvo); 
 		int[] chellList = new int[list.size()];
 		for(int i=0; i<list.size(); i++) {
 			chellList[i] = list.get(i).getChell_seq();
@@ -231,11 +234,16 @@ public class PostDAO {
 	}
 	
 	// (2) 리워드1
-	public List<String> getReward1(MemChellVO mcvo) {
+	public String[] getReward1(MemChellVO mcvo) {
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		SqlSession session = sqlSessionFactory.openSession();
-		List<String> list = session.selectList("getReward1", mcvo); 
+		List<PostVO> list = session.selectList("getReward1", mcvo); 
+		String[] dateList = new String[list.size()];
+		for(int i=0; i<list.size(); i++) {
+			dateList[i] = dateFormat.format(list.get(i).getPost_date());
+		}
 		session.close();
-		return list;
+		return dateList;
 	}
 
 	// (3) 리워드2

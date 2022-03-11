@@ -6,29 +6,55 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link href="./resources/CSS/signUp.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
    
+  <div class="container">
   
    <form method = "post" action="/goalsns/userRegister.do">
-        <h5>현재의 자신보다 더 나은 나를 원한다면 가입하세요</h5>
-
-        <input type="text" name="email" placeholder="이메일 주소" >
+       <div class="item">
+         <img src="./resources/images/logo.png" alt="프로필 사진 바꾸기" >	
+        <h5>현재의 자신보다 더 나은 나를 <br>원한다면 가입하세요</h5>
+      <div class="item_1">
+        <div>
+         <input type="text" class="boxs_1" name="email" placeholder="이메일 주소" >
+        </div>
         <br>
-        <input type="text" name="name" placeholder="성명" >
+        <div>
+         <input type="text" class="boxs_1" name="name" placeholder="성명" >
+        </div>
         <br>
-        <input id = "id" type="text" name="id" placeholder="사용자 이름">
-        <button id = "idCheck" type ="button" class = "btn btn-primary btn-sm" onclick="resultJSON()">ID중복체크</button>
-        <span id = "idResult">아이디 중복체크 결과</span>
+        <div>
+         <input id = "id" type="text" class="boxs_1" name="id" placeholder="사용자 이름">
+        </div>
+        <div class="btn_0">
+         <button id = "idCheck" type ="button" class = "btn btn-primary btn-sm" onclick="resultJSON()">ID중복체크</button>
+        </div>
         <br>
-        <input type="password" name="pw" placeholder="비밀번호">
+        <div>
+         <input type="password" class="boxs_1"  name="pw" placeholder="비밀번호">
+        </div>
         <br>
-        <input type="submit">
-        <!-- 로그인 버튼 없어도 된다고 함  onclick="location.href='index.jsp'"   -->
+       <div class="btn_1">
+        <button type="submit" class="btn btn-primary">가입</button>
+         </div>
+        <!-- 로그인 버튼 없어도 된다고 함  onclick="location.href='index.jsp'"   -->              
+        </div>
+        </div>
     </form>
    
+    <div class="item_2">  
+     <div class="form-group">
+      <div class="item_text">
+        <strong>계정이 있으신가요?</strong>
+        <a href="#" onclick="location.href='signUp.jsp'">로그인</a>
+      </div>
+     </div>
+    </div>
    
+   </div>
    
     <script>
     	$('#idCheck').click(function(){
