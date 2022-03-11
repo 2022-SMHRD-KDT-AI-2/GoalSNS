@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import goalsns.entity.CmtVO;
+
 import goalsns.model.PostDAO;
 
 public class CmtListController implements Controller{
@@ -15,10 +17,14 @@ public class CmtListController implements Controller{
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		
+	
 		PostDAO dao = new PostDAO();
-		List<CmtVO> list = dao.selectAll();
+		CmtVO vo = new CmtVO();
+		List<CmtVO> list = dao.selectAll(vo);
 		request.setAttribute("list", list);
-		return "redirect:/main.do";
+		
+		return "main";
 	}
 
 }
