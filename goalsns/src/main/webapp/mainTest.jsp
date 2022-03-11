@@ -19,6 +19,10 @@
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="./resources/js/all.js"></script>
+<script>
+document.getElementById("fold0").innerHTML = "<i class='fas fa-chevron-up'></i>";
+</script>
+
 
 <!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -42,8 +46,6 @@
     
     <!-- heart hover 시 연하게 바뀜! -->
  		<button id="heart"><i class="fa-regular fa-heart heart"></i></button>
- 		<button id="fullheart"><i class="fa-solid fa-heart fullheart"></i></button>
- 		
  		
  		
  		
