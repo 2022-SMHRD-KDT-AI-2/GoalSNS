@@ -43,10 +43,6 @@
         <div class="item2">
 
        <div class="edit_form">
-
-       <h3>challin_shot</h3>
-
-       <div class="form-group">
        <h3>${memvo.mem_id}</h3>
 
         <a class="profilePic" target="_self">
