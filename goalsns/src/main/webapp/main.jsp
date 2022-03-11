@@ -67,7 +67,7 @@
       </c:if>
       <c:if test="${fn:contains(f,'@')}">
       <a href="#" class="chall_hashtag">${f}</a>
-      </c:if>
+      </c:if>ㅌ`
       <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
       <span>${f}</span>
       </c:if>
