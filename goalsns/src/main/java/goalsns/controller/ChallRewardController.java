@@ -57,7 +57,7 @@ public class ChallRewardController implements Controller {
 		request.setAttribute("rewardList", rewardList);
 		
 
-		return "challReward";
+		return "test2";
 	}
 
 }
