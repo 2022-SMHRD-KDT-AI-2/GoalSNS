@@ -27,6 +27,9 @@
 	function goFollow(mem_id){
 		location.href="/goalsns/follow.do?mem_id="+mem_id;
 	}
+	function goUnFollow(mem_id){
+		location.href="/goalsns/follow.do?mem_id="+mem_id;
+	}
 </script>
 </head>
 <body>
@@ -34,7 +37,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="#"><img class="img-circle" src="./resources/images/profile.png" width="200" height="200"></a>
+			<a href="#"><img class="img-circle" src="./profilePic/${memvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
@@ -48,7 +51,7 @@
 					<c:if test="${!empty memfo}">
 					<a href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">언팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<button class="profile_btn" onclick="goUnFollow(${mvo.mem_id})">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>

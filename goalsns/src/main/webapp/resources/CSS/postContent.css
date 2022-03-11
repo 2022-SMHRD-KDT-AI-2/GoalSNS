@@ -1,4 +1,7 @@
 @charset "EUC-KR";
+.img-circle{
+	border: 1px solid #C4C4C4;
+}
 /* 전체 큰 틀 */
 .containerbox{
 	display: flex;
@@ -17,6 +20,8 @@
 	border: 1px solid #EAEAEA;
 	border-radius: 5px;
 	width:100%;
+	display: flex;
+    flex-direction: column;
 }
 
 /* right_item_top 쪽 세부사항들 */
@@ -54,7 +59,8 @@ a{
 /* right_item_middle 쪽 세부사항들 */
 .right_item_middle{
 	overFlow : auto;
-	border-bottom: 1px solid #EAEAEA;	
+	border-bottom: 1px solid #EAEAEA;
+	flex-grow: 2;	
 }
 .me_coments{
 	display: flex;
