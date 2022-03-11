@@ -77,8 +77,8 @@
       <a href="#" class="plus">댓글 23개 모두 보기</a>
    </div>
    <div>
-      <span name="mem_id" class="post_id">idididididididid</span>
-      <span class="post_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+      <span name="mem_id" class="post_id">123213</span>
+      <span class="post_con">ddddddddd</span>
    </div>
    <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
   
