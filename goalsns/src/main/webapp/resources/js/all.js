@@ -1,3 +1,10 @@
-function like(){
-	
-}
+$(document).on('click','#heart',function(){
+	$('#disheart').css({
+		'color':'red'
+	})
+})
+$(document).on('click','#disheart',function(){
+	$('#disheart').css({
+		'color':'black'
+	})
+})
