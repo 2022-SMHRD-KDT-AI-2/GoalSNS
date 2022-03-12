@@ -42,9 +42,17 @@
     
     
     <!-- heart hover 시 연하게 바뀜! -->
- 		<button id="heart"><i class="fa-regular fa-heart heart"></i></button>
+ 		<button id="heart"><i id="i" class="fa-regular fa-heart heart"></i></button>
  		
- 		
+ 		<script type="text/javascript">
+ 			/* if(class==i)
+ 				
+	 		$("#i").on('click',function(){
+	 			$(this).removeClass("fa-regular fa-heart heart");
+	 			$(this).addClass("fa-solid fa-heart disheart");
+	 		}); */
+ 			
+ 		</script>
  		
  		<button type="button" class="cutes" data-toggle="modal" data-target="#cute"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
     </section>http://localhost:8081/goalsns/mainTest.jsp#

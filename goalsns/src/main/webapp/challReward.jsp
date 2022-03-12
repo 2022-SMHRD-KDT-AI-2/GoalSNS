@@ -79,7 +79,9 @@
 <!-- 리워드 부분 나오기!  -->
 
 <div class="reward_box">
-	<div class="re_box_title">@물마시기_챌린지</div>
+	<div class="re_box_title">
+	@물마시기_챌린지<div class="re_box_month">12&ensp;월</div>
+	</div>
 	<div class="re_box_middle">
 		<div class="re_color"><i class="fa-solid fa-trophy red"></i></div>
 		<!-- <div class="re_color"><i class="fa-solid fa-trophy yellow"></i></div>
@@ -91,7 +93,30 @@
 		<div class="sign"> | </div>
 		<div class="re_date">20일 성공!</div>
 	</div>
-	<div class="re_box_bottom"><div>달성표</div></div>
+	<div class="re_box_bottomtop">-달성표-</div>
+	<div class="re_box_bottom">
+		<div class="bottom_flex">
+		<div class="habit_tracker">
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+		</div>
+		<div class="habit_tracker">	
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+			<div class="tracker_date"></div>
+		</div>
+	</div>
+	</div>
 </div>
 
 
