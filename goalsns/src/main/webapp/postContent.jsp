@@ -67,17 +67,19 @@
 			</div>
 			
 			<!-- 댓글 많이 추가함(지워도 됌) -->
-			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        		<div>
+			<c:forEach var="c" items="${list}" varStatus="i">
+				<div class="me_coments">
+					<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">didididididid</a>
-        				<span class="me_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+        				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
+        				<span class="me_con">${c.cmt_content}</span>
         			</div>
-        			<span id="post_date">2022.02.10</span>
+        			<span id="post_date">${c.cmt_date} </span>
         		</div>
-			</div>
-			<div class="me_coments">
+				</div>
+			</c:forEach>
+			<!--<div class="me_coments">
 				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
         		<div>
         			<div>
@@ -87,7 +89,7 @@
         			<span id="post_date">2022.02.10</span>
         		</div>
 			</div>	
-			<!-- 여기까지 댓글 추가 -->
+			 여기까지 댓글 추가 -->
 				
 		</div>
 		

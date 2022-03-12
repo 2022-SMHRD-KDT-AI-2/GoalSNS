@@ -293,12 +293,12 @@ public class PostDAO {
 		session.close();
 	}
 	
-//	public List<CmtVO> selectAll(CmtVO vo) {
-//		SqlSession session = sqlSessionFactory.openSession();
-//		List<CmtVO> clist = session.selectList("selectAll",vo);
-//		session.close();
-//		return clist;	
-//	}
+	public List<CmtVO> selectCmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<CmtVO> list = session.selectList("selectCmt",vo);
+		session.close();
+		return list;	
+	}
 	
 	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
 	

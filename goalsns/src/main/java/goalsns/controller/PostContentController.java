@@ -21,10 +21,11 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	request.setAttribute("vo", vo);
 	
 	// ------------------- ´ñ±Û ¸®½ºÆ® --------------------------
-//	CmtVO cvo = new CmtVO();
-//	List<CmtVO> clist = dao.selectAll(cvo);
-//	request.setAttribute("clist", clist);
-//	
+	CmtVO cvo = new CmtVO();
+	cvo.setPost_seq(post_seq);
+	List<CmtVO> list = dao.selectCmt(cvo);
+	request.setAttribute("list", list);
+	
 	return "postContent";
 }
 }
