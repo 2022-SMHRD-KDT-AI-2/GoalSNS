@@ -9,9 +9,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="C:/Users/smhrd/Desktop/jquery-3.6.0.min.js"></script>
     <title>Document</title>
-
+<script type="text/javascript" src="./resources/js/all.js"></script>
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -96,7 +95,7 @@
 		<div>
 			<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})" ></i></a>
 			<!-- 아래를 클릭 시, 검색칸의 커서가 켜져야 한다. -->
- 			<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
+ 			<button class="cur_focus"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
 		</div>
 		
 		<!-- 네번째 줄(좋아요 몇개) -->
