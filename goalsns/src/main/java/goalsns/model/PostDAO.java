@@ -262,7 +262,7 @@ public class PostDAO {
 		session.close();
 		return memvo;
 	}
-	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
+	
 	public int like(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo = session.insert("like", vo);
@@ -285,11 +285,13 @@ public class PostDAO {
 		session.close();
 	}
 	
-	public List<CmtVO> selectAll(CmtVO vo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		List<CmtVO> list = session.selectList("selectAll",vo);
-		session.close();
-		return list;	
-	}
-
+//	public List<CmtVO> selectAll(CmtVO vo) {
+//		SqlSession session = sqlSessionFactory.openSession();
+//		List<CmtVO> clist = session.selectList("selectAll",vo);
+//		session.close();
+//		return clist;	
+//	}
+	
+	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
+	
 }

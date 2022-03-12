@@ -1,11 +1,13 @@
 package goalsns.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import goalsns.entity.CmtVO;
 import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
 
@@ -17,6 +19,12 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	PostVO vo = dao.getPostByIdx(post_seq);
 	
 	request.setAttribute("vo", vo);
+	
+	// ------------------- ´ñ±Û ¸®½ºÆ® --------------------------
+//	CmtVO cvo = new CmtVO();
+//	List<CmtVO> clist = dao.selectAll(cvo);
+//	request.setAttribute("clist", clist);
+//	
 	return "postContent";
 }
 }
