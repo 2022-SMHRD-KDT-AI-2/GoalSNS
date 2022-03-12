@@ -32,7 +32,8 @@ public class UnFollowController implements Controller {
 			fvo.setFrom_mem(from_mem);
 			dao.unFollow(fvo);
 			
-		return "redirect:/profile.do?mem_id="+to_mem;
+		 return "redirect:/profile.do?mem_id="+to_mem;
+			
 	}
 	
 }

@@ -105,6 +105,12 @@ public class MemberDAO {
 		session.close();
 		return list;
 	}
+	public FollowVO getfollowid(FollowVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		FollowVO fvo=session.selectOne("getfollowid",vo);
+		session.close();
+		return fvo;
+	}
 	public int follow(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo=session.insert("follow",vo);

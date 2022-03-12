@@ -39,6 +39,7 @@ public class HandlerMapping {
 		
 		mappings.put("/postLike.do", new PostLikeController());
 		mappings.put("/postCmt.do", new PostCmtController());
+		mappings.put("/postFollow.do", new PostContentfollowController());
 
 	}
 	public Controller getController(String key) {
