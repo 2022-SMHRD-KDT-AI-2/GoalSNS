@@ -29,7 +29,7 @@
 		location.href="/goalsns/follow.do?mem_id="+mem_id;
 	}
 	function goUnFollow(mem_id){
-		location.href="/goalsns/follow.do?mem_id="+mem_id;
+		location.href="/goalsns/unfollow.do?mem_id="+mem_id;
 	}
 </script>
 </head>
