@@ -87,9 +87,21 @@ public class MemberDAO {
 		session.close();
 		return list;
 	}
+	public List<FollowVO> tofollowAll(FollowVO vo){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<FollowVO> list = session.selectList("tofollowAll",vo);
+		session.close();
+		return list;
+	}
 	public List<FollowVO> followedAll(FollowVO vo){
 		SqlSession session = sqlSessionFactory.openSession();
 		List<FollowVO> list = session.selectList("followedAll",vo);
+		session.close();
+		return list;
+	}
+	public List<FollowVO> tofollowedAll(FollowVO vo){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<FollowVO> list = session.selectList("tofollowedAll",vo);
 		session.close();
 		return list;
 	}

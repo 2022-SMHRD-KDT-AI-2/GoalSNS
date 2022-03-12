@@ -21,11 +21,11 @@ public class FollowController implements Controller {
 		String to_mem =request.getParameter("mem_id"); // 상대의 아이디
 		HttpSession session=request.getSession();
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
-		String mem_id=(String)memvo.getMem_id(); // 자신의 아이디
+		String from_mem=(String)memvo.getMem_id(); // 자신의 아이디
 		FollowVO fvo =new FollowVO();
 		MemberDAO dao=new MemberDAO();
 		fvo.setTo_mem(to_mem);
-		fvo.setFrom_mem(mem_id);
+		fvo.setFrom_mem(from_mem);
 		//팔로우DB에 저장
 		dao.follow(fvo);
 		
