@@ -46,8 +46,8 @@
 <c:forEach var="vo" items="${list}">
   <div id="peedbox">
     <div id="peedboxtop" >
-        <a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
-        <a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        <a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
+        <a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
       	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     </div>
     <div name="post_file" id="post_file" >
@@ -99,7 +99,7 @@
     <div id="sidebar">
       <h2>인기 챌린지 해시태그</h2>
       <c:forEach var="t" items="${trend}" varStatus="i">
-      <div class="chell1">@${t.chell_name}</div>
+      <div class="chell1"><a href="/goalsns/search.do?search=${t.chell_name}">@${t.chell_name}</a></div>
       <div id="chellcount1">${t.cnt}명 참여 중</div>
       </c:forEach>
 <!--       <div class="chell1">#30일_물마시기_챌린지</div>
@@ -118,7 +118,7 @@
     <div id="sidebar2">
       <h2>유저랭킹</h2>
       <c:forEach var="mem" items="${rank}" varStatus="i">
-      <div class="userrank1">${i.count}. ${mem}</div>
+      <div class="userrank1"><a href="/goalsns/profile.do?mem_id=${mem}">${i.count}. ${mem}</a></div>
 <!--       <div class="userrank1">1. Hello_chall</div>
       <div class="userrank2">2. Hello_chall</div>
       <div class="userrank3">3. Hello_chall</div>
