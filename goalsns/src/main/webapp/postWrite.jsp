@@ -54,29 +54,32 @@
              <img scr="">
            </div>
            </div>
-           <div class="item_2">
-                <input type="file" name="post_file">
-                
+           <div class="item_2">                             
                 <a class="profilePic" target="_self">
                  <img class="postPic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
-                 <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->
-               </a><input class="picture" type="file" name="mem_img">
-           </div>    
+                 <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->              
+               </a>
+              
+           </div> 
+            <div class="input_1">
+               <input class="picture" type="file" name="mem_img">
+               </div>
+              
           <div class="item_3">
           <div class="form-group_0">
-             <img class="postPic_2" src="./resources/images/profile.png">
+             <img class="postPic_2" src="./resources/images/profile.png">           
              <h5>user1_challin</h5>        
           </div>
            <div class="form-group_1">
                     <label for="comment"></label>
-                    <textarea name="post_content" class="spark_1" rows="5" id="comment"></textarea>
+                    <textarea name="post_content" class="spark_1" rows="5" id="comment" placeholder="문구 입력"></textarea>
                    
                  </div>
              
                   
                 <div class="form-group_2">       
                     <label for="comment"></label>
-                    <textarea name="post_content" class="spark_2" rows="5" id="comment"></textarea>
+                    <textarea name="post_content" class="spark_2" rows="5" id="comment" placeholder="챌린지해시태그를 사용하기 위해선 @기호와 텍스트를 차례로 입력"></textarea>
                    <!--  <button type="submit">생성</button> -->
                      
                  </div>
@@ -85,9 +88,6 @@
         </form> 
         </div>
    
-
-
-
 <jsp:include page="footer.jsp" />
 </body>
 </html>

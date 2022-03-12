@@ -64,7 +64,7 @@
    <div  class="form-group">
    <div class="item_text">
   <strong>계정이 없으신가요?</strong>
-  <a href="#" onclick="location.href='signUp.jsp'">가입하기</a>
+  <a href="signUp.jsp">가입하기</a>
   </div>
   </div>
  

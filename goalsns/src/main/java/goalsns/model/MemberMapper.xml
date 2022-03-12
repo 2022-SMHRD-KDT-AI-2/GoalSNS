@@ -23,9 +23,9 @@
 	</insert>
 	
 	<!-- 아이디 중복체크 -->
-	<select id="idCheck" resultType="int">
-		select count(*) from t_member
-		where mem_id = #{mem_id}
+	<select id="idCheck" resultType="String">
+		select * from t_member
+		where mem_id=#{mem_id}
 	</select>
 	
 	<!-- 회원탈퇴 -->
@@ -52,6 +52,11 @@
 		select * from t_follow
 		where from_mem=#{from_mem}
 	</select>
+	<!-- 상대방팔로워리스트 가져오기 -->
+	<select id="tofollowAll" resultType="goalsns.entity.FollowVO">
+		select * from t_follow
+		where to_mem=#{to_mem}
+	</select>
 	<select id="followAllcount" resultType="int">
 		select count(*) from t_follow
 		where from_mem=#{from_mem}
@@ -60,6 +65,11 @@
 	<select id="followedAll" resultType="goalsns.entity.FollowVO">
 		select * from t_follow
 		where to_mem=#{from_mem}
+	</select>
+	<!-- 상대방팔로우 리스트가져오기 -->
+	<select id="tofollowedAll" resultType="goalsns.entity.FollowVO">
+		select * from t_follow
+		where from_mem=#{to_mem}
 	</select>
 	<!-- 특정된 팔로우한사람 가져오기 -->
 	<select id="getFollowInfo" resultType="goalsns.entity.FollowVO">

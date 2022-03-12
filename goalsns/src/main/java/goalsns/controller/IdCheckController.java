@@ -1,26 +1,27 @@
 package goalsns.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import goalsns.entity.FollowVO;
 import goalsns.entity.MemberVO;
-import goalsns.entity.PostVO;
 import goalsns.model.MemberDAO;
-import goalsns.model.PostDAO;
 
-public class FollowedProfileController implements Controller {
+public class IdCheckController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String to_mem =request.getParameter("mem_id");
-		
-		return "redirect:/profile.do?mem_id="+to_mem;
+		String mem_id=request.getParameter("id");
+		MemberVO vo=new MemberVO();
+		MemberDAO dao=new MemberDAO();
+		vo.setMem_id(mem_id);
+		String idck=dao.idCheck(mem_id);
+		request.setAttribute("idck", idck);
+		System.out.println(mem_id);
+		System.out.println(idck);
+		return "signUp";
 	}
 
 }
