@@ -254,6 +254,14 @@ public class PostDAO {
 		return list;
 	}
 	
+	// (4) 챌린지 이름 가져오기
+	public ChellVO getChellName(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		ChellVO chell_name = session.selectOne("getChellName", mcvo); 
+		session.close();
+		return chell_name;
+	}
+	
 	//-----------------------------------댓글, 좋아요--------------------------------------
 	public int cmt(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
@@ -262,7 +270,7 @@ public class PostDAO {
 		session.close();
 		return memvo;
 	}
-	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
+	
 	public int like(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		int memvo = session.insert("like", vo);
@@ -285,11 +293,13 @@ public class PostDAO {
 		session.close();
 	}
 	
-	public List<CmtVO> selectAll(CmtVO vo) {
+	public List<CmtVO> selectCmt(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<CmtVO> list = session.selectList("selectAll",vo);
+		List<CmtVO> list = session.selectList("selectCmt",vo);
 		session.close();
 		return list;	
 	}
-
+	
+	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
+	
 }

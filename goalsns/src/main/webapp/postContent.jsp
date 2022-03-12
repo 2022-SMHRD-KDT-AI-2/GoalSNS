@@ -9,9 +9,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="C:/Users/smhrd/Desktop/jquery-3.6.0.min.js"></script>
     <title>Document</title>
-
+<script type="text/javascript" src="./resources/js/all.js"></script>
 <meta charset="utf-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -28,10 +27,10 @@
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
-		location.href="/goalsns/postContent.do?post_seq="+post_seq;
+		location.href="/goalsns/postCmt.do?post_seq="+post_seq;
 	}
 	function goLike(post_seq){
-		location.href="/goalsns/like.do?post_seq="+post_seq;
+		location.href="/goalsns/postLike.do?post_seq="+post_seq;
 	}
 </script>
 <body>
@@ -68,17 +67,19 @@
 			</div>
 			
 			<!-- 댓글 많이 추가함(지워도 됌) -->
-			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-        		<div>
+			<c:forEach var="c" items="${list}" varStatus="i">
+				<div class="me_coments">
+					<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">didididididid</a>
-        				<span class="me_con">안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</span>
+        				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
+        				<span class="me_con">${c.cmt_content}</span>
         			</div>
-        			<span id="post_date">2022.02.10</span>
+        			<span id="post_date">${c.cmt_date} </span>
         		</div>
-			</div>
-			<div class="me_coments">
+				</div>
+			</c:forEach>
+			<!--<div class="me_coments">
 				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
         		<div>
         			<div>
@@ -88,7 +89,7 @@
         			<span id="post_date">2022.02.10</span>
         		</div>
 			</div>	
-			<!-- 여기까지 댓글 추가 -->
+			 여기까지 댓글 추가 -->
 				
 		</div>
 		
@@ -96,7 +97,7 @@
 		<div>
 			<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})" ></i></a>
 			<!-- 아래를 클릭 시, 검색칸의 커서가 켜져야 한다. -->
- 			<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
+ 			<button class="cur_focus"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
 		</div>
 		
 		<!-- 네번째 줄(좋아요 몇개) -->
@@ -108,8 +109,8 @@
 		<!-- 여섯번째 줄(댓글달기상자) -->
 		<div class="textsection">
 			<div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-        	<form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-        	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
+        	<form action="/goalsns/cmt.do"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+        	<div class="textsection3"><button class="textsection_bt" type="submit" onclick="goContent(${vo.post_seq})">게시</button></div></form>
 		</div>	
 	</div>
 

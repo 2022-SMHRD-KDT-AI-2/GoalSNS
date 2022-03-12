@@ -30,13 +30,11 @@ public class HandlerMapping {
 		mappings.put("/likeDelete.do", new LikeDeleteController());
 		mappings.put("/cmtDelete.do", new CmtDeleteController());
 		mappings.put("/followList.do", new FollowListController());
-
-		mappings.put("/cmtList.do", new CmtListController());
-
 		mappings.put("/challreward.do", new ChallRewardController());
 		mappings.put("/followprofile.do", new FollowProfileController());
 		mappings.put("/followedprofile.do", new FollowProfileController());
-		
+		mappings.put("/postLike.do", new PostLikeController());
+		mappings.put("/postCmt.do", new PostCmtController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

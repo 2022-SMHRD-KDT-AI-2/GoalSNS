@@ -146,7 +146,7 @@
 	flex-direction: column;
 	background-color:white;
 	width: 70%;
-    height: 380px;
+    height: auto;
     margin: 50px auto;
     border: 1px solid #EAEAEA;
     justify-content: space-between;
@@ -157,12 +157,17 @@
 	font-family: 'NeoDunggeunmo';
 	background-color:rgba(239, 154, 99, 0.5);
 	border-radius:5px;
-	height: 140px;
+	height: 80px;
 	padding-top: 15px;
     padding-left: 30px;
+    padding-right: 30px;
+}
+
+.re_box_month{
+	float:right;
 }
 .re_box_middle{
-	height:300px;
+	height:160px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center; 
@@ -212,15 +217,44 @@
       background-clip: text;
       color: transparent;
 }
-
-
-.re_box_bottom{
-	height:300px;
-}
-.re_box_bottom > div{
-	margin:40px;
+.re_box_bottomtop{
 	border-top: 1px solid #E8E8E8;
+    margin: 46px;
+    margin-bottom: 23px;
+    font-size: 20pt;
+    font-family: 'NeoDunggeunmo';
+    text-align: center;
+    padding-top: 23px;
+    padding-right: 50px;
 }
+/* 하빗 트래커 박스 */
+.re_box_bottom{
+	margin-bottom: 60px;
+	
+}
+.bottom_flex{
+	display: flex;
+	flex-direction: column;
+}
+
+.habit_tracker{
+	display: flex;
+	flex-direction: row;
+	width:380px;
+	background-color:white;
+	margin:auto;
+}
+.tracker_date{
+	background-color: rgba(243, 115, 33, 0.67);
+	height: 30px;
+    width: 30px;
+    margin:2.7px;
+    border-radius: 5px;
+}
+.nodate{
+	background-color:#EAEAEA;
+}
+
 
 /* 팔로워 모달창 */
 .modal-content{

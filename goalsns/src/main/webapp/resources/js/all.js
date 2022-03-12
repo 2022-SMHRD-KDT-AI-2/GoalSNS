@@ -1,19 +1,26 @@
-/*$('#heart').toggle();*/
-$(document).on('click','#heart',function(){
-	$('.heart').replacewith(document.getElementById("heart").innerHTML = "<i class='fa-solid fa-heart disheart' style='color:red;'></i>");
-	$("#heart").prop('id','disheart');
-});
-$(document).on('click','#disheart',function(){
-	$(".disheart").replacewith(document.getElementById("disheart").innerHTML = "<i class='fa-regular fa-heart heart'></i>");
+$(document).on('click', '#heart', function(){
+ 			    $('#i').toggleClass('disheart');
+			    $('#i').toggleClass('fa-solid');
+ 			    $('#i').toggleClass('heart');
+ 			    $('#i').toggleClass('fa-regular');
+ 			    $(this).removeAttr('id');
+ 			    $(this).attr('id', 'disheart');
+ 			})
+
+ 			$(document).on('click', '#disheart', function(){
+ 				$('#i').toggleClass('disheart');
+			    $('#i').toggleClass('fa-solid');
+ 			    $('#i').toggleClass('heart');
+ 			    $('#i').toggleClass('fa-regular');
+ 			    $(this).removeAttr('id');
+ 			    $(this).attr('id', 'heart');
+ 			})
+
+/*말풍선 누르면, 커서 두기*/
+$('.cur_focus').click(function(){
+	$('#comment_textarea').focus();
 	
 });
 
 
-/*$(document).on('click','#heart',function(){
-	$(this).text('좋아요취소');
-})*/
-
-/*$("heart").click(function(){
-document.getElementById("heart").innerHTML = "<i class='fa-solid fa-heart heart'></i>";
-});*/
 
