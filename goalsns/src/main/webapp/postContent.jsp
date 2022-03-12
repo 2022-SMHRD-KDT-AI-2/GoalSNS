@@ -95,9 +95,9 @@
 		
 		<!-- 세번째 줄(좋아요, 대화상자 아이콘) -->
 		<div>
-			<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})" ></i></a>
+			<button id="abc"><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})" ></i></button>
 			<!-- 아래를 클릭 시, 검색칸의 커서가 켜져야 한다. -->
- 			<button class="cur_focus"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
+ 			<button id="def"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
 		</div>
 		
 		<!-- 네번째 줄(좋아요 몇개) -->
