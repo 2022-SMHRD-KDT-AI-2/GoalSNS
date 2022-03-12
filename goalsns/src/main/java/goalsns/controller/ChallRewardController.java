@@ -1,6 +1,7 @@
 package goalsns.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -59,9 +60,11 @@ public class ChallRewardController implements Controller {
 			rewardList[i].setReward2(pdao.getReward2(mcvo)); //check가 다 0으로 뜨긴하는데 success는 null/no null 제대로 인듯.
 		}
 		request.setAttribute("rewardList", rewardList);
-		
+		LocalDate now = LocalDate.now();
+		int month = now.getMonthValue();
+		request.setAttribute("month", month);
 
-		return "test2";
+		return "challReward";
 	}
 
 }

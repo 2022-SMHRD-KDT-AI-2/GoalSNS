@@ -1,6 +1,6 @@
 @charset "EUC-KR";
 .img-circle{
-	border: 1px solid #C4C4C4;
+	border: 2px solid #C4C4C4;
 }
 /* 전체 큰 틀 */
 .containerbox{
@@ -93,6 +93,20 @@ a{
 	font-size: 30px;
 	color: black;
   	padding: 10px;
+}
+#abc{
+	margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+#def{
+	margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
 }
 /* 좋아요 개수 */
  .like_count{

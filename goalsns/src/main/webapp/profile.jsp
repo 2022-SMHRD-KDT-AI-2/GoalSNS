@@ -29,7 +29,7 @@
 		location.href="/goalsns/follow.do?mem_id="+mem_id;
 	}
 	function goUnFollow(mem_id){
-		location.href="/goalsns/follow.do?mem_id="+mem_id;
+		location.href="/goalsns/unfollow.do?mem_id="+mem_id;
 	}
 </script>
 </head>
@@ -38,7 +38,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="#"><img class="img-circle" src="./profilePic/${memvo.mem_img}" width="200" height="200"></a>
+			<a href="#"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
