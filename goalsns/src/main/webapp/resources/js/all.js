@@ -4,25 +4,25 @@ $(document).on('click', '#heart', function(){
 			    $('#i').toggleClass('fa-solid');
  			    $('#i').toggleClass('heart');
  			    $('#i').toggleClass('fa-regular');
+=======
+/*$(document).on('click', '#heart', function(){
+ 			    $('#abc').toggleClass('disheart');
+			    $('#abc').toggleClass('fa-solid');
+ 			    $('#abc').toggleClass('heart');
+ 			    $('#abc').toggleClass('fa-regular');
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
  			    $(this).removeAttr('id');
  			    $(this).attr('id', 'disheart');
  			})
 
  			$(document).on('click', '#disheart', function(){
- 				$('#i').toggleClass('disheart');
-			    $('#i').toggleClass('fa-solid');
- 			    $('#i').toggleClass('heart');
- 			    $('#i').toggleClass('fa-regular');
+ 				$('#abc').toggleClass('disheart');
+			    $('#abc').toggleClass('fa-solid');
+ 			    $('#abc').toggleClass('heart');
+ 			    $('#abc').toggleClass('fa-regular');
  			    $(this).removeAttr('id');
  			    $(this).attr('id', 'heart');
- 			})
-
-말풍선 누르면, 커서 두기
-$('.cur_focus').click(function(){
-	$('#comment_textarea').focus();
-	
-});
-*/
+ 			})*/
 function like(){
     $.ajax({
     url: "/goalsns/likeTest.do",
@@ -46,4 +46,10 @@ function like(){
     });
 }
 
+/*말풍선 누르면, 커서 두기*/
+window.onload = function() {
+	document.getElementById('def').onclick = function() {
+		$('#comment_textarea').focus();
+    	};
+};
 
