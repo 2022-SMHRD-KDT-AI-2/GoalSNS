@@ -22,6 +22,7 @@ public class LikeTestController implements Controller {
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
 		String mem_id = memvo.getMem_id();
 		int bno = Integer.parseInt(request.getParameter("board_num"));
+		System.out.println("bno:"+bno);
 		PostDAO dao = new PostDAO(); //보드넘에 대한 보드의 객체
 		LikeVO vo = new LikeVO();
 		vo.setPost_seq(bno);

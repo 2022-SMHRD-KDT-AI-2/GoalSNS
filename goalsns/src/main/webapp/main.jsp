@@ -56,9 +56,9 @@
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
     </div>
     <section>
-    <form id="like_form">
+    <form id="like_form${vo.post_seq}">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
-			<input type="button" onclick="return like()"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
+			<input type="button" onclick="return like(${vo.post_seq})"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
  	</form>
  		<a></a>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
