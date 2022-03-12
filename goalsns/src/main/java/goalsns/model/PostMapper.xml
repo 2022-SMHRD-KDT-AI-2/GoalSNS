@@ -103,7 +103,7 @@ where c.chell_seq = mc.chell_seq
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
 		delete from t_like 
-		where post_seq=#{post_seq}
+		where post_seq=#{post_seq} and mem_id = #{mem_id}
 	</delete>
 	<!-- 댓글 삭제 -->
 	<delete id = "cmtDelete" parameterType="goalsns.entity.CmtVO">
@@ -144,4 +144,8 @@ order by post_date
 		order by cmt_date desc
 	]]>
 	</select>
+  	<select id="selectLike" parameterType="goalsns.entity.LikeVO" resultType="goalsns.entity.LikeVO">
+  		select * from t_like where post_seq = #{post_seq}
+  	</select>
+	
 </mapper>

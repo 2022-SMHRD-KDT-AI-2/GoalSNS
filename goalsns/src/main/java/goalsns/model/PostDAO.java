@@ -3,7 +3,9 @@ package goalsns.model;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -273,17 +275,18 @@ public class PostDAO {
 	
 	public int like(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int memvo = session.insert("like", vo);
+		int cnt = session.insert("like", vo);
 		session.commit();
 		session.close();
-		return memvo;
+		return cnt;
 	}
 	
-	public void likeDelete(int post_seq) {
+	public int likeDelete(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		session.delete("likeDelete", post_seq);
+		int cnt = session.delete("likeDelete", vo);
 		session.commit();
 		session.close();
+		return cnt;
 	}
 
 	public void cmtDelete(int post_seq) {
@@ -296,6 +299,13 @@ public class PostDAO {
 	public List<CmtVO> selectCmt(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<CmtVO> list = session.selectList("selectCmt",vo);
+		session.close();
+		return list;	
+	}
+	
+	public List<LikeVO> selectLike(LikeVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<LikeVO> list = session.selectList("selectLike",vo);
 		session.close();
 		return list;	
 	}

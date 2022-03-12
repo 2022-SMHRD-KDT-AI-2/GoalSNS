@@ -1,0 +1,129 @@
+@charset "EUC-KR";
+.container_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1060px;
+    height: 731px;
+    background-color: gainsboro;
+    margin-left: 477px;
+    border-radius: 30px;
+    margin-top: 40px;
+}
+.item_1{
+	background-color: yellow;
+    width: 1060px;
+    height: 76px;
+     border-radius: 30px 30px 0px 0px;
+}	
+.item_2{
+	
+}	
+.item_3{
+    background-color: green;
+    width: 388px;
+    height: 655px;
+    float: right;
+    margin-top: -678px;
+    border-radius: 0px 0px 30px 0px;
+    
+    
+}	
+.postPic_1{
+    width: 672px;
+    height: 655px;
+    border-radius: 0px 0px 0px 30px;
+    margin-top: 9px;
+}
+.postPic_2{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 70%;
+    float: left;
+    margin-right: 14px;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+.spark_1{
+    width: 389px;
+    height: 335px;
+}
+.spark_2{
+    width: 389px;
+    height: 270px;
+    border-radius: 0px 0px 30px 0px;
+}
+h5{
+	font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    margin-top: 17px;
+    float: left;
+}
+
+
+.modal_wrap{
+    display: none;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top:38%;
+    left: 11%;
+    margin: -250px 0 0 -250px;
+       
+    z-index: 2;
+}
+.black_bg{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0,0, 0.5);
+    top:0;
+    left: 0;
+    z-index: 1;
+ }
+.modal_close{
+        width: 26px;
+        height: 26px;
+        position: absolute;
+        top: -30px;
+        right: 0;
+ }
+.modal_close> a{
+    display: block;
+        width: 100%;
+        height: 100%;
+        background:url(https://img.icons8.com/metro/26/000000/close-window.png);
+        text-indent: -9999px;
+    }
+ .modal_sumbit> a{
+     display: block;
+     width: 57px;
+    height: 56px;
+    background: url(https://img.icons8.com/windows/2x/level-up.png);
+    background: url(https://img.icons8.com/windows/2x/level-up.png);
+    text-indent: -9999px;
+    margin-top: -675pxpx;
+    position: absolute;
+    margin-left:969px;
+ }
+
+.form-group_1{
+	float: left;
+    margin-left: -5px; 
+}
+.form-group_2{
+
+    float: left;
+    margin-left: -5px;
+    margin-top: -7px;
+}
+
+
+
+
+
+
