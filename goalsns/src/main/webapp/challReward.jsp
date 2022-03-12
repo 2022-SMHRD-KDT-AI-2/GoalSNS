@@ -78,46 +78,45 @@
 
 <!-- 리워드 부분 나오기!  -->
 
+
+<c:forEach var="reward" items="${rewardList}">
 <div class="reward_box">
 	<div class="re_box_title">
-	@물마시기_챌린지<div class="re_box_month">12&ensp;월</div>
+	@${reward.chell_name}<div class="re_box_month">${month}&ensp;월</div>
 	</div>
 	<div class="re_box_middle">
-		<div class="re_color"><i class="fa-solid fa-trophy red"></i></div>
+		<div class="re_color"><i class="fa-solid fa-trophy ${reward.reward1.color}"></i></div>
 		<!-- <div class="re_color"><i class="fa-solid fa-trophy yellow"></i></div>
 		<div class="re_color"><i class="fa-solid fa-trophy green"></i></div>
 		<div class="re_color"><i class="fa-solid fa-trophy blue"></i></div>
 		<div class="re_color"><i class="fa-solid fa-trophy rainbow"></i></div> -->
 		<div class="sign"> | </div>
-		<div class="re_percent">90%</div>
+		<div class="re_percent">${reward.reward1.rate}%</div>
 		<div class="sign"> | </div>
-		<div class="re_date">20일 성공!</div>
+		<div class="re_date">${reward.reward1.cnt}일 성공!</div>
 	</div>
 	<div class="re_box_bottomtop">-달성표-</div>
 	<div class="re_box_bottom">
 		<div class="bottom_flex">
-		<div class="habit_tracker">
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-		</div>
-		<div class="habit_tracker">	
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-			<div class="tracker_date"></div>
-		</div>
+		<c:forEach var="tracker" items="${reward.reward2}" varStatus="status">
+		<c:if test="${status.index mod 10 == 0}">
+			<div class="habit_tracker">
+		</c:if>
+			<c:if test="${!empty tracker.success}">
+				<div class="tracker_date"></div>
+			</c:if>
+			<c:if test="${empty tracker.success}">
+				<div class="tracker_date nodate"></div>
+			</c:if>
+		<c:if test="${((status.index+1) mod 10 == 0) || status.last}">
+			</div>
+		</c:if>
+		</c:forEach>
 	</div>
 	</div>
 </div>
+</c:forEach>
+
 
 
 

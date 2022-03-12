@@ -162,6 +162,7 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+
 .re_box_month{
 	float:right;
 }
@@ -250,7 +251,9 @@
     margin:2.7px;
     border-radius: 5px;
 }
-
+.nodate{
+	background-color:#EAEAEA;
+}
 
 
 /* 팔로워 모달창 */

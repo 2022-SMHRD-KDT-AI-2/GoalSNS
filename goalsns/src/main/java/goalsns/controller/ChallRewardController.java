@@ -64,7 +64,7 @@ public class ChallRewardController implements Controller {
 		int month = now.getMonthValue();
 		request.setAttribute("month", month);
 
-		return "test2";
+		return "challReward";
 	}
 
 }
