@@ -19,9 +19,11 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+
 <!-- 모달창  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달창 끝  -->
+<script type="text/javascript" src="./resources/js/all.js"></script>
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
@@ -30,9 +32,9 @@
 	function goLike(post_seq){
 		location.href="/goalsns/like.do?post_seq="+post_seq;
 	}
-	//function goDeleteLike(post_seq){
-	//	location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
-	//}
+	function goDeleteLike(post_seq){
+		location.href="/goalsns/likeDelete.do?post_seq="+post_seq;
+	}
 	//function goDeleteContent(post_seq){
 	//	location.href="/goalsns/cmtDelete.do?post_seq="+post_seq;
 	//}
@@ -43,7 +45,7 @@
 <jsp:include page="menu.jsp" />
 <!-- 이런식으로 하면 여기만 바꿔서 코딩하면 상단과 하단을 분리해서 쓸 수 있어요 -->
 <div id="jb-container">
-<c:forEach var="vo" items="${list}">
+<c:forEach var="vo" items="${list}" varStatus="statusNm">
   <div id="peedbox">
     <div id="peedboxtop" >
         <a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${mvo.mem_img}" width="50" height="50" ></a>
@@ -54,7 +56,11 @@
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
     </div>
     <section>
- 		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
+    <form id="like_form">
+			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
+			<input type="button" onclick="return like()"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
+ 	</form>
+ 		<a></a>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
  		<a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->

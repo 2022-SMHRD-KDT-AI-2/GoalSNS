@@ -1,6 +1,7 @@
 package goalsns.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -8,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import goalsns.entity.CmtVO;
 import goalsns.entity.MemberVO;
 import goalsns.entity.PostVO;
 import goalsns.entity.TrendVO;
@@ -27,7 +27,8 @@ public class MainController implements Controller {
 		String mem_id = memvo.getMem_id();
 		List<PostVO> list = dao.selectPosts(mem_id);
 		request.setAttribute("list", list);
-		
+		// -------------- 좋아요 여부 -----------------------
+
 		// -------------- 인기 챌린지 해시태그 -----------------------
 		List<TrendVO> trend = dao.getTrend();
 		request.setAttribute("trend", trend);
