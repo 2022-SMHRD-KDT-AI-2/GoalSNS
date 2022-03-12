@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<p>${month}월!!!</p>
 <c:forEach var="reward" items="${rewardList}">
 	<p>${reward.chell_seq}번 해시태그인데 이름이 나오도록 바꿔야겠네.</p>
 	<p>@${reward.chell_name} <-이름이 </p>
