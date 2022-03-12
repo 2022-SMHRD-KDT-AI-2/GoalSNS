@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import goalsns.entity.ChellVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.MemberVO;
 import goalsns.entity.RewardVO;
@@ -35,6 +36,7 @@ public class ChallRewardController implements Controller {
 		int[] chellList = pdao.getChellList(mvo);
 		int size = chellList.length; 
 		int cnt = 0;
+		String chell_name;
 		RewardVO[] rewardList = new RewardVO[size];
 		TrophyVO[] trophyList = new TrophyVO[size];
 
@@ -44,6 +46,8 @@ public class ChallRewardController implements Controller {
 			
 			rewardList[i].setChell_seq(chellList[i]);
 			mcvo.setChell_seq(chellList[i]);
+			chell_name = pdao.getChellName(mcvo).getChell_name();
+			rewardList[i].setChell_name(chell_name);
 			trophyList[i] = new TrophyVO();
 			cnt = pdao.getReward1(mcvo).length;
 			trophyList[i].setCnt(cnt);

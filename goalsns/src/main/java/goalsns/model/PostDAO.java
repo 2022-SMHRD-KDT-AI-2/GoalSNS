@@ -254,6 +254,14 @@ public class PostDAO {
 		return list;
 	}
 	
+	// (4) 챌린지 이름 가져오기
+	public ChellVO getChellName(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		ChellVO chell_name = session.selectOne("getChellName", mcvo); 
+		session.close();
+		return chell_name;
+	}
+	
 	//-----------------------------------댓글, 좋아요--------------------------------------
 	public int cmt(CmtVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
