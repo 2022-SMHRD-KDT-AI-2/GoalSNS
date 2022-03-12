@@ -116,7 +116,9 @@ where c.chell_seq = mc.chell_seq
   		select * from t_mem_chell where mem_id = #{mem_id}
   	</select>
 	<select id="getReward1" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.PostVO">
-  		select * from t_post where chell_seq = #{chell_seq} and mem_id = #{mem_id} order by post_date
+  		select * from t_post where chell_seq = #{chell_seq} and mem_id = #{mem_id}
+and post_date between (select FIRST_DAY from (SELECT TRUNC(SYSDATE, 'MM') FIRST_DAY FROM DUAL)) and (select LAST_DAY from (SELECT LAST_DAY(sysdate) LAST_DAY FROM DUAL))
+order by post_date
   	</select>
  	<select id="getReward2" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.TrackerVO">
  	<![CDATA[
