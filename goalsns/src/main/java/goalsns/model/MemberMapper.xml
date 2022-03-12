@@ -23,9 +23,9 @@
 	</insert>
 	
 	<!-- 아이디 중복체크 -->
-	<select id="idCheck" resultType="goalsns.entity.MemberVO">
+	<select id="idCheck" resultType="String">
 		select * from t_member
-		where mem_id = #{mem_id}
+		where mem_id=#{mem_id}
 	</select>
 	
 	<!-- 회원탈퇴 -->

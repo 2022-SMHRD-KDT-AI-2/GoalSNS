@@ -18,34 +18,18 @@ public class FollowController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String id = (String)request.getParameter("mem_id");
 		String to_mem =request.getParameter("mem_id"); // 상대의 아이디
 		HttpSession session=request.getSession();
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
+		String mem_id=(String)memvo.getMem_id(); // 자신의 아이디
 		FollowVO fvo =new FollowVO();
 		MemberDAO dao=new MemberDAO();
-		String from_mem=(String)memvo.getMem_id(); // 자신의 아이디
 		fvo.setTo_mem(to_mem);
-		fvo.setFrom_mem(from_mem);
+		fvo.setFrom_mem(mem_id);
 		//팔로우DB에 저장
 		dao.follow(fvo);
-		PostDAO pdao = new PostDAO();
-		List<FollowVO> memfo=dao.getFollowInfo(fvo);
-		MemberVO mvo = dao.getMemberInfo(id);
-		List<PostVO> postList = pdao.getMemberPosts(to_mem);
-		List<FollowVO> followlist=dao.followAll(fvo);
-		List<FollowVO> followedlist=dao.followedAll(fvo);
-		int postCnt = postList.size();
-		if(from_mem!=id) {
-		request.setAttribute("mvo", mvo);
-		request.setAttribute("memfo", memfo);
-		request.setAttribute("postList", postList);
-		request.setAttribute("postCnt", postCnt);
-		request.setAttribute("followlist", followlist);
-		request.setAttribute("followedlist", followedlist);
-		return "profile";
-		}else {
-			return "redirect:/profile.do";
-		}
+		
+		return "redirect:/profile.do?mem_id="+to_mem;
+		
 	}
 }

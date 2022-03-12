@@ -8,6 +8,12 @@
 <meta charset="utf-8">
 <link href="./resources/CSS/signUp.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function idcheck(){
+		let id=document.getElementById('id').value;
+		location.href="/goalsns/idCheck.do?id="+id;
+	}
+</script>
 </head>
 <body>
    
@@ -30,8 +36,14 @@
          <input id = "id" type="text" class="boxs_1" name="id" placeholder="사용자 이름">
         </div>
         <div class="btn_0">
-         <button id = "idCheck" type ="button" class = "btn btn-primary btn-sm" onclick="resultJSON()">ID중복체크</button>
+         <button method = "post" id = "idCheck" type ="button" class = "btn btn-primary btn-sm" onclick="idcheck()">ID중복체크</button>
         </div>
+        <c:if test="${null ne idck}">
+    <p>aaaaa</p>
+    </c:if>
+   	<c:if test="${null eq idck}">
+    <p>aaaaad</p>
+    </c:if>
         <br>
         <div>
          <input type="password" class="boxs_1"  name="pw" placeholder="비밀번호">
@@ -44,12 +56,12 @@
         </div>
         </div>
     </form>
-   
+    
     <div class="item_2">  
      <div class="form-group">
       <div class="item_text">
         <strong>계정이 있으신가요?</strong>
-        <a href="#" onclick="location.href='signUp.jsp'">로그인</a>
+        <a href="index.jsp" onclick=>로그인</a>
       </div>
      </div>
     </div>

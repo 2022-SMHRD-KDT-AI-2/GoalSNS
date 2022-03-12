@@ -41,6 +41,8 @@ public class ProfileDefaultController implements Controller {
 		request.setAttribute("memfo", memfo);
 		request.setAttribute("followlist", followlist);
 		request.setAttribute("followedlist", followedlist);
+		System.out.println(mvo);
+		System.out.println(memvo);
 		return "profile";
 	}
 

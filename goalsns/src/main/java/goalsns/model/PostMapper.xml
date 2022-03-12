@@ -34,7 +34,7 @@
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
   	</select>
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
-  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc
+  		select * from t_post where mem_id=#{mem_id} order by post_date desc
   	</select>
   	<select id="getTrend" resultType="goalsns.entity.TrendVO">
   		select mc.chell_seq, mc.cnt, c.chell_name
