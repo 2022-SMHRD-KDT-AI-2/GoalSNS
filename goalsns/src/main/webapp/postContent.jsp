@@ -27,7 +27,7 @@
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
-		location.href="/goalsns/postCmt.do?post_seq="+post_seq;
+		location.href="/goalsns/postContent.do?post_seq="+post_seq;
 	}
 	function goLike(post_seq){
 		location.href="/goalsns/postLike.do?post_seq="+post_seq;
@@ -109,8 +109,8 @@
 		<!-- 여섯번째 줄(댓글달기상자) -->
 		<div class="textsection">
 			<div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-        	<form action=""><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-        	<div class="textsection3"><button class="textsection_bt" type="submit" onclick="goContent(${vo.post_seq})">게시</button></div></form>
+        	<form action="goContent(${vo.post_seq})"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+        	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
 		</div>	
 	</div>
 
