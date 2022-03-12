@@ -34,7 +34,7 @@
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
   	</select>
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
-  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id}
+  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc
   	</select>
   	<select id="getTrend" resultType="goalsns.entity.TrendVO">
   		select mc.chell_seq, mc.cnt, c.chell_name
@@ -128,6 +128,9 @@ where c.chell_seq = mc.chell_seq
 		on TO_CHAR(p.post_date) = c.today_str
 		order by c.today_str
 	]]>
+  	</select>
+  	<select id="getChellName" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.ChellVO">
+  		select chell_name from t_chell where chell_seq = #{chell_seq}
   	</select>
 
 	
