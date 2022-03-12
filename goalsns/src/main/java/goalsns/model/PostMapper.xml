@@ -103,7 +103,7 @@ where c.chell_seq = mc.chell_seq
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
 		delete from t_like 
-		where post_seq=#{post_seq}
+		where post_seq=#{post_seq} and mem_id = #{mem_id}
 	</delete>
 	<!-- 댓글 삭제 -->
 	<delete id = "cmtDelete" parameterType="goalsns.entity.CmtVO">
@@ -135,9 +135,22 @@ where c.chell_seq = mc.chell_seq
 
 	
 	<!-- 댓글 리스트 -->
+
 	<select id="selectAll" resultType = "goalsns.entity.CmtVO">
 		select from t_cmt 
 		order by mem_id desc
 	</select>
+
+	<select id="selectCmt" resultType = "goalsns.entity.CmtVO">
+	<![CDATA[
+		select * from t_cmt 
+		where post_seq =#{post_seq}
+		order by cmt_date desc
+	]]>
+	</select>
+  	<select id="selectLike" parameterType="goalsns.entity.LikeVO" resultType="goalsns.entity.LikeVO">
+  		select * from t_like where post_seq = #{post_seq}
+  	</select>
+
 	
 </mapper>
