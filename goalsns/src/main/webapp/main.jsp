@@ -56,7 +56,7 @@
     <section>
  		<a><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})"></i></a>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
- 		<a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goContent(${vo.post_seq})"></i></a>
+ 		<a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
     <div>
