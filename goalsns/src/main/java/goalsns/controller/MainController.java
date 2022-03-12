@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import goalsns.entity.CmtVO;
 import goalsns.entity.MemberVO;
 import goalsns.entity.PostVO;
 import goalsns.entity.TrendVO;
@@ -36,6 +37,7 @@ public class MainController implements Controller {
 		List<String> rank = mdao.getMemRank();
 		request.setAttribute("rank", rank);
 		return "main";
+		
 	}
 
 }
