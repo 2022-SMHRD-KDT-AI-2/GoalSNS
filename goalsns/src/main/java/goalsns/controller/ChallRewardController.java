@@ -2,6 +2,7 @@ package goalsns.controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,10 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import goalsns.entity.ChellVO;
+import goalsns.entity.FollowVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.MemberVO;
+import goalsns.entity.PostVO;
 import goalsns.entity.RewardVO;
 import goalsns.entity.TrophyVO;
+import goalsns.model.MemberDAO;
 import goalsns.model.PostDAO;
 
 public class ChallRewardController implements Controller {
@@ -21,7 +25,28 @@ public class ChallRewardController implements Controller {
 			throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
-		String mem_id = memvo.getMem_id();
+		String id = (String)request.getParameter("mem_id");//상대방아이디
+		String from_mem=(String)memvo.getMem_id();//자신의아이디
+		MemberDAO mdao = new MemberDAO();
+		PostDAO pdao = new PostDAO();
+		FollowVO fvo=new FollowVO();
+		fvo.setTo_mem(id);
+		fvo.setFrom_mem(from_mem);
+		MemberVO mvo = mdao.getMemberInfo(id);
+		List<FollowVO> memfo=mdao.getFollowInfo(fvo);
+		List<FollowVO> followlist=mdao.followAll(fvo);
+		List<FollowVO> tofollowlist=mdao.tofollowAll(fvo);
+		List<FollowVO> followedlist=mdao.followedAll(fvo);
+		List<FollowVO> tofollowedlist=mdao.tofollowedAll(fvo);
+		List<PostVO> postList = pdao.getMemberPosts(id);
+		int postCnt = postList.size();
+		request.setAttribute("postCnt", postCnt);
+		request.setAttribute("mvo", mvo);
+		request.setAttribute("memfo", memfo);
+		request.setAttribute("followlist", followlist);
+		request.setAttribute("followedlist", followedlist);
+		request.setAttribute("tofollowlist", tofollowlist);
+		request.setAttribute("tofollowedlist", tofollowedlist);
 		/*
 		 * (1) 챌린지 해시태그 리스트 가져오기. (커다란 리스트)
 		 * (2) 챌린지 해시태그 아이디에 관한 해당 로그인 유저의 월별 달성도 출력. (작은 리스트)
@@ -29,12 +54,11 @@ public class ChallRewardController implements Controller {
 		 * 리스트[ [해시태그아이디, 리워드1, 리워드2] [해시태아이디, 리워드1, 리워드2] ...] 
 		 * 커다란 리스트 엔티티 - int chell_seq, 달성도 엔티티(List<String> 날짜리스트), 달성표 엔티티(이미 만듦 TrackerVO)
 		 */
-		PostDAO pdao = new PostDAO();
 		MemChellVO mcvo = new MemChellVO();
-		mcvo.setMem_id(mem_id);
-		MemberVO mvo = new MemberVO();
-		mvo.setMem_id(mem_id);
-		int[] chellList = pdao.getChellList(mvo);
+		mcvo.setMem_id(id);
+		MemberVO mvo2 = new MemberVO();
+		mvo2.setMem_id(id);
+		int[] chellList = pdao.getChellList(mvo2);
 		int size = chellList.length; 
 		int cnt = 0;
 		String chell_name;

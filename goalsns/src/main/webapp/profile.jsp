@@ -31,6 +31,9 @@
 	function goUnFollow(mem_id){
 		location.href="/goalsns/unfollow.do?mem_id="+mem_id;
 	}
+	function goReward(mem_id){
+		location.href="/goalsns/challreward.do?mem_id="+mem_id;
+	}
 </script>
 </head>
 <body>
@@ -38,7 +41,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="#"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
+			<a href="/goalsns/profile.do?mem_id=${memvo.mem_id}"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
@@ -47,21 +50,21 @@
 				</div>
 				<div class="prof_edit">
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
+				    <c:if test="${memvo.mem_id==mvo.mem_id}">
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
+					</c:if>
 					<c:if test="${memvo.mem_id!=mvo.mem_id}">
 					<c:if test="${!empty memfo}">
-					<a name="mem_id" href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn" onclick="goUnFollow(${mvo.mem_id})">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					<button class="profile_btn" onclick="goUnFollow('${mvo.mem_id}')">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
 					</c:if>
 					<c:if test="${empty memfo}">
-					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<button class="profile_btn follow1" onclick="goFollow('${mvo.mem_id}')">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 					</c:if>
 					</c:if>
 				</div>
 				<div class="prof_reward">
-					<button class="profile_btn reward">챌린지 리워드</button>
+					<button class="profile_btn reward" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
 				</div>
 			</div>
 
@@ -103,7 +106,7 @@
 	<c:if test="${status.index mod 3 == 0}">
 		<div class="img_row">	
 	</c:if>
-		<div class="imgbox"><img src="./postPic/${post.post_file}"></div>
+		<div class="imgbox"><a href="/goalsns/postContent.do?post_seq=${post.post_seq}"><img src="./postPic/${post.post_file}"></a></div>
 	<c:if test="${((status.index+1) mod 3 == 0) || status.last}">
 		</div>
 	</c:if>
