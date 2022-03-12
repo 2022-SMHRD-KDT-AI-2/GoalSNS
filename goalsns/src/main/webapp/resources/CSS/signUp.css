@@ -6,12 +6,12 @@
     width: 500px;
     height: 732px;
     background-color: #FDFDFD;
-    margin-left: 759px;
+    margin-left: 715px;
     margin-top: 85px;
 }
 .item{
 	width: 430px;
-    height: 511px;
+    height: 555px;
     background-color:#FDFDFD;
      margin-left: 37px;
      
@@ -21,10 +21,10 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .item_1{
-    margin-top: -9px;
+    margin-top: 0px;
     margin-left: 3px;
     width: 422px;
-    height: 332px;
+    height: 351px;
     background-color: white;
     float: left;
 }
@@ -45,7 +45,7 @@ img {
     vertical-align: middle;
     width: 244px;
     margin-left: 63px;
-    margin-top: 5px;
+    margin-top: 11px;
 }
 h5{
    margin-top: 6px;   
@@ -98,7 +98,7 @@ a{
 }
 .btn_1{
 	margin-left: 38px;
-	
+	margin-top: 7px;
 }
 .btn {
     display: inline-block;
