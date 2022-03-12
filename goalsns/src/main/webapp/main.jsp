@@ -56,10 +56,21 @@
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
     </div>
     <section>
-    <form id="like_form${vo.post_seq}">
+    <c:forEach var="isLike" items="${likeCheck}" begin="${statusNm.index}" end="${statusNm.index}">
+    <c:if test="${isLike.lseq eq 0}">
+    	    <form id="like_form${vo.post_seq}">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
 			<input type="button" onclick="return like(${vo.post_seq})"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
  	</form>
+    </c:if>
+    <c:if test="${isLike.lseq ne 0}">
+    	    <form id="like_form${vo.post_seq}">
+			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
+			<input type="button" onclick="return like(${vo.post_seq})"><span class="fa-solid fa-heart disheart ${vo.post_seq}"></span>
+ 	</form>
+    </c:if>
+    </c:forEach>
+
  		<a></a>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
  		<a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>

@@ -27,11 +27,18 @@ public class LikeTestController implements Controller {
 		LikeVO vo = new LikeVO();
 		vo.setPost_seq(bno);
 		vo.setMem_id(mem_id);
-		dao.like(vo); //인서트 
+		
 		
 		int like = dao.selectLike(vo).size();
 		System.out.println("like 개수:"+ like);
-		
+		if(like != 0) {
+			dao.likeDelete(vo); //삭제
+			System.out.println("삭제");
+		}
+		else {
+			dao.like(vo); //삽입
+			System.out.println("삽입");
+		}
 		JSONObject obj = new JSONObject();
 		obj.put("like",like);
 		obj.put("post_seq", bno);
