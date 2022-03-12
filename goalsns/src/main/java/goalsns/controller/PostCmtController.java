@@ -7,27 +7,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import goalsns.entity.LikeVO;
+import goalsns.entity.CmtVO;
 import goalsns.entity.MemberVO;
-//import goalsns.entity.LikeVO;
 import goalsns.model.PostDAO;
 
-public class LikeDeleteController implements Controller {
+public class PostCmtController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-//		HttpSession session=request.getSession();
-//		MemberVO memvo = (MemberVO)session.getAttribute("memvo"); 
-//		String mem_id=(String)memvo.getMem_id();
-//		
-		LikeVO vo = new LikeVO();
-		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
-		//vo.setMem_id(mem_id);
-		PostDAO dao = new PostDAO();
-		dao.likeDelete(post_seq);
+		HttpSession session=request.getSession();
+		MemberVO memvo = (MemberVO)session.getAttribute("memvo"); 
+		String mem_id=(String)memvo.getMem_id();
 		
-		return "redirect:/main.do";
+		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
+		String cmt_content = request.getParameter("content");
+		
+		CmtVO vo = new CmtVO();
+		vo.setPost_seq(post_seq); 
+		vo.setMem_id(mem_id);
+		vo.setCmt_content(cmt_content);
+		
+		PostDAO dao = new PostDAO();
+		dao.cmt(vo);
+		
+		return "redirect:/postContent.do?post_seq="+post_seq;
 	}
 
 }
