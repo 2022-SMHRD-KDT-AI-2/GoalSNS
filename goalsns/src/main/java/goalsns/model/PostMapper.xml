@@ -129,6 +129,9 @@ where c.chell_seq = mc.chell_seq
 		order by c.today_str
 	]]>
   	</select>
+  	<select id="getChellName" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.ChellVO">
+  		select chell_name from t_chell where chell_seq = #{chell_seq}
+  	</select>
 
 	
 	<!-- 댓글 리스트 -->
