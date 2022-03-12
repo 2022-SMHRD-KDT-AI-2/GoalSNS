@@ -34,6 +34,7 @@ public class HandlerMapping {
 		mappings.put("/followprofile.do", new FollowProfileController());
 		mappings.put("/followedprofile.do", new FollowProfileController());
 		
+		mappings.put("/likeTest.do", new LikeTestController());
 	}
 	public Controller getController(String key) {
 		return mappings.get(key);

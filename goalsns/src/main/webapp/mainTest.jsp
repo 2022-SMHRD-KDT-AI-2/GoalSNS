@@ -19,7 +19,7 @@
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="./resources/js/all.js"></script>
-
+<script type="text/javascript" src="./resources/js/test.js"></script>
 
 <!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -43,7 +43,16 @@
     
     <!-- heart hover 시 연하게 바뀜! -->
  		<button id="heart"><i id="i" class="fa-regular fa-heart heart"></i></button>
- 		
+ 		<!-- 도연 좋아요 테스트 -->
+			<form id="like_form">
+			<table id="list">
+			<input type="hidden" name="command" value="like_it">
+			<input type="hidden" name="board_num" value="59"> <!-- 게시글넘버 -->
+			<tr><input type="button" onclick="return like()" class="trylike"><span class="first">좋아요</span></tr>
+			<tr><div id="like_result">${board.like_it}</div> </tr>
+			</table>
+			</form>
+		<!-- //도연 좋아요 테스트 -->
  		<script type="text/javascript">
  			/* if(class==i)
  				
