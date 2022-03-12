@@ -46,10 +46,9 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public int idCheck(MemberVO vo) {
+	public String idCheck(String id) {
 		SqlSession session = sqlSessionFactory.openSession();
-		int result = session.insert("idCheck", vo);
-		session.commit();
+		String result = session.selectOne("idCheck", id);
 		session.close();
 		return result;
 	}
@@ -88,9 +87,21 @@ public class MemberDAO {
 		session.close();
 		return list;
 	}
+	public List<FollowVO> tofollowAll(FollowVO vo){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<FollowVO> list = session.selectList("tofollowAll",vo);
+		session.close();
+		return list;
+	}
 	public List<FollowVO> followedAll(FollowVO vo){
 		SqlSession session = sqlSessionFactory.openSession();
 		List<FollowVO> list = session.selectList("followedAll",vo);
+		session.close();
+		return list;
+	}
+	public List<FollowVO> tofollowedAll(FollowVO vo){
+		SqlSession session = sqlSessionFactory.openSession();
+		List<FollowVO> list = session.selectList("tofollowedAll",vo);
 		session.close();
 		return list;
 	}

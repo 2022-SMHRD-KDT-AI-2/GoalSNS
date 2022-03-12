@@ -3,37 +3,48 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1060px;
-    height: 731px;
+    width: 1081px;
+    height: 748px;
     background-color: gainsboro;
     margin-left: 477px;
     border-radius: 30px;
-    margin-top: 40px;
+    margin-top: 35px;
+    background: #33333324;
 }
 .item_1{
-	background-color: yellow;
-    width: 1060px;
+	
+    width: 1078px;
     height: 76px;
-     border-radius: 30px 30px 0px 0px;
+    border-radius: 30px 30px 0px 0px;
+    margin-top: -1px;
+    background: #FFFFFF;
+    /* border: solid gray 1px; */
+    margin-left: 3px;
 }	
 .item_2{
 	
 }	
 .item_3{
-    background-color: green;
-    width: 388px;
-    height: 655px;
+    background: #FFFFFF;
+    width: 405px;
+    height: 671px;
     float: right;
-    margin-top: -678px;
+    margin-top: -88px;
     border-radius: 0px 0px 30px 0px;
-    
+    /* border-right: solid gray 1px; */
+    /* border-left: solid gray 1px; */
+    margin-left: 18px;
+   
+   
     
 }	
 .postPic_1{
     width: 672px;
-    height: 655px;
+    height: 678px;
     border-radius: 0px 0px 0px 30px;
-    margin-top: 9px;
+        margin-top: 1px;
+    margin-left: 3px;
+
 }
 .postPic_2{
     width: 50px;
@@ -42,23 +53,29 @@
     border-radius: 70%;
     float: left;
     margin-right: 14px;
-    margin-top: 2px;
-    margin-left: 3px;
+    margin-top: 20px;
+    margin-left: 28px;
 }
 .spark_1{
-    width: 389px;
-    height: 335px;
+    width: 404px;
+    height: 333px;
+    border: none;
+    margin-left: 2px;
+    margin-top: 11px;
 }
 .spark_2{
-    width: 389px;
-    height: 270px;
+    width: 404px;
+    height: 263px;
     border-radius: 0px 0px 30px 0px;
+    border-top:solid gray 1px;
+    margin-left: 2px;
+  
 }
 h5{
-	font-weight: 400;
+    font-weight: 400;
     font-size: 16px;
     line-height: 17px;
-    margin-top: 17px;
+    margin-top: 47px;
     float: left;
 }
 
@@ -112,17 +129,29 @@ h5{
  }
 
 .form-group_1{
-	float: left;
-    margin-left: -5px; 
+    float: left;
+    margin-left: -5px;
+    
+    
 }
 .form-group_2{
 
     float: left;
     margin-left: -5px;
     margin-top: -7px;
+ 
+  
+    
 }
-
-
+.input_1{
+	float: none;
+    margin-top: -614px;
+    /* margin-right: 41px; */
+    margin-left: 301px;
+}
+.form-group_0{
+	margin-left: -1px;
+}
 
 
 

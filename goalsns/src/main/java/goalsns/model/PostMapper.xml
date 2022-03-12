@@ -34,7 +34,7 @@
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
   	</select>
   	<select id="getMemberPosts" resultType="goalsns.entity.PostVO">
-  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc
+  		select * from t_post where mem_id=#{mem_id} order by post_date desc
   	</select>
   	<select id="getTrend" resultType="goalsns.entity.TrendVO">
   		select mc.chell_seq, mc.cnt, c.chell_name
@@ -116,9 +116,7 @@ where c.chell_seq = mc.chell_seq
   		select * from t_mem_chell where mem_id = #{mem_id}
   	</select>
 	<select id="getReward1" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.PostVO">
-  		select * from t_post where chell_seq = #{chell_seq} and mem_id = #{mem_id}
-and post_date between (select FIRST_DAY from (SELECT TRUNC(SYSDATE, 'MM') FIRST_DAY FROM DUAL)) and (select LAST_DAY from (SELECT LAST_DAY(sysdate) LAST_DAY FROM DUAL))
-order by post_date
+  		select * from t_post where chell_seq = #{chell_seq} and mem_id = #{mem_id} order by post_date
   	</select>
  	<select id="getReward2" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.TrackerVO">
  	<![CDATA[
@@ -137,6 +135,12 @@ order by post_date
 
 	
 	<!-- 댓글 리스트 -->
+
+	<select id="selectAll" resultType = "goalsns.entity.CmtVO">
+		select from t_cmt 
+		order by mem_id desc
+	</select>
+
 	<select id="selectCmt" resultType = "goalsns.entity.CmtVO">
 	<![CDATA[
 		select * from t_cmt 
@@ -147,5 +151,6 @@ order by post_date
   	<select id="selectLike" parameterType="goalsns.entity.LikeVO" resultType="goalsns.entity.LikeVO">
   		select * from t_like where post_seq = #{post_seq}
   	</select>
+
 	
 </mapper>
