@@ -70,12 +70,28 @@ a{
   margin: 0%;
 }
 
+/* 좋아요 버튼 부분! */
 .fa-heart{
 	font-size: 30px;
 	color: black;
   	padding: 10px;
   	margin-left: 6px;
 }
+.hide_input{
+	position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    margin: 10px;
+    padding: 0;
+    margin-left: 16px;
+}
+
+
+
+
+
 .fa-comment{
 	font-size: 30px;
 	color: black;

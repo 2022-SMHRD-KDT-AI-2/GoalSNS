@@ -62,13 +62,13 @@
     <c:if test="${isLike.lseq eq 0}">
     	    <form id="like_form${vo.post_seq}">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
-			<input type="button" onclick="return like(${vo.post_seq})"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
+			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
  	</form>
     </c:if>
     <c:if test="${isLike.lseq ne 0}">
     	    <form id="like_form${vo.post_seq}">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
-			<input type="button" onclick="return like(${vo.post_seq})"><span class="fa-solid fa-heart disheart ${vo.post_seq}"></span>
+			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-solid fa-heart disheart ${vo.post_seq}"></span>
  	</form>
     </c:if>
     </c:forEach>
