@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html charset="utf-8">
 <link href="./resources/CSS/signUp.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>챌린샷</title>
 <script type="text/javascript">
 	
 window.onload=function(){
