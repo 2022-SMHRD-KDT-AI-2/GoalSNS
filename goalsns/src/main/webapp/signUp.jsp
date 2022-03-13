@@ -23,7 +23,7 @@ function checkit(){
     }
     if(document.fo.name.value === "" || isNaN(fo.name.value) === false){ 
         fo.name.focus(); 
-      alert("이름을 입력하시오");
+      alert("이름이 비어있거나 숫자가 들어있습니다.");
       return;
  }
     if (document.fo.name.value.indexOf(" ") >= 0) {
@@ -39,13 +39,13 @@ function checkit(){
     if (fo.id.value == "") {
         alert("아이디를 입력하지 않았습니다.")
         fo.id.focus();
-        return false;
+        return;
     }
  
     for (var i = 0; i < document.fo.id.value.length; i++) {
         ch = document.fo.id.value.charAt(i)
-        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')&&!() {
-            alert("아이디는 영문 대소문자, 숫자, 특수문자만 입력가능합니다.")
+        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')&&!(ch=='.')&&!(ch=='_')) {
+            alert("아이디는 영문 대소문자, 숫자, 특수문자(.,_)만 입력가능합니다.")
             document.fo.id.focus();
             return;
         }
@@ -77,8 +77,8 @@ function checkit(){
     }
     for (var i = 0; i < document.fo.pw.value.length; i++) {
         ch = document.fo.pw.value.charAt(i)
-        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
-            alert("비밀번호는 영문 대소문자, 숫자와 특수문자(.,_)만 입력가능합니다.")
+        if (!(ch >= '!' && ch <= '~')) {
+            alert("비밀번호는 영문 대소문자, 숫자와 특수문자만 입력가능합니다.")
             document.fo.pw.focus();
             return;
         }
