@@ -33,7 +33,7 @@
        
 		<div class="item1">
             <div class="profilEidt_1">
-                <a class="a_1" href="/goalsns/profileEdit.jsp">프로필 편집</a>
+                <div><a class="a_1" href="/goalsns/profileEdit.jsp">프로필 편집</a></div>
             </div>
             <div class="delete">
                 <a class="a_2" href="/goalsns/memberDelete.jsp">회원 탈퇴</a>
@@ -43,7 +43,7 @@
         <div class="item2">
 
        <div class="edit_form">
-       <h3>${memvo.mem_id}</h3>
+       <h3>${memvo.mem_id}iddididi</h3>
 
         <a class="profilePic" target="_self">
 	     <img class="profilePic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
@@ -71,7 +71,7 @@
             <div class="edit_form">
             <div>
              <div class="edit_id"><label for="mem_about"><span class="space">소개</span></label></div>
-             <textarea rows="5" class="form_impormation" name="mem_about">${memvo.mem_about}</textarea>
+             <textarea rows="5" class="textarea_impormation" name="mem_about">${memvo.mem_about}</textarea>
              </div>
                 <strong>개인정보</strong>
                 <p>비지니스나 반려동물 등에 사용된 계정인 경우에도 회원님의 개인정보를 입력<br>
