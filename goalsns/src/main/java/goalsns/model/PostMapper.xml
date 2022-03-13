@@ -78,7 +78,7 @@ where c.chell_seq = mc.chell_seq
   		select * from t_post where post_seq in (select post_seq from t_post_chell where chell_seq = #{chell_seq})
   	</select>
   	<select id="searchHashBySeq" resultType="goalsns.entity.PostVO">
-  		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq})
+  		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq}) order by post_date desc
   	</select>
   	
   	<!-- 댓글 -->
