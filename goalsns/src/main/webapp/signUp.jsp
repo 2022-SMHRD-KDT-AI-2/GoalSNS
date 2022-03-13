@@ -55,11 +55,11 @@ function checkit(){
           alert("이름은 2글자이상 적어주세요.")
           return;
      }
- if(fo.id.value.length <= 4) {
+ 	if(fo.id.value.length <= 4) {
     fo.id.focus();
       alert("id는 4글자 이상이여만 합니다!")
       return;
- }
+	}
           fo.action = "/goalsns/userRegister.do";
           fo.method = "post";
           fo.submit(); 
