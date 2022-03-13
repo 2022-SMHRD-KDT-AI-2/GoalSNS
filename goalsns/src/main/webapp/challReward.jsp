@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
  
-<title>Insert title here</title>
+<title>챌린샷</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
@@ -27,7 +28,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="#"><img class="img-circle" src="./resources/images/profile.png" width="200" height="200"></a>
+			<a href="/goalsns/profile.do?mem_id=${memvo.mem_id}"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
@@ -36,21 +37,21 @@
 				</div>
 				<div class="prof_edit">
 				    <!-- 나의 프로필이라면, 프로필편집버튼 / 다른 사람 프로리필이라면, 팔로우버튼  -->
+				    <c:if test="${memvo.mem_id==mvo.mem_id}">
 					<button class="profile_btn" onclick="goProfileEdit()">프로필편집</button>
+					</c:if>
 					<c:if test="${memvo.mem_id!=mvo.mem_id}">
 					<c:if test="${!empty memfo}">
-					<a href="/goalsns/unfollow.do?mem_id=${mvo.mem_id}">언팔로우</a>
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn" onclick="goUnFollow(${mvo.mem_id})">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					<button class="profile_btn" onclick="goUnFollow('${mvo.mem_id}')">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
 					</c:if>
 					<c:if test="${empty memfo}">
-					<a href="/goalsns/follow.do?mem_id=${mvo.mem_id}">팔로우테스트</a>
-					<button class="profile_btn follow1" onclick="goFollow(${mvo.mem_id})">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<button class="profile_btn follow1" onclick="goFollow('${mvo.mem_id}')">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
 					</c:if>
 					</c:if>
 				</div>
 				<div class="prof_reward">
-					<button class="profile_btn reward">챌린지 리워드</button>
+					<button class="profile_btn reward" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
 				</div>
 			</div>
 
@@ -58,12 +59,22 @@
 				<div class="post">
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
+				<c:if test="${memvo.mem_id==mvo.mem_id}">
 				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 20</button>
+					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(followedlist)}</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 19</button>
+					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(followlist)}</button>
 				</div>
+				</c:if>
+				<c:if test="${memvo.mem_id!=mvo.mem_id}">
+				<div class="follower">
+					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
+				</div>
+				<div class="follow">
+					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
+				</div>
+				</c:if>
 			</div>
 
 			<div class="section3">

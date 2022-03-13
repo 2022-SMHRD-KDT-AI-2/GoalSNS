@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
  
-<title>Insert title here</title>
+<title>챌린샷</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
@@ -48,7 +48,9 @@
 <c:forEach var="vo" items="${list}" varStatus="statusNm">
   <div id="peedbox">
     <div id="peedboxtop" >
-        <a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${mvo.mem_img}" width="50" height="50" ></a>
+    <c:forEach var="memImages" items="${memImages}" begin="${statusNm.index}" end="${statusNm.index}">
+        <a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
+       </c:forEach>
         <a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
       	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     </div>
@@ -56,13 +58,23 @@
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
     </div>
     <section>
-    <form id="like_form">
+    <c:forEach var="isLike" items="${likeCheck}" begin="${statusNm.index}" end="${statusNm.index}">
+    <c:if test="${isLike.lseq eq 0}">
+    	    <form id="like_form${vo.post_seq}" class="hide_form">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
-			<input type="button" onclick="return like()"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
+			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
  	</form>
- 		<a></a>
+    </c:if>
+    <c:if test="${isLike.lseq ne 0}">
+    	    <form id="like_form${vo.post_seq}" class="hide_form">
+			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
+			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-solid fa-heart disheart ${vo.post_seq}"></span>
+ 	</form>
+    </c:if>
+    </c:forEach>
+		<button type="button" onclick="location.href='/goalsns/postContent.do?post_seq=${vo.post_seq}' " id="def"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
- 		<a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+ 		<!-- <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a> -->
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
     <div>

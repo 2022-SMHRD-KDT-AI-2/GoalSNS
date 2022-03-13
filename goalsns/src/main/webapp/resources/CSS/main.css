@@ -1,6 +1,6 @@
 @charset "EUC-KR";
 .img-circle{
-	border: 1px solid #C4C4C4;
+	border: px solid #C4C4C4;
 }
 h2{
     font-size: 15pt;
@@ -70,17 +70,41 @@ a{
   margin: 0%;
 }
 
+/* 좋아요 버튼 부분! */
 .fa-heart{
 	font-size: 30px;
 	color: black;
   	padding: 10px;
   	margin-left: 6px;
 }
+.hide_input{
+	position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    margin: 10px;
+    padding: 0;
+    margin-left: 16px;
+}
+
+.hide_form{
+	display: inline;
+}
+/* 코멘트 부분 */
 .fa-comment{
 	font-size: 30px;
 	color: black;
   	padding: 10px;
 }
+#def{
+	margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+/*  */
 .fa-face-smile-wink{
 	font-size: 30px;
 	color: black;

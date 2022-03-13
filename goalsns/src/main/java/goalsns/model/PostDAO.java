@@ -3,9 +3,7 @@ package goalsns.model;
 import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -15,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import goalsns.entity.ChellVO;
 import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
+import goalsns.entity.LikeCheckVO;
 import goalsns.entity.LikeVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.MemberVO;
@@ -312,4 +311,10 @@ public class PostDAO {
 	
 	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
 	
+	public List<LikeCheckVO> likeCheck(MemberVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<LikeCheckVO> list = session.selectList("likeCheck",vo);
+		session.close();
+		return list;	
+	}
 }

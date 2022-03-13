@@ -137,9 +137,15 @@
         </c:if>
           <!-- 내 게시물이라면? 게시글 삭제,
            상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
-          <a href="#" class="modal-red">팔로우 취소</a>
+           <c:if test="${memvo.mem_id != vo.mem_id}">
+          <c:if test="${vo.mem_id==tfvo.to_mem }">
+          <a href="/goalsns/unfollow.do?mem_id=${vo.mem_id}" class="modal-red">팔로우 취소</a>
+          </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
-          <!-- <a href="#" class="modal-blue">팔로우</a> -->
+          <c:if test="${empty tfvo.to_mem}">
+          <a href="/goalsns/postFollow.do?post_seq=${vo.post_seq}" class="modal-blue">팔로우</a>
+          </c:if>
+          </c:if>
         </div>
         <div class="modal-box">
           <a href="#" class="black">링크복사</a>

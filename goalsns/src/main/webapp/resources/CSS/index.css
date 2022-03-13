@@ -1,4 +1,8 @@
 @charset "EUC-KR";
+.img-circle{
+	border: 2px solid #C4C4C4;
+}
+
 .container{
     display: flex;
     flex-direction: column; 

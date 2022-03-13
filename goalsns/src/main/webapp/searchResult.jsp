@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>챌린샷</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
 <div class="top_space">
 	<div><span class="search_title">${search}</span></div>
 	<div><span class="search_count">게시물 ${postCnt}</span></div>
-	<div><span class="search_popular">인기 게시물</span></div>
+	<div><span class="search_popular">최근 게시물</span></div>
 </div>
 
 <c:forEach var="post" items="${list}" varStatus="status">

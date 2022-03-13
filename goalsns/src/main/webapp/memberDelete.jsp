@@ -6,14 +6,12 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="C:/Users/smhrd/Desktop/jquery-3.6.0.min.js"></script>
-    <title>Document</title>
 
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>챌린샷</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
@@ -43,28 +41,28 @@
         <div class="item2">
         <h3>회원탈퇴</h3><br>	                 
            
-          <div class="form-group">
+          <div class="edit_form">
            <div class="pabox">          
             <!-- <label for="mem_id"> 사용자 이름 </label>   -->
-            <div class="test"><label  for="mem_id"> <span class="space">사용자 이름</span> </label></div>        
-            <input type="text" class="form-control" name="mem_id" value="${memvo.mem_id}" readonly="readonly">               
+            <div class="edit_id"><label  for="mem_id"> <span class="space">사용자 이름</span> </label></div>        
+            <input type="text" class="form-impormation" name="mem_id" value="${memvo.mem_id}" readonly="readonly">               
            </div>
                 <p>가입한 회원님의 계정을 확인해 주세요.</p>           
             </div>           
             
-             <div class="form-group">
+             <div class="edit_form">
              <div class="pabox">
-             <div class="test"><label  for="mem_email"><span class="space">이메일 주소</span></label></div>                
-             <input type="email" class="form-control" name="mem_email" id="mem_email" value="${memvo.mem_email}" readonly="readonly"> 
+             <div class="edit_id"><label  for="mem_email"><span class="space">이메일 주소</span></label></div>                
+             <input type="email" class="form-impormation" name="mem_email" id="mem_email" value="${memvo.mem_email}" readonly="readonly"> 
                </div>
                 <p>가입한 이메일을 확인해주세요.</p>
                </div>
             
           
-            <div class="form-group">   
+            <div class="edit_form">   
             <div class="pabox">        
-             <div class="test"><label   for="mem_pw"><span class="space">비밀 번호</span></label></div>              
-               <input type="password" class="form-control" name="mem_pw">     
+             <div class="edit_id"><label   for="mem_pw"><span class="space">비밀 번호</span></label></div>              
+               <input type="password" class="form-impormation" name="mem_pw">     
               </div>             
               <p>가입한 비밀번호를 입력해주세요.</p>
            </div>

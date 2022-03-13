@@ -72,6 +72,9 @@
 		where from_mem=#{to_mem}
 	</select>
 	<!-- 특정된 팔로우한사람 가져오기 -->
+	<select id="getfollowid" resultType="goalsns.entity.FollowVO">
+		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
+	</select>
 	<select id="getFollowInfo" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
 	</select>

@@ -78,7 +78,7 @@ where c.chell_seq = mc.chell_seq
   		select * from t_post where post_seq in (select post_seq from t_post_chell where chell_seq = #{chell_seq})
   	</select>
   	<select id="searchHashBySeq" resultType="goalsns.entity.PostVO">
-  		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq})
+  		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq}) order by post_date desc
   	</select>
   	
   	<!-- 댓글 -->
@@ -148,9 +148,20 @@ where c.chell_seq = mc.chell_seq
 		order by cmt_date desc
 	]]>
 	</select>
+	<!-- 좋아요 개수 가져올때 쓰려고. -->
   	<select id="selectLike" parameterType="goalsns.entity.LikeVO" resultType="goalsns.entity.LikeVO">
   		select * from t_like where post_seq = #{post_seq}
   	</select>
+
+  	<!-- 좋아요했는지 안했는지 알아볼때 쓰려고. -->
+  	<select id="likeCheck" resultType = "goalsns.entity.LikeCheckVO">
+	<![CDATA[
+		select p.post_seq as pseq, l.like_seq as lseq
+from (select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc) p
+left join t_like l
+on p.post_seq = l.post_seq
+	]]>
+	</select>
 
 	
 </mapper>
