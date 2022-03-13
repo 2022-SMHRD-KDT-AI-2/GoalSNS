@@ -72,7 +72,8 @@
 	padding-left: 35px;
 }
 .reward{
-	color:#F67600;
+	background-color: #F67600;
+    color: white;
 	border-color:#F67600;
 }
 
