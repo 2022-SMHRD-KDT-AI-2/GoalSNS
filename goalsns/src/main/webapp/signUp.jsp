@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <link href="./resources/CSS/signUp.css" rel="stylesheet" type="text/css">
-<title>Insert title here</title>
+<title>챌린샷</title>
 <script type="text/javascript">
 	function idcheck(){
 		let id=document.getElementById('id').value;
