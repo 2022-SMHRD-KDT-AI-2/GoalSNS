@@ -28,7 +28,6 @@ public class MemberLoginController implements Controller {
 			session.setAttribute("memvo", memvo);
 			System.out.print("로그인성공");
 			System.out.print(session);
-
 			return "redirect:/main.do";
 		} else {
 			System.out.print("로그인실패");
