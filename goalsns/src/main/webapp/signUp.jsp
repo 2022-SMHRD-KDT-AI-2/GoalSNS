@@ -44,8 +44,8 @@ function checkit(){
  
     for (var i = 0; i < document.fo.id.value.length; i++) {
         ch = document.fo.id.value.charAt(i)
-        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
-            alert("아이디는 영문 대소문자, 숫자만 입력가능합니다.")
+        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')&&!() {
+            alert("아이디는 영문 대소문자, 숫자, 특수문자만 입력가능합니다.")
             document.fo.id.focus();
             return;
         }
@@ -78,7 +78,7 @@ function checkit(){
     for (var i = 0; i < document.fo.pw.value.length; i++) {
         ch = document.fo.pw.value.charAt(i)
         if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
-            alert("비밀번호는 영문 대소문자, 숫자만 입력가능합니다.")
+            alert("비밀번호는 영문 대소문자, 숫자와 특수문자(.,_)만 입력가능합니다.")
             document.fo.pw.focus();
             return;
         }
