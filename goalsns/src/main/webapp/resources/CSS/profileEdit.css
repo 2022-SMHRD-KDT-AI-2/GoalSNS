@@ -1,4 +1,8 @@
 @charset "EUC-KR";
+.img-circle{
+	border: 2px solid #C4C4C4;
+}
+
 .container_1{
       /*margin:0;*/
     background-color:white;
@@ -8,7 +12,7 @@
     display:flex; 
     flex-direction: row; 
     width: 70%;
-    height:820px;
+    height:835px;
     margin-left: 400px;
     border:solid #EAEAEA 1px;
     border-radius: 5px; 
@@ -18,7 +22,7 @@
     position: absolute;
     width: 193px;
     left: 210px;
-    height: 820px;
+    height: 835px;
     text-align: center;
     background-color: white;
     border-right:solid #E5E5E5 1px;
@@ -32,27 +36,28 @@
 	flex-basis: content;
 	position: absolute;
     top: 120px;
-    padding-left: 400px;
+    padding-left: 320px;
     float: left;
     text-align:left;
 }
 .profilEidt_1{
 	flex-basis: content;
-	position: absolute;
-    top: 85px;
-    left:19px;
+	top: 85px;
+    left: 19px;
     border-right:solid black 1px;
     width: 174px;
-    height: 20px;	       
+    height: 70px;
+    margin: 18px;
+    padding-top: 25px;       
 }
 .delete{
 	flex-basis: content;
-	position: absolute;
-    top: 135px;
+    top: 85px;
     left: 19px;
-    /*border-right:solid whitesmoke 1px;*/
     width: 174px;
-    height: 20px;	
+    height: 70px;
+    margin: 18px;
+    padding-top: 25px;	
 } 
 .a_1{
 	color: black;
@@ -60,10 +65,16 @@
 	line-height: 22px;
 }
 .a_2{
-	color: gray;
+	color: rgba(0, 0, 0, 0.42);
 	font-size: 15px;
 	line-height: 22px;
 }
+.a_1:hover, .a_2:hover{
+	color: black;
+	text-decoration:none;
+	
+}
+
 .profilePic{
 	width: 70px;
     height: 70px;    
@@ -99,6 +110,15 @@ span{
     border-radius: 3px;
     border:solid 1px #E8E8E8;
     height: 40px;
+}
+.textarea_impormation{
+	background: white;
+    width: 490px;
+    float: right;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border:solid 1px #E8E8E8;
+	height: 65px;
 }
 .selfarea{
 	background: white;
