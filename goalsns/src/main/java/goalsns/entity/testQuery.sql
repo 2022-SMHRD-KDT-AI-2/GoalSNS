@@ -15,3 +15,6 @@ select * from T_FOLLOW;
 select * from T_LIKE;
 
 select * from T_CMT;
+
+delete from t_member
+where mem_id='terereeeeeeeeeeeeee';

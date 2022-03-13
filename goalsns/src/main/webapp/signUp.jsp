@@ -21,17 +21,22 @@ function checkit(){
         fo.email.focus();
         return;   
     }
-    if(document.fo.name.value === "" || isNaN(fo.name.value) === false){ //isNaN에 의해서 숫자는 처리 불가
-        fo.name.focus(); //request는 생략 가능(java)
+    if(document.fo.name.value === "" || isNaN(fo.name.value) === false){ 
+        fo.name.focus(); 
       alert("이름을 입력하시오");
       return;
  }
     if (document.fo.name.value.indexOf(" ") >= 0) {
-        alert("아이디에 공백을 사용할 수 없습니다.")
+        alert("이름에 공백을 사용할 수 없습니다.")
         document.fo.name.focus();
         return;
     }
-    if (f.id.value == "") {
+    if(fo.name.value.length < 2) {
+        fo.name.focus();
+          alert("이름은 2글자이상 입력가능합니다.")
+          return;
+     }
+    if (fo.id.value == "") {
         alert("아이디를 입력하지 않았습니다.")
         fo.id.focus();
         return false;
@@ -46,20 +51,44 @@ function checkit(){
         }
     }
     if (document.fo.id.value.indexOf(" ") >= 0) {
-        alert("이름에 공백을 사용할 수 없습니다.")
+        alert("아이디에 공백을 사용할 수 없습니다.")
         document.fo.id.focus();
         return;
     }
-    if(fo.name.value.length <= 2) {
+    if(fo.id.value.length < 4||fo.id.value.length>29) {
         fo.id.focus();
-          alert("이름은 2글자이상 적어주세요.")
+          alert("아이디는 4글자 이상 30자미만이여만 합니다!")
           return;
      }
- 	if(fo.id.value.length <= 4) {
-    fo.id.focus();
-      alert("id는 4글자 이상이여만 합니다!")
-      return;
-	}
+    if (document.fo.pw.value == "") {
+        alert("비밀번호를 입력하지 않았습니다.")
+        document.fo.pw.focus();
+        return;
+    }
+    if (fo.pw.value == fo.id.value) {
+        alert("아이디와 비밀번호가 같습니다.")
+        document.fo.pw.focus();
+        return;
+    }
+    if (document.fo.pw.value.indexOf(" ") >= 0) {
+        alert("비밀번호에 공백을 사용할 수 없습니다.")
+        document.fo.pw.focus();
+        return;
+    }
+    for (var i = 0; i < document.fo.pw.value.length; i++) {
+        ch = document.fo.pw.value.charAt(i)
+        if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
+            alert("비밀번호는 영문 대소문자, 숫자만 입력가능합니다.")
+            document.fo.pw.focus();
+            return;
+        }
+    }
+    if(fo.pw.value.length < 4||fo.pw.value.length>29) {
+        fo.pw.focus();
+          alert("비밀번호는 4글자 이상 30자미만이여만 합니다!")
+          return;
+     }
+    
           fo.action = "/goalsns/userRegister.do";
           fo.method = "post";
           fo.submit(); 
