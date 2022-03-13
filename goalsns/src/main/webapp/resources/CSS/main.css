@@ -88,15 +88,23 @@ a{
     margin-left: 16px;
 }
 
-
-
-
-
+.hide_form{
+	display: inline;
+}
+/* 코멘트 부분 */
 .fa-comment{
 	font-size: 30px;
 	color: black;
   	padding: 10px;
 }
+#def{
+	margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+/*  */
 .fa-face-smile-wink{
 	font-size: 30px;
 	color: black;

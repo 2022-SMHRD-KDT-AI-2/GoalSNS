@@ -60,22 +60,21 @@
     <section>
     <c:forEach var="isLike" items="${likeCheck}" begin="${statusNm.index}" end="${statusNm.index}">
     <c:if test="${isLike.lseq eq 0}">
-    	    <form id="like_form${vo.post_seq}">
+    	    <form id="like_form${vo.post_seq}" class="hide_form">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
 			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span>
  	</form>
     </c:if>
     <c:if test="${isLike.lseq ne 0}">
-    	    <form id="like_form${vo.post_seq}">
+    	    <form id="like_form${vo.post_seq}" class="hide_form">
 			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
 			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-solid fa-heart disheart ${vo.post_seq}"></span>
  	</form>
     </c:if>
     </c:forEach>
-
- 		<a></a>
+		<button type="button" onclick="location.href='/goalsns/postContent.do?post_seq=${vo.post_seq}' " id="def"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
- 		<a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a>
+ 		<!-- <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a> -->
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
     </section>
     <div>
