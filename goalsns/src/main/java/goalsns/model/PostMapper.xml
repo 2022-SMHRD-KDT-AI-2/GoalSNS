@@ -165,6 +165,9 @@ left join t_like l
 on p.post_seq = l.post_seq
 	]]>
 	</select>
-
+	<!-- 내가 쓴 댓글 가져오기 -->
+	<select id="getMyCmt" parameterType="goalsns.entity.CmtVO" resultType="goalsns.entity.CmtVO">
+	<![CDATA[select * from (select * from t_cmt where post_seq = #{post_seq} and mem_id = #{mem_id} order by cmt_date desc) where rownum=1]]>
+  	</select>
 	
 </mapper>
