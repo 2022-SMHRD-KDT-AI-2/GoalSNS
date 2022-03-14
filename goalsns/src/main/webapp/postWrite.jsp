@@ -27,11 +27,12 @@
  <div class="container_1">
         <form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.do">
            <div class="item_1">
-           <div>
+  
              <div class="modal_sumbit">
             
-             <button type="submit"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
-             <!-- <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a> --></div>
+             <button class="hide_yes" type="submit"></button>
+             <div><span class="fa-solid fa-arrow-up-from-bracket"></span></div>
+             <!-- <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a> -->
            </div>
            </div>
            <div class="item_2">                             

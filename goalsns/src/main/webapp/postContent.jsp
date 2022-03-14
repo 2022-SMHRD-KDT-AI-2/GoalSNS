@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false"%>
+<%@ page errorPage="index.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
