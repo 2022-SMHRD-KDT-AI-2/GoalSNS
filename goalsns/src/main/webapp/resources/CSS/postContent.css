@@ -89,6 +89,24 @@ a{
   	padding: 10px;
   	margin-left: 6px;
 }
+.hide_input{
+	position: absolute;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    margin: 10px;
+    padding: 0;
+    margin-left: 16px;
+}
+
+.hide_form{
+	display: inline;
+}
+.disheart{
+	color:red;
+}
+
 .fa-comment{
 	font-size: 30px;
 	color: black;
