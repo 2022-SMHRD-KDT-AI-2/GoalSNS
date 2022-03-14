@@ -50,8 +50,31 @@ public class MainController implements Controller {
 		List<String> rank = mdao.getMemRank();
 		request.setAttribute("rank", rank);
 		
-		// ------------------- 가장 최신 댓글 1개와 댓글 개수 --------------------------
-		//List<CmtVO> cmtList = dao.getCmts(mem_id);
+		// ------------------- 댓글 개수 --------------------------
+		CmtVO cvo = new CmtVO();
+		int cmtCnt = 0;
+		int[] cmtCntList = new int[list.size()];
+		for(int i=0; i<list.size(); i++) {
+			cvo.setPost_seq(list.get(i).getPost_seq());
+			cmtCnt = dao.selectCmt(cvo).size();
+			cmtCntList[i] = cmtCnt;
+		}
+		request.setAttribute("cmtCntList", cmtCntList);
+		
+		// ------------------- 내가 쓴 댓글 --------------------
+		cvo.setMem_id(mem_id);
+		String[] cmtList = new String[list.size()];
+		String cmt;
+		for(int i=0; i<list.size(); i++) {
+			cvo.setPost_seq(list.get(i).getPost_seq());
+			if(dao.getMyCmt(cvo) != null)
+				cmt = dao.getMyCmt(cvo).getCmt_content();
+			else
+				cmt = null;
+			cmtList[i] = cmt;
+			System.out.println("cmtList[i]:"+cmtList[i]);
+		}
+		request.setAttribute("cmtList", cmtList);
 		
 		return "main";
 		

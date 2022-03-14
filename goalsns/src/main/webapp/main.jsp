@@ -79,10 +79,10 @@
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
       <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
       <c:if test="${fn:contains(f,'#')}">
-      <a href="#" class="hashtag">${f}</a>
+      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '#')}" class="hashtag">${f}</a>
       </c:if>
       <c:if test="${fn:contains(f,'@')}">
-      <a href="#" class="chall_hashtag">${f}</a>
+      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '@')}" class="chall_hashtag">${f}</a>
       </c:if>
       <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
       <span>${f}</span>
@@ -90,12 +90,24 @@
       </c:forEach>
    </div>
    <div class="divplus">
-      <a href="#" class="plus">댓글 23개 모두 보기</a>
+      <a href="#" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}">${cmtCnt}</c:forEach>개 모두 보기</a>
    </div>
+<<<<<<< HEAD
    <div>
       <span name="mem_id" class="post_id">123213</span>
       <span class="post_con">ddddddddd</span>
    </div>
+=======
+   <c:forEach var="cmtcon" items="${cmtList}" begin="${statusNm.index}" end="${statusNm.index}">
+   <c:if test="${cmtcon ne null}">
+	   <div>
+	      <span name="mem_id" class="post_id">${memvo.mem_id}</span>
+	      <span class="post_con">${cmtcon}</span>
+	   </div>
+   </c:if>
+   </c:forEach>
+   <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
