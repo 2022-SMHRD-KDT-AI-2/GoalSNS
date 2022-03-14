@@ -37,7 +37,8 @@ function like(post){
     $(post_seq).toggleClass('disheart');
  	$(post_seq).toggleClass('fa-regular');
 	$(post_seq).toggleClass('fa-solid');
-    alert("'좋아요'가 반영되었습니다!") ; // data중 put한 것의 이름 like
+    // data중 put한 것의 좋아요 개수는 like
+    $("#like_result").text(data.like);
     },
     error:
     function (request, status, error){
@@ -53,3 +54,7 @@ window.onload = function() {
     	};
 };
 
+/*주소복사하기*/
+function copy_clip(strData) {
+clipboardData.setData("Text", strData);
+alert("클립보드로 복사되었습니다.");}

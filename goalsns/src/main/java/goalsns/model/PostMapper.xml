@@ -99,6 +99,9 @@ where c.chell_seq = mc.chell_seq
 		mem_id
 		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
 	</insert>
+  	<select id="getLikeByPost" resultType="goalsns.entity.LikeVO">
+  		select * from t_like where post_seq = #{post_seq} and mem_id = #{mem_id}
+  	</select>
 	
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">

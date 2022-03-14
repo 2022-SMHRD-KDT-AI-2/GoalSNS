@@ -91,6 +91,9 @@ a{
 .hide_form{
 	display: inline;
 }
+.disheart{
+	color:red;
+}
 /* 코멘트 부분 */
 .fa-comment{
 	font-size: 30px;
