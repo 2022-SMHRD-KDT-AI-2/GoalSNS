@@ -31,9 +31,9 @@ public class ProfileDefaultController implements Controller {
 		fvo.setFrom_mem(from_mem);
 		MemberVO mvo = mdao.getMemberInfo(id);
 		List<FollowVO> memfo=mdao.getFollowInfo(fvo);
-		List<FollowVO> followlist=mdao.followAll(fvo);
+		//List<FollowVO> followlist=mdao.followAll(fvo);
 		List<FollowVO> tofollowlist=mdao.tofollowAll(fvo);
-		List<FollowVO> followedlist=mdao.followedAll(fvo);
+		//List<FollowVO> followedlist=mdao.followedAll(fvo);
 		List<FollowVO> tofollowedlist=mdao.tofollowedAll(fvo);
 		List<PostVO> postList = pdao.getMemberPosts(id);
 		int postCnt = postList.size();
@@ -41,8 +41,8 @@ public class ProfileDefaultController implements Controller {
 		request.setAttribute("postCnt", postCnt);
 		request.setAttribute("mvo", mvo);
 		request.setAttribute("memfo", memfo);
-		request.setAttribute("followlist", followlist);
-		request.setAttribute("followedlist", followedlist);
+		//request.setAttribute("followlist", followlist);
+		//request.setAttribute("followedlist", followedlist);
 		request.setAttribute("tofollowlist", tofollowlist);
 		request.setAttribute("tofollowedlist", tofollowedlist);
 		return "profile";

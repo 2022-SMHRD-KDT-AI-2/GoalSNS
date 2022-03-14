@@ -75,6 +75,9 @@
 	<select id="getfollowid" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
 	</select>
+	<select id="getFollow" parameterType="goalsns.entity.FollowVO" resultType="int">
+		select count(*) from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
+	</select>
 	<select id="getFollowInfo" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
 	</select>

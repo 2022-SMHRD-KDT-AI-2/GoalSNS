@@ -72,7 +72,7 @@
 				<div class="post">
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
-				<c:if test="${memvo.mem_id==mvo.mem_id}">
+				<!--<c:if test="${memvo.mem_id==mvo.mem_id}">
 				<div class="follower">
 					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(followedlist)}</button>
 				</div>
@@ -80,14 +80,14 @@
 					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(followlist)}</button>
 				</div>
 				</c:if>
-				<c:if test="${memvo.mem_id!=mvo.mem_id}">
+				<c:if test="${memvo.mem_id!=mvo.mem_id}"> -->
 				<div class="follower">
 					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
 					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
-				</c:if>
+				<!-- </c:if> -->
 			</div>
 
 			<div class="section3">

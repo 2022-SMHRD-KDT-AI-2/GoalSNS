@@ -153,14 +153,14 @@
           <c:if test="${vo.mem_id==tfvo.to_mem }">
           <form id="follow_form" class="hide_form">
           <input type="hidden" name="follow_num" value="${vo.mem_id}">
-          <input type="button" onclick="return postfollow()" class="modal-red">팔로우 취소</a>
+          <input type="button" onclick="return postfollow()" class="modal-red">팔로우 취소
           </form>
           </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
           <c:if test="${empty tfvo.to_mem}">
           <form id="follow_form" class="hide_form">
           <input type="hidden" name="follow_num" value="${vo.mem_id}">
-          <input type="button" onclick="return postfollow()" class="modal-blue">팔로우</a>
+          <input type="button" onclick="return postfollow()" class="modal-blue">팔로우
           </form>
           </c:if>
           </c:if>
