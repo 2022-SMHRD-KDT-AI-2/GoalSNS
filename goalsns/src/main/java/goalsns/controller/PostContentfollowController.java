@@ -17,10 +17,7 @@ public class PostContentfollowController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
-		PostDAO dao = new PostDAO();
-		PostVO vo = dao.getPostByIdx(post_seq);
-		String to_mem=vo.getMem_id(); // 상대의 아이디
+		String to_mem = request.getParameter("follow_num");// 상대의 아이디 
 		HttpSession session=request.getSession();
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
 		String from_mem=(String)memvo.getMem_id(); // 자신의 아이디
@@ -30,9 +27,8 @@ public class PostContentfollowController implements Controller {
 		fvo.setFrom_mem(from_mem);
 		//팔로우DB에 저장
 		mdao.follow(fvo);
-		System.out.println(vo.getMem_id());
 		
-		return "redirect:/postContent.do?post_seq="+post_seq;
+		return null;
 	}
 
 }
