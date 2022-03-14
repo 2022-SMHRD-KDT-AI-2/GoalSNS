@@ -1,25 +1,52 @@
 @charset "EUC-KR";
+/* 모달창의 배경을 만든다 */
+.modal__background{
+    display: none;
+    position: fixed;
+    top:0; 
+    left: 0;
+    bottom: 0; 
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+  }
+   
+  /* 모달창 영역을 꾸민다 */
+  .modal__box{
+    position: absolute;
+    top: calc(50vh - 100px); left: calc(50vw - 200px);
+    background-color: white;
+    display: flex; justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 1081px;
+    height: 748px;
+  }
 .container_1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1081px;
-    height: 748px;
-    background-color: gainsboro;
+    width: 1088px;
+    height: 754px;
+    /* background-color: gainsboro; */
     margin-left: 477px;
     border-radius: 30px;
     margin-top: 35px;
-    background: #33333324;
+    /* background: #33333324; */
+    border: 1px solid #E8E8E8;
+    border-radius: 30px;
 }
 .item_1{
 	
-    width: 1078px;
+    width: 1081px;
     height: 76px;
     border-radius: 30px 30px 0px 0px;
-    margin-top: -1px;
+    margin-top: -2px;
     background: #FFFFFF;
-    /* border: solid gray 1px; */
-    margin-left: 3px;
+    margin-left: 2px;
+    border-bottom: 1px solid #E8E8E8;
+
 }	
 .item_2{
 	
@@ -27,24 +54,19 @@
 .item_3{
     background: #FFFFFF;
     width: 405px;
-    height: 671px;
+    height: 667px;
     float: right;
-    margin-top: -88px;
+    margin-top: -653px;
     border-radius: 0px 0px 30px 0px;
-    /* border-right: solid gray 1px; */
-    /* border-left: solid gray 1px; */
-    margin-left: 18px;
-   
-   
-    
+    margin-left: 0px;
+    margin-right: 3px;
 }	
 .postPic_1{
     width: 672px;
-    height: 678px;
-    border-radius: 0px 0px 0px 30px;
-        margin-top: 1px;
-    margin-left: 3px;
-
+    height: 618px;
+    /* border-radius: 0px 0px 0px 30px; */
+    margin-top: 0px;
+    margin-left: 1px;
 }
 .postPic_2{
     width: 50px;
@@ -62,14 +84,7 @@
     border: none;
     margin-left: 2px;
     margin-top: 11px;
-}
-.spark_2{
-    width: 404px;
-    height: 263px;
-    border-radius: 0px 0px 30px 0px;
-    border-top:solid gray 1px;
-    margin-left: 2px;
-  
+    outline: none;
 }
 h5{
     font-weight: 400;
@@ -78,55 +93,6 @@ h5{
     margin-top: 47px;
     float: left;
 }
-
-
-.modal_wrap{
-    display: none;
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    top:38%;
-    left: 11%;
-    margin: -250px 0 0 -250px;
-       
-    z-index: 2;
-}
-.black_bg{
-    display: none;
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color:rgba(0, 0,0, 0.5);
-    top:0;
-    left: 0;
-    z-index: 1;
- }
-.modal_close{
-        width: 26px;
-        height: 26px;
-        position: absolute;
-        top: -30px;
-        right: 0;
- }
-.modal_close> a{
-    display: block;
-        width: 100%;
-        height: 100%;
-        background:url(https://img.icons8.com/metro/26/000000/close-window.png);
-        text-indent: -9999px;
-    }
- .modal_sumbit> a{
-     display: block;
-     width: 57px;
-    height: 56px;
-    background: url(https://img.icons8.com/windows/2x/level-up.png);
-    background: url(https://img.icons8.com/windows/2x/level-up.png);
-    text-indent: -9999px;
-    margin-top: -675pxpx;
-    position: absolute;
-    margin-left:969px;
- }
 
 .form-group_1{
     float: left;
@@ -139,20 +105,47 @@ h5{
     float: left;
     margin-left: -5px;
     margin-top: -7px;
- 
+    border-top: 1px solid #E8E8E8;
   
     
 }
 .input_1{
-	float: none;
-    margin-top: -614px;
+    float: none;
+    margin-top: 10px;
     /* margin-right: 41px; */
     margin-left: 301px;
 }
 .form-group_0{
 	margin-left: -1px;
 }
+.normal{
+	color:blue;
+}
+.special{
+	color: #DF5C12;
+}
+.muener_1{
+	margin: 2px 7px 10px;
+    padding: 1px 5px 4px;
+    color: rgba(168, 168, 168, 0.8);
+    
+}
+.postWritpic{
+	 float: right;
+     margin-top: 21px;
+     margin-right: 28px;
+}
 
-
-
-
+.fa-arrow-up-from-bracket {
+  
+    content: "\e09a";
+    font-size: 27px;
+    color: black;
+    float: 11;
+    position: relative;
+    top: 27px;
+    left: 1011px;
+}
+.fa-arrow-up-from-bracket:hover{
+    color:rgba(243, 115, 33, 1);
+}

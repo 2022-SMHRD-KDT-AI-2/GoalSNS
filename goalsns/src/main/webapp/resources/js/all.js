@@ -68,5 +68,24 @@ function clip(){
         
         alert("URL이 복사되었습니다.")  // 알림창
     }
+   
+
+function writeCmt(){
+    $.ajax({
+    url: "/goalsns/어쩌고.do",
+    type: "POST",
+    cache: false,
+    dataType: "json",
+    data: $('#comment_form').serialize(), //넘어가는 데이터. 포스트 아이디 : post_seq, 코멘트 내용 : content
+    success:
+    function(data){ //ajax통신 성공시 넘어오는 데이터 통째 이름 =data
+    //화면에서 작성한 댓글이 바로 보이도록하는 건 예지가 작성할겁니당
+    alert("댓글작성 성공");
+    },
+    error:
+    function (request, status, error){
+    alert("ajax실패. code:"+request.status+"\n"+"message:"+request.reponseText+"\n"+"error:"+error);
+    }
+    });
+}
     
-  

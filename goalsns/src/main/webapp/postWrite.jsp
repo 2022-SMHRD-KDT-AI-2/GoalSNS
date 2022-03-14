@@ -2,6 +2,8 @@
 <%@page import="goalsns.entity.PostVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,26 +15,6 @@
   <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
- 
-  <script>
-    window.onload = function() {
- 
-    function onClick() {
-        document.querySelector('.modal_wrap').style.display ='block';
-        document.querySelector('.black_bg').style.display ='block';
-    }   
-    function offClick() {
-        document.querySelector('.modal_wrap').style.display ='none';
-        document.querySelector('.black_bg').style.display ='none';
-    }
- 
-    document.getElementById('modal_btn').addEventListener('click', onClick);
-    document.querySelector('.modal_close').addEventListener('click', offClick);
- 
-};
-</script>
-
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/postWrite.css" rel="stylesheet" type="text/css">
@@ -40,18 +22,16 @@
 <body>
 <jsp:include page="menu.jsp" />
 
-<button type='button' id="modal_btn">모달창아 나와랏</button>
-<div class="black_bg"></div>
-<div class="modal_wrap">
-    <div class="modal_close"><a href="#">close</a></div>
 
-         <div class="container_1">
+ 
+ <div class="container_1">
         <form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.do">
            <div class="item_1">
            <div>
-             <div class="modal_sumbit"><a href="#">저장</a></div>
-             <a href=""></a>
-             <img scr="">
+             <div class="modal_sumbit">
+            
+             <button type="submit"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+             <!-- <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a> --></div>
            </div>
            </div>
            <div class="item_2">                             
@@ -62,32 +42,29 @@
               
            </div> 
             <div class="input_1">
-               <input class="picture" type="file" name="mem_img">
+               <input class="picture" type="file" name="post_file">
                </div>
               
           <div class="item_3">
           <div class="form-group_0">
-             <img class="postPic_2" src="./resources/images/profile.png">           
-             <h5>user1_challin</h5>        
+             <img class="postPic_2" src="./profilePic/${memvo.mem_img}">           
+             <h5>${memvo.mem_id}</h5>        
           </div>
            <div class="form-group_1">
                     <label for="comment"></label>
-                    <textarea name="post_content" class="spark_1" rows="5" id="comment" placeholder="문구 입력"></textarea>
+                    <textarea name="post_content" class="spark_1" rows="5" id="comment" placeholder="문구 입력..."></textarea>
                    
                  </div>
              
                   
                 <div class="form-group_2">       
-                    <label for="comment"></label>
-                    <textarea name="post_content" class="spark_2" rows="5" id="comment" placeholder="챌린지해시태그를 사용하기 위해선 @기호와 텍스트를 차례로 입력"></textarea>
-                   <!--  <button type="submit">생성</button> -->
+                    <p class="muener_1">일반해시태그를 사용하기 위해선 #기호와 텍스트를 차례로 입력합니다. 색이 주황색으로 변합니다. (예:<span class="normal">#꽃</span>)챌린지해시태그를 사용하기 위해선 @기호와 텍스트를 차례로 입력합니다. 색이 남색으로 변합니다. (예:<span class="special"> @물마시기챌린지</span>) 해시태그에 숫자나 기호를 사용할 수 있지만 공백은 사용할 수 없습니다. 하나의 게시물에 최대 30개의 태그를 사용할 수 있습니다.</p>
                      
                  </div>
                    </div>
                   
         </form> 
         </div>
-   
-<jsp:include page="footer.jsp" />
-</body>
-</html>
+
+  </body>
+  </html>

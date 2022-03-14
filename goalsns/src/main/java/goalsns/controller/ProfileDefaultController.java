@@ -24,6 +24,8 @@ public class ProfileDefaultController implements Controller {
 		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
 		String id = (String)request.getParameter("mem_id");//상대방아이디
 		String from_mem=(String)memvo.getMem_id();//자신의아이디
+		System.out.println(id);
+		System.out.println(from_mem);
 		MemberDAO mdao = new MemberDAO();
 		PostDAO pdao = new PostDAO();
 		FollowVO fvo=new FollowVO();
