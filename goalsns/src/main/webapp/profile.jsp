@@ -72,10 +72,7 @@
 				<div class="post">
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
-<<<<<<< HEAD
-=======
-				
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
+
 				<div class="follower">
 					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
