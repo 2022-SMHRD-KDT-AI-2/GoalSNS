@@ -91,22 +91,25 @@ function checkit(){
         </div>
      
         <div class="item2">
-
+         <div class="edit_fix">
        <div class="edit_form" name="fileForm">
        <h3>${memvo.mem_id}</h3>
-
+        <div class="edit_fix_1">
         <a class="profilePic" target="_self">
 	     <img class="profilePic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
 	     <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->
 	   </a><input class="picture" type="file" id="isFile" name="mem_img" accept="image/*">
+	   </div>
 	    </div>             
-          
+          </div>
+          </div>
+          <div class ="item3">
           <div class="edit_form">
            <div class="pabox">          
             <div class="edit_id"><label for="mem_name"><span class="space">이름</span></label> </div>         
             <input type="text" class="form_impormation" name="mem_name" value="${memvo.mem_name}">               
            </div>
-                <p>사람들이 이름,별명 또는 비즈니스 이름 등 회원님의 얄려진 이름을 사용하여<br>
+                <p>사람들이 이름,별명 또는 비즈니스 이름 등 회원님의 알려진 이름을 사용하여<br>
                   회원님의 계정을 찾을 수 있도록 도와주세요. </p>           
             </div>   
            
