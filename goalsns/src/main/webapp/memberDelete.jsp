@@ -68,7 +68,7 @@
            </div>
           
             <div class="btn_1">
-             <button type="submit" class="btn btn-danger btn-sm">탈퇴하기</button>   	
+             <button type="submit" class="btn btn-danger btn-sm">탈퇴</button>   	
 		    </div>
         </div>  
      </form>	     

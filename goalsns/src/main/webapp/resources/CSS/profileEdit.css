@@ -96,11 +96,18 @@ h3{
     padding-right: 360px;
     margin-top: 70px;
 }
-span{
+
+.btn_1{
+    padding-left: 290px;
 	
 }
-.btn_1{
-    padding-left: 290px;	
+.btn-info{
+	background-color: #52A1FF;
+    border-color: #52A1FF;
+}
+.btn-info:hover{
+	background-color: rgba(82, 161, 255, 0.8);
+	border-color: rgba(82, 161, 255, 0.8);
 }	
 .form_impormation{
 	background: white;
