@@ -2,6 +2,7 @@
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% pageContext.setAttribute("chell", "@"); %>
 <%@ page isELIgnored="false"%>
 
@@ -49,8 +50,9 @@
     <c:forEach var="memImages" items="${memImages}" begin="${statusNm.index}" end="${statusNm.index}">
         <a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
        </c:forEach>
+
         <a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
-      	<div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
+      	<div name="post_date" class="post_date"><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div>
     </div>
     <div name="post_file" id="post_file" >
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
@@ -92,12 +94,7 @@
    <div class="divplus">
       <a href="#" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}">${cmtCnt}</c:forEach>개 모두 보기</a>
    </div>
-<<<<<<< HEAD
-   <div>
-      <span name="mem_id" class="post_id">123213</span>
-      <span class="post_con">ddddddddd</span>
-   </div>
-=======
+
    <c:forEach var="cmtcon" items="${cmtList}" begin="${statusNm.index}" end="${statusNm.index}">
    <c:if test="${cmtcon ne null}">
 	   <div>
@@ -106,8 +103,6 @@
 	   </div>
    </c:if>
    </c:forEach>
-   <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
