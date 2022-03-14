@@ -25,12 +25,7 @@
 	function goProfileEdit(){
 		location.href="/goalsns/profileEditForm.do";
 	}
-	function goFollow(mem_id){
-		location.href="/goalsns/follow.do?mem_id="+mem_id;
-	}
-	function goUnFollow(mem_id){
-		location.href="/goalsns/unfollow.do?mem_id="+mem_id;
-	}
+
 	function goReward(mem_id){
 		location.href="/goalsns/challreward.do?mem_id="+mem_id;
 	}
