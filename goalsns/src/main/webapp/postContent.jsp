@@ -148,7 +148,7 @@
           </c:if>
         </div>
         <div class="modal-box">
-          <a href="#" class="black">링크복사</a>
+          <button class="black">링크복사</button>
         </div>
         <div class="modal_cancel">
           <button class="canbtn" data-dismiss="modal">취소</button>

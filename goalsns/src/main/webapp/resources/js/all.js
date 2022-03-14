@@ -53,3 +53,7 @@ window.onload = function() {
     	};
 };
 
+/*주소복사하기*/
+function copy_clip(strData) {
+clipboardData.setData("Text", strData);
+alert("클립보드로 복사되었습니다.");}
