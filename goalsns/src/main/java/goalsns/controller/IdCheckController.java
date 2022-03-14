@@ -17,7 +17,7 @@ public class IdCheckController implements Controller {
 		MemberVO vo=new MemberVO();
 		MemberDAO dao=new MemberDAO();
 		vo.setMem_id(mem_id);
-		String idck=dao.idCheck(mem_id);
+		int idck=dao.idCheck(mem_id);
 		request.setAttribute("idck", idck);
 		System.out.println(mem_id);
 		System.out.println(idck);

@@ -46,9 +46,9 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public String idCheck(String id) {
+	public int idCheck(String id) {
 		SqlSession session = sqlSessionFactory.openSession();
-		String result = session.selectOne("idCheck", id);
+		int result = session.selectOne("idCheck", id);
 		session.close();
 		return result;
 	}
