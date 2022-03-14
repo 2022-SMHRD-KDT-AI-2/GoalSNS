@@ -27,7 +27,7 @@
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
-		location.href="/goalsns/postCmt.do?post_seq="+post_seq;
+		location.href="/goalsns/postContent.do?post_seq="+post_seq;
 	}
 	function goLike(post_seq){
 		location.href="/goalsns/postLike.do?post_seq="+post_seq;
@@ -119,8 +119,8 @@
 		<!-- 여섯번째 줄(댓글달기상자) -->
 		<div class="textsection">
 			<div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-        	<form action="/goalsns/cmt.do"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-        	<div class="textsection3"><button class="textsection_bt" type="submit" onclick="goContent(${vo.post_seq})">게시</button></div></form>
+        	<form action="/goalsns/postCmt.do?post_seq=${post_seq}"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+        	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
 		</div>	
 	</div>
 
@@ -147,12 +147,14 @@
         </c:if>
           <!-- 내 게시물이라면? 게시글 삭제,
            상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
+           <c:if test="${memvo.mem_id != vo.mem_id}">
           <c:if test="${vo.mem_id==tfvo.to_mem }">
           <a href="/goalsns/unfollow.do?mem_id=${vo.mem_id}" class="modal-red">팔로우 취소</a>
           </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
           <c:if test="${empty tfvo.to_mem}">
           <a href="/goalsns/postFollow.do?post_seq=${vo.post_seq}" class="modal-blue">팔로우</a>
+          </c:if>
           </c:if>
         </div>
         <div class="modal-box">
