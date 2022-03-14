@@ -137,15 +137,23 @@ h5{
 }
 
 .fa-arrow-up-from-bracket {
-  
-    content: "\e09a";
     font-size: 27px;
-    color: black;
-    float: 11;
-    position: relative;
-    top: 27px;
-    left: 1011px;
 }
-.fa-arrow-up-from-bracket:hover{
-    color:rgba(243, 115, 33, 1);
+
+/* 올리기버튼 활성화! */
+.hide_yes{
+	margin-right: 22px;
+    margin-top: 15px;
+    margin-left: 1030px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    position: absolute;
+}
+
+.modal_sumbit > div{
+	text-align: right;
+    padding-right: 20px;
+    padding-top: 20px;
 }

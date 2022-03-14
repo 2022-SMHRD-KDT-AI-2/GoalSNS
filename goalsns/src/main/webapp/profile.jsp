@@ -25,12 +25,7 @@
 	function goProfileEdit(){
 		location.href="/goalsns/profileEditForm.do";
 	}
-	function goFollow(mem_id){
-		location.href="/goalsns/follow.do?mem_id="+mem_id;
-	}
-	function goUnFollow(mem_id){
-		location.href="/goalsns/unfollow.do?mem_id="+mem_id;
-	}
+
 	function goReward(mem_id){
 		location.href="/goalsns/challreward.do?mem_id="+mem_id;
 	}
@@ -59,13 +54,13 @@
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<button class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					<input type="button" class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span>
 					</form>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<button  class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<input type="button" class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span>
 					</form>
 					</c:if>
 					</c:if>
