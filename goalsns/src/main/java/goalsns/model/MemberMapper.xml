@@ -71,6 +71,16 @@
 		select * from t_follow
 		where from_mem=#{to_mem}
 	</select>
+	<!-- 팔로우 갯수 가져오기 -->
+	<select id="followcount" parameterType="goalsns.entity.FollowVO" resultType="int">
+		select count(*) from t_follow
+		where from_mem=#{to_mem}
+	</select>
+	<!-- 팔로워 갯수 가져오기 -->
+	<select id="followercount" parameterType="goalsns.entity.FollowVO" resultType="int">
+		select count(*) from t_follow
+		where to_mem=#{to_mem}
+	</select>
 	<!-- 특정된 팔로우한사람 가져오기 -->
 	<select id="getfollowid" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
