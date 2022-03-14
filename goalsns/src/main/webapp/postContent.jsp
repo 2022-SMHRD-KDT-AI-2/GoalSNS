@@ -121,8 +121,8 @@
 		<!-- 여섯번째 줄(댓글달기상자) -->
 		<div class="textsection">
 			<div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-        	<form action="/goalsns/postCmt.do?post_seq=${post_seq}"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-        	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
+        	<form id="comment_form"><input type="hidden" name="post_seq" value="${vo.post_seq}"><div class="textsection2"><textarea name="content" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+        	<div class="textsection3"><input type="button" onclick="writeCmt()" class="textsection_bt">게시</div></form>
 		</div>	
 	</div>
 
