@@ -4,6 +4,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <% pageContext.setAttribute("chell", "@"); %>
 <%@ page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +21,6 @@
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 
-<!-- 모달창  -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- 모달창 끝  -->
 <script type="text/javascript" src="./resources/js/all.js"></script>
 </head>
 <script type="text/javascript">
@@ -52,7 +50,7 @@
         <a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
        </c:forEach>
         <a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
-      	<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
+      	<div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
     </div>
     <div name="post_file" id="post_file" >
       <img src="./postPic/${vo.post_file}" class="postfile"width="100%">
@@ -72,7 +70,7 @@
  	</form>
     </c:if>
     </c:forEach>
-		<button type="button" onclick="location.href='/goalsns/postContent.do?post_seq=${vo.post_seq}' " id="def"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
+		<button type="button" onclick="location.href='/goalsns/postContent.do?post_seq=${vo.post_seq}' " id="fed"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
  		<!-- <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a> -->
  		<!-- <a><i class="fa-regular fa-comment fa-flip-horizontal" onclick="goDeleteContent(${vo.post_seq})"></i></a> -->
@@ -81,10 +79,10 @@
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
       <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
       <c:if test="${fn:contains(f,'#')}">
-      <a href="#" class="hashtag">${f}</a>
+      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '#')}" class="hashtag">${f}</a>
       </c:if>
       <c:if test="${fn:contains(f,'@')}">
-      <a href="#" class="chall_hashtag">${f}</a>
+      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '@')}" class="chall_hashtag">${f}</a>
       </c:if>
       <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
       <span>${f}</span>
@@ -92,13 +90,24 @@
       </c:forEach>
    </div>
    <div class="divplus">
-      <a href="#" class="plus">댓글 23개 모두 보기</a>
+      <a href="#" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}">${cmtCnt}</c:forEach>개 모두 보기</a>
    </div>
+<<<<<<< HEAD
    <div>
       <span name="mem_id" class="post_id">123213</span>
       <span class="post_con">ddddddddd</span>
    </div>
+=======
+   <c:forEach var="cmtcon" items="${cmtList}" begin="${statusNm.index}" end="${statusNm.index}">
+   <c:if test="${cmtcon ne null}">
+	   <div>
+	      <span name="mem_id" class="post_id">${memvo.mem_id}</span>
+	      <span class="post_con">${cmtcon}</span>
+	   </div>
+   </c:if>
+   </c:forEach>
    <div name="post_date" class="post_date"><span id="post_date">${vo.post_date}</span></div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
@@ -148,41 +157,8 @@
   
 </div>
 
-<!-- 모달창 -->
-<div class="background">
-  <div class="window">
-    <div class="popup"></div>
-</div>
 
-<!-- 모달 -->
-<div class="container">
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-box">
-        <c:if test="${memvo.mem_id == vo.mem_id}">
-        	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
-        </c:if>
-          <!-- 내 게시물이라면? 게시글 삭제,
-           상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
-          <a href="#" class="modal-red">팔로우 취소</a>
-          <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
-          <!-- <a href="#" class="modal-blue">팔로우</a> -->
-        </div>
-        <div class="modal-box">
-          <a href="#" class="black">링크복사</a>
-        </div>
-        <div class="modal_cancel">
-          <button class="canbtn" data-dismiss="modal">취소</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<!-- 모달 끝 -->
+
 <jsp:include page="footer.jsp" />
 </body>
 </html>

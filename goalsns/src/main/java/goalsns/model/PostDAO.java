@@ -302,6 +302,13 @@ public class PostDAO {
 		return list;	
 	}
 	
+	public CmtVO getMyCmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		CmtVO cmt = session.selectOne("getMyCmt",vo);
+		session.close();
+		return cmt;	
+	}
+	
 	public List<LikeVO> selectLike(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<LikeVO> list = session.selectList("selectLike",vo);
