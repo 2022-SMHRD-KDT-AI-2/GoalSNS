@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +65,7 @@
         				<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
         				<span class="me_con">${vo.post_content}</span>
         			</div>
-        			<span id="post_date">${vo.post_date}</span>
+        			<span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span>
         		</div>
 			</div>
 			
@@ -77,7 +78,7 @@
         				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
         				<span class="me_con">${c.cmt_content}</span>
         			</div>
-        			<span id="post_date">${c.cmt_date} </span>
+        			<span id="post_date"><fmt:formatDate value="${c.cmt_date}" pattern="yyyy.MM.dd HH:mm"/> </span>
         		</div>
 				</div>
 			</c:forEach>
@@ -115,7 +116,7 @@
 		<div class="like_count"><span>좋아요 <span id="like_result">${likecnt}</span>개</span></div>
 		
 		<!-- 다섯번째 줄(게시글 작성 날짜) -->
-		<div name="post_date" class="post_date_div"><span id="post_date">2022.02.10</span></div>
+		<div name="post_date" class="post_date_div"><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div>
 		
 		<!-- 여섯번째 줄(댓글달기상자) -->
 		<div class="textsection">
