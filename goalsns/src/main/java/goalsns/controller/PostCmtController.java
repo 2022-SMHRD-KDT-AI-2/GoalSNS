@@ -31,7 +31,7 @@ public class PostCmtController implements Controller {
 		PostDAO dao = new PostDAO();
 		dao.cmt(vo);
 		
-		return null;
+		return "redirect:/postContent.do?post_seq="+post_seq;
 	}
 
 }
