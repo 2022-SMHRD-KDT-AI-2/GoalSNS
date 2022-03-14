@@ -86,20 +86,20 @@
 	padding-top: 50px;	
 		
 }
-.btn-info:hover {
-    color: #fff;
-    background-color: #FF0000;
-    border-color: #FF0000;
+.btn-danger{
+	background-color: #F94242;
+	border-color: #F94242;
+}
+.btn-danger:hover {
+    color: white;
+    background-color: rgba(249, 66, 66, 0.82);
+    border-color: rgba(249, 66, 66, 0.82);
 }
 h3{
 	padding-left: 206px;
 	padding-bottom: 30px;
 }
-.btn btn-info btn-sm{
-	background-color: #FF0000;
-	border-color: #FF0000;
-	 
-}
+
 p{
 	  font-size: 11px;
        line-height: 19px;
