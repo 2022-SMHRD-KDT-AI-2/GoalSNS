@@ -79,14 +79,14 @@
 				<div class="post">
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
-				
+
 				<div class="follower">
 					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
 					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
-				
+
 			</div>
 
 			<div class="section3">
@@ -171,7 +171,7 @@
           <span class="model_title">팔로잉</span>
         </div>       
         <div class="follower-box">
-        
+
         	<c:forEach var="tofled" items="${tofollowedlist}">
 	        <div class="follower_list">
 	        	<a href="/goalsns/followprofile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
@@ -179,6 +179,7 @@
 	        	<button class="unfollow">팔로잉</button> 
 	        </div>
 	        </c:forEach>
+
         </div>
       </div>        
     </div>
