@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import goalsns.entity.CmtVO;
 import goalsns.entity.FollowVO;
+import goalsns.entity.LikeVO;
 import goalsns.entity.MemberVO;
 import goalsns.entity.PostVO;
 import goalsns.model.MemberDAO;
@@ -37,7 +38,14 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	cvo.setPost_seq(post_seq);
 	List<CmtVO> list = dao.selectCmt(cvo);
 	request.setAttribute("list", list);
-	
+	// ------------------- 좋아요 개수, 좋아요 여부 --------------------------
+	LikeVO lvo = new LikeVO();
+	lvo.setMem_id(to_mem);
+	lvo.setPost_seq(post_seq);
+	int likecnt = dao.selectLike(lvo).size();
+	request.setAttribute("likecnt", likecnt);
+	LikeVO isLike = dao.getLikeByPost(lvo);
+	request.setAttribute("isLike", isLike);
 	return "postContent";
 }
 }
