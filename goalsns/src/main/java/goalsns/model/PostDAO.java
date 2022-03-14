@@ -309,6 +309,14 @@ public class PostDAO {
 		return list;	
 	}
 	
+	public LikeVO getLikeByPost(LikeVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		LikeVO like = session.selectOne("getLikeByPost",vo);
+		session.close();
+		return like;	
+	}
+	
+	
 	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
 	
 	public List<LikeCheckVO> likeCheck(MemberVO vo) {

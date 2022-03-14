@@ -33,6 +33,7 @@
 		location.href="/goalsns/postLike.do?post_seq="+post_seq;
 	}
 </script>
+<script type="text/javascript" src="./resources/js/all.js"></script>
 <body>
 <jsp:include page="menu.jsp" />
 <div class="containerbox">
@@ -95,13 +96,22 @@
 		
 		<!-- 세번째 줄(좋아요, 대화상자 아이콘) -->
 		<div>
-			<button id="abc"><i class="fa-regular fa-heart" onclick="goLike(${vo.post_seq})" ></i></button>
+		<c:if test="${isLike eq null}">
+			<form id="like_form${vo.post_seq}" class="hide_form">
+			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
+			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-regular fa-heart heart ${vo.post_seq}"></span></form>
+		</c:if>
+		<c:if test="${isLike ne null}">
+			<form id="like_form${vo.post_seq}" class="hide_form">
+			<input type="hidden" name="board_num" value="${vo.post_seq}"> <!-- 게시글넘버 -->
+			<input type="button" onclick="return like(${vo.post_seq})" class="hide_input"><span class="fa-solid fa-heart disheart ${vo.post_seq}"></span></form>
+		</c:if>
 			<!-- 아래를 클릭 시, 검색칸의 커서가 켜져야 한다. -->
  			<button id="def"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
 		</div>
 		
 		<!-- 네번째 줄(좋아요 몇개) -->
-		<div class="like_count"><span>좋아요 60,200개</span></div>
+		<div class="like_count"><span>좋아요 <span id="like_result">${likecnt}</span>개</span></div>
 		
 		<!-- 다섯번째 줄(게시글 작성 날짜) -->
 		<div name="post_date" class="post_date_div"><span id="post_date">2022.02.10</span></div>
