@@ -23,6 +23,9 @@
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="./resources/js/all.js"></script>
+<!-- 모달 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- 모달끝 -->
 </head>
 <script type="text/javascript">
 	function goContent(post_seq){
@@ -72,6 +75,7 @@
  	</form>
     </c:if>
     </c:forEach>
+    	
 		<button type="button" onclick="location.href='/goalsns/postContent.do?post_seq=${vo.post_seq}' " id="fed"><i class="fa-regular fa-comment fa-flip-horizontal"></i></button>
  		<!--<a><i class="fa-regular fa-heart" onclick="goDeleteLike(${vo.post_seq})"></i></a>-->
  		<!-- <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}"><i class="fa-regular fa-comment fa-flip-horizontal"></i></a> -->
@@ -151,7 +155,6 @@
   </div>
   
 </div>
-
 
 
 <jsp:include page="footer.jsp" />
