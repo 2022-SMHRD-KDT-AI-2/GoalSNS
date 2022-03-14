@@ -89,3 +89,12 @@ function writeCmt(){
     });
 }
     
+
+/* postContent에서 게시버튼 누르면 댓글이 뿅!*/    
+/*$(.textsection_bt).click(function(){
+	let commant = $('input').val();
+	$('').append();
+	
+})*/
+    
+    
