@@ -1,11 +1,15 @@
 @charset "EUC-KR";
+body{
+	background-color:#FAFAFA;
+}
+
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 500px;
     height: 732px;
-    background-color: #FDFDFD;
+    background-color: #FAFAFA;
     margin-left: 715px;
     margin-top: 85px;
 }

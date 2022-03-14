@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +34,7 @@
 		location.href="/goalsns/postLike.do?post_seq="+post_seq;
 	}
 </script>
+<script type="text/javascript" src="./resources/js/postunfollow.js"></script>
 <script type="text/javascript" src="./resources/js/all.js"></script>
 <body>
 <jsp:include page="menu.jsp" />
@@ -63,7 +65,7 @@
         				<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
         				<span class="me_con">${vo.post_content}</span>
         			</div>
-        			<span id="post_date">${vo.post_date}</span>
+        			<span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span>
         		</div>
 			</div>
 			
@@ -76,7 +78,7 @@
         				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
         				<span class="me_con">${c.cmt_content}</span>
         			</div>
-        			<span id="post_date">${c.cmt_date} </span>
+        			<span id="post_date"><fmt:formatDate value="${c.cmt_date}" pattern="yyyy.MM.dd HH:mm"/> </span>
         		</div>
 				</div>
 			</c:forEach>
@@ -114,13 +116,13 @@
 		<div class="like_count"><span>좋아요 <span id="like_result">${likecnt}</span>개</span></div>
 		
 		<!-- 다섯번째 줄(게시글 작성 날짜) -->
-		<div name="post_date" class="post_date_div"><span id="post_date">2022.02.10</span></div>
+		<div name="post_date" class="post_date_div"><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div>
 		
 		<!-- 여섯번째 줄(댓글달기상자) -->
 		<div class="textsection">
 			<div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-        	<form action="/goalsns/postCmt.do?post_seq=${post_seq}"><div class="textsection2"><textarea name="comment_textarea" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-        	<div class="textsection3"><button class="textsection_bt" type="submit">게시</button></div></form>
+        	<form id="comment_form"><input type="hidden" name="post_seq" value="${vo.post_seq}"><div class="textsection2"><textarea name="content" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+        	<div class="textsection3"><input type="button" onclick="writeCmt()" class="textsection_bt">게시</div></form>
 		</div>	
 	</div>
 
@@ -141,7 +143,8 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-box">
+        <div class="modal-box${vo.post_seq}">
+        <input type="hidden" name="board_num" value="${vo.post_seq}">
         <c:if test="${memvo.mem_id == vo.mem_id}">
         	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
         </c:if>
@@ -149,16 +152,22 @@
            상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
            <c:if test="${memvo.mem_id != vo.mem_id}">
           <c:if test="${vo.mem_id==tfvo.to_mem }">
-          <a href="/goalsns/unfollow.do?mem_id=${vo.mem_id}" class="modal-red">팔로우 취소</a>
+          <form id="follow_form" class="hide_form">
+          <input type="hidden" name="follow_num" value="${vo.mem_id}">
+          <input type="button" onclick="return postfollow()" class="modal-red">팔로우 취소
+          </form>
           </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
           <c:if test="${empty tfvo.to_mem}">
-          <a href="/goalsns/postFollow.do?post_seq=${vo.post_seq}" class="modal-blue">팔로우</a>
+          <form id="follow_form" class="hide_form">
+          <input type="hidden" name="follow_num" value="${vo.mem_id}">
+          <input type="button" onclick="return postfollow()" class="modal-blue">팔로우
+          </form>
           </c:if>
           </c:if>
         </div>
         <div class="modal-box">
-          <button class="black">링크복사</button>
+          <a href="#" class="black" title="새창" onclick="clip(); return false;">링크복사</a>
         </div>
         <div class="modal_cancel">
           <button class="canbtn" data-dismiss="modal">취소</button>

@@ -23,7 +23,7 @@ function checkit(){
     }
     if(document.fo.name.value === "" || isNaN(fo.name.value) === false){ 
         fo.name.focus(); 
-      alert("이름이 비어있거나 숫자가 들어있습니다.");
+      alert("이름이 비어있거나 이름에 숫자만 들어있습니다.");
       return;
  }
     if (document.fo.name.value.indexOf(" ") >= 0) {
@@ -93,7 +93,6 @@ function checkit(){
           fo.method = "post";
           fo.submit(); 
  
- 
  }   
 	    
 	function idcheck(){
@@ -138,6 +137,12 @@ function checkit(){
         </div>
     </form>
     
+    <c:if test="${idck==1 }">
+    <p>aaa</p>
+    </c:if>
+    <c:if test="${idck==0 }">
+    <p>aaa3</p>
+    </c:if>
     <div class="item_2">  
      <div class="form-group">
       <div class="item_text">

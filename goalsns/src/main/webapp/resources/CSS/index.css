@@ -1,4 +1,8 @@
 @charset "EUC-KR";
+body{
+	background-color: #FAFAFA;
+}
+
 .img-circle{
 	border: 2px solid #C4C4C4;
 }

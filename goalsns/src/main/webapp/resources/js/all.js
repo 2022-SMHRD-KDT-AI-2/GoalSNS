@@ -55,6 +55,37 @@ window.onload = function() {
 };
 
 /*주소복사하기*/
-function copy_clip(strData) {
-clipboardData.setData("Text", strData);
-alert("클립보드로 복사되었습니다.");}
+function clip(){
+        var url = '';    // <a>태그에서 호출한 함수인 clip 생성
+        var textarea = document.createElement("textarea");  
+        //url 변수 생성 후, textarea라는 변수에 textarea의 요소를 생성
+        document.body.appendChild(textarea); //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
+        url = window.document.location.href;  //url에는 현재 주소값을 넣어줌
+        textarea.value = url;  // textarea 값에 url를 넣어줌
+        textarea.select();  //textarea를 설정
+        document.execCommand("copy");   // 복사
+        document.body.removeChild(textarea); //extarea 요소를 없애줌
+        
+        alert("URL이 복사되었습니다.")  // 알림창
+    }
+   
+
+function writeCmt(){
+    $.ajax({
+    url: "/goalsns/어쩌고.do",
+    type: "POST",
+    cache: false,
+    dataType: "json",
+    data: $('#comment_form').serialize(), //넘어가는 데이터. 포스트 아이디 : post_seq, 코멘트 내용 : content
+    success:
+    function(data){ //ajax통신 성공시 넘어오는 데이터 통째 이름 =data
+    //화면에서 작성한 댓글이 바로 보이도록하는 건 예지가 작성할겁니당
+    alert("댓글작성 성공");
+    },
+    error:
+    function (request, status, error){
+    alert("ajax실패. code:"+request.status+"\n"+"message:"+request.reponseText+"\n"+"error:"+error);
+    }
+    });
+}
+    
