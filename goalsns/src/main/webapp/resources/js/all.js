@@ -68,7 +68,8 @@ function clip(){
         
         alert("URL이 복사되었습니다.")  // 알림창
     }
-    
+   
+
 function writeCmt(){
     $.ajax({
     url: "/goalsns/어쩌고.do",
