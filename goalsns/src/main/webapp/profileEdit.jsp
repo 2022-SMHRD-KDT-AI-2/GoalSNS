@@ -20,14 +20,66 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/profileEdit.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+window.onload=function(){
+    document.getElementById("sendbtn").onclick =checkit
+}
+function checkit(){
+    var fileForm = /(.*?)\.(jpg|jpeg|png|gif|bmp|pdf|JPG|JPEG|PNG|GIF|BMP|PDF)$/;
+    var maxSize = 20 * 1024 * 1024;
+    var fileSize;
 
+    if($('#isFile').val() != "" && $('#isFile').val() != null) {
+    	fileSize = document.getElementById("isFile").files[0].size;
+        
+        if(!$('#isFile').val().match(fileForm)) {
+        	alert("이미지 파일만 업로드 가능합니다");
+            return;
+        } else if(fileSize > maxSize) {
+        	alert("파일 사이즈는 20MB에 1024*1024입니다");
+            return;
+        }
+    }
+	if(document.fo.mem_name.value === "" || isNaN(fo.mem_name.value) === false){ 
+        fo.mem_name.focus(); 
+      alert("이름이 비어있거나 앞에 이름에 숫자만 들어있습니다.");
+      return;
+ 	}
+    if (document.fo.mem_name.value.indexOf(" ") >= 0) {
+        alert("이름에 공백을 사용할 수 없습니다.")
+        document.fo.mem_name.focus();
+        return;
+    }
+    if(fo.mem_name.value.length < 2) {
+        fo.mem_name.focus();
+          alert("이름은 2글자이상 입력가능합니다.")
+          return;
+     }
+    if(fo.mem_about.value.length>1000) {
+        fo.mem_about.focus();
+          alert("소개글은 1000자 이내로 적어주세요")
+          return;
+     }
+    var aa=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/; // 표준식
+    // a부터 z까지 문자 1개 이상일 경우 and 숫자 0,1,2일 경우에만 / [^a-z, 0,1,2] : ^ 붙이면 부정의 뜻 / 한글은 가-힣
+    if(!fo.mem_email.value.match(aa)){
+        alert("이메일을 정확히 입력하세요!");
+        fo.mem_email.focus();
+        return;   
+    }
+    
+    fo.action = "/goalsns/profileEdit.do";
+    fo.method = "post";
+    fo.submit(); 
+}
+</script>
 </head>
 <body>
 <jsp:include page="menu.jsp" />
 
 
 <div class="container_1" >
-  <form method="post" enctype="multipart/form-data" action="/goalsns/profileEdit.do">             
+  <form name="fo" enctype="multipart/form-data">             
        
 		<div class="item1">
             <div class="profilEidt_1">
@@ -40,13 +92,13 @@
      
         <div class="item2">
 
-       <div class="edit_form">
-       <h3>${memvo.mem_id}iddididi</h3>
+       <div class="edit_form" name="fileForm">
+       <h3>${memvo.mem_id}</h3>
 
         <a class="profilePic" target="_self">
 	     <img class="profilePic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
 	     <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->
-	   </a><input class="picture" type="file" name="mem_img">
+	   </a><input class="picture" type="file" id="isFile" name="mem_img" accept="image/*">
 	    </div>             
           
           <div class="edit_form">
@@ -86,7 +138,7 @@
              </div>
                                 
             <div class="btn_1">
-             <button type="submit" class="btn btn-info btn-sm">제출</button>   	
+             <button type="button" id="sendbtn" class="btn btn-info btn-sm">제출</button>   	
 		    </div>
         </div>  
      </form>	     

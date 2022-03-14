@@ -34,6 +34,7 @@
 		location.href="/goalsns/postLike.do?post_seq="+post_seq;
 	}
 </script>
+<script type="text/javascript" src="./resources/js/postunfollow.js"></script>
 <script type="text/javascript" src="./resources/js/all.js"></script>
 <body>
 <jsp:include page="menu.jsp" />
@@ -142,7 +143,8 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-box">
+        <div class="modal-box${vo.post_seq}">
+        <input type="hidden" name="board_num" value="${vo.post_seq}">
         <c:if test="${memvo.mem_id == vo.mem_id}">
         	<a href="/goalsns/postDelete.do" class="modal-red">게시글 삭제</a>
         </c:if>
@@ -150,11 +152,17 @@
            상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
            <c:if test="${memvo.mem_id != vo.mem_id}">
           <c:if test="${vo.mem_id==tfvo.to_mem }">
-          <a href="/goalsns/unfollow.do?mem_id=${vo.mem_id}" class="modal-red">팔로우 취소</a>
+          <form id="follow_form" class="hide_form">
+          <input type="hidden" name="follow_num" value="${vo.mem_id}">
+          <input type="button" onclick="return postfollow()" class="modal-red">팔로우 취소
+          </form>
           </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
           <c:if test="${empty tfvo.to_mem}">
-          <a href="/goalsns/postFollow.do?post_seq=${vo.post_seq}" class="modal-blue">팔로우</a>
+          <form id="follow_form" class="hide_form">
+          <input type="hidden" name="follow_num" value="${vo.mem_id}">
+          <input type="button" onclick="return postfollow()" class="modal-blue">팔로우
+          </form>
           </c:if>
           </c:if>
         </div>

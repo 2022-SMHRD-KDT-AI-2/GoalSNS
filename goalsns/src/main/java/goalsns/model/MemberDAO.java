@@ -46,9 +46,9 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public String idCheck(String id) {
+	public int idCheck(MemberVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		String result = session.selectOne("idCheck", id);
+		int result = session.selectOne("idCheck", vo);
 		session.close();
 		return result;
 	}
@@ -108,6 +108,12 @@ public class MemberDAO {
 	public FollowVO getfollowid(FollowVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		FollowVO fvo=session.selectOne("getfollowid",vo);
+		session.close();
+		return fvo;
+	}
+	public int getFollow(FollowVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int fvo=session.selectOne("getFollow",vo);
 		session.close();
 		return fvo;
 	}
