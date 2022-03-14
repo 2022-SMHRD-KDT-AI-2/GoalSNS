@@ -36,6 +36,7 @@
 	}
 </script>
 </head>
+<script type="text/javascript" src="./resources/js/postunfollow.js"></script>
 <body>
 <jsp:include page="menu.jsp" />
 <!-- 프로필부분  -->
@@ -56,10 +57,16 @@
 					<c:if test="${memvo.mem_id!=mvo.mem_id}">
 					<c:if test="${!empty memfo}">
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn" onclick="goUnFollow('${mvo.mem_id}')">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					<form id="follow_form" class="hide_form">
+					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
+					<button class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					</form>
 					</c:if>
 					<c:if test="${empty memfo}">
-					<button class="profile_btn follow1" onclick="goFollow('${mvo.mem_id}')">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<form id="follow_form" class="hide_form">
+					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
+					<button  class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					</form>
 					</c:if>
 					</c:if>
 				</div>
@@ -72,22 +79,14 @@
 				<div class="post">
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
-				<c:if test="${memvo.mem_id==mvo.mem_id}">
-				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(followedlist)}</button>
-				</div>
-				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(followlist)}</button>
-				</div>
-				</c:if>
-				<c:if test="${memvo.mem_id!=mvo.mem_id}">
+
 				<div class="follower">
 					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
 					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
-				</c:if>
+
 			</div>
 
 			<div class="section3">
@@ -138,22 +137,15 @@
           <span class="model_title">팔로워</span>
         </div>
         <div class="follower-box">
-        <c:if test="${memvo.mem_id==mvo.mem_id}">
-        	<c:forEach var="fled" items="${followedlist}">
-	        <div class="follower_list">
-	        	<a href="/goalsns/followedprofile.do?mem_id=${fled.from_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="/goalsns/followedprofile.do?mem_id=${fled.from_mem}" name="mem_id" class="mem_id">${fled.from_mem}</a> 
-	        </div>
-	        </c:forEach>
-	    </c:if>
-	    <c:if test="${memvo.mem_id!=mvo.mem_id}">
+        
+	    
 	    <c:forEach var="tofled" items="${tofollowlist}">
 	        <div class="follower_list">
 	        	<a href="/goalsns/followedprofile.do?mem_id=${tofled.from_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
 	        	<a href="/goalsns/followedprofile.do?mem_id=${tofled.from_mem}" name="mem_id" class="mem_id">${tofled.from_mem}</a> 
 	        </div>
 	        </c:forEach>
-	      </c:if>
+	      
         </div>       
       </div>    
     </div>
@@ -179,16 +171,7 @@
           <span class="model_title">팔로잉</span>
         </div>       
         <div class="follower-box">
-        <c:if test="${memvo.mem_id==mvo.mem_id}">
-	        <c:forEach var="fl" items="${followlist}">
-	        <div class="follower_list">
-	        	<a href="/goalsns/followprofile.do?mem_id=${fl.to_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="/goalsns/followprofile.do?mem_id=${fl.to_mem}" class="mem_id">${fl.to_mem}</a>
-	        	<button class="unfollow">팔로잉</button>  
-	        </div>
-	        </c:forEach>
-	         </c:if>
-	        <c:if test="${memvo.mem_id!=mvo.mem_id}">
+
         	<c:forEach var="tofled" items="${tofollowedlist}">
 	        <div class="follower_list">
 	        	<a href="/goalsns/followprofile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
@@ -196,7 +179,7 @@
 	        	<button class="unfollow">팔로잉</button> 
 	        </div>
 	        </c:forEach>
-	    </c:if>
+
         </div>
       </div>        
     </div>

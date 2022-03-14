@@ -23,8 +23,8 @@
 	</insert>
 	
 	<!-- 아이디 중복체크 -->
-	<select id="idCheck" resultType="String">
-		select * from t_member
+	<select id="idCheck" resultType="int">
+		select count(*) from t_member
 		where mem_id=#{mem_id}
 	</select>
 	
@@ -74,6 +74,9 @@
 	<!-- 특정된 팔로우한사람 가져오기 -->
 	<select id="getfollowid" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
+	</select>
+	<select id="getFollow" parameterType="goalsns.entity.FollowVO" resultType="int">
+		select count(*) from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}
 	</select>
 	<select id="getFollowInfo" resultType="goalsns.entity.FollowVO">
 		select * from t_follow where to_mem=#{to_mem} and from_mem=#{from_mem}

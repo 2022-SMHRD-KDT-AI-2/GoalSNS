@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import goalsns.entity.CmtVO;
 import goalsns.entity.LikeCheckVO;
 import goalsns.entity.MemberVO;
 import goalsns.entity.PostVO;
@@ -48,6 +49,33 @@ public class MainController implements Controller {
 		// ------------------- À¯Àú ·©Å· --------------------------
 		List<String> rank = mdao.getMemRank();
 		request.setAttribute("rank", rank);
+		
+		// ------------------- ´ñ±Û °³¼ö --------------------------
+		CmtVO cvo = new CmtVO();
+		int cmtCnt = 0;
+		int[] cmtCntList = new int[list.size()];
+		for(int i=0; i<list.size(); i++) {
+			cvo.setPost_seq(list.get(i).getPost_seq());
+			cmtCnt = dao.selectCmt(cvo).size();
+			cmtCntList[i] = cmtCnt;
+		}
+		request.setAttribute("cmtCntList", cmtCntList);
+		
+		// ------------------- ³»°¡ ¾´ ´ñ±Û --------------------
+		cvo.setMem_id(mem_id);
+		String[] cmtList = new String[list.size()];
+		String cmt;
+		for(int i=0; i<list.size(); i++) {
+			cvo.setPost_seq(list.get(i).getPost_seq());
+			if(dao.getMyCmt(cvo) != null)
+				cmt = dao.getMyCmt(cvo).getCmt_content();
+			else
+				cmt = null;
+			cmtList[i] = cmt;
+			System.out.println("cmtList[i]:"+cmtList[i]);
+		}
+		request.setAttribute("cmtList", cmtList);
+		
 		return "main";
 		
 	}

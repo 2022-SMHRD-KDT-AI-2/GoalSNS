@@ -302,12 +302,27 @@ public class PostDAO {
 		return list;	
 	}
 	
+	public CmtVO getMyCmt(CmtVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		CmtVO cmt = session.selectOne("getMyCmt",vo);
+		session.close();
+		return cmt;	
+	}
+	
 	public List<LikeVO> selectLike(LikeVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		List<LikeVO> list = session.selectList("selectLike",vo);
 		session.close();
 		return list;	
 	}
+	
+	public LikeVO getLikeByPost(LikeVO vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		LikeVO like = session.selectOne("getLikeByPost",vo);
+		session.close();
+		return like;	
+	}
+	
 	
 	//-----------------------------------SNS 기능 구현을 위한 메소드--------------------------------------
 	

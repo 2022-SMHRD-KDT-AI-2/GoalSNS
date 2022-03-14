@@ -99,6 +99,9 @@ where c.chell_seq = mc.chell_seq
 		mem_id
 		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
 	</insert>
+  	<select id="getLikeByPost" resultType="goalsns.entity.LikeVO">
+  		select * from t_like where post_seq = #{post_seq} and mem_id = #{mem_id}
+  	</select>
 	
 	<!-- 좋아요 삭제 -->
 	<delete id = "likeDelete" parameterType="goalsns.entity.LikeVO">
@@ -162,6 +165,9 @@ left join t_like l
 on p.post_seq = l.post_seq
 	]]>
 	</select>
-
+	<!-- 내가 쓴 댓글 가져오기 -->
+	<select id="getMyCmt" parameterType="goalsns.entity.CmtVO" resultType="goalsns.entity.CmtVO">
+	<![CDATA[select * from (select * from t_cmt where post_seq = #{post_seq} and mem_id = #{mem_id} order by cmt_date desc) where rownum=1]]>
+  	</select>
 	
 </mapper>
