@@ -163,6 +163,18 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+.re_box_two{
+	display:flex;
+	flex-direction: row;
+}
+.re_box_left{
+	display:flex;
+	flex-direction: column;
+	flex-grow: 0.5;
+}
+.re_box_right{
+	flex-grow: 1;
+}
 
 .re_box_month{
 	float:right;
@@ -230,7 +242,7 @@
 }
 /* 하빗 트래커 박스 */
 .re_box_bottom{
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	
 }
 .bottom_flex{
