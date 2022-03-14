@@ -129,6 +129,77 @@
 </c:forEach>
 
 
+<!-- 예지가 적은 멋진차트 나오도록 하는 박스여~ -->
+
+<div class="reward_box">
+
+	<div class="re_box_title">
+		@${reward.chell_name}<div class="re_box_month">${month}&ensp;월</div>
+	</div>
+	
+	<div class="re_box_two">
+		<div class="re_box_left">
+			<div class="re_box_middle">
+				<div class="re_color"><i class="fa-solid fa-trophy ${reward.reward1.color}"></i></div>
+				<!-- <div class="re_color"><i class="fa-solid fa-trophy yellow"></i></div>
+				<div class="re_color"><i class="fa-solid fa-trophy green"></i></div>
+				<div class="re_color"><i class="fa-solid fa-trophy blue"></i></div>
+				<div class="re_color"><i class="fa-solid fa-trophy rainbow"></i></div> -->
+				<div class="sign"> | </div>
+				<div class="re_percent">${reward.reward1.rate}%</div>
+				<div class="sign"> | </div>
+				<div class="re_date">${reward.reward1.cnt}일 성공!</div>
+			</div>
+			<div class="re_box_bottomtop">-달성표-</div>
+			<div  class="re_box_bottom">
+			<div class="bottom_flex">
+				<div class="habit_tracker">
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<!-- <div class="tracker_date nodate"></div> -->
+				</div>
+				<div class="habit_tracker">
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<!-- <div class="tracker_date nodate"></div> -->
+				</div>
+				<div class="habit_tracker">
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<div class="tracker_date"></div>
+					<!-- <div class="tracker_date nodate"></div> -->
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="re_box_right">
+			<div>멋진표공간</div>
+		</div>
+	</div>
+	
+</div>
+
+
+<!-- 끝 -->
+
+
+
 
 
 <!-- 팔로워 모달창 -->

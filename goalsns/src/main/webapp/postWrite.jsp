@@ -2,6 +2,8 @@
 <%@page import="goalsns.entity.PostVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +27,12 @@
  <div class="container_1">
         <form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.do">
            <div class="item_1">
-           <div>
+  
              <div class="modal_sumbit">
             
-             <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a></div>
+             <button class="hide_yes" type="submit"></button>
+             <div><span class="fa-solid fa-arrow-up-from-bracket"></span></div>
+             <!-- <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a> -->
            </div>
            </div>
            <div class="item_2">                             
@@ -39,13 +43,13 @@
               
            </div> 
             <div class="input_1">
-               <input class="picture" type="file" name="mem_img">
+               <input class="picture" type="file" name="post_file">
                </div>
               
           <div class="item_3">
           <div class="form-group_0">
-             <img class="postPic_2" src="./resources/images/profile.png">           
-             <h5>user1_challin</h5>        
+             <img class="postPic_2" src="./profilePic/${memvo.mem_img}">           
+             <h5>${memvo.mem_id}</h5>        
           </div>
            <div class="form-group_1">
                     <label for="comment"></label>
