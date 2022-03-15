@@ -1,133 +1,118 @@
 @charset "EUC-KR";
+.img-circle{
+	border: 2px solid #C4C4C4;
+}
+/* flex 박스들 지정하기 */
 .container_1{
     display: flex;
     flex-direction: column;
     width: 1088px;
-    height: 754px;
+ 
     background-color: white;
     margin-left: 400px;
     border-radius: 5px;
     border: 1px solid #E8E8E8;
     border-radius: 17px;
 }
+
+.all_row{
+	display: flex;
+    flex-direction: row;
+}	
+.all_row_left{
+	display: flex;
+    flex-direction: column;
+    flex: 1.5;
+}	
+.all_row_right{
+	display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-left: 1px solid #E8E8E8;
+}
+
+
+
+/* 상단 버튼 올리기 부분 */
+.sub{
+	text-align: right;
+	margin: 15px;
+    margin-left: 1042px;
 }
 .item_1{
-	
-    width: 1081px;
-    height: 76px;
-    border-radius: 30px 30px 0px 0px;
-    margin-top: -2px;
-    background: #FFFFFF;
-    margin-left: 2px;
     border-bottom: 1px solid #E8E8E8;
-
-}	
-.item_2{
-	
-}	
-.item_3{
-    background: #FFFFFF;
-    width: 405px;
-    height: 667px;
-    float: right;
-    margin-top: -653px;
-    border-radius: 0px 0px 30px 0px;
-    margin-left: 0px;
-    margin-right: 3px;
-}	
-.postPic_1{
-    width: 672px;
-    height: 618px;
-    /* border-radius: 0px 0px 0px 30px; */
-    margin-top: 0px;
-    margin-left: 1px;
 }
-.postPic_2{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 70%;
-    float: left;
-    margin-right: 14px;
-    margin-top: 20px;
-    margin-left: 28px;
-}
-.spark_1{
-    width: 404px;
-    height: 333px;
-    border: none;
-    margin-left: 2px;
-    margin-top: 11px;
-    outline: none;
-}
-h5{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 17px;
-    margin-top: 47px;
-    float: left;
-}
-
-.form-group_1{
-    float: left;
-    margin-left: -5px;
-    
-    
-}
-.form-group_2{
-
-    float: left;
-    margin-left: -5px;
-    margin-top: -7px;
-    border-top: 1px solid #E8E8E8;
-  
-    
-}
-.input_1{
-    float: none;
-    margin-top: 10px;
-    /* margin-right: 41px; */
-    margin-left: 301px;
-}
-.form-group_0{
-	margin-left: -1px;
-}
-.normal{
-	color:blue;
-}
-.special{
-	color: #DF5C12;
-}
-.muener_1{
-	margin: 2px 7px 10px;
-    padding: 1px 5px 4px;
-    color: rgba(168, 168, 168, 0.8);
-    
-}
-.postWritpic{
-	 float: right;
-     margin-top: 21px;
-     margin-right: 28px;
-}
-
 .fa-arrow-up-from-bracket {
     font-size: 27px;
 }
-
 /* 올리기버튼 활성화! */
 .hide_yes{
-	margin-right: 22px;
-    margin-top: 15px;
-    margin-left: 1030px;
-    width: 40px;
-    height: 40px;
+    margin-left: 1034px;
+    width: 50px;
+    height: 45px;
     border: none;
     background: transparent;
     position: absolute;
 }
 
-.modal_sumbit > div{
-	text-align: right;
-    padding-right: 20px;
-    padding-top: 20px;
+
+
+/* 사진들 */
+#View{
+	width: 100%; 
 }
+.input_2{
+    margin: 20px;
+}
+
+
+
+/* 오른쪽 박스 */
+.form-group_0{
+	display: flex;
+    flex-direction: row;
+}
+.mem_id{
+  	font-size: 13pt;
+    color: black;
+    text-align: center;
+    margin-top: 25px;
+}
+#peedimg{
+	margin: 12px;
+}
+
+.spark_1{
+    width: 410px;
+    height: 420px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    resize: none;
+}
+
+
+.form-group_2{
+    padding:10px;
+    border-top: 1px solid #E8E8E8;
+   
+}
+.normal{
+	color:#5277C8;
+}
+.special{
+	color: #F37321;
+}
+.muener_1{
+
+    color: rgba(168, 168, 168, 0.8);  
+}
+details summary{
+	color: #838383;
+	cursor:pointer;
+	margin-bottom: 4px;
+}
+
+
+

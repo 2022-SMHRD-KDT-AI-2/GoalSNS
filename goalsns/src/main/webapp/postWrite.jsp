@@ -18,6 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/postWrite.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./resources/js/all.js"></script>
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -28,45 +29,44 @@
         <form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.do">
         
            <div class="item_1">
-  
              <div class="modal_sumbit">
-            
              <button class="hide_yes" type="submit"></button>
-             <div><span class="fa-solid fa-arrow-up-from-bracket"></span></div>
-             <!-- <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a> -->
+             <div class="sub"><span class="fa-solid fa-arrow-up-from-bracket"></span></div>
+           	 </div>
            </div>
-           </div>
-           <div class="item_2">                             
-                <a class="profilePic" target="_self">
-                 <img class="postPic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
-                 <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->              
-               </a>
-              
-           </div> 
-            <div class="input_1">
-               <input class="picture" type="file" name="post_file">
-               </div>
-              
-          <div class="item_3">
-          <div class="form-group_0">
-             <img class="postPic_2" src="./profilePic/${memvo.mem_img}">           
-             <h5>${memvo.mem_id}</h5>        
-          </div>
-           <div class="form-group_1">
-                    <label for="comment"></label>
-                    <textarea name="post_content" class="spark_1" rows="5" id="comment" placeholder="문구 입력..."></textarea>
-                   
-                 </div>
-             
-                  
-                <div class="form-group_2">       
-                    <p class="muener_1">일반해시태그를 사용하기 위해선 #기호와 텍스트를 차례로 입력합니다. 색이 주황색으로 변합니다. (예:<span class="normal">#꽃</span>)챌린지해시태그를 사용하기 위해선 @기호와 텍스트를 차례로 입력합니다. 색이 남색으로 변합니다. (예:<span class="special"> @물마시기챌린지</span>) 해시태그에 숫자나 기호를 사용할 수 있지만 공백은 사용할 수 없습니다. 하나의 게시물에 최대 30개의 태그를 사용할 수 있습니다.</p>
-                     
-                 </div>
-                   </div>
-                  
-        </form> 
-        </div>
+           
+           <div class="all_row">
+	           <div class="all_row_left">
+		           <div class="item_2">                            
+		  				<img id="View" src="./resources/images/profile.png" alt="이미지 미리보기" />
+		           </div> 
+		           <div class="input_2">
+		               <input name="post_file" type='file' id="myFile" />
+		           </div>  
+	          </div>
+	          
+	             
+	          <div class="all_row_right">
+		          	<div class="form-group_0">
+		          		<img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" >   
+		             	<div class="mem_id">${memvo.mem_id}</div>        
+		          	</div>
+	           		<div class="form-group_1">
+	                    <label for="comment"></label>
+	                    <textarea name="post_content" class="spark_1" rows="5" id="comment" placeholder="문구 입력..."></textarea>
+	                 </div>  
+	                <div class="form-group_2">
+	                	<details>
+	                		<summary>도움말 클릭</summary>     
+	                    	<p class="muener_1">일반해시태그를 사용하기 위해선 #기호와 텍스트를 차례로 입력합니다. 색이 남색으로 변합니다. (예: <span class="normal">#꽃</span>)<br>챌린지해시태그를 사용하기 위해선 @기호와 텍스트를 차례로 입력합니다. 색이 주황색으로 변합니다. (예:<span class="special"> @물마시기챌린지</span>)<br> 해시태그에 숫자나 기호를 사용할 수 있지만 공백은 사용할 수 없습니다. 하나의 게시물에 최대 30개의 태그를 사용할 수 있습니다.</p>
+	                    </details> 
+	                </div>
+	           </div>
+	           
+	          
+         </div>
+	</form> 
+</div>
 <jsp:include page="footer.jsp" />
   </body>
   </html>
