@@ -42,17 +42,19 @@
 <div class="containerbox">
 
 	<div name="post_file" id="post_file" class="left_item">
-	      <%-- <img src="./postPic/${vo.post_file}" class="postfile"> --%>
 	      <img src="./resources/images/small.jpg" class="postfile">
 	</div>
 	<div class="right_item">
 		<!--첫번째 줄 -->
 		<div id="right_item_top" >
-        	<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
-        	<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        	<a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a>
+        	<a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
         	<!-- 내가 상대방을 팔로우 했다면, 팔로잉보여지게(클릭X),
-        	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
-        	<span class="follow following">• 팔로잉</span>
+        	 팔로우를 하지 않았다면, 아무것도 안보이도록 수정. -->
+        
+        	<span class="follow following"><c:if test="${memvo.mem_id != vo.mem_id}">
+          <c:if test="${vo.mem_id==tfvo.to_mem }">• 팔로잉</c:if></c:if></span>
+
         	<!-- <span class="follow follow_click"><a href="#">• 팔로우</a></span> -->
       		<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     	</div>
@@ -60,10 +62,10 @@
 		<!-- 두번째 줄(댓글공간) -->
 		<div class="right_item_middle">
 			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+				<a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a>
         		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        				<a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
         				<span class="me_con">${vo.post_content}</span>
         			</div>
         			<span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span>
@@ -72,17 +74,21 @@
 			
 			<!-- 댓글 많이 추가함(지워도 됌) -->
 			<c:forEach var="c" items="${list}" varStatus="i">
+			<c:forEach var="memImages" items="${memImages}" begin="${i.index}" end="${i.index}">
 				<div class="me_coments">
-					<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+					<a href="/goalsns/profile.do?mem_id=${c.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
+					</c:forEach>
 	        		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
+        				<a href="/goalsns/profile.do?mem_id=${c.mem_id}" name="mem_id" class="mem_id">${c.mem_id}</a>
         				<span class="me_con">${c.cmt_content}</span>
         			</div>
         			<span id="post_date"><fmt:formatDate value="${c.cmt_date}" pattern="yyyy.MM.dd HH:mm"/> </span>
         		</div>
 				</div>
 			</c:forEach>
+			
+			
 			<!--<div class="me_coments">
 				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
         		<div>
@@ -126,6 +132,8 @@
         	<div class="textsection3"><input type="button" onclick="writeCmt()" class="textsection_bt">게시</div></form>
 		</div>	
 	</div>
+
+
 
 </div>
 
@@ -184,9 +192,10 @@
 <jsp:include page="footer.jsp" />
 <script>
 	$('.textsection_bt').click(function(){
-		var com = $('textarea').val();
-			$('.me_coments').prepend(com);
-			});
+			var com = $('textarea').val();
+				$('.right_item_middle').prepend('<div class="me_coments"><a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a><div><div><a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a><span class="me_con">'+com+'</span></div><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div></div>');
+				});
+
 </script>
 </body>
 </html>
