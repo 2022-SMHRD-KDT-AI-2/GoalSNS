@@ -138,8 +138,8 @@
 		</div>
 		
 		<div class="re_box_right">
-			<div>멋진표공간</div>
-			<div style="width: 600px;">
+			
+			<div style="width: 500px;" class="nice_space">
 			<canvas id="myChart${reward.chell_seq}"></canvas>
 			</div>
 			<!-- ---------------------------------------------------------------------- -->
