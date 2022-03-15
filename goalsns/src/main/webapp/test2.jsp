@@ -37,10 +37,20 @@ var myChart = new Chart(chartArea, {
     data: {
         labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
         datasets: [{
-            label: '달성도',
-            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3],
+            label: '달성률',
+            
+            data: [10,23,53,23,76,53,12,88,10,40,78,64],
+            
             backgroundColor: 'rgba(246, 118, 0, 0.5)',
             borderColor: 'rgba(246, 118, 0, 1)',
+            borderWidth: 1
+        },{
+            label: '평균 달성률',
+            
+            data: [99,31,23,55,13,78,32,75,34,78,12,93],
+            
+            backgroundColor: 'rgba(100, 118, 0, 0.5)',
+            borderColor: 'rgba(100, 118, 0, 1)',
             borderWidth: 1
         }]
     },
