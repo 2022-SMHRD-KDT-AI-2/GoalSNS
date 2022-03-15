@@ -38,6 +38,13 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	cvo.setPost_seq(post_seq);
 	List<CmtVO> list = dao.selectCmt(cvo);
 	request.setAttribute("list", list);
+	// -------------- 프로필 이미지(멤버 정보) ----------------------
+	String[] memImages = new String[list.size()];
+	for(int i=0; i<list.size(); i++) {
+		memImages[i] = mdao.getMemberInfo(list.get(i).getMem_id()).getMem_img();
+		System.out.println("memImages:"+memImages[i]);
+	}
+	request.setAttribute("memImages", memImages);
 	// ------------------- 좋아요 개수, 좋아요 여부 --------------------------
 	LikeVO lvo = new LikeVO();
 	lvo.setMem_id(to_mem);

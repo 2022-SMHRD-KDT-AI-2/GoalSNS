@@ -51,8 +51,11 @@
         	<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
         	<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
         	<!-- 내가 상대방을 팔로우 했다면, 팔로잉보여지게(클릭X),
-        	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
-        	<span class="follow following">• 팔로잉</span>
+        	 팔로우를 하지 않았다면, 아무것도 안보이도록 수정. -->
+        
+        	<span class="follow following"><c:if test="${memvo.mem_id != vo.mem_id}">
+          <c:if test="${vo.mem_id==tfvo.to_mem }">• 팔로잉</c:if></c:if></span>
+
         	<!-- <span class="follow follow_click"><a href="#">• 팔로우</a></span> -->
       		<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     	</div>
@@ -72,8 +75,10 @@
 			
 			<!-- 댓글 많이 추가함(지워도 됌) -->
 			<c:forEach var="c" items="${list}" varStatus="i">
+			<c:forEach var="memImages" items="${memImages}" begin="${i.index}" end="${i.index}">
 				<div class="me_coments">
-					<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+					<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
+					</c:forEach>
 	        		<div>
         			<div>
         				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
@@ -151,18 +156,18 @@
         </c:if>
           <!-- 내 게시물이라면? 게시글 삭제,
            상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
-           <c:if test="${memvo.mem_id != vo.mem_id}">
+          <c:if test="${memvo.mem_id != vo.mem_id}">
           <c:if test="${vo.mem_id==tfvo.to_mem }">
           <form id="follow_form" class="hide_form">
           <input type="hidden" name="follow_num" value="${vo.mem_id}">
-          <input type="button" onclick="return postfollow()" class="modal-red">팔로우 취소
+          <input type="button" onclick="return postfollow()" class="fol_input_hide"><span class="fol_no modal-red">팔로우 취소</span>
           </form>
           </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
           <c:if test="${empty tfvo.to_mem}">
           <form id="follow_form" class="hide_form">
           <input type="hidden" name="follow_num" value="${vo.mem_id}">
-          <input type="button" onclick="return postfollow()" class="modal-blue">팔로우
+          <input type="button" onclick="return postfollow()" class="fol_input_hide"><span class="fol_no modal-blue">팔로우</span>
           </form>
           </c:if>
           </c:if>

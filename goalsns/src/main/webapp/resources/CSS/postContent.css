@@ -207,6 +207,8 @@ a{
 	font-weight: 500;
 	display:block;
 	padding:25px;
+	text-align: center;
+	border-bottom: 1px solid #C4C4C4;
 }
 .modal-red:hover{
 	color: red;
@@ -217,10 +219,25 @@ a{
 	font-weight: 500;
 	display:block;
 	padding:25px;
+	text-align: center;
+	border-bottom: 1px solid #C4C4C4;
 }
-.modal-blue:hover{
-	color: #52A1FF;
+
+
+/* ÆÈ·Î¿ì,ÆÈ·Î¿ìÃë¼Ò input À§·Î  */
+.fol_input_hide{
+	position: absolute;
+    width: 348px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    margin: 25px;
+    padding: 0;
 }
+
+
+
+
 .black{
 	color: black;
 	font-size: 18px;

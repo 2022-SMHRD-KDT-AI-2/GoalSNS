@@ -134,9 +134,11 @@
         <div class="follower-box">
         
 	    
-	    <c:forEach var="tofled" items="${tofollowlist}">
+	    <c:forEach var="tofled" items="${tofollowlist}" varStatus="statusNm">
 	        <div class="follower_list">
-	        	<a href="/goalsns/followedprofile.do?mem_id=${tofled.from_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+	        <c:forEach var="followerImages" items="${followerImages}" begin="${statusNm.index}" end="${statusNm.index}">
+	        	<a href="/goalsns/followedprofile.do?mem_id=${tofled.from_mem}"><img id="peedimg" class="img-circle" src="./profilePic/${followerImages}" width="50" height="50" ></a>
+	        	</c:forEach>
 	        	<a href="/goalsns/followedprofile.do?mem_id=${tofled.from_mem}" name="mem_id" class="mem_id">${tofled.from_mem}</a> 
 	        </div>
 	        </c:forEach>
@@ -163,17 +165,16 @@
       <div class="modal-content">     
         <div class="modal-box">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <span class="model_title">팔로잉</span>
+          <span class="model_title">팔로우</span>
         </div>       
         <div class="follower-box">
 
-        	<c:forEach var="tofled" items="${tofollowedlist}">
+        	<c:forEach var="tofled" items="${tofollowedlist}" varStatus="statusNm">
+        	<c:forEach var="followImages" items="${followImages}" begin="${statusNm.index}" end="${statusNm.index}">
 	        <div class="follower_list">
-	        	<a href="/goalsns/followprofile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
-	        	<a href="/goalsns/followprofile.do?mem_id=${tofled.to_mem}" class="mem_id">${tofled.to_mem}</a>
-	        	<form>
-	        	<button class="unfollow">팔로잉</button>
-	        	</form> 
+	        	<a href="/goalsns/profile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./profilePic/${followImages}" width="50" height="50" ></a>
+	        	</c:forEach>
+	        	<a href="/goalsns/profile.do?mem_id=${tofled.to_mem}" class="mem_id">${tofled.to_mem}</a> 
 	        </div>
 	        </c:forEach>
 

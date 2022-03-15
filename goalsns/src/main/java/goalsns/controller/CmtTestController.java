@@ -34,8 +34,10 @@ public class CmtTestController implements Controller {
 		dao.cmt(vo);
 		
 		JSONObject obj = new JSONObject();
-		obj.put(dao, obj);
+		obj.put("post_seq", post_seq);
 		
+		response.setContentType("application/x-json; charset=UTF-8");
+		response.getWriter().print(obj);
 		
 		return null;
 	}
