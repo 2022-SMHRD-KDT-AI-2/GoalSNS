@@ -18,7 +18,6 @@ import goalsns.entity.LikeCheckVO;
 import goalsns.entity.LikeVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.MemberVO;
-import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 import goalsns.entity.TrackerVO;
@@ -150,14 +149,6 @@ public class PostDAO {
 	public void memChellInsert(MemChellVO mcvo) {
 		SqlSession session = sqlSessionFactory.openSession();
 		session.insert("memChellInsert", mcvo);
-		session.commit();
-		session.close();		
-	}
-	
-	// (5) 포스트-챌린지 매핑 테이블 삽입하기
-	public void postChellInsert(PostChellVO pcvo) {
-		SqlSession session = sqlSessionFactory.openSession();
-		session.insert("postChellInsert", pcvo);
 		session.commit();
 		session.close();		
 	}
