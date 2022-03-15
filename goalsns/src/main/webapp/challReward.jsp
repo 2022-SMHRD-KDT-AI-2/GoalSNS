@@ -164,7 +164,7 @@ var myChart${reward.chell_seq} = new Chart(chartArea, {
             
             data: data${reward.chell_seq},
             
-            backgroundColor: 'rgba(246, 118, 0, 0.5)',
+            backgroundColor: 'rgba(246, 118, 0, 1)',
             borderColor: 'rgba(246, 118, 0, 1)',
             borderWidth: 1
         },{
@@ -172,8 +172,8 @@ var myChart${reward.chell_seq} = new Chart(chartArea, {
             
             data: avgdata${reward.chell_seq},
             
-            backgroundColor: 'rgba(100, 118, 0, 0.5)',
-            borderColor: 'rgba(100, 118, 0, 1)',
+            backgroundColor: 'rgba(165, 182, 74, 1)',
+            borderColor: 'rgba(165, 182, 74, 1)',
             borderWidth: 1
         }]
     },
