@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+
 import goalsns.entity.MemberVO;
 import goalsns.model.MemberDAO;
 
@@ -18,9 +20,12 @@ public class IdCheckController implements Controller {
 		MemberDAO dao=new MemberDAO();
 		vo.setMem_id(mem_id);
 		int idck=dao.idCheck(vo);
-		request.setAttribute("idck", idck);
-		System.out.println(mem_id);
-		System.out.println(idck);
+		
+		JSONObject obj = new JSONObject();
+		obj.put("idck",idck);
+		
+		response.setContentType("application/x-json; charset=UTF-8");
+		response.getWriter().print(obj);
 		return "signUp";
 	}
 
