@@ -72,8 +72,10 @@
 			
 			<!-- 댓글 많이 추가함(지워도 됌) -->
 			<c:forEach var="c" items="${list}" varStatus="i">
+			<c:forEach var="memImages" items="${memImages}" begin="${i.index}" end="${i.index}">
 				<div class="me_coments">
-					<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+					<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
+					</c:forEach>
 	        		<div>
         			<div>
         				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
