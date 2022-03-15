@@ -51,8 +51,11 @@
         	<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
         	<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
         	<!-- 내가 상대방을 팔로우 했다면, 팔로잉보여지게(클릭X),
-        	 팔로우를 하지 않았다면, 팔로우 클릭 시 팔로잉이 되도록(클릭O) -->
-        	<span class="follow following">• 팔로잉</span>
+        	 팔로우를 하지 않았다면, 아무것도 안보이도록 수정. -->
+        
+        	<span class="follow following"><c:if test="${memvo.mem_id != vo.mem_id}">
+          <c:if test="${vo.mem_id==tfvo.to_mem }">• 팔로잉</c:if></c:if></span>
+
         	<!-- <span class="follow follow_click"><a href="#">• 팔로우</a></span> -->
       		<button type="button" class="mybtn" data-toggle="modal" data-target="#myModal"><i class="fa-solid fa-ellipsis"></i></button>
     	</div>
