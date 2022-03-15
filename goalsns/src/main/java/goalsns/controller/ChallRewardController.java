@@ -33,20 +33,28 @@ public class ChallRewardController implements Controller {
 		fvo.setTo_mem(id);
 		fvo.setFrom_mem(from_mem);
 		MemberVO mvo = mdao.getMemberInfo(id);
-		List<FollowVO> memfo=mdao.getFollowInfo(fvo);
-		List<FollowVO> followlist=mdao.followAll(fvo);
 		List<FollowVO> tofollowlist=mdao.tofollowAll(fvo);
-		List<FollowVO> followedlist=mdao.followedAll(fvo);
 		List<FollowVO> tofollowedlist=mdao.tofollowedAll(fvo);
 		List<PostVO> postList = pdao.getMemberPosts(id);
 		int postCnt = postList.size();
+		request.setAttribute("postList", postList);
 		request.setAttribute("postCnt", postCnt);
 		request.setAttribute("mvo", mvo);
-		request.setAttribute("memfo", memfo);
-		request.setAttribute("followlist", followlist);
-		request.setAttribute("followedlist", followedlist);
 		request.setAttribute("tofollowlist", tofollowlist);
 		request.setAttribute("tofollowedlist", tofollowedlist);
+		
+		// -------------- 팔로워 이미지(멤버 정보) ----------------------
+		String[] followerImages = new String[tofollowlist.size()];
+		for (int i = 0; i < tofollowlist.size(); i++) {
+			followerImages[i] = mdao.getMemberInfo(tofollowlist.get(i).getFrom_mem()).getMem_img();
+		}
+		request.setAttribute("followerImages", followerImages);
+		// -------------- 팔로우 이미지(멤버 정보) ----------------------
+		String[] followImages = new String[tofollowedlist.size()];
+		for (int i = 0; i < tofollowedlist.size(); i++) {
+			followImages[i] = mdao.getMemberInfo(tofollowedlist.get(i).getTo_mem()).getMem_img();
+		}
+		request.setAttribute("followImages", followImages);
 		/*
 		 * (1) 챌린지 해시태그 리스트 가져오기. (커다란 리스트)
 		 * (2) 챌린지 해시태그 아이디에 관한 해당 로그인 유저의 월별 달성도 출력. (작은 리스트)
