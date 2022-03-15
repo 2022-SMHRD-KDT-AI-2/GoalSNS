@@ -125,6 +125,6 @@ a{
     background-color: #FDFDFD;
    
 }
-input:focus {
+input#mem_id.form-control:focus {
 	outline:2px solid #CEC8C8;
 	}
