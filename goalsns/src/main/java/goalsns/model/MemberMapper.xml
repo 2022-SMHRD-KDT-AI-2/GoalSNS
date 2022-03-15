@@ -31,7 +31,7 @@
 	<!-- 회원탈퇴 -->
 	<delete id = "memberDelete" parameterType="goalsns.entity.MemberVO">
 		delete from t_member 
-		where mem_pw=#{mem_pw}
+		where mem_id=#{mem_id} and mem_pw=#{mem_pw}
 	</delete>
 	<!-- 프로필 수정 -->
 	<update id="profileEdit" parameterType="goalsns.entity.MemberVO">

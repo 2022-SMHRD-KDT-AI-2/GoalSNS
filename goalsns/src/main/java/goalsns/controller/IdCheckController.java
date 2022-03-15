@@ -26,7 +26,7 @@ public class IdCheckController implements Controller {
 		
 		response.setContentType("application/x-json; charset=UTF-8");
 		response.getWriter().print(obj);
-		return "signUp";
+		return null;
 	}
 
 }

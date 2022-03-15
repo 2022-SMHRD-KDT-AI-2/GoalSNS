@@ -13,17 +13,17 @@ import goalsns.model.MemberDAO;
 public class MemberDeleteController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String mem_pw = request.getParameter("pw");
-		String test4 = "test4";
+		HttpSession session=request.getSession();
+		MemberVO memvo = (MemberVO)session.getAttribute("memvo");
+		String Mem_id=(String)memvo.getMem_id();
+		String mem_pw = request.getParameter("mem_pw");
 		
 		MemberVO vo = new MemberVO();
-		vo.setMem_id(test4);
+		vo.setMem_id(Mem_id);
 		vo.setMem_pw(mem_pw);
 		
 		MemberDAO dao = new MemberDAO();
-		MemberVO memvo=dao.memberDelete(vo);
-		HttpSession session=request.getSession();
-		session.setAttribute("memvo", memvo);
+		dao.memberDelete(vo);
 		return "index";
 		 
 	}
