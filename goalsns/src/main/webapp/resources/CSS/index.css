@@ -87,8 +87,8 @@ body{
 }
 img {
     vertical-align: middle;
-    width: 193px;
-    margin-left: 81px;
+    width: 244px;
+    margin-left: 56px;
     margin-top: 72px;
 }
 .form-inline .form-control {
@@ -100,13 +100,13 @@ img {
 }
 strong{
 	font-weight: 400;
-    font-size: 24.3763px;
+    font-size: 19.3763px;
     line-height: 32px;
     
 }
 a{
 	font-weight: 400;
-    font-size: 24.3763px;
+    font-size: 19.3763px;
     line-height: 32px;
 }
 .item_text{
