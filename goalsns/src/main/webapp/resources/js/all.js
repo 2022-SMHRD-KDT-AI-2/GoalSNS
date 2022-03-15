@@ -86,7 +86,7 @@ function writeCmt(){
     function (request, status, error){
     alert("ajax실패. code:"+request.status+"\n"+"message:"+request.reponseText+"\n"+"error:"+error);
     }
-    });
+    })
 }
     
 
@@ -96,8 +96,3 @@ function writeCmt(){
 	$('').append();
 	*/
 	
-$('.textsection_bt').click(function(){
-	var com = $('input[type=text]').val()
-		$('.textsection2').prepend(com)
-		$('input[type=text]').val('')
-		});
