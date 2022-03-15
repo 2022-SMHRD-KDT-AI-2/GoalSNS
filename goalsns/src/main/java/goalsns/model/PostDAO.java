@@ -271,6 +271,21 @@ public class PostDAO {
 		session.close();
 		return list;
 	}	
+	// (6) 평균 (차트)
+	public List<Chart> getAvg(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Chart> list = session.selectList("getAvg", mcvo); 
+		session.close();
+		return list;
+	}	
+	// (5) 리워드3 (차트)
+	public int getMemChellCnt(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<MemChellVO> cntList = session.selectList("getMemChellCnt", mcvo); 
+		int cnt = cntList.size();
+		session.close();
+		return cnt;
+	}	
 	
 	//-----------------------------------댓글, 좋아요--------------------------------------
 	public int cmt(CmtVO vo) {

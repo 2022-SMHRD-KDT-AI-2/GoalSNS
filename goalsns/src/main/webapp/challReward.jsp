@@ -144,11 +144,15 @@
 			</div>
 			<!-- ---------------------------------------------------------------------- -->
 			<script>
-
+			var avgdata${reward.chell_seq} = [];
 			var data${reward.chell_seq} = [];
 			<c:forEach var="chart" items="${reward.reward3}">
 			var rate = (${chart.cnt} / date) * 100;
 			data${reward.chell_seq}.push(rate);
+			</c:forEach>
+			<c:forEach var="avg" items="${reward.avg}">
+			var rate2 = ((${avg.cnt} / date) * 100)/${reward.mem_cnt};
+			avgdata${reward.chell_seq}.push(rate2);
 			</c:forEach>
 var chartArea = document.getElementById('myChart'+${reward.chell_seq}).getContext('2d');
 var myChart${reward.chell_seq} = new Chart(chartArea, {
@@ -162,6 +166,14 @@ var myChart${reward.chell_seq} = new Chart(chartArea, {
             
             backgroundColor: 'rgba(246, 118, 0, 0.5)',
             borderColor: 'rgba(246, 118, 0, 1)',
+            borderWidth: 1
+        },{
+            label: '평균 달성률',
+            
+            data: avgdata${reward.chell_seq},
+            
+            backgroundColor: 'rgba(100, 118, 0, 0.5)',
+            borderColor: 'rgba(100, 118, 0, 1)',
             borderWidth: 1
         }]
     },
