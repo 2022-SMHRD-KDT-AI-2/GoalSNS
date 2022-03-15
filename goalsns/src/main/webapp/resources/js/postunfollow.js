@@ -15,6 +15,16 @@ function postfollow(){
     $('.fol_no').toggleClass('modal-blue');
     $('.modal-blue').text('팔로우');
     $('.modal-red').text('팔로우 취소');
+    
+ 	$('.fal_yes').toggleClass('fa-user');
+	$('.fal_yes').toggleClass('fa-user-plus');
+	$('.profile_btn').toggleClass('follow1');
+	$('.profile_btn').toggleClass('fo_2');
+	$('.inner_text').toggleClass('inner_text1');
+	$('.inner_text').toggleClass('inner_text2');
+	$('.inner_text1').text('팔로잉 ');
+	$('.inner_text2').text('팔로우 ');
+    
     if(data.follow == 0)
     	$('.following').text(' ');
     else
