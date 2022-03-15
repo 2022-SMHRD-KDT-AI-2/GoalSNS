@@ -39,7 +39,7 @@ public class CmtTestController implements Controller {
 		response.setContentType("application/x-json; charset=UTF-8");
 		response.getWriter().print(obj);
 		
-		return "redirect:/postContent.do?post_seq="+post_seq;
+		return null;
 	}
 
 }
