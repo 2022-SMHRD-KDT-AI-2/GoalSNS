@@ -38,7 +38,7 @@
            <div class="all_row">
 	           <div class="all_row_left">
 		           <div class="item_2">                            
-		  				<img id="View" src="./resources/images/profile.png" alt="이미지 미리보기" />
+		  				<img id="View" src="./resources/images/NoImage.jpg" alt="이미지 미리보기" />
 		           </div> 
 		           <div class="input_2">
 		               <input name="post_file" type='file' id="myFile" />
