@@ -133,7 +133,6 @@
         </div>
         <div class="follower-box">
         
-	    
 	    <c:forEach var="tofled" items="${tofollowlist}">
 	        <div class="follower_list">
 	        	<a href="/goalsns/followedprofile.do?mem_id=${tofled.from_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>

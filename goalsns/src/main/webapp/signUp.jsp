@@ -60,7 +60,6 @@ function checkit(){
           alert("아이디는 4글자 이상 30자미만이여만 합니다!")
           return;
      }
-    	
     if (document.fo.pw.value == "") {
         alert("비밀번호를 입력하지 않았습니다.")
         document.fo.pw.focus();
@@ -93,10 +92,10 @@ function checkit(){
     	alert("아이디 중복체크를 클릭해주세요")
     	return;
     }
+    
           fo.action = "/goalsns/userRegister.do";
           fo.method = "post";
           fo.submit(); 
-    
  
  }   
 	    
@@ -105,9 +104,7 @@ function checkit(){
 		location.href="/goalsns/idCheck.do?id="+id;
 	}
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<script type="text/javascript" src="./resources/js/idCheck.js"></script>
 <body>
    
   <div class="container">
@@ -125,10 +122,9 @@ function checkit(){
          <input type="text" class="boxs_1" name="name" placeholder="성명" >
         </div>
         <br>
-        
-        <form id="idCheck_form" class="hide_form">
-        <div id="inputid">
+         <form id="idCheck_form" class="hide_form">
         <input type="hidden" id="idck" name="idck" value="0">
+        <div id="inputid">
          <input id = "id" type="text" class="boxs_1" name="id" placeholder="사용자 이름">
         </div>
         <div class="btn_0">
@@ -147,7 +143,7 @@ function checkit(){
         </div>
         </div>
     </form>
-
+    
     <div class="item_2">  
      <div class="form-group">
       <div class="item_text">
@@ -159,5 +155,30 @@ function checkit(){
    
    </div>
    
+    <script>
+    	$('#idCheck').click(function(){
+    		var id = $('#id').val();
+    		$.ajax({
+    			url : "idCheck.do",
+    			type : 'GET',
+    			data : {'id',id},
+    			dataType : 'JSON',
+    			success : resultJSON,
+    			error : function(){
+    				alert('error');
+    			} // error
+    		});   // .ajax
+    	});  	  // .click
+    	
+    	function resultJSON(data) {
+    		if(data.check == 'true') {
+    			$('#idResult').test('사용할 수 있는 아이디 입니다.');
+    			$('#idResult').css('color','blue');
+    		} else {
+    			$('#idResult').test('사용할 수 없는 아이디 입니다.');
+    			$('#idResult').css('color','red');
+    		}
+    	}
+    </script>
 </body>
 </html>

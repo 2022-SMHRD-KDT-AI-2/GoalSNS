@@ -44,6 +44,7 @@ public class PostContentfollowController implements Controller {
 		System.out.println(followcnt);
 		System.out.println(followercnt);
 		JSONObject obj = new JSONObject();
+		follow=mdao.getFollow(fvo);
 		obj.put("follow",follow);
 		obj.put("followcnt",followcnt);
 		obj.put("followercnt",followercnt);

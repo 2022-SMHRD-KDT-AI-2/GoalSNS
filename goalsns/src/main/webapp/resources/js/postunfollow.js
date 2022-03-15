@@ -15,7 +15,10 @@ function postfollow(){
     $('.fol_no').toggleClass('modal-blue');
     $('.modal-blue').text('팔로우');
     $('.modal-red').text('팔로우 취소');
-    
+    if(data.follow == 0)
+    	$('.following').text(' ');
+    else
+    	$('.following').text('• 팔로잉');
     },
     error:
     function (request, status, error){

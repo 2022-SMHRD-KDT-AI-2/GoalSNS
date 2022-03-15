@@ -156,7 +156,30 @@ where c.chell_seq = mc.chell_seq
 		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
 	]]>
   	</select>  	
-
+ 	<select id="getAvg" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.Chart">
+ 	<![CDATA[
+		 SELECT TO_CHAR(b.dt, 'YYYY-MM') AS mon
+		     , NVL(SUM(a.cnt), 0) cnt
+		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
+		              , COUNT(*) cnt
+		           FROM (select * from t_post where chell_seq=#{chell_seq})
+		          WHERE post_date BETWEEN (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)
+		                             AND (SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		          GROUP BY post_date
+		        ) a
+		      , ( SELECT TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1 AS dt
+		            FROM dual 
+		         CONNECT BY LEVEL <= ((SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		                            - (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL) + 1)
+		        ) b
+		  WHERE b.dt = a.post_date(+)
+		  GROUP BY TO_CHAR(b.dt, 'YYYY-MM')
+		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
+	]]>
+  	</select>
+	<select id="getMemChellCnt" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.MemChellVO">
+		  select * from t_mem_chell where chell_seq = #{chell_seq}
+	</select>
 	
 	<!-- 댓글 리스트 -->
 
