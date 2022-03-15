@@ -170,7 +170,7 @@
 .re_box_left{
 	display:flex;
 	flex-direction: column;
-	flex-grow: 0.5;
+	flex-grow: 1;
 }
 .re_box_right{
 	flex-grow: 1;
@@ -244,6 +244,11 @@
 .re_box_bottom{
 	margin-bottom: 40px;
 	
+}
+.re_box_right > .nice_space{
+	margin-top: 100px;
+    margin-left: 30px;
+    margin-right: -110px;
 }
 .bottom_flex{
 	display: flex;
