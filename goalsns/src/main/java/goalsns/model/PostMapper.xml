@@ -135,6 +135,27 @@ where c.chell_seq = mc.chell_seq
   	<select id="getChellName" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.ChellVO">
   		select chell_name from t_chell where chell_seq = #{chell_seq}
   	</select>
+ 	<select id="getReward3" parameterType="goalsns.entity.MemChellVO" resultType="goalsns.entity.Chart">
+ 	<![CDATA[
+		 SELECT TO_CHAR(b.dt, 'YYYY-MM') AS mon
+		     , NVL(SUM(a.cnt), 0) cnt
+		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
+		              , COUNT(*) cnt
+		           FROM (select * from t_post where chell_seq=#{chell_seq} and mem_id=#{mem_id})
+		          WHERE post_date BETWEEN (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)
+		                             AND (SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		          GROUP BY post_date
+		        ) a
+		      , ( SELECT TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1 AS dt
+		            FROM dual 
+		         CONNECT BY LEVEL <= ((SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		                            - (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL) + 1)
+		        ) b
+		  WHERE b.dt = a.post_date(+)
+		  GROUP BY TO_CHAR(b.dt, 'YYYY-MM')
+		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
+	]]>
+  	</select>  	
 
 	
 	<!-- 댓글 리스트 -->
