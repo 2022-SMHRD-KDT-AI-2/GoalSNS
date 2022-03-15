@@ -1,41 +1,15 @@
 @charset "EUC-KR";
-/* 모달창의 배경을 만든다 */
-.modal__background{
-    display: none;
-    position: fixed;
-    top:0; 
-    left: 0;
-    bottom: 0; 
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
-  }
-   
-  /* 모달창 영역을 꾸민다 */
-  .modal__box{
-    position: absolute;
-    top: calc(50vh - 100px); left: calc(50vw - 200px);
-    background-color: white;
-    display: flex; justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    width: 1081px;
-    height: 748px;
-  }
 .container_1{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 1088px;
     height: 754px;
-    /* background-color: gainsboro; */
-    margin-left: 477px;
-    border-radius: 30px;
-    margin-top: 35px;
-    /* background: #33333324; */
+    background-color: white;
+    margin-left: 400px;
+    border-radius: 5px;
     border: 1px solid #E8E8E8;
-    border-radius: 30px;
+    border-radius: 17px;
+}
 }
 .item_1{
 	

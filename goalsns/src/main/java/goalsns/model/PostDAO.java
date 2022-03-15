@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import goalsns.entity.Chart;
 import goalsns.entity.ChellVO;
 import goalsns.entity.CmtVO;
 import goalsns.entity.HashtagVO;
@@ -262,6 +263,14 @@ public class PostDAO {
 		session.close();
 		return chell_name;
 	}
+	
+	// (5) 리워드3 (차트)
+	public List<Chart> getReward3(MemChellVO mcvo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<Chart> list = session.selectList("getReward3", mcvo); 
+		session.close();
+		return list;
+	}	
 	
 	//-----------------------------------댓글, 좋아요--------------------------------------
 	public int cmt(CmtVO vo) {

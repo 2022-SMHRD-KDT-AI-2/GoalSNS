@@ -22,6 +22,15 @@
 <!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달끝 -->
+<script type="text/javascript" src="./resources/js/postunfollow.js"></script>
+<script type="text/javascript" src="./resources/js/chart.js"></script>
+
+<!-- chart.js CDN방식으로 불러오기! -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script type="text/javascript">
+	let today = new Date();
+	let date = today.getDate();
+</script>
 </head>
 <body>
 <jsp:include page="menu.jsp" />
@@ -43,10 +52,16 @@
 					<c:if test="${memvo.mem_id!=mvo.mem_id}">
 					<c:if test="${!empty memfo}">
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
-					<button class="profile_btn" onclick="goUnFollow('${mvo.mem_id}')">팔로잉&nbsp;<span class="fa-solid fa-user"></span></button>
+					<form id="follow_form" class="hide_form">
+					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
+					<input type="button" class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span>
+					</form>
 					</c:if>
 					<c:if test="${empty memfo}">
-					<button class="profile_btn follow1" onclick="goFollow('${mvo.mem_id}')">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span></button>
+					<form id="follow_form" class="hide_form">
+					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
+					<input type="button" class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span>
+					</form>
 					</c:if>
 					</c:if>
 				</div>
@@ -59,22 +74,12 @@
 				<div class="post">
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
-				<c:if test="${memvo.mem_id==mvo.mem_id}">
-				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(followedlist)}</button>
-				</div>
-				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(followlist)}</button>
-				</div>
-				</c:if>
-				<c:if test="${memvo.mem_id!=mvo.mem_id}">
 				<div class="follower">
 					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
 					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
-				</c:if>
 			</div>
 
 			<div class="section3">
@@ -87,49 +92,10 @@
 
 <div class="point"><img class= "point_img" src="./resources/images/reward_icon.png">  챌린지 리워드</div>
 
-<!-- 리워드 부분 나오기!  -->
-
-
-<c:forEach var="reward" items="${rewardList}">
-<div class="reward_box">
-	<div class="re_box_title">
-	@${reward.chell_name}<div class="re_box_month">${month}&ensp;월</div>
-	</div>
-	<div class="re_box_middle">
-		<div class="re_color"><i class="fa-solid fa-trophy ${reward.reward1.color}"></i></div>
-		<!-- <div class="re_color"><i class="fa-solid fa-trophy yellow"></i></div>
-		<div class="re_color"><i class="fa-solid fa-trophy green"></i></div>
-		<div class="re_color"><i class="fa-solid fa-trophy blue"></i></div>
-		<div class="re_color"><i class="fa-solid fa-trophy rainbow"></i></div> -->
-		<div class="sign"> | </div>
-		<div class="re_percent">${reward.reward1.rate}%</div>
-		<div class="sign"> | </div>
-		<div class="re_date">${reward.reward1.cnt}일 성공!</div>
-	</div>
-	<div class="re_box_bottomtop">-달성표-</div>
-	<div class="re_box_bottom">
-		<div class="bottom_flex">
-		<c:forEach var="tracker" items="${reward.reward2}" varStatus="status">
-		<c:if test="${status.index mod 10 == 0}">
-			<div class="habit_tracker">
-		</c:if>
-			<c:if test="${!empty tracker.success}">
-				<div class="tracker_date"></div>
-			</c:if>
-			<c:if test="${empty tracker.success}">
-				<div class="tracker_date nodate"></div>
-			</c:if>
-		<c:if test="${((status.index+1) mod 10 == 0) || status.last}">
-			</div>
-		</c:if>
-		</c:forEach>
-	</div>
-	</div>
-</div>
-</c:forEach>
 
 
 <!-- 예지가 적은 멋진차트 나오도록 하는 박스여~ -->
+<c:forEach var="reward" items="${rewardList}">
 
 <div class="reward_box">
 
@@ -153,48 +119,73 @@
 			<div class="re_box_bottomtop">-달성표-</div>
 			<div  class="re_box_bottom">
 			<div class="bottom_flex">
+			<c:forEach var="tracker" items="${reward.reward2}" varStatus="status">
+			<c:if test="${status.index mod 10 == 0}">
 				<div class="habit_tracker">
+			</c:if>
+			<c:if test="${!empty tracker.success}">
 					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<!-- <div class="tracker_date nodate"></div> -->
+			</c:if>
+			<c:if test="${empty tracker.success}">
+					<div class="tracker_date nodate"></div>
+			</c:if>
+			<c:if test="${((status.index+1) mod 10 == 0) || status.last}">
 				</div>
-				<div class="habit_tracker">
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<!-- <div class="tracker_date nodate"></div> -->
-				</div>
-				<div class="habit_tracker">
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<div class="tracker_date"></div>
-					<!-- <div class="tracker_date nodate"></div> -->
-				</div>
+			</c:if>
+			</c:forEach>
 			</div>
 			</div>
 		</div>
 		
 		<div class="re_box_right">
-			<div>멋진표공간</div>
+			
+			<div style="width: 500px;" class="nice_space">
+			<canvas id="myChart${reward.chell_seq}"></canvas>
+			</div>
+			<!-- ---------------------------------------------------------------------- -->
+			<script>
+
+			var data${reward.chell_seq} = [];
+			<c:forEach var="chart" items="${reward.reward3}">
+			var rate = (${chart.cnt} / date) * 100;
+			data${reward.chell_seq}.push(rate);
+			</c:forEach>
+var chartArea = document.getElementById('myChart'+${reward.chell_seq}).getContext('2d');
+var myChart${reward.chell_seq} = new Chart(chartArea, {
+    type: 'line',
+    data: {
+        labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        datasets: [{
+            label: '달성률',
+            
+            data: data${reward.chell_seq},
+            
+            backgroundColor: 'rgba(246, 118, 0, 0.5)',
+            borderColor: 'rgba(246, 118, 0, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+            	suggestedMax: 100,
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 20
+                  }
+            }
+        }
+    }
+});
+</script>
+			<!-- ---------------------------------------------------------------------- -->
+
 		</div>
 	</div>
 	
 </div>
 
+</c:forEach>
 
 <!-- 끝 -->
 
