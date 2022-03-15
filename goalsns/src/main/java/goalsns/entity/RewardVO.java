@@ -7,15 +7,17 @@ public class RewardVO {
 	private String chell_name;
 	private TrophyVO reward1;
 	private List<TrackerVO> reward2;
+	private List<Chart> reward3;
 	
 	public RewardVO() {};
 	
-	public RewardVO(int chell_seq, String chell_name, TrophyVO reward1, List<TrackerVO> reward2) {
+	public RewardVO(int chell_seq, String chell_name, TrophyVO reward1, List<TrackerVO> reward2, List<Chart> reward3) {
 		super();
 		this.chell_seq = chell_seq;
 		this.chell_name = chell_name;
 		this.reward1 = reward1;
 		this.reward2 = reward2;
+		this.reward3 = reward3;
 	}
 	public int getChell_seq() {
 		return chell_seq;
@@ -42,6 +44,14 @@ public class RewardVO {
 
 	public void setChell_name(String chell_name) {
 		this.chell_name = chell_name;
+	}
+
+	public List<Chart> getReward3() {
+		return reward3;
+	}
+
+	public void setReward3(List<Chart> reward3) {
+		this.reward3 = reward3;
 	}
 	
 	
