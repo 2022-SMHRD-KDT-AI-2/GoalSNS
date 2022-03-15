@@ -10,8 +10,8 @@ body{
     width: 500px;
     height: 732px;
     background-color: #FAFAFA;
-    margin-left: 706px;
-    margin-top: 85px;
+    margin-left: 689px;
+    margin-top: 67px;  
 }
 .item{
 	width: 430px;
@@ -33,7 +33,7 @@ body{
     float: left;
 }
 .item_2{
-    margin-top: 28px;
+    margin-top: 34px;
     background-color: #FDFDFD;
     width: 430px;
     margin-left: 37px;

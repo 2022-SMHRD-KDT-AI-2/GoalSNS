@@ -87,6 +87,8 @@
         		</div>
 				</div>
 			</c:forEach>
+			
+			
 			<!--<div class="me_coments">
 				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
         		<div>
@@ -188,6 +190,12 @@
 </div> 
 <!-- 모달 끝  -->
 <jsp:include page="footer.jsp" />
+<script>
+	$('.textsection_bt').click(function(){
+			var com = $('textarea').val();
+				$('.right_item_middle').prepend('<div class="me_coments"><a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a><div><div><a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a><span class="me_con">'+com+'</span></div><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div></div>');
+				});
 
+</script>
 </body>
 </html>

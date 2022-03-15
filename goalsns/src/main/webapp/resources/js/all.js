@@ -86,16 +86,18 @@ function writeCmt(){
     function (request, status, error){
     alert("ajax실패. code:"+request.status+"\n"+"message:"+request.reponseText+"\n"+"error:"+error);
     }
-    });
+    })
 }
     
 
-/* postContent에서 게시버튼 누르면 댓글이 뿅!*/    
-/*$(.textsection_bt).click(function(){
+
+/*$('.textsection_bt').click(function(){
 	let commant = $('input').val();
 	$('').append();
+	*/
 	
-})*/
+
+//})
 
 /*postWrite 이미지 미리보기*/
 $(function() {
@@ -112,6 +114,4 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-
-    
-    
+   
