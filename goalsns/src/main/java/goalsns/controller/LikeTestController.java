@@ -40,6 +40,7 @@ public class LikeTestController implements Controller {
 			dao.like(vo); //»ğÀÔ
 			System.out.println("»ğÀÔ");
 		}
+		like = dao.selectLike(vo).size();
 		JSONObject obj = new JSONObject();
 		obj.put("like",like);
 		obj.put("post_seq", bno);
