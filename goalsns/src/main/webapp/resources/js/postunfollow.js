@@ -32,8 +32,8 @@ function postfollow(){
     	}
     else{
     	$('.following').text('• 팔로잉');
-    	$('#follower').text('팔로워'+data.followercnt);
-    	$('#follow').text('팔로우'+data.followcnt);
+    	$('#follower').text('팔로워 '+data.followercnt);
+    	$('#follow').text('팔로우 '+data.followcnt);
     	}
     },
     error:
