@@ -118,12 +118,15 @@ function checkit(){
          <input type="text" class="boxs_1" name="name" placeholder="성명" >
         </div>
         <br>
+        
         <div>
          <input id = "id" type="text" class="boxs_1" name="id" placeholder="사용자 이름">
         </div>
+        
         <div class="btn_0">
          <button method = "post" id = "idCheck" type ="button" class = "btn btn-primary btn-sm" onclick="idcheck()">ID중복체크</button>
         </div>
+        
         <br>
         <div>
          <input type="password" class="boxs_1"  name="pw" placeholder="비밀번호">
