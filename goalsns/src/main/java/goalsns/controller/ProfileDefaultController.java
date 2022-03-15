@@ -39,6 +39,20 @@ public class ProfileDefaultController implements Controller {
 		request.setAttribute("mvo", mvo);
 		request.setAttribute("tofollowlist", tofollowlist);
 		request.setAttribute("tofollowedlist", tofollowedlist);
+		
+		// -------------- 팔로워 이미지(멤버 정보) ----------------------
+		String[] followerImages = new String[tofollowlist.size()];
+		for (int i = 0; i < tofollowlist.size(); i++) {
+			followerImages[i] = mdao.getMemberInfo(tofollowlist.get(i).getFrom_mem()).getMem_img();
+		}
+		request.setAttribute("followerImages", followerImages);
+		// -------------- 팔로우 이미지(멤버 정보) ----------------------
+		String[] followImages = new String[tofollowedlist.size()];
+		for (int i = 0; i < tofollowedlist.size(); i++) {
+			followImages[i] = mdao.getMemberInfo(tofollowedlist.get(i).getTo_mem()).getMem_img();
+		}
+		request.setAttribute("followImages", followImages);
+		
 		return "profile";
 	}
 
