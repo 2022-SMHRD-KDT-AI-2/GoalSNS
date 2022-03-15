@@ -35,6 +35,7 @@ public class HandlerMapping {
 		mappings.put("/likeTest.do", new LikeTestController());
 		mappings.put("/followedprofile.do", new FollowProfileController());
 
+		mappings.put("/cmtTest.do", new CmtTestController());
 		mappings.put("/idCheck.do", new IdCheckController());
 		
 		mappings.put("/postLike.do", new PostLikeController());

@@ -72,7 +72,7 @@ function clip(){
 
 function writeCmt(){
     $.ajax({
-    url: "/goalsns/어쩌고.do",
+    url: "/goalsns/cmtTest.do",
     type: "POST",
     cache: false,
     dataType: "json",

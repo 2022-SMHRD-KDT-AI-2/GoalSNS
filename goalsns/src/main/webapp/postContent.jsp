@@ -151,18 +151,18 @@
         </c:if>
           <!-- 내 게시물이라면? 게시글 삭제,
            상대방 게시물(팔로잉)이라면? 팔로우 취소, 상대방 게시물(팔로우안함)이라면? 팔로우 -->
-           <c:if test="${memvo.mem_id != vo.mem_id}">
+          <c:if test="${memvo.mem_id != vo.mem_id}">
           <c:if test="${vo.mem_id==tfvo.to_mem }">
           <form id="follow_form" class="hide_form">
           <input type="hidden" name="follow_num" value="${vo.mem_id}">
-          <input type="button" onclick="return postfollow()" class="modal-red">팔로우 취소
+          <input type="button" onclick="return postfollow()" class="fol_input_hide"><span class="fol_no modal-red">팔로우 취소</span>
           </form>
           </c:if>
           <!-- <a href="#" class="modal-red">게시글 삭제</a> -->
           <c:if test="${empty tfvo.to_mem}">
           <form id="follow_form" class="hide_form">
           <input type="hidden" name="follow_num" value="${vo.mem_id}">
-          <input type="button" onclick="return postfollow()" class="modal-blue">팔로우
+          <input type="button" onclick="return postfollow()" class="fol_input_hide"><span class="fol_no modal-blue">팔로우</span>
           </form>
           </c:if>
           </c:if>
@@ -178,9 +178,8 @@
     </div>
 
   </div>
-
+  
 </div>
-
 
 </div> 
 <!-- 모달 끝  -->
