@@ -71,7 +71,7 @@
 			</div>
 			
 			<!-- 댓글 많이 추가함(지워도 됌) -->
-			<c:forEach var="c" items="${list}" varStatus="i" class="CMT">
+			<c:forEach var="c" items="${list}" varStatus="i">
 				<div class="me_coments">
 					<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
 	        		<div>
