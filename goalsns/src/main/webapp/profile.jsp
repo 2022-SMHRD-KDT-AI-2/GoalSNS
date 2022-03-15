@@ -171,7 +171,9 @@
 	        <div class="follower_list">
 	        	<a href="/goalsns/followprofile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
 	        	<a href="/goalsns/followprofile.do?mem_id=${tofled.to_mem}" class="mem_id">${tofled.to_mem}</a>
-	        	<button class="unfollow">팔로잉</button> 
+	        	<form>
+	        	<button class="unfollow">팔로잉</button>
+	        	</form> 
 	        </div>
 	        </c:forEach>
 
