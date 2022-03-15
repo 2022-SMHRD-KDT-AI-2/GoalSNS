@@ -26,6 +26,7 @@
  
  <div class="container_1">
         <form method="post" enctype="multipart/form-data" action="/goalsns/postWrite.do">
+        
            <div class="item_1">
   
              <div class="modal_sumbit">
@@ -66,6 +67,6 @@
                   
         </form> 
         </div>
-
+<jsp:include page="footer.jsp" />
   </body>
   </html>
