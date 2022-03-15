@@ -42,7 +42,7 @@ function checkit(){
     }
 	if(document.fo.mem_name.value === "" || isNaN(fo.mem_name.value) === false){ 
         fo.mem_name.focus(); 
-      alert("이름이 비어있거나 앞에 이름에 숫자만 들어있습니다.");
+      alert("이름이 비어있거나 이름에 숫자만 들어있습니다.");
       return;
  	}
     if (document.fo.mem_name.value.indexOf(" ") >= 0) {
@@ -57,7 +57,7 @@ function checkit(){
      }
     if(fo.mem_about.value.length>1000) {
         fo.mem_about.focus();
-          alert("소개글은 1000자 이내로 적어주세요")
+          alert("소개글은 1000자 이내로 입력하세요")
           return;
      }
     var aa=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/; // 표준식

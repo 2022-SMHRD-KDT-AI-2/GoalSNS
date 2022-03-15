@@ -84,6 +84,10 @@ public class ChallRewardController implements Controller {
 			rewardList[i].setReward2(pdao.getReward2(mcvo)); //check가 다 0으로 뜨긴하는데 success는 null/no null 제대로 인듯.
 			
 			rewardList[i].setReward3(pdao.getReward3(mcvo));
+			
+			rewardList[i].setAvg(pdao.getAvg(mcvo));
+			
+			rewardList[i].setMem_cnt(pdao.getMemChellCnt(mcvo));
 		}
 		request.setAttribute("rewardList", rewardList);
 		LocalDate now = LocalDate.now();

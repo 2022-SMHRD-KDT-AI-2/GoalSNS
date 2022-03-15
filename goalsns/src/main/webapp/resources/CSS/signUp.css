@@ -10,12 +10,12 @@ body{
     width: 500px;
     height: 732px;
     background-color: #FAFAFA;
-    margin-left: 794px;
+    margin-left: 706px;
     margin-top: 85px;
 }
 .item{
 	width: 430px;
-    height: 555px;
+    height: 560px;
     background-color:#FDFDFD;
      margin-left: 37px;
      
@@ -47,27 +47,27 @@ body{
 }
 img {
     vertical-align: middle;
-    width: 244px;
-    margin-left: 63px;
-    margin-top: 11px;
+    width: 230px;
+    margin-left: 78px;
+    margin-top: 36px;
 }
 h5{
    margin-top: 6px;   
    font-weight: 400;
-   font-size: 18px;
+   font-size: 17px;
    line-height: 24px;
    text-align: center;
    color: #000000;
 }
 strong{
 	font-weight: 400;
-    font-size: 19.3763px;
+    font-size: 18.3763px;
     line-height: 32px;
     
 }
 a{
 	font-weight: 400;
-    font-size: 19.3763px;
+    font-size: 18.3763px;
     line-height: 32px;
 }
 .item_text{
@@ -81,10 +81,11 @@ a{
 	width: 352px;
     height: 42px;
     background: #FDFDFD;
-    border: 1px solid #CEC8C8;
+    border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 4px;
     margin-left: 43px;
+    padding-left: 11px;
 }
 .btn-primary {
     color: #fff;
@@ -97,8 +98,9 @@ a{
     border-color: #FF5500;
 }
 .btn_0{
-	margin-left: 38px;
-	margin-top: 8px;
+	margin-left: 299px;
+    margin-top: -41px;
+    position: absolute;
 }
 .btn_1{
 	margin-left: 38px;
@@ -124,7 +126,18 @@ a{
     width: 352px;
    
 }
-.btn btn-primary btn-sm {
+
+button#idCheck.btn.btn-primary.btn-sm{
+	width: 91px;
+	height: 40px;
 	background: rgba(93, 95, 239, 0.44);
     border-radius: 4px;
 }
+button#idCheck.btn.btn-primary.btn-sm:hover {
+    color: #fff;
+    background-color: #5D5FEF70;
+    border-color: #5D5FEF70;
+}
+input:focus {
+	outline:1px solid #CEC8C8;
+	}
