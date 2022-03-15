@@ -294,4 +294,21 @@ a{
         text-align: left;
         vertical-align: middle;
 }
+
+  /* 일반해시태그, 챌린지해시태그 색 */
+  .hashtag, .hashtag:hover{
+  	color: #5277C8;
+  }
+  .hashtag:active{
+  	color: #5277C8;
+  	opacity:0.5;
+  }
+  
+  .chall_hashtag, .chall_hashtag:hover{
+  	color: #F37321;
+  }
+ .chall_hashtag:active{
+  	color:#F37321;
+  	opacity:0.5;
+  }
 	

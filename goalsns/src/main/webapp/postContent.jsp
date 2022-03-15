@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false"%>
 <%@ page errorPage="index.jsp" %>
@@ -8,13 +9,11 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 <script type="text/javascript" src="./resources/js/all.js"></script>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>챌린샷</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
@@ -42,7 +41,7 @@
 <div class="containerbox">
 
 	<div name="post_file" id="post_file" class="left_item">
-	      <img src="./resources/images/small.jpg" class="postfile">
+	      <img src="./postPic/${vo.post_file}" class="postfile">
 	</div>
 	<div class="right_item">
 		<!--첫번째 줄 -->
@@ -66,7 +65,19 @@
         		<div>
         			<div>
         				<a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
-        				<span class="me_con">${vo.post_content}</span>
+        				<span class="me_con">
+					      <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
+					      <c:if test="${fn:contains(f,'#')}">
+					      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '#')}" class="hashtag">${f}</a>
+					      </c:if>
+					      <c:if test="${fn:contains(f,'@')}">
+					      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '@')}" class="chall_hashtag">${f}</a>
+					      </c:if>
+					      <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
+					      <span>${f}</span>
+					      </c:if>
+					      </c:forEach>
+						</span>
         			</div>
         			<span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span>
         		</div>
