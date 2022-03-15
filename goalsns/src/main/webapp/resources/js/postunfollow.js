@@ -27,8 +27,8 @@ function postfollow(){
     
     if(data.follow == 0){
     	$('.following').text(' ');
-    	$('#follower').text('팔로워'+data.followercnt);
-    	$('#follow').text('팔로우'+data.followcnt);
+    	$('#follower').text('팔로워 '+data.followercnt);
+    	$('#follow').text('팔로우 '+data.followcnt);
     	}
     else{
     	$('.following').text('• 팔로잉');
