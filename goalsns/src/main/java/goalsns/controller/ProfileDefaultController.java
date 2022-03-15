@@ -39,6 +39,8 @@ public class ProfileDefaultController implements Controller {
 		request.setAttribute("mvo", mvo);
 		request.setAttribute("tofollowlist", tofollowlist);
 		request.setAttribute("tofollowedlist", tofollowedlist);
+		List<FollowVO> memfo=mdao.getFollowInfo(fvo);
+		request.setAttribute("memfo", memfo);
 		
 		// -------------- 팔로워 이미지(멤버 정보) ----------------------
 		String[] followerImages = new String[tofollowlist.size()];
