@@ -54,19 +54,19 @@
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<input class="hide_input" type="button" onclick="return postfollow()"><button class="profile_btn fo_2"><div class="inner_text inner_text1">팔로잉&nbsp;</div><span class="fa-solid fal_yes fa-user"></span></button>
+					<input type="button" class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span>
 					</form>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<input class="hide_input" type="button" onclick="return postfollow()"><button class="profile_btn follow1"><div class="inner_text inner_text2">팔로우&nbsp;</div><span class="fa-solid fal_yes fa-user-plus"></span></button>
+					<input type="button" class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span>
 					</form>
 					</c:if>
 					</c:if>
 				</div>
 				<div class="prof_reward">
-					<button class="profile_reward_btn" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
+					<button class="profile_btn reward" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
 				</div>
 			</div>
 
@@ -76,10 +76,10 @@
 				</div>
 
 				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
+					<button id="follower" class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
+					<button id="follow" class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
 
 			</div>
@@ -168,12 +168,12 @@
         </div>       
         <div class="follower-box">
         	<c:forEach var="tofled" items="${tofollowedlist}" varStatus="statusNm">
+        	<div class="follower_list">
         	<c:forEach var="followImages" items="${followImages}" begin="${statusNm.index}" end="${statusNm.index}">
-	        <div class="follower_list">
 	        	<a href="/goalsns/profile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./profilePic/${followImages}" width="50" height="50" ></a>
 	        	</c:forEach>
 	        	<a href="/goalsns/profile.do?mem_id=${tofled.to_mem}" class="mem_id">${tofled.to_mem}</a> 
-	        </div>
+	        	</div>
 	        </c:forEach>
 
         </div>
