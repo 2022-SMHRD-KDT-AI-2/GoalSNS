@@ -127,13 +127,13 @@ a{
    
 }
 
-button#idCheck.btn.btn-primary.btn-sm{
+input.btn.btn-primary.btn-sm{
 	width: 91px;
 	height: 40px;
 	background: rgba(93, 95, 239, 0.44);
     border-radius: 4px;
 }
-button#idCheck.btn.btn-primary.btn-sm:hover {
+input.btn.btn-primary.btn-sm:hover {
     color: #fff;
     background-color: #5D5FEF70;
     border-color: #5D5FEF70;
