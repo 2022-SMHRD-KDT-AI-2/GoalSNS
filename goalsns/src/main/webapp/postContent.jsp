@@ -42,14 +42,13 @@
 <div class="containerbox">
 
 	<div name="post_file" id="post_file" class="left_item">
-	      <%-- <img src="./postPic/${vo.post_file}" class="postfile"> --%>
 	      <img src="./resources/images/small.jpg" class="postfile">
 	</div>
 	<div class="right_item">
 		<!--첫번째 줄 -->
 		<div id="right_item_top" >
-        	<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memvo.mem_img}" width="50" height="50" ></a>
-        	<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        	<a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a>
+        	<a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
         	<!-- 내가 상대방을 팔로우 했다면, 팔로잉보여지게(클릭X),
         	 팔로우를 하지 않았다면, 아무것도 안보이도록 수정. -->
         
@@ -63,10 +62,10 @@
 		<!-- 두번째 줄(댓글공간) -->
 		<div class="right_item_middle">
 			<div class="me_coments">
-				<a href="#"><img id="peedimg" class="img-circle" src="./resources/images/profile.png" width="50" height="50" ></a>
+				<a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a>
         		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">${vo.mem_id}</a>
+        				<a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
         				<span class="me_con">${vo.post_content}</span>
         			</div>
         			<span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span>
@@ -77,11 +76,11 @@
 			<c:forEach var="c" items="${list}" varStatus="i">
 			<c:forEach var="memImages" items="${memImages}" begin="${i.index}" end="${i.index}">
 				<div class="me_coments">
-					<a href="#"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
+					<a href="/goalsns/profile.do?mem_id=${c.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${memImages}" width="50" height="50" ></a>
 					</c:forEach>
 	        		<div>
         			<div>
-        				<a href="#" name="mem_id" class="mem_id">${c.mem_id}</a>
+        				<a href="/goalsns/profile.do?mem_id=${c.mem_id}" name="mem_id" class="mem_id">${c.mem_id}</a>
         				<span class="me_con">${c.cmt_content}</span>
         			</div>
         			<span id="post_date"><fmt:formatDate value="${c.cmt_date}" pattern="yyyy.MM.dd HH:mm"/> </span>
