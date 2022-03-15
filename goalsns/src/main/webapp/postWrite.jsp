@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
  
-<title>Insert title here</title>
+<title>챌린샷</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
            <div class="all_row">
 	           <div class="all_row_left">
 		           <div class="item_2">                            
-		  				<img id="View" src="./resources/images/profile.png" alt="이미지 미리보기" />
+		  				<img id="View" src="./resources/images/NoImage.jpg" alt="이미지 미리보기" />
 		           </div> 
 		           <div class="input_2">
 		               <input name="post_file" type='file' id="myFile" />

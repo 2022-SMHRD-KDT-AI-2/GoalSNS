@@ -57,10 +57,6 @@ where c.chell_seq = mc.chell_seq
   	<select id="getChellSeq" resultType="int">
   		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_CHELL_SEQ'
   	</select>
- 	<insert id="postChellInsert" parameterType="goalsns.entity.PostChellVO">
-		insert into t_post_chell
-		values (#{post_seq}, #{chell_seq}, t_post_chell_SEQ.nextval)
-	</insert>
   	<select id="memChallSelect" resultType="goalsns.entity.MemChellVO">
   		select * from t_mem_chell where chell_seq=#{chell_seq} and mem_id=#{mem_id}
   	</select>
@@ -75,7 +71,7 @@ where c.chell_seq = mc.chell_seq
   		select * from t_hashtag where hashtag_name = #{hashtag_name}
   	</select>
   	<select id="searchChellBySeq" resultType="goalsns.entity.PostVO">
-  		select * from t_post where post_seq in (select post_seq from t_post_chell where chell_seq = #{chell_seq})
+  		select * from t_post where post_seq in (select post_seq from t_post where chell_seq = #{chell_seq})
   	</select>
   	<select id="searchHashBySeq" resultType="goalsns.entity.PostVO">
   		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq}) order by post_date desc

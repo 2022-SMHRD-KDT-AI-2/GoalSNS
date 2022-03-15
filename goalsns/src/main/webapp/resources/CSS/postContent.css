@@ -60,7 +60,8 @@ a{
 .right_item_middle{
 	overFlow : auto;
 	border-bottom: 1px solid #EAEAEA;
-	flex-grow: 2;	
+	flex-grow: 2;
+	height:300px;	
 }
 .me_coments{
 	display: flex;
@@ -169,15 +170,19 @@ a{
 
 .textsection3{
   padding-top: 16px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  margin-right: 6px;
+  margin-right: 10px;
   float: right;
+  color: #F67600;
 }
 .textsection_bt{
-	border:none;
-    background-color: transparent;
-    color: #F67600;
+	position: absolute;
+    border: none;
+    background: transparent;
+    padding: 0;
+    border: none;
+    width: 40px;
+    height: 30px;
+
 }
 
 
@@ -289,4 +294,21 @@ a{
         text-align: left;
         vertical-align: middle;
 }
+
+  /* 일반해시태그, 챌린지해시태그 색 */
+  .hashtag, .hashtag:hover{
+  	color: #5277C8;
+  }
+  .hashtag:active{
+  	color: #5277C8;
+  	opacity:0.5;
+  }
+  
+  .chall_hashtag, .chall_hashtag:hover{
+  	color: #F37321;
+  }
+ .chall_hashtag:active{
+  	color:#F37321;
+  	opacity:0.5;
+  }
 	

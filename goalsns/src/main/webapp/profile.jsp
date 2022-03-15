@@ -76,10 +76,10 @@
 				</div>
 
 				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
+					<button id="follower" class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
+					<button id="follow" class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
 
 			</div>
@@ -168,12 +168,12 @@
         </div>       
         <div class="follower-box">
         	<c:forEach var="tofled" items="${tofollowedlist}" varStatus="statusNm">
+        	<div class="follower_list">
         	<c:forEach var="followImages" items="${followImages}" begin="${statusNm.index}" end="${statusNm.index}">
-	        <div class="follower_list">
 	        	<a href="/goalsns/profile.do?mem_id=${tofled.to_mem}"><img id="peedimg" class="img-circle" src="./profilePic/${followImages}" width="50" height="50" ></a>
 	        	</c:forEach>
 	        	<a href="/goalsns/profile.do?mem_id=${tofled.to_mem}" class="mem_id">${tofled.to_mem}</a> 
-	        </div>
+	        	</div>
 	        </c:forEach>
 
         </div>

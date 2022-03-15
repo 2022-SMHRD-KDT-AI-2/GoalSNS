@@ -21,15 +21,12 @@ public class HandlerMapping {
 		mappings.put("/logout.do", new MemberLogoutController());
 		mappings.put("/profileEdit.do", new MemberProfileEditController());
 		mappings.put("/profile.do", new ProfileDefaultController());
-		mappings.put("/follow.do", new FollowController());
-		mappings.put("/unfollow.do", new UnFollowController());
 		mappings.put("/cmt.do", new CmtController());
 		mappings.put("/search.do", new SearchResultController());
 		mappings.put("/profileEditForm.do", new ProfileEditFormController());
 		mappings.put("/like.do", new LikeController());
 		mappings.put("/likeDelete.do", new LikeDeleteController());
 		mappings.put("/cmtDelete.do", new CmtDeleteController());
-		mappings.put("/followList.do", new FollowListController());
 		mappings.put("/challreward.do", new ChallRewardController());
 		mappings.put("/followprofile.do", new FollowProfileController());
 		mappings.put("/likeTest.do", new LikeTestController());

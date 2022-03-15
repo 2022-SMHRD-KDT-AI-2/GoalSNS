@@ -32,7 +32,8 @@ body{
 }
 .form-inline .form-group {
     display: inline-block;
-    margin-bottom: 29px;
+       margin-bottom: 3px;
+    margin-top: 26px;
     vertical-align: middle;
 }
 
@@ -78,7 +79,7 @@ body{
     border-radius: 4px;
     margin-left: 4px;
     width: 358px;
-   
+       margin-top: 53px;
 }
 .btn-primary {
     color: #fff;
@@ -91,16 +92,16 @@ body{
     border-color: #FF5500;
 }
 img {
-    vertical-align: middle;
+       vertical-align: middle;
     width: 244px;
-    margin-left: 56px;
-    margin-top: 42px;
+    margin-left: 42px;
+    margin-top: 50px;
 }
 .form-inline .form-control {
     display: inline-block;
     width: 358px;
     vertical-align: middle;
-    margin-bottom: 38px;
+    margin-bottom: 7px;
     height: 50px;
 }
 strong{

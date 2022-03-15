@@ -25,10 +25,16 @@ function postfollow(){
 	$('.inner_text1').text('팔로잉 ');
 	$('.inner_text2').text('팔로우 ');
     
-    if(data.follow == 0)
+    if(data.follow == 0){
     	$('.following').text(' ');
-    else
+    	$('#follower').text('팔로워 '+data.followercnt);
+    	$('#follow').text('팔로우 '+data.followcnt);
+    	}
+    else{
     	$('.following').text('• 팔로잉');
+    	$('#follower').text('팔로워 '+data.followercnt);
+    	$('#follow').text('팔로우 '+data.followcnt);
+    	}
     },
     error:
     function (request, status, error){

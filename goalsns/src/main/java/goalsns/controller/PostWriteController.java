@@ -15,7 +15,6 @@ import goalsns.entity.ChellVO;
 import goalsns.entity.HashtagVO;
 import goalsns.entity.MemChellVO;
 import goalsns.entity.MemberVO;
-import goalsns.entity.PostChellVO;
 import goalsns.entity.PostHashVO;
 import goalsns.entity.PostVO;
 import goalsns.model.PostDAO;
@@ -54,7 +53,6 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 	
 	//아래로는 해시태그 구현부.
 	ChellVO cvo = new ChellVO();
-	PostChellVO pcvo = new PostChellVO();
 	MemChellVO mcvo = new MemChellVO();
 	ChellVO exist_cvo = null;
 	int chell_seq;
@@ -102,9 +100,7 @@ public String requestHandler(HttpServletRequest request, HttpServletResponse res
 				chell_seq = exist_cvo.getChell_seq();
 				System.out.println("chell_seq: "+chell_seq);
 			}
-				pcvo.setPost_seq(post_seq);
-				pcvo.setChell_seq(chell_seq);
-				dao.postChellInsert(pcvo);
+
 				mcvo.setChell_seq(chell_seq);
 				mcvo.setMem_id(mem_id);
 				

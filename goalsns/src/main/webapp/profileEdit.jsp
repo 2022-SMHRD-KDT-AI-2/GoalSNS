@@ -17,6 +17,7 @@
 <script src="https://kit.fontawesome.com/83edcfd603.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./resources/js/all.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/profileEdit.css" rel="stylesheet" type="text/css">
@@ -96,8 +97,10 @@ function checkit(){
        <h3>${memvo.mem_id}</h3>
         <div class="edit_fix_1">
         <a class="profilePic" target="_self">
-	     <img class="profilePic_1" src="./resources/images/profile.png" alt="프로필 사진 바꾸기" >	     
+
+	     <img class="profilePic_1" src="./profilePic/${memvo.mem_img}" alt="프로필 사진 바꾸기" >	     
 	     <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->
+
 	   </a><input class="picture" type="file" id="isFile" name="mem_img" accept="image/*">
 	   </div>
 	    </div>             
