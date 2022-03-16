@@ -24,8 +24,6 @@ public class HandlerMapping {
 		mappings.put("/cmt.do", new CmtController());
 		mappings.put("/search.do", new SearchResultController());
 		mappings.put("/profileEditForm.do", new ProfileEditFormController());
-		mappings.put("/like.do", new LikeController());
-		mappings.put("/likeDelete.do", new LikeDeleteController());
 		mappings.put("/cmtDelete.do", new CmtDeleteController());
 		mappings.put("/challreward.do", new ChallRewardController());
 		mappings.put("/followprofile.do", new FollowProfileController());
