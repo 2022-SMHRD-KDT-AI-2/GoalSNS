@@ -35,7 +35,7 @@ function checkit(){
         fo.mem_id.focus();
           alert("아이디는 4글자 이상 30자미만이여만 합니다!")
           return;
-     }
+     }  
  
     for (var i = 0; i < document.fo.mem_id.value.length; i++) {
         ch = document.fo.mem_id.value.charAt(i)
