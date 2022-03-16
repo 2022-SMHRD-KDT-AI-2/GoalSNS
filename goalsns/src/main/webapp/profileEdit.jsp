@@ -38,7 +38,7 @@ function checkit(){
         	alert("이미지 파일만 업로드 가능합니다");
             return;
         } else if(fileSize > maxSize) {
-        	alert("파일 사이즈는 20MB입니다");
+        	alert("파일 크기는 20MB이하입니다");
             return;
         }
     }
