@@ -30,7 +30,6 @@ public class MemberLoginController implements Controller {
 			return "redirect:/main.do";
 		} else {
 			System.out.print("로그인실패");
-
 			return "../index";
 	}
 	
