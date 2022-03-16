@@ -113,7 +113,7 @@
       <form id="comment_form${vo.post_seq}"><div class="textsection2">
       <input type="hidden" name="post_seq" value = "${vo.post_seq}">
       <textarea class="cmttextarea${vo.post_seq}" name="content" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-      <div class="textsection3"><input type="button" onclick="writeCmt2('${vo.post_seq}')">게시</div></form>
+      <div class="textsection3"><input class="hide_co" type="button" onclick="writeCmt2('${vo.post_seq}')">게시</div></form>
   </div>
 
  </div>
