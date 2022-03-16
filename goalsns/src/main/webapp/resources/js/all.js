@@ -60,8 +60,14 @@ function writeCmt(){
     
     $('.textsection_bt')
 			var com = $('textarea').val();
-			$('.right_item_middle').prepend('<div class="me_coments"><a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a><div><div><a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">'+data.mem_id+'</a><span class="me_con">'+com+'</span></div><span id="post_date"><fmt:formatDate value="${vo.post_date}"pattern="yyyy.MM.dd HH:mm"/></span></div></div>');	
-   		//document.getElementById("comment_textarea").value='';
+			$('.addCmt').prepend(
+				'<div class="me_coments"><a href="/goalsns/profile.do?mem_id='
+				+data.mem_id+'"><img id="peedimg" class="img-circle" src="./profilePic/'
+				+data.writerImg+'" width="50" height="50" ></a><div><div><a href="/goalsns/profile.do?mem_id='
+				+data.mem_id+'" name="mem_id" class="mem_id">'
+				+data.mem_id+'</a><span class="me_con">'
+				+com+'</span></div><span id="post_date">'
+				+data.cmt_date+'</span></div></div>');	
    	
     },
     error:
