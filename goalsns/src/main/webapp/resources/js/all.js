@@ -56,7 +56,14 @@ function writeCmt(){
     success:
     function(data){ //ajax통신 성공시 넘어오는 데이터 통째 이름 =data
     //화면에서 작성한 댓글이 바로 보이도록하는 건 예지가 작성할겁니당
+    alert("댓글작성 성공");
+    
+    $('.textsection_bt')
+			var com = $('textarea').val();
+				$('.right_item_middle').prepend('<div class="me_coments"><a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a><div><div><a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a><span class="me_con">'+com+'</span></div><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div></div>');
+
     document.getElementById("comment_textarea").value='';
+
     },
     error:
     function (request, status, error){
