@@ -15,7 +15,7 @@ public class MemberLogoutController implements Controller {
 		System.out.print(session);
 		session.invalidate();
 		System.out.print("로그아웃성공");	
-		return "index";
+		return "../index";
 	}
 	
 }
