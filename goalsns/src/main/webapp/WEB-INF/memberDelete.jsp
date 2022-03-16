@@ -31,10 +31,10 @@
        
 		<div class="item1">
             <div class="profilEidt_1">
-                <a class="a_1" href="/goalsns/profileEdit.jsp">프로필 편집</a>
+                <a class="a_1" href="/goalsns/profileEditForm.do">프로필 편집</a>
             </div>
             <div class="delete">
-                <a class="a_2" href="/goalsns/memberDelete.jsp">회원 탈퇴</a>
+                <a class="a_2" href="/goalsns/memberDeleteForm.do">회원 탈퇴</a>
             </div>
         </div>
      
