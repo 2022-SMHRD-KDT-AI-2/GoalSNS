@@ -2,8 +2,6 @@ package com.smhrd.controller;
 
 import java.util.HashMap;
 
-import postWriteForm.MemberDeleteFormController;
-
 
 public class HandlerMapping {
 	//클라이언트의 어떤 요청에 어떤 POJO를 실행해야하는지 연결해주는 클래스.
