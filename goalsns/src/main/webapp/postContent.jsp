@@ -92,7 +92,17 @@
 	        		<div>
         			<div>
         				<a href="/goalsns/profile.do?mem_id=${c.mem_id}" name="mem_id" class="mem_id">${c.mem_id}</a>
-        				<span class="me_con">${c.cmt_content}</span>
+        				<c:forEach var="co" items="${fn:split(c.cmt_content,' ')}">
+        				<c:if test="${fn:startsWith(co,'#')}">
+					      <a href="/goalsns/search.do?search=${fn:substringAfter(co, '#')}" class="hashtag">${co}</a>
+					      </c:if>
+					      <c:if test="${fn:startsWith(co,'@')}">
+					      <a href="/goalsns/search.do?search=${fn:substringAfter(co, '@')}" class="chall_hashtag">${co}</a>
+					      </c:if>
+					      <c:if test="${not fn:startsWith(co,'@')&&not fn:startsWith(co,'#')}">
+					      <span class="me_con">${co}</span>
+					      </c:if>
+        				</c:forEach>
         			</div>
         			<span id="post_date"><fmt:formatDate value="${c.cmt_date}" pattern="yyyy.MM.dd HH:mm"/> </span>
         		</div>
