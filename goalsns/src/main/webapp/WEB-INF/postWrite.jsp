@@ -41,8 +41,8 @@
 		  				<img id="View" src="./resources/images/NoImage.jpg" alt="이미지 미리보기" />
 		           </div> 
 		           <div class="input_2">
-		             <label  class="input-file-button" id="myfile">사진업로드</label>
-		               <input name="post_file" type='file' id="myFile" />		               
+		             <label  class="input-file-button" id="myfile">사진업로드
+		               <input name="post_file" type='file' id="myFile" /></label>		               
 		           </div>  
 	          </div>
 	          

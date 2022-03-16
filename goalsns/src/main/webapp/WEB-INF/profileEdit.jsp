@@ -102,7 +102,7 @@ function checkit(){
 	     <img class="profilePic_1" src="./profilePic/${memvo.mem_img}" alt="프로필 사진 바꾸기" >	     
 	     <!-- <br><span class="picture">프로필 사진 바꾸기</span> -->
 
-	   </a><input class="picture" type="file" id="isFile" name="mem_img" accept="image/*">
+	   </a><input class="picture" type="file" id="isFile" name="mem_img" accept="image/*">	 
 	   </div>
 	    </div>             
           </div>
