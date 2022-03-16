@@ -36,6 +36,7 @@ public class CmtTestController implements Controller {
 		int cmtCnt = dao.selectCmt(vo).size();
 		
 		JSONObject obj = new JSONObject();
+		obj.put("mem_id", mem_id);
 		obj.put("post_seq", post_seq);
 		obj.put("cmtCnt", cmtCnt);
 		
