@@ -67,13 +67,13 @@
         				<a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a>
         				<span class="me_con">
 					      <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
-					      <c:if test="${fn:contains(f,'#')}">
+					      <c:if test="${fn:startsWith(f,'#')}">
 					      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '#')}" class="hashtag">${f}</a>
 					      </c:if>
-					      <c:if test="${fn:contains(f,'@')}">
+					      <c:if test="${fn:startsWith(f,'@')}">
 					      <a href="/goalsns/search.do?search=${fn:substringAfter(f, '@')}" class="chall_hashtag">${f}</a>
 					      </c:if>
-					      <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
+					      <c:if test="${not fn:startsWith(f,'@')&&not fn:startsWith(f,'#')}">
 					      <span>${f}</span>
 					      </c:if>
 					      </c:forEach>
