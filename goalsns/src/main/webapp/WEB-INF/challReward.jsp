@@ -37,7 +37,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="/goalsns/profile.do?mem_id=${memvo.mem_id}"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
+			<a href="/goalsns/profile.do?mem_id=${mvo.mem_id}"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
