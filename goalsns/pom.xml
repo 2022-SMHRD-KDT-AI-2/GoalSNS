@@ -76,6 +76,18 @@
   </dependencies>
   <build>
   	<finalName>goalsns</finalName>
+  	
+  	<!-- mybatis test -->
+  	<resources>
+  		<resource>
+  			<directory>src/main/java</directory>
+  			<includes>
+  				<include>**/*.xml</include>
+  			</includes>
+  		</resource>
+  	
+  	</resources>
+  	
     <pluginManagement>
     <plugins>
     <!-- 서버 배포 셋팅 -->
