@@ -2,6 +2,8 @@ package goalsns.controller;
 
 import java.util.HashMap;
 
+import postWriteForm.MemberDeleteFormController;
+
 
 public class HandlerMapping {
 	//클라이언트의 어떤 요청에 어떤 POJO를 실행해야하는지 연결해주는 클래스.
@@ -29,6 +31,8 @@ public class HandlerMapping {
 		mappings.put("/followprofile.do", new FollowProfileController());
 		mappings.put("/likeTest.do", new LikeTestController());
 		mappings.put("/followedprofile.do", new FollowProfileController());
+		mappings.put("/postWriteForm.do", new PostWriteFormController());
+		mappings.put("/memberDeleteForm.do", new MemberDeleteFormController());
 
 		mappings.put("/cmtTest.do", new CmtTestController());
 		mappings.put("/idCheck.do", new IdCheckController());
