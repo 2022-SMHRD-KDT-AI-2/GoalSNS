@@ -66,7 +66,7 @@
 					</c:if>
 				</div>
 				<div class="prof_reward">
-					<button class="profile_reward_btn" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
+					<button class="profile_rewardbtn" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
 				</div>
 			</div>
 
