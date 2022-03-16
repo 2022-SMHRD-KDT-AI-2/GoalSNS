@@ -54,19 +54,19 @@
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<input type="button" class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span>
+					<input type="button" class="hide_input" onclick="return postfollow()"><button class="profile_btn fo_2"><div class="inner_text inner_text1">팔로잉&nbsp;</div><span class="fa-solid fal_yes fa-user"></span></button>
 					</form>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<input type="button" class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span>
+					<input type="button" class="hide_input" onclick="return postfollow()"><button class="profile_btn follow1"><div class="inner_text inner_text2">팔로우&nbsp;</div><span class="fa-solid fal_yes fa-user-plus"></span></button>
 					</form>
 					</c:if>
 					</c:if>
 				</div>
 				<div class="prof_reward">
-					<button class="profile_btn reward" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
+					<button class="profile_reward_btn" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
 				</div>
 			</div>
 

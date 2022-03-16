@@ -67,23 +67,52 @@
 	margin: auto 0;
 	padding-left: 40px;
 }
+
 .prof_reward{
 	margin: auto 0;
 	padding-left: 35px;
 }
-.reward{
-	background-color: #F67600;
-    color: white;
-	border-color:#F67600;
+.profile_reward_btn{
+	font-size:20px;
+	height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    background-color: #F67600;
+  	border: solid 1px #F67600;
+  	border-radius: 7px;
+  	color:white;
 }
-
+.inner_text1, .inner_text2{
+	display:inline;
+}
 .follow1{
 	color:white;
 	background-color:#52A1FF;
 }
 .fa-user-plus{
-	font-size:15.5px;
+	font-size:18.4px;
 }
+.fa-user{
+	font-size:19.5px;
+}
+
+/* input 안보이게 */
+.hide_input{
+	position: absolute;
+    width: 122px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+
+
+
+
+
+
 
 
 .prof_text{
