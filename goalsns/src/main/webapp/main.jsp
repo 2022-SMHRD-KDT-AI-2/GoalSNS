@@ -96,7 +96,7 @@
       </c:forEach>
    </div>
    <div class="divplus">
-      <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}">${cmtCnt}</c:forEach>개 모두 보기</a>
+      <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}"><span class="cmtcount">${cmtCnt}</span></c:forEach>개 모두 보기</a>
    </div>
 
    <c:forEach var="cmtcon" items="${cmtList}" begin="${statusNm.index}" end="${statusNm.index}">

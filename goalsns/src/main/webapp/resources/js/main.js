@@ -10,6 +10,7 @@ function writeCmt2(post){
     function(data){ 
         var con = $('.cmttextarea'+post).val();
         $('.'+post+'cmt').text(con);
+        $('.cmtcount').text(data.cmtCnt);
     },
     error:
     function (request, status, error){
