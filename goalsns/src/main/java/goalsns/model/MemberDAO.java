@@ -21,7 +21,7 @@ public class MemberDAO {
 	
 	static {
 		try {
-		String resource = "goalsns/model/config.xml";
+		String resource = "domain/config.xml";
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		}catch(Exception e) {
