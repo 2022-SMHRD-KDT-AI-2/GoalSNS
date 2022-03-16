@@ -7,7 +7,7 @@
 
 	<servlet>
 		<servlet-name>MemberFrontController</servlet-name>
-		<servlet-class>goalsns.controller.MemberFrontController</servlet-class>
+		<servlet-class>com.smhrd.controller.MemberFrontController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

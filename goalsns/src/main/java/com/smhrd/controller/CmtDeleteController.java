@@ -1,4 +1,4 @@
-package postWriteForm;
+package com.smhrd.controller;
 
 import java.io.IOException;
 
@@ -6,14 +6,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.smhrd.controller.Controller;
+import com.smhrd.model.PostDAO;
 
-public class MemberDeleteFormController implements Controller {
+public class CmtDeleteController implements Controller {
 
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		return "memberDelete";
+		
+		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
+		PostDAO dao = new PostDAO();
+		dao.cmtDelete(post_seq);
+		return "redirect:/main.do";
 	}
 
 }

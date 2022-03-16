@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.PostMapper">
+	<insert id="postWrite" parameterType="com.smhrd.entity.PostVO">
+		insert into t_post(post_seq, post_content, post_file, mem_id)
+		values (t_post_SEQ.nextval, #{post_content}, #{post_file}, #{mem_id})
+	</insert>
+	<select id="selectPosts" resultType="com.smhrd.entity.PostVO">
+  		select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc
+  	</select>
+  	<select id="getPostByIdx" parameterType="int" resultType="com.smhrd.entity.PostVO">
+  		select * from t_post where post_seq=#{post_seq}
+  	</select>
+  	<delete id="postDelete">
+  		delete from t_post where post_seq=#{post_seq}
+  	</delete>
+  	<select id="hashSelect" resultType="com.smhrd.entity.HashtagVO">
+  		select * from t_hashtag where hashtag_name=#{hashtag_name}
+  	</select>
+ 	<insert id="hashInsert" parameterType="com.smhrd.entity.HashtagVO">
+		insert into t_hashtag
+		values (t_hashtag_SEQ.nextval, #{hashtag_name})
+	</insert>
+ 	<insert id="postHashInsert" parameterType="com.smhrd.entity.PostHashVO">
+		insert into t_post_hashtag
+		values (#{post_seq}, #{hashtag_seq}, t_post_hashtag_SEQ.nextval)
+	</insert>
+  	<select id="getPostSeq" resultType="int">
+  		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_POST_SEQ'
+  	</select>
+  	<select id="getHashtagSeq" resultType="int">
+  		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_HASHTAG_SEQ'
+  	</select>
+  	<select id="getMemberPosts" resultType="com.smhrd.entity.PostVO">
+  		select * from t_post where mem_id=#{mem_id} order by post_date desc
+  	</select>
+  	<select id="getTrend" resultType="com.smhrd.entity.TrendVO">
+  		select mc.chell_seq, mc.cnt, c.chell_name
+from (select * from (select chell_seq, count(mem_id) as cnt from t_mem_chell group by chell_seq order by count(mem_id)) <![CDATA[where rownum<=6]]>) mc, t_chell c
+where c.chell_seq = mc.chell_seq
+  	</select>
+  	
+<!-- 챌린지 해시태그 기능 -->
+  	<select id="challSelect" resultType="com.smhrd.entity.ChellVO">
+  		select * from t_chell where chell_name=#{chell_name}
+  	</select>
+ 	<insert id="chellInsert" parameterType="com.smhrd.entity.ChellVO">
+		insert into t_chell
+		values (t_hashtag_SEQ.nextval, #{chell_name})
+	</insert>
+ 	<insert id="memChellInsert" parameterType="com.smhrd.entity.MemChellVO">
+		insert into t_mem_chell
+		values (#{mem_id}, #{chell_seq}, T_MEM_CHELL_SEQ.nextval)
+	</insert>
+  	<select id="getChellSeq" resultType="int">
+  		SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'T_CHELL_SEQ'
+  	</select>
+  	<select id="memChallSelect" resultType="com.smhrd.entity.MemChellVO">
+  		select * from t_mem_chell where chell_seq=#{chell_seq} and mem_id=#{mem_id}
+  	</select>
+  	<update id="postChellUpdate" parameterType="com.smhrd.entity.PostVO">
+  		update t_post set chell_seq=#{chell_seq} where post_seq=#{post_seq}
+    </update>
+ <!-- 검색 기능 -->
+  	<select id="getSeqByChellName" resultType="com.smhrd.entity.ChellVO">
+  		select * from t_chell where chell_name = #{chell_name}
+  	</select>
+  	<select id="getSeqByHashName"  resultType="com.smhrd.entity.HashtagVO">
+  		select * from t_hashtag where hashtag_name = #{hashtag_name}
+  	</select>
+  	<select id="searchChellBySeq" resultType="com.smhrd.entity.PostVO">
+  		select * from t_post where post_seq in (select post_seq from t_post where chell_seq = #{chell_seq})
+  	</select>
+  	<select id="searchHashBySeq" resultType="com.smhrd.entity.PostVO">
+  		select * from t_post where post_seq in (select post_seq from t_post_hashtag where hashtag_seq = #{hashtag_seq}) order by post_date desc
+  	</select>
+  	
+  	<!-- 댓글 -->
+	<insert id="cmt" parameterType="com.smhrd.entity.CmtVO">
+		insert into t_cmt (
+		cmt_seq,
+		post_seq,
+		mem_id,
+		cmt_content 
+		) values(t_cmt_seq.nextval, #{post_seq}, #{mem_id}, #{cmt_content})
+	</insert>
+	
+	<!-- 좋아요 -->
+	<insert id="like" parameterType="com.smhrd.entity.LikeVO">
+		insert into t_like(
+		like_seq,
+		post_seq,
+		mem_id
+		) values(t_like_seq.nextval,#{post_seq},#{mem_id})
+	</insert>
+  	<select id="getLikeByPost" resultType="com.smhrd.entity.LikeVO">
+  		select * from t_like where post_seq = #{post_seq} and mem_id = #{mem_id}
+  	</select>
+	
+	<!-- 좋아요 삭제 -->
+	<delete id = "likeDelete" parameterType="com.smhrd.entity.LikeVO">
+		delete from t_like 
+		where post_seq=#{post_seq} and mem_id = #{mem_id}
+	</delete>
+	<!-- 댓글 삭제 -->
+	<delete id = "cmtDelete" parameterType="com.smhrd.entity.CmtVO">
+		delete from t_cmt 
+		where post_seq=#{post_seq}
+	</delete>
+
+	<!-- 챌린지 리워드 -->
+	<select id="getChellList" parameterType="com.smhrd.entity.MemberVO" resultType="com.smhrd.entity.MemChellVO">
+  		select * from t_mem_chell where mem_id = #{mem_id}
+  	</select>
+	<select id="getReward1" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.PostVO">
+  		select * from t_post where chell_seq = #{chell_seq} and mem_id = #{mem_id} order by post_date
+  	</select>
+ 	<select id="getReward2" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.TrackerVO">
+ 	<![CDATA[
+  		select DISTINCT c.today_str as monthly, TO_CHAR(p.post_date) as success, DECODE(TO_CHAR(p.post_date), NULL, 0, 1) AS SYNC_CHECK
+		from ( SELECT TO_CHAR (FIRST_DAY + LEVEL - 1) TODAY_STR
+		 		FROM (SELECT TRUNC(SYSDATE, 'MM') FIRST_DAY FROM DUAL)
+		 		CONNECT BY FIRST_DAY + LEVEL - 1 <= TRUNC(LAST_DAY(SYSDATE))) c
+		left join (select * from t_post where chell_seq=#{chell_seq} and mem_id=#{mem_id}) p 
+		on TO_CHAR(p.post_date) = c.today_str
+		order by c.today_str
+	]]>
+  	</select>
+  	<select id="getChellName" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.ChellVO">
+  		select chell_name from t_chell where chell_seq = #{chell_seq}
+  	</select>
+ 	<select id="getReward3" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.Chart">
+ 	<![CDATA[
+		 SELECT TO_CHAR(b.dt, 'YYYY-MM') AS mon
+		     , NVL(SUM(a.cnt), 0) cnt
+		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
+		              , COUNT(*) cnt
+		           FROM (select * from t_post where chell_seq=#{chell_seq} and mem_id=#{mem_id})
+		          WHERE post_date BETWEEN (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)
+		                             AND (SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		          GROUP BY post_date
+		        ) a
+		      , ( SELECT TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1 AS dt
+		            FROM dual 
+		         CONNECT BY LEVEL <= ((SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		                            - (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL) + 1)
+		        ) b
+		  WHERE b.dt = a.post_date(+)
+		  GROUP BY TO_CHAR(b.dt, 'YYYY-MM')
+		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
+	]]>
+  	</select>  	
+ 	<select id="getAvg" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.Chart">
+ 	<![CDATA[
+		 SELECT TO_CHAR(b.dt, 'YYYY-MM') AS mon
+		     , NVL(SUM(a.cnt), 0) cnt
+		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
+		              , COUNT(*) cnt
+		           FROM (select * from t_post where chell_seq=#{chell_seq})
+		          WHERE post_date BETWEEN (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)
+		                             AND (SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		          GROUP BY post_date
+		        ) a
+		      , ( SELECT TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1 AS dt
+		            FROM dual 
+		         CONNECT BY LEVEL <= ((SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
+		                            - (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL) + 1)
+		        ) b
+		  WHERE b.dt = a.post_date(+)
+		  GROUP BY TO_CHAR(b.dt, 'YYYY-MM')
+		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
+	]]>
+  	</select>
+	<select id="getMemChellCnt" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.MemChellVO">
+		  select * from t_mem_chell where chell_seq = #{chell_seq}
+	</select>
+	
+	<!-- 댓글 리스트 -->
+
+	<select id="selectAll" resultType = "com.smhrd.entity.CmtVO">
+		select from t_cmt 
+		order by mem_id desc
+	</select>
+
+	<select id="selectCmt" resultType = "com.smhrd.entity.CmtVO">
+	<![CDATA[
+		select * from t_cmt 
+		where post_seq =#{post_seq}
+		order by cmt_date asc
+	]]>
+	</select>
+	<!-- 좋아요 개수 가져올때 쓰려고. -->
+  	<select id="selectLike" parameterType="com.smhrd.entity.LikeVO" resultType="com.smhrd.entity.LikeVO">
+  		select * from t_like where post_seq = #{post_seq}
+  	</select>
+
+  	<!-- 좋아요했는지 안했는지 알아볼때 쓰려고. -->
+  	<select id="likeCheck" resultType = "com.smhrd.entity.LikeCheckVO">
+	<![CDATA[
+		select p.post_seq as pseq, l.like_seq as lseq
+from (select * from t_post where mem_id in(select to_mem from t_follow where from_mem=#{mem_id}) or mem_id=#{mem_id} order by post_date desc) p
+left join t_like l
+on p.post_seq = l.post_seq
+	]]>
+	</select>
+	
+	<!-- 내가 쓴 댓글 가져오기 -->
+	<select id="getMyCmt" parameterType="com.smhrd.entity.CmtVO" resultType="com.smhrd.entity.CmtVO">
+	<![CDATA[select * from (select * from t_cmt where post_seq = #{post_seq} and mem_id = #{mem_id} order by cmt_date desc) where rownum=1]]>
+  	</select>
+	
+</mapper>

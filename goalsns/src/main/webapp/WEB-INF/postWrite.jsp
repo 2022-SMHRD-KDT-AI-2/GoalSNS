@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="goalsns.entity.PostVO"%>
+<%@page import="com.smhrd.entity.PostVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
