@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./resources/js/all.js"></script>
+<script type="text/javascript" src="./resources/js/postpreview.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/profileEdit.css" rel="stylesheet" type="text/css">
