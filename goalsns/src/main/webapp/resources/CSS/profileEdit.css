@@ -99,6 +99,23 @@
     margin-top: 34px;
     margin-left: 40px;
 }
+
+.input-file-button{
+  padding: 6px 25px;
+  background-color:#FF6600;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+#isFile{
+	display:none;
+}
+input[type=file] {
+    display: non;
+    background-color: green;
+}
+
+
 h3{
    float: right;
     padding-right: 360px;

@@ -23,7 +23,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달끝 -->
 <script type="text/javascript" src="./resources/js/postunfollow.js"></script>
-<script type="text/javascript" src="./resources/js/chart.js"></script>
 
 <!-- chart.js CDN방식으로 불러오기! -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
