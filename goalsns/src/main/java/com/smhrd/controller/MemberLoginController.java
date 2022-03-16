@@ -31,7 +31,7 @@ public class MemberLoginController implements Controller {
 		} else {
 			System.out.print("로그인실패");
 
-			return "index";
+			return "../index";
 	}
 	
 	}

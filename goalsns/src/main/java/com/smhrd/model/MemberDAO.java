@@ -26,12 +26,10 @@ public class MemberDAO {
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		}catch(Exception e) {
 			e.printStackTrace();
-		
 		}
 	}
 	
 	public List<MemberVO> selectAll() {
-
 		SqlSession session = sqlSessionFactory.openSession();
 		List<MemberVO> list = session.selectList("selectAll");
 		session.close();
