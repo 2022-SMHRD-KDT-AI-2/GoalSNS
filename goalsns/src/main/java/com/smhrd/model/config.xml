@@ -8,10 +8,10 @@
     <environment id="development">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
-        <property name="driver" value="${driver}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="driver" value="oracle.jdbc.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:XE"/>
+        <property name="username" value="cgi_5_0216_1"/>
+        <property name="password" value="smhrd1"/>
       </dataSource>
     </environment>
   </environments>
