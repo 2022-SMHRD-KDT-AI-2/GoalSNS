@@ -19,6 +19,7 @@
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/challReward.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
+<link href="./resources/CSS/profile.css" rel="stylesheet" type="text/css">
 <!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달끝 -->
@@ -36,7 +37,7 @@
 <!-- 프로필부분  -->
 	<div class="profile_box">
 		<div class="prof_img">
-			<a href="/goalsns/profile.do?mem_id=${memvo.mem_id}"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
+			<a href="/goalsns/profile.do?mem_id=${mvo.mem_id}"><img class="img-circle" src="./profilePic/${mvo.mem_img}" width="200" height="200"></a>
 		</div>
 		<div class="item1">
 			<div class="section1">
@@ -53,19 +54,19 @@
 					<!-- 팔로우 버튼을 누른다면, 팔로잉으로 바뀌기! / 팔로잉을 누르면, 다시 팔로우 버튼으로! -->
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<input type="button" class="profile_btn" onclick="return postfollow()">팔로잉&nbsp;<span class="fa-solid fa-user"></span>
+					<input type="button" class="hide_input" onclick="return postfollow()"><button class="profile_btn fo_2"><div class="inner_text inner_text1">팔로잉&nbsp;</div><span class="fa-solid fal_yes fa-user"></span></button>
 					</form>
 					</c:if>
 					<c:if test="${empty memfo}">
 					<form id="follow_form" class="hide_form">
 					<input type="hidden" name="follow_num" value="${mvo.mem_id}">
-					<input type="button" class="profile_btn follow1" onclick="return postfollow()">팔로우&nbsp;<span class="fa-solid fa-user-plus align-items-center"></span>
+					<input type="button" class="hide_input" onclick="return postfollow()"><button class="profile_btn follow1"><div class="inner_text inner_text2">팔로우&nbsp;</div><span class="fa-solid fal_yes fa-user-plus"></span></button>
 					</form>
 					</c:if>
 					</c:if>
 				</div>
 				<div class="prof_reward">
-					<button class="profile_btn reward" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
+					<button class="profile_rewardbtn" onclick="goReward('${mvo.mem_id}')">챌린지 리워드</button>
 				</div>
 			</div>
 
@@ -74,10 +75,10 @@
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
 				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
+					<button id="follower" class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
+					<button id="follow" class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
 			</div>
 
