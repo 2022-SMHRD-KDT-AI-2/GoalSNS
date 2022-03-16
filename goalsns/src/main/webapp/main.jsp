@@ -22,7 +22,7 @@
 <link href="./resources/CSS/main.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="./resources/js/all.js"></script>
+<script type="text/javascript" src="./resources/js/main.js"></script>
 <!-- 모달 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 모달끝 -->
@@ -84,36 +84,36 @@
     <div>
       <span name="mem_id" class="post_id">${vo.mem_id}</span>
       <c:forEach var="f" items="${fn:split(vo.post_content,' ')}" >
-      <c:if test="${fn:contains(f,'#')}">
+      <c:if test="${fn:startsWith(f,'#')}">
       <a href="/goalsns/search.do?search=${fn:substringAfter(f, '#')}" class="hashtag">${f}</a>
       </c:if>
-      <c:if test="${fn:contains(f,'@')}">
+      <c:if test="${fn:startsWith(f,'@')}">
       <a href="/goalsns/search.do?search=${fn:substringAfter(f, '@')}" class="chall_hashtag">${f}</a>
       </c:if>
-      <c:if test="${not fn:contains(f,'@')&&not fn:contains(f,'#')}">
+      <c:if test="${not fn:startsWith(f,'@')&&not fn:startsWith(f,'#')}">
       <span>${f}</span>
       </c:if>
       </c:forEach>
    </div>
    <div class="divplus">
-      <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}">${cmtCnt}</c:forEach>개 모두 보기</a>
+      <a href="/goalsns/postContent.do?post_seq=${vo.post_seq}" class="plus">댓글 <c:forEach var="cmtCnt" items="${cmtCntList}" begin="${statusNm.index}" end="${statusNm.index}"><span class="cmtcount">${cmtCnt}</span></c:forEach>개 모두 보기</a>
    </div>
 
    <c:forEach var="cmtcon" items="${cmtList}" begin="${statusNm.index}" end="${statusNm.index}">
    <c:if test="${cmtcon ne null}">
 	   <div>
 	      <span name="mem_id" class="post_id">${memvo.mem_id}</span>
-	      <span class="post_con">${cmtcon}</span>
+	      <span class="post_con ${vo.post_seq}cmt">${cmtcon}</span>
 	   </div>
    </c:if>
    </c:forEach>
   
   <div class="textsection">
 	  <div class="textsection1"><i class="fa-regular fa-face-smile-wink"></i></div>
-      <form action="/goalsns/cmt.do"><div class="textsection2">
+      <form id="comment_form${vo.post_seq}"><div class="textsection2">
       <input type="hidden" name="post_seq" value = "${vo.post_seq}">
-      <textarea name="content" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
-      <div class="textsection3"><button class="text_bt" type="submit">게시</button></div></form>
+      <textarea class="cmttextarea${vo.post_seq}" name="content" id="comment_textarea" cols="1333" rows="1" placeholder="댓글 달기..."></textarea></div>
+      <div class="textsection3"><input class="hide_co" type="button" onclick="writeCmt2('${vo.post_seq}')">게시</div></form>
   </div>
 
  </div>

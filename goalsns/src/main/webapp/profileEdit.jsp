@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./resources/js/all.js"></script>
+<script type="text/javascript" src="./resources/js/postpreview.js"></script>
 <link href="./resources/CSS/menu.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/footer.css" rel="stylesheet" type="text/css">
 <link href="./resources/CSS/profileEdit.css" rel="stylesheet" type="text/css">
@@ -37,7 +38,7 @@ function checkit(){
         	alert("이미지 파일만 업로드 가능합니다");
             return;
         } else if(fileSize > maxSize) {
-        	alert("파일 사이즈는 20MB입니다");
+        	alert("파일 크기는 20MB이하입니다");
             return;
         }
     }
@@ -84,10 +85,10 @@ function checkit(){
        
 		<div class="item1">
             <div class="profilEidt_1">
-                <div><a class="a_1" href="/goalsns/profileEdit.jsp">프로필 편집</a></div>
+                <div><a class="a_1" href="/goalsns/profileEdit.do">프로필 편집</a></div>
             </div>
             <div class="delete">
-                <a class="a_2" href="/goalsns/memberDelete.jsp">회원 탈퇴</a>
+                <a class="a_2" href="/goalsns/memberDeleteForm.do">회원 탈퇴</a>
             </div>
         </div>
      

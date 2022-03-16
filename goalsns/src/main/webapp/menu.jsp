@@ -18,7 +18,7 @@
               <div class="test">
                 <ul class="nav navbar-nav">
                   <li><a href="/goalsns/main.do"><i class="fa-solid fa-house"></i></a></li>
-                  <li><a href="/goalsns/postWrite.jsp"><i class="fa-regular fa-square-plus"></i></a></li>
+                  <li><a href="/goalsns/postWriteForm.do"><i class="fa-regular fa-square-plus"></i></a></li>
                   <li><a href="/goalsns/profile.do?mem_id=${memvo.mem_id}"><img class="img-circle" src="./profilePic/${memvo.mem_img}" width=26.5px height=26.5px></a></li>
                   <li><a href="/goalsns/logout.do"><i class="fa-solid fa-arrow-right-from-bracket"></i></i></a></li>
                 </ul>
