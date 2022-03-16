@@ -133,7 +133,7 @@ where c.chell_seq = mc.chell_seq
   	</select>
  	<select id="getReward3" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.Chart">
  	<![CDATA[
-		 SELECT TO_CHAR(b.dt, 'YYYY-MM') AS mon
+		 SELECT substr(b.dt, 1, 7) AS mon
 		     , NVL(SUM(a.cnt), 0) cnt
 		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
 		              , COUNT(*) cnt
@@ -142,19 +142,19 @@ where c.chell_seq = mc.chell_seq
 		                             AND (SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
 		          GROUP BY post_date
 		        ) a
-		      , ( SELECT TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1 AS dt
+		      , ( SELECT to_char((TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1), 'YYYY-MM-DD') AS dt
 		            FROM dual 
 		         CONNECT BY LEVEL <= ((SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
 		                            - (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL) + 1)
 		        ) b
 		  WHERE b.dt = a.post_date(+)
-		  GROUP BY TO_CHAR(b.dt, 'YYYY-MM')
-		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
+		  GROUP BY substr(b.dt, 1, 7)
+		  ORDER BY substr(b.dt, 1, 7)
 	]]>
   	</select>  	
  	<select id="getAvg" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.Chart">
  	<![CDATA[
-		 SELECT TO_CHAR(b.dt, 'YYYY-MM') AS mon
+		 SELECT substr(b.dt, 1, 7) AS mon
 		     , NVL(SUM(a.cnt), 0) cnt
 		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
 		              , COUNT(*) cnt
@@ -163,14 +163,14 @@ where c.chell_seq = mc.chell_seq
 		                             AND (SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
 		          GROUP BY post_date
 		        ) a
-		      , ( SELECT TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1 AS dt
+		      , ( SELECT to_char((TO_DATE('2022-01-01','YYYY-MM-DD') + LEVEL - 1), 'YYYY-MM-DD') AS dt
 		            FROM dual 
 		         CONNECT BY LEVEL <= ((SELECT ADD_MONTHS (TRUNC (SYSDATE, 'YEAR'), 12) - 1 FROM DUAL)
 		                            - (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL) + 1)
 		        ) b
 		  WHERE b.dt = a.post_date(+)
-		  GROUP BY TO_CHAR(b.dt, 'YYYY-MM')
-		  ORDER BY TO_CHAR(b.dt, 'YYYY-MM')
+		  GROUP BY substr(b.dt, 1, 7)
+		  ORDER BY substr(b.dt, 1, 7)
 	]]>
   	</select>
 	<select id="getMemChellCnt" parameterType="com.smhrd.entity.MemChellVO" resultType="com.smhrd.entity.MemChellVO">
