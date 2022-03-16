@@ -1,28 +1,4 @@
-/*
-$(document).on('click', '#heart', function(){
- 			    $('#i').toggleClass('disheart');
-			    $('#i').toggleClass('fa-solid');
- 			    $('#i').toggleClass('heart');
- 			    $('#i').toggleClass('fa-regular');
-=======
-/*$(document).on('click', '#heart', function(){
- 			    $('#abc').toggleClass('disheart');
-			    $('#abc').toggleClass('fa-solid');
- 			    $('#abc').toggleClass('heart');
- 			    $('#abc').toggleClass('fa-regular');
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-2/GoalSNS.git
- 			    $(this).removeAttr('id');
- 			    $(this).attr('id', 'disheart');
- 			})
-
- 			$(document).on('click', '#disheart', function(){
- 				$('#abc').toggleClass('disheart');
-			    $('#abc').toggleClass('fa-solid');
- 			    $('#abc').toggleClass('heart');
- 			    $('#abc').toggleClass('fa-regular');
- 			    $(this).removeAttr('id');
- 			    $(this).attr('id', 'heart');
- 			})*/
+/*좋아요*/
 function like(post){
     $.ajax({
     url: "/goalsns/likeTest.do",
@@ -66,10 +42,10 @@ function clip(){
         document.execCommand("copy");   // 복사
         document.body.removeChild(textarea); //extarea 요소를 없애줌
         
-        alert("URL이 복사되었습니다.")  // 알림창
+        alert("URL이 복사되었습니다.")
     }
    
-
+/*댓글달기*/
 function writeCmt(){
     $.ajax({
     url: "/goalsns/cmtTest.do",
@@ -85,6 +61,9 @@ function writeCmt(){
     $('.textsection_bt')
 			var com = $('textarea').val();
 				$('.right_item_middle').prepend('<div class="me_coments"><a href="/goalsns/profile.do?mem_id=${vo.mem_id}"><img id="peedimg" class="img-circle" src="./profilePic/${writerImg}" width="50" height="50" ></a><div><div><a href="/goalsns/profile.do?mem_id=${vo.mem_id}" name="mem_id" class="mem_id">${vo.mem_id}</a><span class="me_con">'+com+'</span></div><span id="post_date"><fmt:formatDate value="${vo.post_date}" pattern="yyyy.MM.dd HH:mm"/></span></div></div>');
+
+    document.getElementById("comment_textarea").value='';
+
     },
     error:
     function (request, status, error){
@@ -92,16 +71,6 @@ function writeCmt(){
     }
     })
 }
-    
-
-
-/*$('.textsection_bt').click(function(){
-	let commant = $('input').val();
-	$('').append();
-	*/
-	
-
-//})
 
 /*postWrite 이미지 미리보기*/
 $(function() {
@@ -118,6 +87,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
 /*profileEdit에서 이미지미리보기*/
 $(function() {
     $("#isFile").on('change', function(){
