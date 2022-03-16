@@ -75,10 +75,10 @@
 					<span class="prof_text">게시물 ${postCnt}</span>
 				</div>
 				<div class="follower">
-					<button class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
+					<button id="follower" class="prof_text prof_follower" data-toggle="modal" data-target="#followermodal">팔로워 ${fn:length(tofollowlist)}</button>
 				</div>
 				<div class="follow">
-					<button class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
+					<button id="follow" class="prof_text prof_follow" data-toggle="modal" data-target="#followModal">팔로우 ${fn:length(tofollowedlist)}</button>
 				</div>
 			</div>
 
