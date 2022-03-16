@@ -33,7 +33,6 @@ public class HandlerMapping {
 		mappings.put("/cmtTest.do", new CmtTestController());
 		mappings.put("/idCheck.do", new IdCheckController());
 		
-		mappings.put("/postLike.do", new PostLikeController());
 		mappings.put("/postCmt.do", new PostCmtController());
 		mappings.put("/postFollow.do", new PostContentfollowController());
 
