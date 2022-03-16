@@ -37,7 +37,7 @@ function checkit(){
         	alert("이미지 파일만 업로드 가능합니다");
             return;
         } else if(fileSize > maxSize) {
-        	alert("파일 사이즈는 20MB에 1024*1024입니다");
+        	alert("파일 사이즈는 20MB입니다");
             return;
         }
     }
