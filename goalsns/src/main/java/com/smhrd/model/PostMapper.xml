@@ -137,7 +137,7 @@ where c.chell_seq = mc.chell_seq order by mc.cnt desc
  	<![CDATA[
 		 SELECT substr(b.dt, 1, 7) AS mon
 		     , NVL(SUM(a.cnt), 0) cnt
-		  FROM ( SELECT TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
+		  FROM ( SELECT distinct TO_CHAR(post_date, 'YYYY-MM-DD') AS post_date
 		              , COUNT(*) cnt
 		           FROM (select * from t_post where chell_seq=#{chell_seq} and mem_id=#{mem_id})
 		          WHERE post_date BETWEEN (SELECT TRUNC (SYSDATE, 'YEAR') FROM DUAL)

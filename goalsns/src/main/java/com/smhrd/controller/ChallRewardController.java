@@ -83,16 +83,20 @@ public class ChallRewardController implements Controller {
 			mcvo.setChell_seq(chellList[i]);
 			chell_name = pdao.getChellName(mcvo).getChell_name();
 			rewardList[i].setChell_name(chell_name);
+			
+			rewardList[i].setReward2(pdao.getReward2(mcvo)); //check가 다 0으로 뜨긴하는데 success는 null/no null 제대로 인듯.
+			for(int j=0; j<rewardList[i].getReward2().size(); j++) {
+				if(rewardList[i].getReward2().get(j).getSuccess() != null) {
+					cnt+=1;
+				}
+			}
 			trophyList[i] = new TrophyVO();
-			cnt = pdao.getReward1(mcvo).length;
 			trophyList[i].setCnt(cnt);
+			//cnt = pdao.getReward1(mcvo).length;
 			trophyList[i].calcRate(cnt);
 			System.out.println("rate: "+trophyList[i].getRate());
 			trophyList[i].calcColor(trophyList[i].getRate());
 			rewardList[i].setReward1(trophyList[i]);
-			
-			rewardList[i].setReward2(pdao.getReward2(mcvo)); //check가 다 0으로 뜨긴하는데 success는 null/no null 제대로 인듯.
-			
 			rewardList[i].setReward3(pdao.getReward3(mcvo));
 			
 			rewardList[i].setAvg(pdao.getAvg(mcvo));
