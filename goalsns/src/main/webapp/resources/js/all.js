@@ -15,6 +15,7 @@ function like(post){
 	$(post_seq).toggleClass('fa-solid');
     // data중 put한 것의 좋아요 개수는 like
     $("#like_result").text(data.like);
+    
     },
     error:
     function (request, status, error){
@@ -56,7 +57,6 @@ function writeCmt(){
     success:
     function(data){ //ajax통신 성공시 넘어오는 데이터 통째 이름 =data
     //화면에서 작성한 댓글이 바로 보이도록하는 건 예지가 작성할겁니당
-    alert("댓글작성 성공");
     
     $('.textsection_bt')
 			var com = $('textarea').val();
@@ -68,6 +68,8 @@ function writeCmt(){
 				+data.mem_id+'</a><span class="me_con">'
 				+com+'</span></div><span id="post_date">'
 				+data.cmt_date+'</span></div></div>');	
+				document.getElementById("comment_textarea").value='';
+				
    	
     },
     error:
