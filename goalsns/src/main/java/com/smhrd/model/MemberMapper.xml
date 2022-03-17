@@ -112,11 +112,13 @@
 	
 	<!-- 유저 랭킹 -->
 	<select id="getMemRank" resultType="java.lang.String">
-		select mem_id 
+		<![CDATA[
+select mem_id 
 		from (select mem_id, count(post_seq) from t_post where chell_seq is not null
 		and post_date between (select FIRST_DAY from (SELECT TRUNC(SYSDATE, 'MM') FIRST_DAY FROM DUAL)) and (select LAST_DAY from (SELECT LAST_DAY(sysdate) LAST_DAY FROM DUAL))
-		group by mem_id order by count(post_seq))
-		<![CDATA[where rownum<=5]]>
+		group by mem_id order by count(post_seq) desc)
+		where rownum<=5
+		]]>
 	</select>
 	
 </mapper>
