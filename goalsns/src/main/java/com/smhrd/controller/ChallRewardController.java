@@ -70,13 +70,13 @@ public class ChallRewardController implements Controller {
 		mvo2.setMem_id(id);
 		int[] chellList = pdao.getChellList(mvo2);
 		int size = chellList.length; 
-		int cnt = 0;
 		String chell_name;
 		RewardVO[] rewardList = new RewardVO[size];
 		TrophyVO[] trophyList = new TrophyVO[size];
 
 		
 		for(int i=0; i<size; i++) {
+			int cnt = 0;
 			rewardList[i] = new RewardVO();
 			
 			rewardList[i].setChell_seq(chellList[i]);
