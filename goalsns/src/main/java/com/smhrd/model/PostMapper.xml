@@ -37,9 +37,11 @@
   		select * from t_post where mem_id=#{mem_id} order by post_date desc
   	</select>
   	<select id="getTrend" resultType="com.smhrd.entity.TrendVO">
-  		select mc.chell_seq, mc.cnt, c.chell_name
-from (select * from (select chell_seq, count(mem_id) as cnt from t_mem_chell group by chell_seq order by count(mem_id)) <![CDATA[where rownum<=6]]>) mc, t_chell c
-where c.chell_seq = mc.chell_seq
+  	<![CDATA[
+  	  		select mc.chell_seq, mc.cnt, c.chell_name
+from (select * from (select chell_seq, count(mem_id) as cnt from t_mem_chell group by chell_seq order by count(mem_id) desc) where rownum<=6) mc, t_chell c
+where c.chell_seq = mc.chell_seq order by mc.cnt desc
+  	]]>
   	</select>
   	
 <!-- 챌린지 해시태그 기능 -->
