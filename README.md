@@ -20,6 +20,7 @@
 | 백엔드 | JSP/Servlet, Mybatis |
 | API | Chart.js |
 | IDE | Eclipse |
+
 <br><br>
 ## 팀 구성
 | 이름 | 업무 분야 | 분장업무 |
@@ -29,8 +30,11 @@
 | 서명진 | 백엔드 | 기능구현 : 좋아요, 회원가입, 회원탈퇴 | 기획 발표 |
 | 안주호 | 백엔드 | 기능구현: 유효성 검사, 팔로우, 로그인 |
 | 이윤호 | 프론트엔드 | UI/UX설계(Figma활용) I 화면구현 : 로그인, 회원가입, 글쓰기, 회원정보 관련 페이지 | 기획 PPT |
+
 <br><br>
 ## 대표 이미지
+![image](https://user-images.githubusercontent.com/44861724/160356578-51be3d37-00a8-41ac-8fb6-178e11456211.png)
+![image](https://user-images.githubusercontent.com/44861724/160356604-ed792dba-d98c-4a4d-8423-70c17e65d09b.png)
 
 ## 서비스 URL
 https://project-student-5.ddns.net/goalsns
