@@ -33,7 +33,7 @@
 
 <br><br>
 ## 대표 이미지
-![image](https://user-images.githubusercontent.com/44861724/160356578-51be3d37-00a8-41ac-8fb6-178e11456211.png)
+![챌린샷](https://user-images.githubusercontent.com/44861724/212521901-46a48371-351f-49a5-b991-ba8e3b10a90a.JPG)
 ![image](https://user-images.githubusercontent.com/44861724/160356604-ed792dba-d98c-4a4d-8423-70c17e65d09b.png)
 
 ## 서비스 URL
